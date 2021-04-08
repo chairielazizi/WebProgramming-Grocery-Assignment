@@ -4,3 +4,13 @@
     --lightyellow : #fef6c2;
     --darkblue: #0c143c;
 }
+
+.nav-bg {
+    background-color: var(--darkblue);
+}
+
+.navbar-nav1 {
+    /* display:table; */
+    width:100% !important;
+    margin: 0;
+}
