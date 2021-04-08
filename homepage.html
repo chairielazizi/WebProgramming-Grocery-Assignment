@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,68 +8,86 @@
     <title>TroliMart HomePage</title>
 
     <link rel="stylesheet" href="dist/css/file.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 </head>
-    
+
 <body class="text-dark">
-        <!-- upper navbar -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark nav-bg m-0">
-                <div class="container-fluid">
-                    <!-- <a class="navbar-brand mb-0 h1" href="#">TroliMart</a> -->
-                    <a class = "navbar-brand p-0 me-2" href="#">
+    <!-- upper navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark nav-bg m-0">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand p-0 me-2" href="#">
                         <img src="/images/trolimart rect2.png" width="180" alt="">
                     </a>
-                    <input class="form-control mr-sm-2 border rounded w-50" type="search" placeholder="Search for groceries..." aria-label="Search">
-                    <button class="btn " type="submit">
-                        <a class="navbar-brand m-0" href="#">
-                            <img src="/images/search.png" width="35" height="35" alt="">
-                          </a>
-                    </button>
-                    <ul class="navbar-nav">
-                        <li class="nav-item text-light ml-5">
-                            <a class="navbar-brand" href="#">
-                                <img src="/images/user.png" width="30" height="30" alt="">
-                            </a>
-                        </li>
-                        <li class="nav-item text-light mt-2">Hello WP Boyz</li>
-                        <li class="nav-item text-light ml-5">
-                            <a class="navbar-brand" href="#">
-                                <img src="/images/shopping-cart.png" width="30" height="30" alt="">
-                            </a>
-                        </li>
-                        <li class="nav-item text-light mr-0 mt-2">View Cart</li>
-                    </ul>
                 </div>
-            </nav>
-        </header>
-        
+                <div class="lign-items-center w-50">
+                    <form class = "input-group align-items-center w-auto" action="">
+                        <input type="search" class="align-self-center form-control border rounded w-auto"
+                            placeholder="Search..." aria-label="Search" aria-describedby="button-addon2">
+                        <button class="align-items-center btn" type="submit" id="button-addon2">
+                            <a class="navbar-brand m-0" href="#">
+                                <img src="/images/search.png" width="35" height="35" alt="">
+                            </a>
+                        </button>
+                    </form>
 
-        <!-- sidebar -->
-        <div class="wrapper">
-            <nav id="sidebar" class=" category-bg">
-                <div class="sidebar-header">
-                    <h3>All Categories</h3>
+
+
                 </div>
+                <!-- <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                  </div> -->
 
-                <ul class="list-unstyled components">
-                    <p>Dummy heading</p>
-                    <li>
-                        <a href="#">About</a>
+
+
+                <ul class="navbar-nav">
+                    <li class="nav-item text-light ml-5">
+                        <a class="navbar-brand" href="#">
+                            <img src="/images/user.png" width="30" height="30" alt="">
+                        </a>
                     </li>
-                    <li>
-                        <a href="#">About</a>
+                    <li class="nav-item text-light mt-2">Hello WP Boyz</li>
+                    <li class="nav-item text-light ml-5">
+                        <a class="navbar-brand" href="#">
+                            <img src="/images/shopping-cart.png" width="30" height="30" alt="">
+                        </a>
                     </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
+                    <li class="nav-item text-light mr-0 mt-2">View Cart</li>
                 </ul>
-            </nav>
-        </div>
-        
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- sidebar -->
+    <div class="wrapper">
+        <nav id="sidebar" class=" category-bg">
+            <div class="sidebar-header">
+                <h3>All Categories</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy heading</p>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
 </body>
+
 </html>
