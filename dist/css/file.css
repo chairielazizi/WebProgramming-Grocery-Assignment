@@ -7,12 +7,9 @@
 }
 
 .nav-bg {
-    background-color: var(--darkblue);
+    background-color: #0E173B;
 }
 
-#logoonnav{
-    size:initial;
-}
 
 .navbar-nav1 {
     /* display:table; */
