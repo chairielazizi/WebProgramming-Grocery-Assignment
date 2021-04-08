@@ -3,6 +3,7 @@
     --choc: #d2b48c;
     --lightyellow : #fef6c2;
     --darkblue: #0c143c;
+    --silver: #b4b6c2;
 }
 
 .nav-bg {
@@ -13,4 +14,18 @@
     /* display:table; */
     width:100% !important;
     margin: 0;
+}
+
+.category-bg {
+    background-color: var(--silver);
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
 }
