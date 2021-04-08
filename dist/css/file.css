@@ -10,6 +10,10 @@
     background-color: var(--darkblue);
 }
 
+#logoonnav{
+    size:initial;
+}
+
 .navbar-nav1 {
     /* display:table; */
     width:100% !important;
