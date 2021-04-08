@@ -24,12 +24,71 @@
     background-color: var(--silver);
 }
 
+.categories > ul > li {
+    padding: 10px 10px 10px 25px;
+}
+
+.categories > ul > li:hover {
+    background-color: #18a0fb;
+}
+
+.categories > ul > li > a {
+    color: black;
+    display: block;
+}
+
+.categories > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.card {
+    min-width: 200px !important;
+    min-height: 150px !important;
+}
+
 .wrapper {
     display: flex;
     align-items: stretch;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    /* min-width: 250px;
+    max-width: 250px; */
+    width: 15vw;
+}
+
+.sidebar-header {
+    margin-left: 10px;
+}
+
+.price-range {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.price-range-selector {
+    display: flex;
+    flex-direction: row;
+}
+
+.price-range-input {
+    max-width: 80px;
+}
+
+.price-range-button {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.price-range-line {
+    width: 30px;
+    height: 2px;
+    margin: auto 10px;
+    border-bottom: 1px solid black;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
 }

@@ -21,7 +21,7 @@
                         <img src="/images/trolimart rect2.png" width="180" alt="">
                     </a>
                     <input class="form-control mr-sm-2 border rounded w-50" type="search" placeholder="Search for groceries..." aria-label="Search">
-                    <button class="btn " type="submit">
+                    <button class="btn" type="submit">
                         <a class="navbar-brand m-0" href="#">
                             <img src="/images/search.png" width="35" height="35" alt="">
                           </a>
@@ -44,31 +44,98 @@
             </nav>
         </header>
         
+        <div class="main-content">
+            <!-- sidebar -->
+            <div class="wrapper">
+                <nav id="sidebar" class=" category-bg">
+                    <div class="sidebar-header">
+                        <h3>All Categories</h3>
+                    </div>
 
-        <!-- sidebar -->
-        <div class="wrapper">
-            <nav id="sidebar" class=" category-bg">
-                <div class="sidebar-header">
-                    <h3>All Categories</h3>
+                    <div class="categories">
+                        <ul class="list-unstyled components">
+                            <li>
+                                <a href="#">Beverages</a>
+                            </li>
+                            <li>
+                                <a href="#">Bread/Bakery</a>
+                            </li>
+                            <li>
+                                <a href="#">Canned/Jarred Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Dairy</a>
+                            </li>
+                            <li>
+                                <a href="#">Dry/Baking Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Frozen Foods</a>
+                            </li>
+                            <li>
+                                <a href="#">Meat</a>
+                            </li>
+                            <li>
+                                <a href="#">Produce</a>
+                            </li>
+                            <li>
+                                <a href="#">Cleaners</a>
+                            </li>
+                            <li>
+                                <a href="#">Paper Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal Care</a>
+                            </li>
+                            <li>
+                                <a href="#">Others</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-header">
+                        <h3>Search Filter</h3>
+                    </div>
+
+                    <div class="price-range">
+                        <h5>Price Range</h5>
+                        <div class="price-range-selector">
+                            <input type="text" class='price-range-input' placeholder="RM MIN">
+                            <div class="price-range-line"></div>
+                            <input type="text" class='price-range-input' placeholder="RM MAX">
+                        </div>
+                        <button class="price-range-button btn btn-success">APPLY</button>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- items -->
+            <main>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1>Welcome to TroliMart</h1>
+                    </div>
                 </div>
-
-                <ul class="list-unstyled components">
-                    <p>Dummy heading</p>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                </ul>
-            </nav>
+                <div class="categories">
+                    <h3>Frozen Foods</h3>
+                    <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto">
+                        
+                    </div>
+                    <h3>Canned/Jarred Goods</h3>
+                    <div id='c-canned-goods' class="d-flex flex-row flex-nowrap overflow-auto">
+                        
+                    </div>
+                    <h3>Beverages</h3>
+                    <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto">
+                        
+                    </div>
+                    <h3>Personal Care</h3>
+                    <div id='c-personal-care' class="d-flex flex-row flex-nowrap overflow-auto">
+                        
+                    </div>
+                </div>
+            </main>
         </div>
-        
+        <script src="dist/js/file.js"></script>
 </body>
 </html>
