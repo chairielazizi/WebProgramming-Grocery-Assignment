@@ -18,32 +18,24 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark nav-bg m-0">
             <div class="container-fluid">
+                <!-- <a class="navbar-brand mb-0 h1" href="#">TroliMart</a> -->
                 <div>
                     <a class="navbar-brand p-0 me-2" href="#">
                         <img src="/images/trolimart rect2.png" width="180" alt="">
                     </a>
                 </div>
-                <div class="lign-items-center w-50">
-                    <form class = "input-group align-items-center w-auto" action="">
-                        <input type="search" class="align-self-center form-control border rounded w-auto"
-                            placeholder="Search..." aria-label="Search" aria-describedby="button-addon2">
+
+                <div class="align-items-center w-50">
+                    <form class="input-group align-items-center w-auto" action="">
+                        <input type="search" class="align-self-center form-control border rounded w-50"
+                            placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
                         <button class="align-items-center btn" type="submit" id="button-addon2">
                             <a class="navbar-brand m-0" href="#">
                                 <img src="/images/search.png" width="35" height="35" alt="">
                             </a>
                         </button>
                     </form>
-
-
-
                 </div>
-                <!-- <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                  </div> -->
-
-
-
                 <ul class="navbar-nav">
                     <li class="nav-item text-light ml-5">
                         <a class="navbar-brand" href="#">
@@ -62,32 +54,119 @@
         </nav>
     </header>
 
+    <div class="main-content">
+        <!-- sidebar -->
+        <div class="wrapper">
+            <nav id="sidebar" class=" category-bg ">
+                <div class="sidebar-header ">
+                    <br>
+                    <h3>All Categories</h3>
 
-    <!-- sidebar -->
-    <div class="wrapper">
-        <nav id="sidebar" class=" category-bg">
-            <div class="sidebar-header">
-                <h3>All Categories</h3>
+                    <div class="categories overflow-auto">
+                        <ul class="list-unstyled components">
+                            <li>
+                                <a href="#">Beverages</a>
+                            </li>
+                            <li>
+                                <a href="#">Bread/Bakery</a>
+                            </li>
+                            <li>
+                                <a href="#">Canned/Jarred Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Dairy</a>
+                            </li>
+                            <li>
+                                <a href="#">Dry/Baking Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Frozen Foods</a>
+                            </li>
+                            <li>
+                                <a href="#">Meat</a>
+                            </li>
+                            <li>
+                                <a href="#">Produce</a>
+                            </li>
+                            <li>
+                                <a href="#">Cleaners</a>
+                            </li>
+                            <li>
+                                <a href="#">Paper Goods</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal Care</a>
+                            </li>
+                            <li>
+                                <a href="#">Others</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-header">
+                    <h3>Search Filter</h3>
+                    <div class="price-range">
+                        <h5>Price Range</h5>
+                        <div class="price-range-selector">
+                            <input type="text" class='price-range-input' placeholder="RM MIN">
+                            <div class="price-range-line"></div>
+                            <input type="text" class='price-range-input' placeholder="RM MAX">
+                        </div>
+                        <button class="price-range-button btn btn-success">APPLY</button>
+                    </div>
+                </div>
+
+
+            </nav>
+        </div>
+
+        <!-- items -->
+        <main>
+            <div id="carouselExampleIndicators" class="carousel slide m-3" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-50 h-50 align-items-center" src="images/trolimart rectangle.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-50 h-50 align-items-center" src="/images/shoppinglist.jpg" alt="Second slide">
+                    </div>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
+            <div class="categories">
+                <h3>Frozen Foods</h3>
+                <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto">
 
-            <ul class="list-unstyled components">
-                <p>Dummy heading</p>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-            </ul>
-        </nav>
+                </div>
+                <h3>Canned/Jarred Goods</h3>
+                <div id='c-canned-goods' class="d-flex flex-row flex-nowrap overflow-auto">
+
+                </div>
+                <h3>Beverages</h3>
+                <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto">
+
+                </div>
+                <h3>Personal Care</h3>
+                <div id='c-personal-care' class="d-flex flex-row flex-nowrap overflow-auto">
+
+                </div>
+            </div>
+        </main>
     </div>
-
+    <script src="dist/js/file.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
