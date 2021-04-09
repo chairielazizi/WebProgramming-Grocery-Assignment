@@ -2,6 +2,7 @@ const frozenFoods = document.querySelector('#c-frozen-foods')
 const cannedGoods = document.querySelector('#c-canned-goods')
 const beverage = document.querySelector('#c-beverages')
 const personalCare = document.querySelector('#c-personal-care')
+const frozenButton = document.querySelector('.c-frozen-foods-button')
 
 
 const frozen = [
@@ -67,6 +68,10 @@ frozen.forEach(function(products) {
     var frozenFoodPhoto = document.createElement('img')
     frozenFoodPhoto.className = 'card-img-top'
 
+    var frozenFoodButton = document.createElement('button')
+    frozenFoodButton.className = 'add-to-cart-button btn btn-success'
+    frozenFoodButton.textContent = 'Add to Cart'
+
     var frozenFoodName = document.createElement('h6')
     frozenFoodName.className = 'card-title'
     frozenFoodName.textContent = products.name
@@ -79,6 +84,7 @@ frozen.forEach(function(products) {
     frozenFoodCard.appendChild(frozenFoodPhoto)
     frozenFoodCard.appendChild(frozenFoodName)
     frozenFoodCard.appendChild(frozenFoodPrice)
+    frozenFoodCard.appendChild(frozenFoodButton)
 
     frozenFoods.appendChild(frozenFoodCard)
     console.log(frozenFoods)
@@ -90,6 +96,10 @@ beverages.forEach(function(products) {
 
     var beveragePhoto = document.createElement('img')
     beveragePhoto.className = 'card-img-top'
+
+    var beverageButton = document.createElement('button')
+    beverageButton.className = 'add-to-cart-button btn btn-success'
+    beverageButton.textContent = 'Add to Cart'
 
     var beverageName = document.createElement('h6')
     beverageName.className = 'card-title'
@@ -103,6 +113,7 @@ beverages.forEach(function(products) {
     beverageCard.appendChild(beveragePhoto)
     beverageCard.appendChild(beverageName)
     beverageCard.appendChild(beveragePrice)
+    beverageCard.appendChild(beverageButton)
 
     beverage.appendChild(beverageCard)
 })
@@ -113,6 +124,10 @@ canned.forEach(function(products) {
 
     var cannedGoodsPhoto = document.createElement('img')
     cannedGoodsPhoto.className = 'card-img-top'
+
+    var cannedButton = document.createElement('button')
+    cannedButton.className = 'add-to-cart-button btn btn-success'
+    cannedButton.textContent = 'Add to Cart'
 
     var cannedGoodsName = document.createElement('h6')
     cannedGoodsName.className = 'card-title'
@@ -126,6 +141,7 @@ canned.forEach(function(products) {
     cannedGoodsCard.appendChild(cannedGoodsPhoto)
     cannedGoodsCard.appendChild(cannedGoodsName)
     cannedGoodsCard.appendChild(cannedGoodsPrice)
+    cannedGoodsCard.appendChild(cannedButton)
 
     cannedGoods.appendChild(cannedGoodsCard)
 })
@@ -136,6 +152,10 @@ personalCareProducts.forEach(function(products) {
 
     var personalCarePhoto = document.createElement('img')
     personalCarePhoto.className = 'card-img-top'
+
+    var personalCareButton = document.createElement('button')
+    personalCareButton.className = 'add-to-cart-button btn btn-success'
+    personalCareButton.textContent = 'Add to Cart'
 
     var personalCareName = document.createElement('h6')
     personalCareName.className = 'card-title'
@@ -149,6 +169,7 @@ personalCareProducts.forEach(function(products) {
     personalCareCard.appendChild(personalCarePhoto)
     personalCareCard.appendChild(personalCareName)
     personalCareCard.appendChild(personalCarePrice)
+    personalCareCard.appendChild(personalCareButton)
 
     personalCare.appendChild(personalCareCard)
 })
@@ -160,4 +181,6 @@ function toggleCart() {
     } else {
       cart.style.display = "none";
     }
-  }
+}
+
+
