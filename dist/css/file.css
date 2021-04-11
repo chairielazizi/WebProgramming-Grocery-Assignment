@@ -114,6 +114,16 @@
     margin: 0 auto;
 }
 
+.cart {
+    position: absolute;
+    z-index: 100;
+    width: 30vw;
+    height: 100vh;
+    background-color: #d2b48c;
+    right: 0;
+    top: 75px;
+}
+
 .view-cart {
     display: flex;
     flex-direction: row;

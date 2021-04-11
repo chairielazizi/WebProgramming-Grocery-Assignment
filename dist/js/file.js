@@ -12,11 +12,11 @@ const frozen = [
     { name: 'Instant Pizza', price: 'RM9.00' },
     { name: 'Frozen Vegetables', price: 'RM7.60' },
     { name: 'Paratha', price: 'RM10.00' },
-    { name: 'Pau', price: 'RM8.50' },
-    { name: 'Frozen Fried Rice', price: 'RM4.50' },
-    { name: 'Beef Patties', price: 'RM9.00' },
-    { name: 'Chicken Patties', price: 'RM9.00' },
-    { name: 'Tilapia Fish', price: 'RM13.00' },
+    // { name: 'Pau', price: 'RM8.50' },
+    // { name: 'Frozen Fried Rice', price: 'RM4.50' },
+    // { name: 'Beef Patties', price: 'RM9.00' },
+    // { name: 'Chicken Patties', price: 'RM9.00' },
+    // { name: 'Tilapia Fish', price: 'RM13.00' },
 ]
 
 const canned = [
@@ -26,11 +26,11 @@ const canned = [
     { name: 'Mackerels', price: 'RM9.00' },
     { name: 'Canned Pineapples', price: 'RM7.60' },
     { name: 'Baked Beans', price: 'RM10.00' },
-    { name: 'Button Mushrooms', price: 'RM8.50' },
-    { name: 'Chicken Curry', price: 'RM4.50' },
-    { name: 'Rendang', price: 'RM9.00' },
-    { name: 'Sambal', price: 'RM9.00' },
-    { name: 'Ayam Brand Sardines', price: 'RM13.00' },
+    // { name: 'Button Mushrooms', price: 'RM8.50' },
+    // { name: 'Chicken Curry', price: 'RM4.50' },
+    // { name: 'Rendang', price: 'RM9.00' },
+    // { name: 'Sambal', price: 'RM9.00' },
+    // { name: 'Ayam Brand Sardines', price: 'RM13.00' },
 ]
 
 const beverages = [
@@ -40,11 +40,11 @@ const beverages = [
     { name: 'Chrysanthemum', price: 'RM9.00' },
     { name: 'Carlsberg', price: 'RM7.60' },
     { name: 'Sagota', price: 'RM10.00' },
-    { name: 'Lipton Green Tea', price: 'RM8.50' },
-    { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
-    { name: 'Asahi', price: 'RM9.00' },
-    { name: 'Heineken', price: 'RM9.00' },
-    { name: 'Soya', price: 'RM13.00' },
+    // { name: 'Lipton Green Tea', price: 'RM8.50' },
+    // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
+    // { name: 'Asahi', price: 'RM9.00' },
+    // { name: 'Heineken', price: 'RM9.00' },
+    // { name: 'Soya', price: 'RM13.00' },
 ]
 
 const personalCareProducts = [
@@ -54,11 +54,11 @@ const personalCareProducts = [
     { name: 'Gatsby Hair Gel', price: 'RM9.00' },
     { name: 'Gatsby Hairwax', price: 'RM7.60' },
     { name: 'Razors', price: 'RM10.00' },
-    { name: 'Baby Oil', price: 'RM8.50' },
-    { name: 'Deodorant', price: 'RM4.50' },
-    { name: 'Deodorant Spray', price: 'RM9.00' },
-    { name: 'Hair Serum', price: 'RM9.00' },
-    { name: 'Body Wash', price: 'RM13.00' },
+    // { name: 'Baby Oil', price: 'RM8.50' },
+    // { name: 'Deodorant', price: 'RM4.50' },
+    // { name: 'Deodorant Spray', price: 'RM9.00' },
+    // { name: 'Hair Serum', price: 'RM9.00' },
+    // { name: 'Body Wash', price: 'RM13.00' },
 ]
 
 frozen.forEach(function(products) {
