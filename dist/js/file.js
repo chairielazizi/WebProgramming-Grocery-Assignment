@@ -174,13 +174,14 @@ personalCareProducts.forEach(function(products) {
     personalCare.appendChild(personalCareCard)
 })
 
-function toggleCart() {
-    var cart = document.querySelector('.cart');
-    if (cart.style.display === "none") {
-      cart.style.display = "block";
-    } else {
-      cart.style.display = "none";
-    }
-}
+// function toggleCart() {
+//     var cart = document.querySelector('.cart');
+//     console.log(cart);
+//     if (cart.style.display === "none") {
+//       cart.style.display = "block";
+//     } else {
+//       cart.style.display = "none";
+//     }
+// }
 
 

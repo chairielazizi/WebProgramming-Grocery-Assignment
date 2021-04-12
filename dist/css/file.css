@@ -17,14 +17,23 @@
     margin: 0;
 }
 
+.carousel{
+    /* here you can edit the carousel of homepage*/
+    background-color: #18a0fb;
+    width: 1250px;
+    height:200px;
+}
+
+#carouselinnerhomepage > .carousel-item > img{
+    /* Here you can edit the size of img in carousel of homepage*/
+    width: 1250px;
+    height:200px;
+}
 
 .categories{
     height: auto;
     max-height: 600px;
 }
-/* .category-bg {
-    background-color: var(--silver);
-} */
 
 .categories > ul > li {
     padding: 10px 10px 10px 25px;
