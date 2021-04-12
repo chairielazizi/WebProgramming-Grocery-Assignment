@@ -70,7 +70,7 @@ frozen.forEach(function(products) {
 
     var frozenFoodButton = document.createElement('button')
     frozenFoodButton.className = 'add-to-cart-button btn btn-success'
-    frozenFoodButton.textContent = 'Add to Cart'
+    frozenFoodButton.textContent = 'Add to List'
 
     var frozenFoodName = document.createElement('h6')
     frozenFoodName.className = 'card-title'
@@ -99,7 +99,7 @@ beverages.forEach(function(products) {
 
     var beverageButton = document.createElement('button')
     beverageButton.className = 'add-to-cart-button btn btn-success'
-    beverageButton.textContent = 'Add to Cart'
+    beverageButton.textContent = 'Add to List'
 
     var beverageName = document.createElement('h6')
     beverageName.className = 'card-title'
@@ -127,7 +127,7 @@ canned.forEach(function(products) {
 
     var cannedButton = document.createElement('button')
     cannedButton.className = 'add-to-cart-button btn btn-success'
-    cannedButton.textContent = 'Add to Cart'
+    cannedButton.textContent = 'Add to List'
 
     var cannedGoodsName = document.createElement('h6')
     cannedGoodsName.className = 'card-title'
@@ -155,7 +155,7 @@ personalCareProducts.forEach(function(products) {
 
     var personalCareButton = document.createElement('button')
     personalCareButton.className = 'add-to-cart-button btn btn-success'
-    personalCareButton.textContent = 'Add to Cart'
+    personalCareButton.textContent = 'Add to List'
 
     var personalCareName = document.createElement('h6')
     personalCareName.className = 'card-title'
