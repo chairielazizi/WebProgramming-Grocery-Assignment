@@ -3,6 +3,7 @@ const cannedGoods = document.querySelector('#c-canned-goods')
 const beverage = document.querySelector('#c-beverages')
 const personalCare = document.querySelector('#c-personal-care')
 const frozenButton = document.querySelector('.c-frozen-foods-button')
+const cartContent = document.querySelector('.cart-content')
 
 
 const frozen = [
@@ -174,14 +175,15 @@ personalCareProducts.forEach(function(products) {
     personalCare.appendChild(personalCareCard)
 })
 
-// function toggleCart() {
-//     var cart = document.querySelector('.cart');
-//     console.log(cart);
-//     if (cart.style.display === "none") {
-//       cart.style.display = "block";
-//     } else {
-//       cart.style.display = "none";
-//     }
-// }
+function toggleCart() {
+    var cart = document.querySelector('.cart');
+    console.log(cart);
+    if (cart.style.display === "none") {
+      cart.style.display = "block";
+    } else {
+      cart.style.display = "none";
+    }
+}
+
 
 

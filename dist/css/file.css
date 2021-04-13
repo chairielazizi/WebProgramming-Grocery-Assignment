@@ -30,9 +30,14 @@
     height:200px;
 }
 
-.categories{
+.categories {
     height: auto;
     max-height: 600px;
+}
+
+.categories-header {
+    margin-top: 20px;
+    margin-left: 8px;
 }
 
 .categories > ul > li {
@@ -128,17 +133,27 @@
     z-index: 100;
     width: 30vw;
     height: 100vh;
-    background-color: #d2b48c;
+    background-color: whitesmoke;
     right: 0;
     top: 75px;
 }
 
+.cart-content {
+    margin-left: 15px;
+}
+
+.cart-header {
+    margin-top: 10px;
+}
+
 .view-cart {
     display: flex;
-    flex-direction: row;
+    flex-direction: row
 }
 
 .view-cart-text {
     float: right;
     font-size: 16px;
+    margin: 5px 10px;
+    padding: 0;
 }

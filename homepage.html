@@ -47,7 +47,7 @@
                     <li class="nav-item text-light ml-5">
                         <a class="view-cart navbar-brand" href="#" onclick="return toggleCart()">
                             <img src="images/shopping-cart.png" width="30" height="30" alt="">
-                            View List
+                            <p class="view-cart-text">View List</p>
                         </a>
                     </li>
                 </ul>
@@ -147,19 +147,19 @@
             </div>
             
             <div class="categories">
-                <h3>Frozen Foods</h3>
+                <h3 class='categories-header'>Frozen Foods</h3>
                 <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto">
                 </div>
 
-                <h3>Canned/Jarred Goods</h3>
+                <h3 class='categories-header'>Canned/Jarred Goods</h3>
                 <div id='c-canned-goods' class="d-flex flex-row flex-nowrap overflow-auto">
 
                 </div>
-                <h3>Beverages</h3>
+                <h3 class='categories-header'>Beverages</h3>
                 <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto">
 
                 </div>
-                <h3>Personal Care</h3>
+                <h3 class='categories-header'>Personal Care</h3>
                 <div id='c-personal-care' class="d-flex flex-row flex-nowrap overflow-auto">
 
                 </div>
@@ -167,7 +167,10 @@
 
             <!-- cart -->
             <div class="cart" aria-hidden="false">
-                <h1>this is list</h1>
+                <div class="cart-content">
+                    <h2 class='cart-header'>Your Cart</h2>
+                    <button class="btn-primary">Create a New Cart</button>
+                </div>
             </div>
         </div>
 
