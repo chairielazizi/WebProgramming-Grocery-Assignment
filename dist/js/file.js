@@ -4,6 +4,8 @@ const beverage = document.querySelector('#c-beverages')
 const personalCare = document.querySelector('#c-personal-care')
 const frozenButton = document.querySelector('.c-frozen-foods-button')
 const cartContent = document.querySelector('.cart-content')
+const cartItems = document.querySelector('.cart-items')
+
 
 
 const frozen = [
@@ -62,7 +64,7 @@ const personalCareProducts = [
     // { name: 'Body Wash', price: 'RM13.00' },
 ]
 
-frozen.forEach(function(products) {
+for (var i = 0; i < frozen.length; i++) {
     var frozenFoodCard = document.createElement('div')
     frozenFoodCard.className = 'card card-block mx-2'
 
@@ -75,12 +77,12 @@ frozen.forEach(function(products) {
 
     var frozenFoodName = document.createElement('h6')
     frozenFoodName.className = 'card-title'
-    frozenFoodName.textContent = products.name
+    frozenFoodName.textContent = frozen[i].name
 
 
     var frozenFoodPrice = document.createElement('p')
     frozenFoodPrice.className = 'card-text'
-    frozenFoodPrice.textContent = products.price
+    frozenFoodPrice.textContent = frozen[i].price
 
     frozenFoodCard.appendChild(frozenFoodPhoto)
     frozenFoodCard.appendChild(frozenFoodName)
@@ -88,8 +90,7 @@ frozen.forEach(function(products) {
     frozenFoodCard.appendChild(frozenFoodButton)
 
     frozenFoods.appendChild(frozenFoodCard)
-    console.log(frozenFoods)
-})
+}
 
 beverages.forEach(function(products) {
     var beverageCard = document.createElement('div')
@@ -184,6 +185,5 @@ function toggleCart() {
       cart.style.display = "none";
     }
 }
-
 
 
