@@ -136,6 +136,7 @@
     background-color: whitesmoke;
     right: 0;
     top: 75px;
+    overflow: auto;
 }
 
 .cart-content {
@@ -167,4 +168,3 @@
     width: 120px;
     margin: 0 auto;
 }
-

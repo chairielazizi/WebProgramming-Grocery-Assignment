@@ -74,6 +74,7 @@ for (var i = 0; i < frozen.length; i++) {
     var frozenFoodButton = document.createElement('button')
     frozenFoodButton.className = 'add-to-cart-button btn btn-success'
     frozenFoodButton.textContent = 'Add to List'
+    frozenFoodButton.addEventListener("click",additem)
 
     var frozenFoodName = document.createElement('h6')
     frozenFoodName.className = 'card-title'
@@ -102,6 +103,7 @@ beverages.forEach(function(products) {
     var beverageButton = document.createElement('button')
     beverageButton.className = 'add-to-cart-button btn btn-success'
     beverageButton.textContent = 'Add to List'
+    beverageButton.addEventListener("click",additem)
 
     var beverageName = document.createElement('h6')
     beverageName.className = 'card-title'
@@ -130,6 +132,7 @@ canned.forEach(function(products) {
     var cannedButton = document.createElement('button')
     cannedButton.className = 'add-to-cart-button btn btn-success'
     cannedButton.textContent = 'Add to List'
+    cannedButton.addEventListener("click",additem)
 
     var cannedGoodsName = document.createElement('h6')
     cannedGoodsName.className = 'card-title'
@@ -158,6 +161,7 @@ personalCareProducts.forEach(function(products) {
     var personalCareButton = document.createElement('button')
     personalCareButton.className = 'add-to-cart-button btn btn-success'
     personalCareButton.textContent = 'Add to List'
+    personalCareButton.addEventListener("click",additem)
 
     var personalCareName = document.createElement('h6')
     personalCareName.className = 'card-title'
@@ -175,6 +179,15 @@ personalCareProducts.forEach(function(products) {
 
     personalCare.appendChild(personalCareCard)
 })
+
+function additem(){
+    var paper = document.getElementById('list_items')
+    // console.log(paper);
+    var productAdded = '<li> <p>product name</p> </li>';
+    paper.insertAdjacentHTML('beforeend', productAdded);
+    
+    
+}
 
 function toggleCart() {
     var cart = document.querySelector('.cart');
