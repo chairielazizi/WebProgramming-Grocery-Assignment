@@ -1,202 +1,217 @@
-const frozenFoods = document.querySelector('#c-frozen-foods')
-const cannedGoods = document.querySelector('#c-canned-goods')
-const beverage = document.querySelector('#c-beverages')
-const personalCare = document.querySelector('#c-personal-care')
-const frozenButton = document.querySelector('.c-frozen-foods-button')
-const cartContent = document.querySelector('.cart-content')
-const cartItems = document.querySelector('.cart-items')
-
-
+const frozenFoods = document.querySelector("#c-frozen-foods");
+const cannedGoods = document.querySelector("#c-canned-goods");
+const beverage = document.querySelector("#c-beverages");
+const personalCare = document.querySelector("#c-personal-care");
+const frozenButton = document.querySelector(".c-frozen-foods-button");
+const cartContent = document.querySelector(".cart-content");
+const cartItems = document.querySelector(".cart-items");
 
 const frozen = [
-    { name: 'Waffles', price: 'RM12.00' },
-    { name: 'Ayamas Frozen Chicken Wings', price: 'RM14.50' },
-    { name: 'Ayamas Chicken Frankfurters', price: 'RM8.00' },
-    { name: 'Instant Pizza', price: 'RM9.00' },
-    { name: 'Frozen Vegetables', price: 'RM7.60' },
-    { name: 'Paratha', price: 'RM10.00' },
-    // { name: 'Pau', price: 'RM8.50' },
-    // { name: 'Frozen Fried Rice', price: 'RM4.50' },
-    // { name: 'Beef Patties', price: 'RM9.00' },
-    // { name: 'Chicken Patties', price: 'RM9.00' },
-    // { name: 'Tilapia Fish', price: 'RM13.00' },
-]
+  {
+    name: "Waffles",
+    price: "RM12.00",
+    img: "../images/Products/frozen/waffle.jpg",
+  },
+  {
+    name: "Ayamas Frozen Chicken Wings",
+    price: "RM14.50",
+    img: "../images/Products/frozen/ayamas_wings.jpg",
+  },
+  {
+    name: "Ayamas Chicken Frankfurters",
+    price: "RM8.00",
+    img: "../images/Products/frozen/ayamas_frank.png",
+  },
+  {
+    name: "Instant Pizza",
+    price: "RM9.00",
+    img: "../images/Products/frozen/waffle.jpg",
+  },
+  {
+    name: "Frozen Vegetables",
+    price: "RM7.60",
+    img: "../images/Products/frozen/vegetables.jpg",
+  },
+  {
+    name: "Paratha",
+    price: "RM10.00",
+    img: "../images/Products/frozen/paratha.jpg",
+  },
+  // { name: 'Pau', price: 'RM8.50' },
+  // { name: 'Frozen Fried Rice', price: 'RM4.50' },
+  // { name: 'Beef Patties', price: 'RM9.00' },
+  // { name: 'Chicken Patties', price: 'RM9.00' },
+  // { name: 'Tilapia Fish', price: 'RM13.00' },
+];
 
 const canned = [
-    { name: 'Sardines', price: 'RM12.00' },
-    { name: 'Spaghetti Sauce', price: 'RM14.50' },
-    { name: 'Carbonara Sauce', price: 'RM8.00' },
-    { name: 'Mackerels', price: 'RM9.00' },
-    { name: 'Canned Pineapples', price: 'RM7.60' },
-    { name: 'Baked Beans', price: 'RM10.00' },
-    // { name: 'Button Mushrooms', price: 'RM8.50' },
-    // { name: 'Chicken Curry', price: 'RM4.50' },
-    // { name: 'Rendang', price: 'RM9.00' },
-    // { name: 'Sambal', price: 'RM9.00' },
-    // { name: 'Ayam Brand Sardines', price: 'RM13.00' },
-]
+  { name: "Sardines", price: "RM12.00" },
+  { name: "Spaghetti Sauce", price: "RM14.50" },
+  { name: "Carbonara Sauce", price: "RM8.00" },
+  { name: "Mackerels", price: "RM9.00" },
+  { name: "Canned Pineapples", price: "RM7.60" },
+  { name: "Baked Beans", price: "RM10.00" },
+  // { name: 'Button Mushrooms', price: 'RM8.50' },
+  // { name: 'Chicken Curry', price: 'RM4.50' },
+  // { name: 'Rendang', price: 'RM9.00' },
+  // { name: 'Sambal', price: 'RM9.00' },
+  // { name: 'Ayam Brand Sardines', price: 'RM13.00' },
+];
 
 const beverages = [
-    { name: 'Coca-Cola', price: 'RM12.00' },
-    { name: 'Sprite', price: 'RM14.50' },
-    { name: 'Milo', price: 'RM8.00' },
-    { name: 'Chrysanthemum', price: 'RM9.00' },
-    { name: 'Carlsberg', price: 'RM7.60' },
-    { name: 'Sagota', price: 'RM10.00' },
-    // { name: 'Lipton Green Tea', price: 'RM8.50' },
-    // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
-    // { name: 'Asahi', price: 'RM9.00' },
-    // { name: 'Heineken', price: 'RM9.00' },
-    // { name: 'Soya', price: 'RM13.00' },
-]
+  { name: "Coca-Cola", price: "RM12.00" },
+  { name: "Sprite", price: "RM14.50" },
+  { name: "Milo", price: "RM8.00" },
+  { name: "Chrysanthemum", price: "RM9.00" },
+  { name: "Carlsberg", price: "RM7.60" },
+  { name: "Sagota", price: "RM10.00" },
+  // { name: 'Lipton Green Tea', price: 'RM8.50' },
+  // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
+  // { name: 'Asahi', price: 'RM9.00' },
+  // { name: 'Heineken', price: 'RM9.00' },
+  // { name: 'Soya', price: 'RM13.00' },
+];
 
 const personalCareProducts = [
-    { name: 'Colgate Toothpaste', price: 'RM12.00' },
-    { name: 'Colgate Toothbrush', price: 'RM14.50' },
-    { name: 'Floss', price: 'RM8.00' },
-    { name: 'Gatsby Hair Gel', price: 'RM9.00' },
-    { name: 'Gatsby Hairwax', price: 'RM7.60' },
-    { name: 'Razors', price: 'RM10.00' },
-    // { name: 'Baby Oil', price: 'RM8.50' },
-    // { name: 'Deodorant', price: 'RM4.50' },
-    // { name: 'Deodorant Spray', price: 'RM9.00' },
-    // { name: 'Hair Serum', price: 'RM9.00' },
-    // { name: 'Body Wash', price: 'RM13.00' },
-]
+  { name: "Colgate Toothpaste", price: "RM12.00" },
+  { name: "Colgate Toothbrush", price: "RM14.50" },
+  { name: "Floss", price: "RM8.00" },
+  { name: "Gatsby Hair Gel", price: "RM9.00" },
+  { name: "Gatsby Hairwax", price: "RM7.60" },
+  { name: "Razors", price: "RM10.00" },
+  // { name: 'Baby Oil', price: 'RM8.50' },
+  // { name: 'Deodorant', price: 'RM4.50' },
+  // { name: 'Deodorant Spray', price: 'RM9.00' },
+  // { name: 'Hair Serum', price: 'RM9.00' },
+  // { name: 'Body Wash', price: 'RM13.00' },
+];
 
 for (var i = 0; i < frozen.length; i++) {
-    var frozenFoodCard = document.createElement('div')
-    frozenFoodCard.className = 'card card-block mx-2'
+  var frozenFoodCard = document.createElement("div");
+  frozenFoodCard.className = "card card-block mx-2";
 
-    var frozenFoodPhoto = document.createElement('img')
-    frozenFoodPhoto.className = 'card-img-top'
+  var frozenFoodPhoto = document.createElement("img");
+  frozenFoodPhoto.className = "card-img-top";
+  frozenFoodPhoto.src = frozen[i].img;
 
-    var frozenFoodButton = document.createElement('button')
-    frozenFoodButton.className = 'add-to-cart-button btn btn-success'
-    frozenFoodButton.textContent = 'Add to List'
-    frozenFoodButton.addEventListener("click",additem)
+  var frozenFoodButton = document.createElement("button");
+  frozenFoodButton.className = "add-to-cart-button btn btn-success";
+  frozenFoodButton.textContent = "Add to List";
+  frozenFoodButton.addEventListener("click", additem);
 
-    var frozenFoodName = document.createElement('h6')
-    frozenFoodName.className = 'card-title'
-    frozenFoodName.textContent = frozen[i].name
+  var frozenFoodName = document.createElement("h6");
+  frozenFoodName.className = "card-title";
+  frozenFoodName.textContent = frozen[i].name;
 
+  var frozenFoodPrice = document.createElement("p");
+  frozenFoodPrice.className = "card-text";
+  frozenFoodPrice.textContent = frozen[i].price;
 
-    var frozenFoodPrice = document.createElement('p')
-    frozenFoodPrice.className = 'card-text'
-    frozenFoodPrice.textContent = frozen[i].price
+  frozenFoodCard.appendChild(frozenFoodPhoto);
+  frozenFoodCard.appendChild(frozenFoodName);
+  frozenFoodCard.appendChild(frozenFoodPrice);
+  frozenFoodCard.appendChild(frozenFoodButton);
 
-    frozenFoodCard.appendChild(frozenFoodPhoto)
-    frozenFoodCard.appendChild(frozenFoodName)
-    frozenFoodCard.appendChild(frozenFoodPrice)
-    frozenFoodCard.appendChild(frozenFoodButton)
-
-    frozenFoods.appendChild(frozenFoodCard)
+  frozenFoods.appendChild(frozenFoodCard);
 }
 
-beverages.forEach(function(products) {
-    var beverageCard = document.createElement('div')
-    beverageCard.className = 'card card-block mx-2'
+beverages.forEach(function (products) {
+  var beverageCard = document.createElement("div");
+  beverageCard.className = "card card-block mx-2";
 
-    var beveragePhoto = document.createElement('img')
-    beveragePhoto.className = 'card-img-top'
+  var beveragePhoto = document.createElement("img");
+  beveragePhoto.className = "card-img-top";
 
-    var beverageButton = document.createElement('button')
-    beverageButton.className = 'add-to-cart-button btn btn-success'
-    beverageButton.textContent = 'Add to List'
-    beverageButton.addEventListener("click",additem)
+  var beverageButton = document.createElement("button");
+  beverageButton.className = "add-to-cart-button btn btn-success";
+  beverageButton.textContent = "Add to List";
+  beverageButton.addEventListener("click", additem);
 
-    var beverageName = document.createElement('h6')
-    beverageName.className = 'card-title'
-    beverageName.textContent = products.name
+  var beverageName = document.createElement("h6");
+  beverageName.className = "card-title";
+  beverageName.textContent = products.name;
 
+  var beveragePrice = document.createElement("p");
+  beveragePrice.className = "card-text";
+  beveragePrice.textContent = products.price;
 
-    var beveragePrice = document.createElement('p')
-    beveragePrice.className = 'card-text'
-    beveragePrice.textContent = products.price
+  beverageCard.appendChild(beveragePhoto);
+  beverageCard.appendChild(beverageName);
+  beverageCard.appendChild(beveragePrice);
+  beverageCard.appendChild(beverageButton);
 
-    beverageCard.appendChild(beveragePhoto)
-    beverageCard.appendChild(beverageName)
-    beverageCard.appendChild(beveragePrice)
-    beverageCard.appendChild(beverageButton)
+  beverage.appendChild(beverageCard);
+});
 
-    beverage.appendChild(beverageCard)
-})
+canned.forEach(function (products) {
+  var cannedGoodsCard = document.createElement("div");
+  cannedGoodsCard.className = "card card-block mx-2";
 
-canned.forEach(function(products) {
-    var cannedGoodsCard = document.createElement('div')
-    cannedGoodsCard.className = 'card card-block mx-2'
+  var cannedGoodsPhoto = document.createElement("img");
+  cannedGoodsPhoto.className = "card-img-top";
 
-    var cannedGoodsPhoto = document.createElement('img')
-    cannedGoodsPhoto.className = 'card-img-top'
+  var cannedButton = document.createElement("button");
+  cannedButton.className = "add-to-cart-button btn btn-success";
+  cannedButton.textContent = "Add to List";
+  cannedButton.addEventListener("click", additem);
 
-    var cannedButton = document.createElement('button')
-    cannedButton.className = 'add-to-cart-button btn btn-success'
-    cannedButton.textContent = 'Add to List'
-    cannedButton.addEventListener("click",additem)
+  var cannedGoodsName = document.createElement("h6");
+  cannedGoodsName.className = "card-title";
+  cannedGoodsName.textContent = products.name;
 
-    var cannedGoodsName = document.createElement('h6')
-    cannedGoodsName.className = 'card-title'
-    cannedGoodsName.textContent = products.name
+  var cannedGoodsPrice = document.createElement("p");
+  cannedGoodsPrice.className = "card-text";
+  cannedGoodsPrice.textContent = products.price;
 
+  cannedGoodsCard.appendChild(cannedGoodsPhoto);
+  cannedGoodsCard.appendChild(cannedGoodsName);
+  cannedGoodsCard.appendChild(cannedGoodsPrice);
+  cannedGoodsCard.appendChild(cannedButton);
 
-    var cannedGoodsPrice = document.createElement('p')
-    cannedGoodsPrice.className = 'card-text'
-    cannedGoodsPrice.textContent = products.price
+  cannedGoods.appendChild(cannedGoodsCard);
+});
 
-    cannedGoodsCard.appendChild(cannedGoodsPhoto)
-    cannedGoodsCard.appendChild(cannedGoodsName)
-    cannedGoodsCard.appendChild(cannedGoodsPrice)
-    cannedGoodsCard.appendChild(cannedButton)
+personalCareProducts.forEach(function (products) {
+  var personalCareCard = document.createElement("div");
+  personalCareCard.className = "card card-block mx-2";
 
-    cannedGoods.appendChild(cannedGoodsCard)
-})
+  var personalCarePhoto = document.createElement("img");
+  personalCarePhoto.className = "card-img-top";
 
-personalCareProducts.forEach(function(products) {
-    var personalCareCard = document.createElement('div')
-    personalCareCard.className = 'card card-block mx-2'
+  var personalCareButton = document.createElement("button");
+  personalCareButton.className = "add-to-cart-button btn btn-success";
+  personalCareButton.textContent = "Add to List";
+  personalCareButton.addEventListener("click", additem);
 
-    var personalCarePhoto = document.createElement('img')
-    personalCarePhoto.className = 'card-img-top'
+  var personalCareName = document.createElement("h6");
+  personalCareName.className = "card-title";
+  personalCareName.textContent = products.name;
 
-    var personalCareButton = document.createElement('button')
-    personalCareButton.className = 'add-to-cart-button btn btn-success'
-    personalCareButton.textContent = 'Add to List'
-    personalCareButton.addEventListener("click",additem)
+  var personalCarePrice = document.createElement("p");
+  personalCarePrice.className = "card-text";
+  personalCarePrice.textContent = products.price;
 
-    var personalCareName = document.createElement('h6')
-    personalCareName.className = 'card-title'
-    personalCareName.textContent = products.name
+  personalCareCard.appendChild(personalCarePhoto);
+  personalCareCard.appendChild(personalCareName);
+  personalCareCard.appendChild(personalCarePrice);
+  personalCareCard.appendChild(personalCareButton);
 
+  personalCare.appendChild(personalCareCard);
+});
 
-    var personalCarePrice = document.createElement('p')
-    personalCarePrice.className = 'card-text'
-    personalCarePrice.textContent = products.price
-
-    personalCareCard.appendChild(personalCarePhoto)
-    personalCareCard.appendChild(personalCareName)
-    personalCareCard.appendChild(personalCarePrice)
-    personalCareCard.appendChild(personalCareButton)
-
-    personalCare.appendChild(personalCareCard)
-})
-
-function additem(){
-    var paper = document.getElementById('list_items')
-    // console.log(paper);
-    var productAdded = '<li> <p>product name</p> </li>';
-    paper.insertAdjacentHTML('beforeend', productAdded);
-    
-    
+function additem() {
+  var paper = document.getElementById("list_items");
+  // console.log(paper);
+  var productAdded = "<li> <p>product name</p> </li>";
+  paper.insertAdjacentHTML("beforeend", productAdded);
 }
 
 function toggleCart() {
-    var cart = document.querySelector('.cart');
-    console.log(cart);
-    if (cart.style.display === "none") {
-      cart.style.display = "block";
-    } else {
-      cart.style.display = "none";
-    }
+  var cart = document.querySelector(".cart");
+  console.log(cart);
+  if (cart.style.display === "none") {
+    cart.style.display = "block";
+  } else {
+    cart.style.display = "none";
+  }
 }
-
-
