@@ -10,32 +10,32 @@ const frozen = [
   {
     name: "Waffles",
     price: "RM12.00",
-    img: "../images/Products/frozen/waffle.jpg",
+    img: "../images/products/frozen/waffle.jpg",
   },
   {
     name: "Ayamas Frozen Chicken Wings",
     price: "RM14.50",
-    img: "../images/Products/frozen/ayamas_wings.jpg",
+    img: "../images/products/frozen/ayamas_wings.jpg",
   },
   {
     name: "Ayamas Chicken Frankfurters",
     price: "RM8.00",
-    img: "../images/Products/frozen/ayamas_frank.png",
+    img: "../images/products/frozen/ayamas_frank.png",
   },
   {
     name: "Instant Pizza",
     price: "RM9.00",
-    img: "../images/Products/frozen/waffle.jpg",
+    img: "../images/products/frozen/waffle.jpg",
   },
   {
     name: "Frozen Vegetables",
     price: "RM7.60",
-    img: "../images/Products/frozen/vegetables.jpg",
+    img: "../images/products/frozen/vegetables.jpg",
   },
   {
     name: "Paratha",
     price: "RM10.00",
-    img: "../images/Products/frozen/paratha.jpg",
+    img: "../images/products/frozen/paratha.jpg",
   },
   // { name: 'Pau', price: 'RM8.50' },
   // { name: 'Frozen Fried Rice', price: 'RM4.50' },
@@ -45,12 +45,36 @@ const frozen = [
 ];
 
 const canned = [
-  { name: "Sardines", price: "RM12.00" },
-  { name: "Spaghetti Sauce", price: "RM14.50" },
-  { name: "Carbonara Sauce", price: "RM8.00" },
-  { name: "Mackerels", price: "RM9.00" },
-  { name: "Canned Pineapples", price: "RM7.60" },
-  { name: "Baked Beans", price: "RM10.00" },
+  {
+    name: "Sardines",
+    price: "RM12.00",
+    img: "../images/products/canned/sardine.jfif",
+  },
+  {
+    name: "Spaghetti Sauce",
+    price: "RM14.50",
+    img: "../images/products/canned/spaghettisauce.jpg",
+  },
+  {
+    name: "Carbonara Sauce",
+    price: "RM8.00",
+    img: "../images/products/canned/carbonarasauce.jpg",
+  },
+  {
+    name: "Mackerels",
+    price: "RM9.00",
+    img: "../images/products/canned/mackerel.jfif",
+  },
+  {
+    name: "Canned Pineapples",
+    price: "RM7.60",
+    img: "../images/products/canned/pineapple.jfif",
+  },
+  {
+    name: "Baked Beans",
+    price: "RM10.00",
+    img: "../images/products/canned/bakedbeans.jfif",
+  },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
   // { name: 'Rendang', price: 'RM9.00' },
@@ -59,12 +83,36 @@ const canned = [
 ];
 
 const beverages = [
-  { name: "Coca-Cola", price: "RM12.00" },
-  { name: "Sprite", price: "RM14.50" },
-  { name: "Milo", price: "RM8.00" },
-  { name: "Chrysanthemum", price: "RM9.00" },
-  { name: "Carlsberg", price: "RM7.60" },
-  { name: "Sagota", price: "RM10.00" },
+  {
+    name: "Coca-Cola",
+    price: "RM12.00",
+    img: "../images/products/beverages/cocacola.jpg",
+  },
+  {
+    name: "Sprite",
+    price: "RM14.50",
+    img: "../images/products/beverages/sprite.jpg",
+  },
+  {
+    name: "Milo",
+    price: "RM8.00",
+    img: "../images/products/beverages/milo.jfif",
+  },
+  {
+    name: "Chrysanthemum",
+    price: "RM9.00",
+    img: "../images/products/beverages/chrysanthemum.png",
+  },
+  {
+    name: "Carlsberg",
+    price: "RM7.60",
+    img: "../images/products/beverages/carlsberg.jpg",
+  },
+  {
+    name: "Sagota",
+    price: "RM10.00",
+    img: "../images/products/beverages/sagota.jpg",
+  },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
   // { name: 'Asahi', price: 'RM9.00' },
@@ -73,12 +121,36 @@ const beverages = [
 ];
 
 const personalCareProducts = [
-  { name: "Colgate Toothpaste", price: "RM12.00" },
-  { name: "Colgate Toothbrush", price: "RM14.50" },
-  { name: "Floss", price: "RM8.00" },
-  { name: "Gatsby Hair Gel", price: "RM9.00" },
-  { name: "Gatsby Hairwax", price: "RM7.60" },
-  { name: "Razors", price: "RM10.00" },
+  {
+    name: "Colgate Toothpaste",
+    price: "RM12.00",
+    img: "../images/products/personalcare/colgate.jpeg",
+  },
+  {
+    name: "Colgate Toothbrush",
+    price: "RM14.50",
+    img: "../images/products/personalcare/colgatebrush.jpg",
+  },
+  {
+    name: "Floss",
+    price: "RM8.00",
+    img: "../images/products/personalcare/floss.png",
+  },
+  {
+    name: "Gatsby Hair Gel",
+    price: "RM9.00",
+    img: "../images/products/personalcare/hairgel.png",
+  },
+  {
+    name: "Gatsby Hairwax",
+    price: "RM7.60",
+    img: "../images/products/personalcare/hairwax.jfif",
+  },
+  {
+    name: "Razors",
+    price: "RM10.00",
+    img: "../images/products/personalcare/razors.jpg",
+  },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
   // { name: 'Deodorant Spray', price: 'RM9.00' },
@@ -93,6 +165,7 @@ for (var i = 0; i < frozen.length; i++) {
   var frozenFoodPhoto = document.createElement("img");
   frozenFoodPhoto.className = "card-img-top";
   frozenFoodPhoto.src = frozen[i].img;
+  frozenFoodPhoto.style.height = "9em";
 
   var frozenFoodButton = document.createElement("button");
   frozenFoodButton.className = "add-to-cart-button btn btn-success";
@@ -121,6 +194,8 @@ beverages.forEach(function (products) {
 
   var beveragePhoto = document.createElement("img");
   beveragePhoto.className = "card-img-top";
+  beveragePhoto.src = products.img;
+  beveragePhoto.style.height = "9em";
 
   var beverageButton = document.createElement("button");
   beverageButton.className = "add-to-cart-button btn btn-success";
@@ -149,6 +224,8 @@ canned.forEach(function (products) {
 
   var cannedGoodsPhoto = document.createElement("img");
   cannedGoodsPhoto.className = "card-img-top";
+  cannedGoodsPhoto.src = products.img;
+  cannedGoodsPhoto.style.height = "9em";
 
   var cannedButton = document.createElement("button");
   cannedButton.className = "add-to-cart-button btn btn-success";
