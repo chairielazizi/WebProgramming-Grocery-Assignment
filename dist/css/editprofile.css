@@ -1,5 +1,8 @@
 body{
     background-color: white;
+    
+}
+main{
     text-align:center;
     box-align:center;
 }
@@ -9,26 +12,24 @@ body{
 .box{
     box-sizing:  border-box;
     width: 360px;
-    height: 600px;
+    height: 500px;
     margin: auto;
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    border: none;
+    position: relative;
     border: 2px solid #3498db;
-    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94,104,121,0.288);
+    box-shadow: -3px -3px 7px #685c5c73, 3px 3px 5px rgba(94,104,121,0.288);
     border-radius: 5px;
     background-color: black;
-    margin-top: 50px;
+    margin-top: 20px;
     overflow: hidden;
     box-align:center;
     text-align:center;
-  
-
+    padding: 20px 0 0 20px;
 }
-img{
+img#profilePic{
     box-sizing: border-box;
     width: 149px;
     height: 149px;
@@ -68,14 +69,14 @@ input[type="email"]:focus{
     transition: 0.2 ease;
     
 }
-button{
+.formBtn{
     border: 1px solid #3498db;
     background-color: black;
     color: whitesmoke;
     height: 30px;
     width: 100px;
     border-radius: 5px;
-    margin: 0px;
+    margin: 30px;
     transition: all 0,3s;
     
 }
@@ -85,7 +86,7 @@ button:hover{
 input[type="file"]{
     display: none;
 }
-label{
+#editPic{
     box-sizing: border-box;
     font-size: 20px;
     background-color: black;
@@ -95,7 +96,7 @@ label{
     border-radius: 5px;
     transition: all 0.3s;
 }
-label:hover{
+#editPic:hover{
     background-color: #3498db;
     color: black;
 }
