@@ -4,32 +4,99 @@
 <head>
 
 <!-- metadata goes in head - Contains information that describes the web page document -->
-
 	<title>Edit Profile</title>
-    <link rel= "stylesheet" type="text/css" href="editprofile.css">
-    
-
+    <link rel= "stylesheet" type="text/css" href="dist/css/editprofile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script type="text/javascript"src="profile.js"></script>
 </head>
 
 <body>
-<!-- content goes in the body - contains text and elements that display in the web page document -->
-    
 
-        <div class="box">
-           
-            <img src="OET.jpg"></img>
+    <!-- content goes in the body - contains text and elements that display in the web page document -->
+    <header class="p-2 mb-2 text-light" style="background-color: #0c143c">
+        <img src="/images/trolimart rect2.png" alt="TroliMart Logo" width="180" class="ml-4">
+    </header>
+
+    <main class="box">
+        
+            <img src="images/user.png" id="profilePic"></img>
             <input type= "file" name="" id= "file" accept= "image/*">
-            <label for= "file"> EDIT PIC </label>
+            <label id="editPic" for= "file"> EDIT PIC </label>
             <input type="text" name=""placeholder= "User Name">
             <input type="email" name=""placeholder= "Email ID">
             <input type="text" name=""placeholder= "Change password">
             <input type="text" name=""placeholder= "Date of Birth">
              
-            <button style="float: left;margin: 10px 0 0 18.2%;">CANCEL</button>
-            <button style="float: right;margin: 10px 0 0 18.2%;">DONE</button>
             
+            <button class="formBtn" style="float: left;">CANCEL</button>
+            <button class="formBtn" style="float: right;">DONE</button>
+           
+        
+    </main>
+    <footer class="text-center font-italic p-3 pb-4 mt-3 text-light" style="background-color: #0c143c;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <p type="button" data-toggle="collapse" data-target="#collapseContactUs" aria-expanded="false" aria-controls="collapseExample">
+                  <u>Contact Us</u>
+              </p>
+              <div class="collapse" id="collapseContactUs">
+                <div class="fs-6 fw-lighter text-left">
+                  <ul>
+                    <li>Call us at <p style="color:#3385ff;">03-5657 5432</p></li>
+                    <li>Email us at <a href="mailto:jcustomerservice@TroliMart.com.my">customerservice@TroliMart.com.my</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <p type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+                <u>About Us</u>
+            </p>
+            <div class="collapse" id="collapseAboutUs">
+              <div class="fs-6 fw-lighter text-left">
+                <p>TroliMart system is intended to help the consumers to manage grocery shopping list before going to the shop to purchase the products. 
+                </p>
+              </div>
+            </div>
+            </div>
+            <div class="col-sm">
+              <p type="button" data-toggle="collapse" data-target="#collapseFollowUs" aria-expanded="false" aria-controls="collapseExample">
+                <u>Follow Us</u>
+            </p>
+            <div class="collapse" id="collapseFollowUs">
+              <div class="fs-6 fw-lighter text-left">
+                <ul>
+                  <li>
+                    <nav class="navbar navbar-light">
+                      <a class="navbar-brand text-primary" href="https://www.facebook.com/">
+                        <img src="/images/fb.png" width="30" height="30" alt="" class="d-inline-block align-top">
+                          Facebook
+                      </a>
+                    </nav>
+                  </li>
+                  <li>
+                    <nav class="navbar navbar-light">
+                      <a class="navbar-brand text-primary" href="https://www.instagram.com/">
+                        <img src="/images/insta.jpg" width="30" height="30" alt="" class="d-inline-block align-top">
+                        Instagram
+                      </a>
+                    </nav>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
         </div>
+          <p>
+              Copyright &copy; 2021 TroliMart Co. <br>
+          </p>
+      </footer>
     
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     
 </body>
 </html>
