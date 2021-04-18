@@ -10,32 +10,32 @@ const frozen = [
   {
     name: "Waffles",
     price: "RM12.00",
-    img: "../images/products/frozen/waffle.jpg",
+    img: "./images/products/frozen/waffle.jpg",
   },
   {
     name: "Ayamas Frozen Chicken Wings",
     price: "RM14.50",
-    img: "../images/products/frozen/ayamas_wings.jpg",
+    img: "./images/products/frozen/ayamas_wings.jpg",
   },
   {
     name: "Ayamas Chicken Frankfurters",
     price: "RM8.00",
-    img: "../images/products/frozen/ayamas_frank.png",
+    img: "./images/products/frozen/ayamas_frank.png",
   },
   {
     name: "Instant Pizza",
     price: "RM9.00",
-    img: "../images/products/frozen/waffle.jpg",
+    img: "./images/products/frozen/waffle.jpg",
   },
   {
     name: "Frozen Vegetables",
     price: "RM7.60",
-    img: "../images/products/frozen/vegetables.jpg",
+    img: "./images/products/frozen/vegetables.jpg",
   },
   {
     name: "Paratha",
     price: "RM10.00",
-    img: "../images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/paratha.jpg",
   },
   // { name: 'Pau', price: 'RM8.50' },
   // { name: 'Frozen Fried Rice', price: 'RM4.50' },
@@ -48,32 +48,32 @@ const canned = [
   {
     name: "Sardines",
     price: "RM12.00",
-    img: "../images/products/canned/sardine.jfif",
+    img: "./images/products/canned/sardine.jfif",
   },
   {
     name: "Spaghetti Sauce",
     price: "RM14.50",
-    img: "../images/products/canned/spaghettisauce.jpg",
+    img: "./images/products/canned/spaghettisauce.jpg",
   },
   {
     name: "Carbonara Sauce",
     price: "RM8.00",
-    img: "../images/products/canned/carbonarasauce.jpg",
+    img: "./images/products/canned/carbonarasauce.jpg",
   },
   {
     name: "Mackerels",
     price: "RM9.00",
-    img: "../images/products/canned/mackerel.jfif",
+    img: "./images/products/canned/mackerel.jfif",
   },
   {
     name: "Canned Pineapples",
     price: "RM7.60",
-    img: "../images/products/canned/pineapple.jfif",
+    img: "./images/products/canned/pineapple.jfif",
   },
   {
     name: "Baked Beans",
     price: "RM10.00",
-    img: "../images/products/canned/bakedbeans.jfif",
+    img: "./images/products/canned/bakedbeans.jfif",
   },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
@@ -86,32 +86,32 @@ const beverages = [
   {
     name: "Coca-Cola",
     price: "RM12.00",
-    img: "../images/products/beverages/cocacola.jpg",
+    img: "./images/products/beverages/cocacola.jpg",
   },
   {
     name: "Sprite",
     price: "RM14.50",
-    img: "../images/products/beverages/sprite.jpg",
+    img: "./images/products/beverages/sprite.jpg",
   },
   {
     name: "Milo",
     price: "RM8.00",
-    img: "../images/products/beverages/milo.jfif",
+    img: "./images/products/beverages/milo.jfif",
   },
   {
     name: "Chrysanthemum",
     price: "RM9.00",
-    img: "../images/products/beverages/chrysanthemum.png",
+    img: "./images/products/beverages/chrysanthemum.png",
   },
   {
     name: "Carlsberg",
     price: "RM7.60",
-    img: "../images/products/beverages/carlsberg.jpg",
+    img: "./images/products/beverages/carlsberg.jpg",
   },
   {
     name: "Sagota",
     price: "RM10.00",
-    img: "../images/products/beverages/sagota.jpg",
+    img: "./images/products/beverages/sagota.jpg",
   },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
@@ -124,32 +124,32 @@ const personalCareProducts = [
   {
     name: "Colgate Toothpaste",
     price: "RM12.00",
-    img: "../images/products/personalcare/colgate.jpeg",
+    img: "./images/products/personalcare/colgate.jpeg",
   },
   {
     name: "Colgate Toothbrush",
     price: "RM14.50",
-    img: "../images/products/personalcare/colgatebrush.jpg",
+    img: "./images/products/personalcare/colgatebrush.jpg",
   },
   {
     name: "Floss",
     price: "RM8.00",
-    img: "../images/products/personalcare/floss.png",
+    img: "./images/products/personalcare/floss.png",
   },
   {
     name: "Gatsby Hair Gel",
     price: "RM9.00",
-    img: "../images/products/personalcare/hairgel.png",
+    img: "./images/products/personalcare/hairgel.png",
   },
   {
     name: "Gatsby Hairwax",
     price: "RM7.60",
-    img: "../images/products/personalcare/hairwax.jfif",
+    img: "./images/products/personalcare/hairwax.jfif",
   },
   {
     name: "Razors",
     price: "RM10.00",
-    img: "../images/products/personalcare/razors.jpg",
+    img: "./images/products/personalcare/razors.jpg",
   },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
@@ -279,7 +279,7 @@ personalCareProducts.forEach(function (products) {
 function additem() {
   var paper = document.getElementById("list_items");
   // console.log(paper);
-  var productAdded = "<li> <p>product name</p> </li>";
+  var productAdded = "<li class='list-group-item'> product name  </li>";
   paper.insertAdjacentHTML("beforeend", productAdded);
 }
 
