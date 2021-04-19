@@ -170,7 +170,7 @@ for (var i = 0; i < frozen.length; i++) {
   var frozenFoodButton = document.createElement("button");
   frozenFoodButton.className = "add-to-cart-button btn btn-success";
   frozenFoodButton.textContent = "Add to List";
-  frozenFoodButton.addEventListener("click", additem);
+  addtolist(frozenFoodButton, frozen[i].name, frozen[i].price)
 
   var frozenFoodName = document.createElement("h6");
   frozenFoodName.className = "card-title";
@@ -200,7 +200,7 @@ beverages.forEach(function (products) {
   var beverageButton = document.createElement("button");
   beverageButton.className = "add-to-cart-button btn btn-success";
   beverageButton.textContent = "Add to List";
-  beverageButton.addEventListener("click", additem);
+  addtolist(beverageButton, products.name, products.price);
 
   var beverageName = document.createElement("h6");
   beverageName.className = "card-title";
@@ -230,7 +230,7 @@ canned.forEach(function (products) {
   var cannedButton = document.createElement("button");
   cannedButton.className = "add-to-cart-button btn btn-success";
   cannedButton.textContent = "Add to List";
-  cannedButton.addEventListener("click", additem);
+  addtolist(cannedButton, products.name, products.price);
 
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
@@ -258,7 +258,7 @@ personalCareProducts.forEach(function (products) {
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "add-to-cart-button btn btn-success";
   personalCareButton.textContent = "Add to List";
-  personalCareButton.addEventListener("click", additem);
+  addtolist(personalCareButton, products.name, products.price);
 
   var personalCareName = document.createElement("h6");
   personalCareName.className = "card-title";
@@ -276,11 +276,17 @@ personalCareProducts.forEach(function (products) {
   personalCare.appendChild(personalCareCard);
 });
 
-function additem() {
-  var paper = document.getElementById("list_items");
-  // console.log(paper);
-  var productAdded = "<li class='list-group-item'> product name  </li>";
-  paper.insertAdjacentHTML("beforeend", productAdded);
+function addtolist(button, productname, productprice) {
+  button.addEventListener("click", function () {
+    var paper = document.getElementById("list_items");
+    var productAdded = "<li class='list-group-item'>" + productname + " " + productprice + "</li>";
+    paper.insertAdjacentHTML("beforeend", productAdded);
+  });
+
+}
+
+function additem(productname) {
+
 }
 
 function toggleCart() {
