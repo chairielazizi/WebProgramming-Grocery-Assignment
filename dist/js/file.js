@@ -160,7 +160,7 @@ const personalCareProducts = [
 
 for (var i = 0; i < frozen.length; i++) {
   var frozenFoodCard = document.createElement("div");
-  frozenFoodCard.className = "card card-block mx-2";
+  frozenFoodCard.className = "card card-block mx-2 text-center";
 
   var frozenFoodPhoto = document.createElement("img");
   frozenFoodPhoto.className = "card-img-top";
@@ -168,7 +168,7 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoodPhoto.style.height = "9em";
 
   var frozenFoodButton = document.createElement("button");
-  frozenFoodButton.className = "add-to-cart-button btn btn-success";
+  frozenFoodButton.className = "add-to-cart-button btn btn-success align-self-end";
   frozenFoodButton.textContent = "Add to List";
   addtolist(frozenFoodButton, frozen[i].name, frozen[i].price)
 
@@ -190,7 +190,7 @@ for (var i = 0; i < frozen.length; i++) {
 
 beverages.forEach(function (products) {
   var beverageCard = document.createElement("div");
-  beverageCard.className = "card card-block mx-2";
+  beverageCard.className = "card card-block mx-2 text-center";
 
   var beveragePhoto = document.createElement("img");
   beveragePhoto.className = "card-img-top";
@@ -220,7 +220,7 @@ beverages.forEach(function (products) {
 
 canned.forEach(function (products) {
   var cannedGoodsCard = document.createElement("div");
-  cannedGoodsCard.className = "card card-block mx-2";
+  cannedGoodsCard.className = "card card-block mx-2 text-center";
 
   var cannedGoodsPhoto = document.createElement("img");
   cannedGoodsPhoto.className = "card-img-top";
@@ -250,7 +250,7 @@ canned.forEach(function (products) {
 
 personalCareProducts.forEach(function (products) {
   var personalCareCard = document.createElement("div");
-  personalCareCard.className = "card card-block mx-2";
+  personalCareCard.className = "card card-block mx-2 text-center";
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
@@ -282,11 +282,6 @@ function addtolist(button, productname, productprice) {
     var productAdded = "<li class='list-group-item'>" + productname + " " + productprice + "</li>";
     paper.insertAdjacentHTML("beforeend", productAdded);
   });
-
-}
-
-function additem(productname) {
-
 }
 
 function toggleCart() {
