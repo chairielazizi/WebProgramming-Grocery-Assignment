@@ -13,12 +13,12 @@ const frozen = [
     img: "./images/products/frozen/waffle.jpg",
   },
   {
-    name: "Ayamas Frozen Chicken Wings",
+    name: "Ayamas Frozen Wings",
     price: "RM14.50",
     img: "./images/products/frozen/ayamas_wings.jpg",
   },
   {
-    name: "Ayamas Chicken Frankfurters",
+    name: "Chicken Frankfurters",
     price: "RM8.00",
     img: "./images/products/frozen/ayamas_frank.png",
   },
