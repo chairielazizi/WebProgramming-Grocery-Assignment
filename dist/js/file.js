@@ -281,12 +281,19 @@ personalCareProducts.forEach(function (products) {
 function addtolist(button, productname, productprice) {
   button.addEventListener("click", function () {
     var paper = document.getElementById("list_items");
-    var productAdded = "<li class='list-group-item' id='iteminlist'>" + productname + " RM " + productprice.toFixed(2) + "</li>";
+
+    var productAdded =
+    '<div class="list-group-item" id="iteminlist"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM '+ productprice.toFixed(2) + '</div></div></div></div>';
+
     paper.insertAdjacentHTML("beforeend", productAdded);
     totalprice += productprice;
     document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
 
   });
+}
+
+function checklist(tobec) {//tobec is item to be check
+
 }
 
 function toggleCart() {
