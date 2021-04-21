@@ -128,7 +128,7 @@
 
         <!-- items -->
         <div class='content'>
-            <div id="carouselIndicators" class="carousel slide m-3" data-ride="carousel">
+            <div id="carouselIndicators" class="carousel slide mt-3" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselIndicators" data-slide-to="1"></li>
@@ -152,7 +152,7 @@
             
             <div class="categories">
                 <h3 class='categories-header'>Frozen Foods</h3>
-                <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto">
+                <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill">
                 
                 </div>
 
@@ -168,16 +168,21 @@
 
             <!-- cart -->
             <div class="cart">
-                <div class="cart-content">
+                <div class="cart-content ">
                     <h3 class='cart-header'>Your Cart</h3>
                     <div class="cart-items overflow-auto">
                         <ol id = "list_items" class='list-group list-group-flush'>
                             
                         </ol>
                     </div>
-                    <h6 class="total-price">
-
-                    </h6>
+                    <div class="row">
+                        <div class="col ">
+                            Total price: 
+                        </div>
+                        <div class="col align-right" >
+                             RM <span id="total-price-value">0.00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,7 +233,7 @@
                   <li>
                     <nav class="navbar navbar-light">
                       <a class="navbar-brand text-primary" href="https://www.instagram.com/">
-                        <img src="images/insta.jpg" width="30" height="30" alt="" class="d-inline-block align-top">
+                        <img src="images/insta.png" width="30" height="30" alt="" class="d-inline-block align-top">
                         Instagram
                       </a>
                     </nav>

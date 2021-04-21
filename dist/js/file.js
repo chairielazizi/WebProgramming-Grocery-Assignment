@@ -2,39 +2,40 @@ const frozenFoods = document.querySelector("#c-frozen-foods");
 const cannedGoods = document.querySelector("#c-canned-goods");
 const beverage = document.querySelector("#c-beverages");
 const personalCare = document.querySelector("#c-personal-care");
-const frozenButton = document.querySelector(".c-frozen-foods-button");
+const frozenButton = document.querySelector(".c-frozen-foods-button"); // what is this?
 const cartContent = document.querySelector(".cart-content");
 const cartItems = document.querySelector(".cart-items");
+var totalprice = 0; //total price of the list
 
 const frozen = [
   {
     name: "Waffles",
-    price: "RM12.00",
+    price: 12.0,
     img: "./images/products/frozen/waffle.jpg",
   },
   {
     name: "Ayamas Frozen Wings",
-    price: "RM14.50",
+    price: 14.5,
     img: "./images/products/frozen/ayamas_wings.jpg",
   },
   {
     name: "Chicken Frankfurters",
-    price: "RM8.00",
+    price: 8.0,
     img: "./images/products/frozen/ayamas_frank.png",
   },
   {
     name: "Instant Pizza",
-    price: "RM9.00",
+    price: 9.0,
     img: "./images/products/frozen/waffle.jpg",
   },
   {
     name: "Frozen Vegetables",
-    price: "RM7.60",
+    price: 7.6,
     img: "./images/products/frozen/vegetables.jpg",
   },
   {
     name: "Paratha",
-    price: "RM10.00",
+    price: 10.0,
     img: "./images/products/frozen/paratha.jpg",
   },
   // { name: 'Pau', price: 'RM8.50' },
@@ -47,32 +48,32 @@ const frozen = [
 const canned = [
   {
     name: "Sardines",
-    price: "RM12.00",
+    price: 12.0,
     img: "./images/products/canned/sardine.jfif",
   },
   {
     name: "Spaghetti Sauce",
-    price: "RM14.50",
+    price: 14.5,
     img: "./images/products/canned/spaghettisauce.jpg",
   },
   {
     name: "Carbonara Sauce",
-    price: "RM8.00",
+    price: 8.0,
     img: "./images/products/canned/carbonarasauce.jpg",
   },
   {
     name: "Mackerels",
-    price: "RM9.00",
+    price: 9.0,
     img: "./images/products/canned/mackerel.jfif",
   },
   {
     name: "Canned Pineapples",
-    price: "RM7.60",
+    price: 7.6,
     img: "./images/products/canned/pineapple.jfif",
   },
   {
     name: "Baked Beans",
-    price: "RM10.00",
+    price: 10.0,
     img: "./images/products/canned/bakedbeans.jfif",
   },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
@@ -85,32 +86,32 @@ const canned = [
 const beverages = [
   {
     name: "Coca-Cola",
-    price: "RM12.00",
+    price: 12.0,
     img: "./images/products/beverages/cocacola.jpg",
   },
   {
     name: "Sprite",
-    price: "RM14.50",
+    price: 14.5,
     img: "./images/products/beverages/sprite.jpg",
   },
   {
     name: "Milo",
-    price: "RM8.00",
+    price: 8.0,
     img: "./images/products/beverages/milo.jfif",
   },
   {
     name: "Chrysanthemum",
-    price: "RM9.00",
+    price: 9.0,
     img: "./images/products/beverages/chrysanthemum.png",
   },
   {
     name: "Carlsberg",
-    price: "RM7.60",
+    price: 7.6,
     img: "./images/products/beverages/carlsberg.jpg",
   },
   {
     name: "Sagota",
-    price: "RM10.00",
+    price: 10.0,
     img: "./images/products/beverages/sagota.jpg",
   },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
@@ -123,32 +124,32 @@ const beverages = [
 const personalCareProducts = [
   {
     name: "Colgate Toothpaste",
-    price: "RM12.00",
+    price: 12.0,
     img: "./images/products/personalcare/colgate.jpeg",
   },
   {
     name: "Colgate Toothbrush",
-    price: "RM14.50",
+    price: 14.5,
     img: "./images/products/personalcare/colgatebrush.jpg",
   },
   {
     name: "Floss",
-    price: "RM8.00",
+    price: 8.0,
     img: "./images/products/personalcare/floss.png",
   },
   {
     name: "Gatsby Hair Gel",
-    price: "RM9.00",
+    price: 9.0,
     img: "./images/products/personalcare/hairgel.png",
   },
   {
     name: "Gatsby Hairwax",
-    price: "RM7.60",
+    price: 7.6,
     img: "./images/products/personalcare/hairwax.jfif",
   },
   {
     name: "Razors",
-    price: "RM10.00",
+    price: 10.0,
     img: "./images/products/personalcare/razors.jpg",
   },
   // { name: 'Baby Oil', price: 'RM8.50' },
@@ -168,9 +169,10 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoodPhoto.style.height = "9em";
 
   var frozenFoodButton = document.createElement("button");
-  frozenFoodButton.className = "add-to-cart-button btn btn-success align-self-end";
+  frozenFoodButton.className =
+    "add-to-cart-button btn btn-success align-self-end";
   frozenFoodButton.textContent = "Add to List";
-  addtolist(frozenFoodButton, frozen[i].name, frozen[i].price)
+  addtolist(frozenFoodButton, frozen[i].name, frozen[i].price);
 
   var frozenFoodName = document.createElement("h6");
   frozenFoodName.className = "card-title";
@@ -178,7 +180,7 @@ for (var i = 0; i < frozen.length; i++) {
 
   var frozenFoodPrice = document.createElement("p");
   frozenFoodPrice.className = "card-text";
-  frozenFoodPrice.textContent = frozen[i].price;
+  frozenFoodPrice.textContent = "RM " + frozen[i].price.toFixed(2);
 
   frozenFoodCard.appendChild(frozenFoodPhoto);
   frozenFoodCard.appendChild(frozenFoodName);
@@ -208,7 +210,7 @@ beverages.forEach(function (products) {
 
   var beveragePrice = document.createElement("p");
   beveragePrice.className = "card-text";
-  beveragePrice.textContent = products.price;
+  beveragePrice.textContent = "RM " + products.price.toFixed(2);
 
   beverageCard.appendChild(beveragePhoto);
   beverageCard.appendChild(beverageName);
@@ -238,7 +240,7 @@ canned.forEach(function (products) {
 
   var cannedGoodsPrice = document.createElement("p");
   cannedGoodsPrice.className = "card-text";
-  cannedGoodsPrice.textContent = products.price;
+  cannedGoodsPrice.textContent = "RM " + products.price.toFixed(2);
 
   cannedGoodsCard.appendChild(cannedGoodsPhoto);
   cannedGoodsCard.appendChild(cannedGoodsName);
@@ -266,7 +268,7 @@ personalCareProducts.forEach(function (products) {
 
   var personalCarePrice = document.createElement("p");
   personalCarePrice.className = "card-text";
-  personalCarePrice.textContent = products.price;
+  personalCarePrice.textContent = products.price.toFixed(2);
 
   personalCareCard.appendChild(personalCarePhoto);
   personalCareCard.appendChild(personalCareName);
@@ -279,17 +281,33 @@ personalCareProducts.forEach(function (products) {
 function addtolist(button, productname, productprice) {
   button.addEventListener("click", function () {
     var paper = document.getElementById("list_items");
-    var productAdded = "<li class='list-group-item'>" + productname + " " + productprice + "</li>";
+
+    var productAdded =
+      '<div class="list-group-item" id="iteminlist"><div class="inlist width-auto"><div class="row"><div class="col">' +
+      productname +
+      '</div><div class="col align-right">RM ' +
+      productprice.toFixed(2) +
+      "</div></div></div></div>";
+
     paper.insertAdjacentHTML("beforeend", productAdded);
+    totalprice += productprice;
+    document.getElementById("total-price-value").innerHTML = totalprice.toFixed(
+      2
+    );
   });
+}
+
+function checklist(tobec) {
+  //tobec is item to be check
 }
 
 function toggleCart() {
   var cart = document.querySelector(".cart");
   console.log(cart);
-  if (cart.style.display === "none") {
-    cart.style.display = "block";
-  } else {
-    cart.style.display = "none";
-  }
+  // if (cart.style.display == "none") {
+  //   cart.style.display = "block";
+  // } else {
+  //   cart.style.display = "none";
+  // }
+  cart.classList.toggle("display-cart");
 }
