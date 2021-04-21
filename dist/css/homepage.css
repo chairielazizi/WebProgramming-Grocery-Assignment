@@ -39,6 +39,9 @@ html {
     height: auto;
     max-height: 600px;
     overflow-y: scroll;
+}
+
+.categories-content {
     width: 81vw;
 }
 

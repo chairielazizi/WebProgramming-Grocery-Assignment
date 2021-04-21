@@ -287,6 +287,7 @@ function addtolist(button, productname, productprice) {
       productname +
       '</div><div class="col align-right">RM ' +
       productprice.toFixed(2) +
+      '</div><div class="col"><img src="../images/delete.png" width="40">' +
       "</div></div></div></div>";
 
     paper.insertAdjacentHTML("beforeend", productAdded);
