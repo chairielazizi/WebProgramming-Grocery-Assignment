@@ -147,6 +147,11 @@ html {
     right: 0;
     top: 75px;
     overflow: auto;
+    display: none;
+}
+
+.display-cart {
+    display: block;
 }
 
 .cart-content {
