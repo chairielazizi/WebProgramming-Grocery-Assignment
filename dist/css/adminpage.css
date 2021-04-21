@@ -1,0 +1,104 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow: #fcebb6;
+    --choc: #d2b48c;
+    --lightyellow : #fef6c2;
+    --darkblue: #0c143c;
+    --silver: #b4b6c2;
+}
+
+.nav-bg {
+    background-color: var(--darkblue);
+}
+
+
+.navbar-nav1 {
+    /* display:table; */
+    width:100% !important;
+    margin: 0;
+}
+
+
+.categories {
+    height: auto;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.categories-header {
+    margin-top: 20px;
+    margin-left: 8px;
+}
+
+.categories > ul > li {
+    padding: 10px 10px 10px 25px;
+}
+
+.categories > ul > li:hover {
+    background-color: #18a0fb;
+}
+
+.categories > ul > li > a {
+    color: black;
+    display: block;
+}
+
+.categories > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.card {
+    min-width: 200px !important;
+    min-height: 150px !important;
+    max-width: 200px;
+}
+
+.jumbotron{
+    width: 1000px;
+    height: 400px;
+}
+
+.wrapper {
+    display: table-cell;
+	width: 15%;
+	vertical-align: top;
+}
+
+#sidebar {
+    /* min-width: 250px;
+    max-width: 250px; */
+    width: 15vw;
+    margin:20px;
+}
+
+.sidebar-header {
+    margin-left: 10px;
+    
+}
+
+.main-content {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: table-cell;
+	width: 85%;
+	vertical-align: top;
+}
+
+
+.add-button{
+    margin-top: 5px;
+    width: 100%;
+}
+
+.delete-button{
+    width: 120px;
+    margin: 0 auto;
+}
