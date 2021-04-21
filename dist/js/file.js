@@ -7,6 +7,9 @@ const cartContent = document.querySelector(".cart-content");
 const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 
+var list = {};
+list['title'] = 'list 1';
+
 const frozen = [
   {
     name: "Waffles",
@@ -279,22 +282,31 @@ personalCareProducts.forEach(function (products) {
 });
 
 function addtolist(button, productname, productprice) {
+
   button.addEventListener("click", function () {
-    var paper = document.getElementById("list_items");
+    if (list.hasOwnProperty(productname)) {
+      list[productname] += 1;
+      totalprice += productprice;
+      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
+      document.getElementById("multiplier"+ productname).innerHTML = list[productname];
+    }
+    else {
+      list[productname] = 1;
+      var paper = document.getElementById("list_items");
 
-    var productAdded =
-      '<div class="list-group-item" id="iteminlist"><div class="inlist width-auto"><div class="row"><div class="col">' +
-      productname +
-      '</div><div class="col align-right">RM ' +
-      productprice.toFixed(2) +
-      '</div><div class="col"><img src="../images/delete.png" width="40">' +
-      "</div></div></div></div>";
+      var productAdded =
+        '<div class="list-group-item" id="iteminlist"><div class="inlist width-auto"><div class="row"><div class="col">' +
+        productname +
+        '</div><div class="col align-right">RM ' +
+        productprice.toFixed(2) +
+        '</div><div id="multiplier'+productname+'" > x'+ list[productname] +' </div><div class="col"><img src="../images/delete.png" width="40">' +
+        "</div></div></div></div>";
 
-    paper.insertAdjacentHTML("beforeend", productAdded);
-    totalprice += productprice;
-    document.getElementById("total-price-value").innerHTML = totalprice.toFixed(
-      2
-    );
+      paper.insertAdjacentHTML("beforeend", productAdded);
+      totalprice += productprice;
+      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
+    }
+
   });
 }
 
