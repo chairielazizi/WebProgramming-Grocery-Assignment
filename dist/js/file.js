@@ -288,30 +288,37 @@ function addtolist(button, productname, productprice) {
       list[productname] += 1;
       totalprice += productprice;
       document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier"+ productname).innerHTML = list[productname];
+      document.getElementById("multiplier"+ productname).innerHTML = "×" + list[productname];
     }
     else {
       list[productname] = 1;
       var paper = document.getElementById("list_items");
 
       var productAdded =
-        '<div class="list-group-item" id="iteminlist"><div class="inlist width-auto"><div class="row"><div class="col">' +
-        productname +
-        '</div><div class="col align-right">RM ' +
-        productprice.toFixed(2) +
-        '</div><div id="multiplier'+productname+'" > x'+ list[productname] +' </div><div class="col"><img src="../images/delete.png" width="40">' +
-        "</div></div></div></div>";
+        '<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div id="multiplier' + productname + '" > ×'+ list[productname] +' </div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="35"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
       document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
     }
+    var deleteitem = document.getElementById('Bin'+ productname+'');
+    
+    deleteitem.addEventListener('click',function (){
+      delitemlist(productname,productprice);
+    });
+      
 
   });
 }
-
-function checklist(tobec) {
-  //tobec is item to be check
+// '+productname+','+ productprice +'
+// productname,productprice
+function delitemlist(productname,productprice){
+  console.log(productname + "  lol  " + productprice)
+  document.getElementById('li'+ productname +'').remove();
+  totalprice -= list[productname]*productprice;
+  document.getElementById('total-price-value').innerHTML = totalprice.toFixed(2);
+  list[productname] = 0;
+  document.getElementById('multiplier' + productname + '').innerHTML = list[productname] = 0;;
 }
 
 function toggleCart() {
