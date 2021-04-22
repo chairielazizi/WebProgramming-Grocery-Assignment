@@ -8,7 +8,7 @@ const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 
 var list = {};
-list['title'] = 'list 1';
+list["title"] = "list 1";
 
 const frozen = [
   {
@@ -282,43 +282,60 @@ personalCareProducts.forEach(function (products) {
 });
 
 function addtolist(button, productname, productprice) {
-
   button.addEventListener("click", function () {
     if (list.hasOwnProperty(productname)) {
       list[productname] += 1;
       totalprice += productprice;
-      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier"+ productname).innerHTML = "×" + list[productname];
-    }
-    else {
+      document.getElementById(
+        "total-price-value"
+      ).innerHTML = totalprice.toFixed(2);
+      document.getElementById("multiplier" + productname).innerHTML =
+        "×" + list[productname];
+    } else {
       list[productname] = 1;
       var paper = document.getElementById("list_items");
 
       var productAdded =
-        '<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div id="multiplier' + productname + '" > ×'+ list[productname] +' </div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="35"></a></div></div></div></li>';
+        '<li class="list-group-item" id="li' +
+        productname +
+        '"><div class="inlist width-auto"><div class="row"><div class="col">' +
+        productname +
+        '</div><div class="col align-right">RM ' +
+        productprice.toFixed(2) +
+        '</div><div id="multiplier' +
+        productname +
+        '" > ×' +
+        list[productname] +
+        ' </div><div class="col"><a href="#"><img id="Bin' +
+        productname +
+        '" alt="" src="../images/delete.png" width="35"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
-      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
+      document.getElementById(
+        "total-price-value"
+      ).innerHTML = totalprice.toFixed(2);
     }
-    var deleteitem = document.getElementById('Bin'+ productname+'');
-    
-    deleteitem.addEventListener('click',function (){
-      delitemlist(productname,productprice);
-    });
-      
+    var deleteitem = document.getElementById("Bin" + productname + "");
 
+    deleteitem.addEventListener("click", function () {
+      delitemlist(productname, productprice);
+    });
   });
 }
 // '+productname+','+ productprice +'
 // productname,productprice
-function delitemlist(productname,productprice){
-  console.log(productname + "  lol  " + productprice)
-  document.getElementById('li'+ productname +'').remove();
-  totalprice -= list[productname]*productprice;
-  document.getElementById('total-price-value').innerHTML = totalprice.toFixed(2);
+function delitemlist(productname, productprice) {
+  console.log(productname + "  lol  " + productprice);
+  document.getElementById("li" + productname + "").remove();
+  totalprice -= list[productname] * productprice;
+  document.getElementById("total-price-value").innerHTML = totalprice.toFixed(
+    2
+  );
   list[productname] = 0;
-  document.getElementById('multiplier' + productname + '').innerHTML = list[productname] = 0;;
+  document.getElementById("multiplier" + productname + "").innerHTML = list[
+    productname
+  ] = 0;
 }
 
 function toggleCart() {
