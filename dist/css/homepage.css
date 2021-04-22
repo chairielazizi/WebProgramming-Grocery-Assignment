@@ -25,8 +25,9 @@ html {
 .carousel{
     /* here you can edit the carousel of homepage*/
     background-color: #18a0fb;
-    width: 100%;
+    width: 90%;
     height:200px;
+    margin: auto;
 }
 
 #carouselinnerhomepage > .carousel-item > img{
