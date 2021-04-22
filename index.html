@@ -37,14 +37,14 @@
           </div>
           <div class="btn-group btn-group-toggle ml-5" data-toggle="buttons">
             <label class="btn btn-secondary btn-sm p-1 active">
-              <input type="radio" name="options" id="option1" autocomplete="off" checked> Customer
+              <input type="radio" name="options" id="option1" value="customer" autocomplete="off" checked> Customer
             </label>
             <label class="btn btn-secondary btn-sm p-1 px-3">
-              <input type="radio" name="options" id="option2" autocomplete="off"> Admin
+              <input type="radio" name="options" id="option2" value="admin" autocomplete="off"> Admin
             </label>
           </div><br>
           <div class="text-center">
-            <button onclick="return checkForm()" type="reset" class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
+            <button onclick="checkForm()" class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
           </div>
           <p class="text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" style="color: red;" href="signup.html" role="button">Sign Up &raquo;</a></p>
       </form>
