@@ -73,44 +73,44 @@ const modalbeverages = [
 
 const modalbreadbakery = [
   {
-    name: "Coca-Cola",
-    price: 12.0,
-    img: "./images/products/beverages/cocacola.jpg",
+    name: "Roti Gardenia Classic Jumbo",
+    price: 3.79,
+    img: "./images/products/bread/jumbo.jfif",
   },
   {
-    name: "Sprite",
-    price: 14.5,
-    img: "./images/products/beverages/sprite.jpg",
+    name: "Roti Gardenia Coklat Kismis",
+    price: 4.99,
+    img: "./images/products/bread/rotikismis.jpg",
   },
   {
-    name: "Milo",
-    price: 8.0,
-    img: "./images/products/beverages/milo.jfif",
+    name: "Gardenia Roti Coklat",
+    price: 0.99,
+    img: "./images/products/bread/roticoklat.jfif",
   },
   {
-    name: "Chrysanthemum",
-    price: 9.0,
-    img: "./images/products/beverages/chrysanthemum.png",
+    name: "Roti Gardenia Twiggies Choc",
+    price: 1.6,
+    img: "./images/products/bread/twiggies.jfif",
   },
   {
-    name: "Carlsberg",
-    price: 7.6,
-    img: "./images/products/beverages/carlsberg.jpg",
+    name: "Roti Sambal Bilis Gardenia",
+    price: 1.39,
+    img: "./images/products/bread/bilis.jpg",
   },
   {
-    name: "Sagota",
-    price: 10.0,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Roti Gardenia Wholemeal",
+    price: 4.9,
+    img: "./images/products/bread/wholemeal.jpg",
   },
   {
-    name: "Lipton Green Tea",
-    price: 8.5,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Gardenia Delicia Choc Waffle",
+    price: 1.58,
+    img: "./images/products/bread/waffle.jpg",
   },
   {
-    name: "Lipton Iced Lemon Tea",
-    price: 4.5,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Gardenia Roll Up Garlic",
+    price: 4.9,
+    img: "./images/products/bread/garlic.jfif",
   },
   {
     name: "Asahi",
@@ -189,39 +189,39 @@ const modalcanned = [
 
 const modaldairy = [
   {
-    name: "Coca-Cola",
-    price: 12.0,
-    img: "./images/products/beverages/cocacola.jpg",
+    name: "Dairy Champ Sweteened Creamer",
+    price: 2.45,
+    img: "./images/products/dairy/creamer.jpg",
   },
   {
-    name: "Sprite",
-    price: 14.5,
-    img: "./images/products/beverages/sprite.jpg",
+    name: "Almond Chocolate Milk",
+    price: 4.9,
+    img: "./images/products/dairy/almond.jpg",
   },
   {
-    name: "Milo",
-    price: 8.0,
-    img: "./images/products/beverages/milo.jfif",
+    name: "Dairy Strawberry Milk",
+    price: 2.98,
+    img: "./images/products/dairy/straw.jfif",
   },
   {
-    name: "Chrysanthemum",
-    price: 9.0,
-    img: "./images/products/beverages/chrysanthemum.png",
+    name: "Barista Almond Milk",
+    price: 18.9,
+    img: "./images/products/dairy/barista.png",
   },
   {
-    name: "Carlsberg",
-    price: 7.6,
-    img: "./images/products/beverages/carlsberg.jpg",
+    name: "Susu Farm Fresh",
+    price: 3.45,
+    img: "./images/products/dairy/farmfresh.jfif",
   },
   {
-    name: "Sagota",
-    price: 10.0,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Susu Dutch Lady Pisang",
+    price: 4.99,
+    img: "./images/products/dairy/pisang.jfif",
   },
   {
-    name: "Lipton Green Tea",
-    price: 8.5,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Susu Dutch Lady Full Cream",
+    price: 5.9,
+    img: "./images/products/dairy/fullcream.jpg",
   },
   {
     name: "Lipton Iced Lemon Tea",
@@ -247,39 +247,39 @@ const modaldairy = [
 
 const modaldrybaking = [
   {
-    name: "Colgate Toothpaste",
-    price: 12.0,
-    img: "./images/products/personalcare/colgate.jpeg",
+    name: "Adabi Cucur Powder",
+    price: 3.04,
+    img: "./images/products/drybakery/adabiudang.jfif",
   },
   {
-    name: "Colgate Toothbrush",
-    price: 14.5,
-    img: "./images/products/personalcare/colgatebrush.jpg",
+    name: "Cap Ros Tepung Gandum",
+    price: 1.89,
+    img: "./images/products/drybakery/capros.jpg",
   },
   {
-    name: "Floss",
-    price: 8.0,
-    img: "./images/products/personalcare/floss.png",
+    name: "Cap Sauh Wheat Flour",
+    price: 2.52,
+    img: "./images/products/drybakery/capsauh.png",
   },
   {
-    name: "Gatsby Hair Gel",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Star Brand Corn Flour",
+    price: 1.31,
+    img: "./images/products/drybakery/corn.jpeg",
   },
   {
-    name: "Gatsby Hairwax",
-    price: 7.6,
-    img: "./images/products/personalcare/hairwax.jfif",
+    name: "Bird's Custard Foil Powder",
+    price: 5.5,
+    img: "./images/products/drybakery/custard.jfif",
   },
   {
-    name: "Razors",
-    price: 10.0,
-    img: "./images/products/personalcare/razors.jpg",
+    name: "Tepung Goreng Pisang",
+    price: 3.52,
+    img: "./images/products/drybakery/gorengpisang.jpg",
   },
   {
-    name: "Baby Oil",
-    price: 8.5,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Erawan Rice Flour",
+    price: 1.89,
+    img: "./images/products/drybakery/rice.jfif",
   },
   {
     name: "Deodorant",
@@ -363,39 +363,39 @@ const modalfrozen = [
 
 const modalmeat = [
   {
-    name: "Coca-Cola",
-    price: 12.0,
-    img: "./images/products/beverages/cocacola.jpg",
-  },
-  {
-    name: "Sprite",
-    price: 14.5,
-    img: "./images/products/beverages/sprite.jpg",
-  },
-  {
-    name: "Milo",
-    price: 8.0,
-    img: "./images/products/beverages/milo.jfif",
-  },
-  {
-    name: "Chrysanthemum",
-    price: 9.0,
-    img: "./images/products/beverages/chrysanthemum.png",
-  },
-  {
-    name: "Carlsberg",
-    price: 7.6,
-    img: "./images/products/beverages/carlsberg.jpg",
-  },
-  {
-    name: "Sagota",
-    price: 10.0,
-    img: "./images/products/beverages/sagota.jpg",
-  },
-  {
-    name: "Lipton Green Tea",
+    name: "Ramly Frankfurter",
     price: 8.5,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/meat/ramly.jpg",
+  },
+  {
+    name: "Smoke Chicken Frankfurter",
+    price: 4.6,
+    img: "./images/products/meat/farmbest.jpg",
+  },
+  {
+    name: "Chicken Cheese Frankfurter",
+    price: 8.2,
+    img: "./images/products/meat/chickencheese.jpeg",
+  },
+  {
+    name: "Ayamas Drummet",
+    price: 17.0,
+    img: "./images/products/meat/drummet.jpg",
+  },
+  {
+    name: "Ayamas Koktel Sosej",
+    price: 13.9,
+    img: "./images/products/meat/koktel.jpg",
+  },
+  {
+    name: "Ayamas Bebola Ayam",
+    price: 15.7,
+    img: "./images/products/meat/bebola.jfif",
+  },
+  {
+    name: "Ayamas Meatloaf",
+    price: 5.95,
+    img: "./images/products/meat/meatloaf.jpg",
   },
   {
     name: "Lipton Iced Lemon Tea",
@@ -479,44 +479,44 @@ const modalproduce = [
 
 const modalcleaners = [
   {
-    name: "Colgate Toothpaste",
-    price: 12.0,
-    img: "./images/products/personalcare/colgate.jpeg",
+    name: "Scotch Brite Sponge",
+    price: 6.9,
+    img: "./images/products/cleaners/sponge.jpg",
   },
   {
-    name: "Colgate Toothbrush",
-    price: 14.5,
-    img: "./images/products/personalcare/colgatebrush.jpg",
+    name: "Magic Brush Electric Bath",
+    price: 28.0,
+    img: "./images/products/cleaners/magic.jfif",
   },
   {
-    name: "Floss",
-    price: 8.0,
-    img: "./images/products/personalcare/floss.png",
+    name: "Toilet Brush",
+    price: 9.99,
+    img: "./images/products/cleaners/toilet.jpg",
   },
   {
-    name: "Gatsby Hair Gel",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Aquarium Cleaning Kit",
+    price: 11.59,
+    img: "./images/products/cleaners/aquarium.jfif",
   },
   {
-    name: "Gatsby Hairwax",
-    price: 7.6,
-    img: "./images/products/personalcare/hairwax.jfif",
+    name: "Cleaning Brush",
+    price: 2.18,
+    img: "./images/products/cleaners/brush.jpg",
   },
   {
-    name: "Razors",
-    price: 10.0,
-    img: "./images/products/personalcare/razors.jpg",
+    name: "Ajax Apple",
+    price: 11.99,
+    img: "./images/products/cleaners/apple.jpg",
   },
   {
-    name: "Baby Oil",
-    price: 8.5,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Ajax Lavender",
+    price: 11.55,
+    img: "./images/products/cleaners/lavender.jpg",
   },
   {
-    name: "Deodorant",
-    price: 4.5,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Scotch Brite Mop",
+    price: 35.5,
+    img: "./images/products/cleaners/mop.jfif",
   },
   {
     name: "Deodorant Spray",
@@ -1068,4 +1068,10 @@ modalothers.forEach((products) => {
   othersCard.appendChild(othersButton);
 
   othersModal.appendChild(othersCard);
+});
+
+const searchButton = document.querySelector(".search-btn");
+
+searchButton.addEventListener("click", function () {
+  console.log("Hi search button");
 });
