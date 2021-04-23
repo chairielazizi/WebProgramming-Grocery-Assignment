@@ -8,7 +8,6 @@ const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 
 var list = {};
-list["title"] = "list 1";
 
 const frozen = [
   {
@@ -281,19 +280,30 @@ personalCareProducts.forEach(function (products) {
   personalCare.appendChild(personalCareCard);
 });
 
+list.forEach(function(){
+
+
+
+});
 function addtolist(button, productname, productprice) {
   button.addEventListener("click", function () {
     if (list.hasOwnProperty(productname)) {
-      list[productname] += 1;
+      list[productname].total += 1;
       totalprice += productprice;
       document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier"+ productname).innerHTML = list[productname];
+      document.getElementById("multiplier"+ productname).innerHTML = list[productname].total;
     }
     else {
-      list[productname] = 1;
+      list[productname]={
+        total: 1,
+        addbutton:document.getElementById('Add'+productname),
+        minusbutton:document.getElementById('Minus'+productname),
+        deletebutton:document.getElementById('Bin'+productname)
+      };
+      console.log(list[productname].total);
       var paper = document.getElementById("list_items");
       
-      var productAdded ='<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div class="col"> <a href="#"><img id="Minus'+ productname +'" alt="" src="../images/redminus.png" width="28"></a><span id="multiplier'+productname+'"> '+ list[productname] +'</span> <a href="#"><img id="Add'+ productname +'" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
+      var productAdded ='<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div class="col"> <a href="#"><img id="Minus'+ productname +'" alt="" src="../images/redminus.png" width="28"></a><span id="multiplier'+productname+'"> '+ list[productname].total +'</span> <a href="#"><img id="Add'+productname+'" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
