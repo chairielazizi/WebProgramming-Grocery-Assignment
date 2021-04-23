@@ -1,3 +1,4 @@
+checkForm();
 function checkForm(){
     var emailInput = document.getElementById("inputEmail");
     var passwordInput = document.getElementById("inputPassword");
