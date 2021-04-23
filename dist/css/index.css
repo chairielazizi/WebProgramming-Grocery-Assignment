@@ -1,8 +1,4 @@
-.text-dark {
-    height: 86vh;
-}
-
-.container {
+main.container {
     max-width: 540px;
 }
 
