@@ -8,7 +8,10 @@ const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 
 var list = {};
-
+for (let key in list) {
+  console.log(key, ':', list[key].total);
+  delitemlist(list[key].deletebutton,key,list[key].price);
+}
 const frozen = [
   {
     name: "Waffles",
@@ -280,85 +283,105 @@ personalCareProducts.forEach(function (products) {
   personalCare.appendChild(personalCareCard);
 });
 
-list.forEach(function(){
 
 
-
-});
 function addtolist(button, productname, productprice) {
   button.addEventListener("click", function () {
     if (list.hasOwnProperty(productname)) {
       list[productname].total += 1;
       totalprice += productprice;
       document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier"+ productname).innerHTML = list[productname].total;
+      document.getElementById("multiplier" + productname).innerHTML = list[productname].total;
     }
     else {
-      list[productname]={
+      list[productname] = {
         total: 1,
-        addbutton:document.getElementById('Add'+productname),
-        minusbutton:document.getElementById('Minus'+productname),
-        deletebutton:document.getElementById('Bin'+productname)
+        price: productprice,
+        addbutton: document.getElementById('Add' + productname),
+        minusbutton: document.getElementById('Minus' + productname),
+        deletebutton: document.getElementById('Bin' + productname)
+
       };
-      console.log(list[productname].total);
+
       var paper = document.getElementById("list_items");
-      
-      var productAdded ='<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div class="col"> <a href="#"><img id="Minus'+ productname +'" alt="" src="../images/redminus.png" width="28"></a><span id="multiplier'+productname+'"> '+ list[productname].total +'</span> <a href="#"><img id="Add'+productname+'" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
+
+      var productAdded = '<li class="list-group-item" id="li' + productname + '"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div class="col"> <a href="#"><img id="Minus' + productname + '" alt="" src="../images/redminus.png" width="28"></a><span id="multiplier' + productname + '"> ' + list[productname].total + '</span> <a href="#"><img id="Add' + productname + '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col"><a href="#"><img id="Bin' + productname + '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
       document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-    }
-    // var deletebutton = document.getElementById('Bin'+ productname);
-    //   deletebutton.addEventListener('click',function(){
-    //   delitemlist(productname,productprice);
-    // });
 
-    // var adbutton = document.getElementById('Add'+ productname);
-    //   adbutton.addEventListener('click',function(){
-    //     additem(productname,productprice);
-    //   })
+      document.getElementById('Add' + productname).addEventListener('click',function (){
+        additem(productname);
+      })
+      document.getElementById('Minus'+ productname).addEventListener('click',function(){
+        minusitem(productname);
+      })
+    }
+
+    var deletebutton = document.getElementById('Bin' + productname);
+    deletebutton.addEventListener('click', function () {
+      delitemlist(productname);
+    });
+
+    
     // delitemlist(document.getElementById('Bin'+ productname),productname,productprice)
     // minusitem(document.getElementById('Minus'+ productname),productname,productprice);
     // additem(document.getElementById('Add'+ productname),productname,productprice)
+    // var deletebutton =list[productname].deletebutton;
+    // deletebutton.addEventListener('click', function () {
+    //   delitemlist(productname);
+    // });
+
+    // var addbutton = list[productname].addbutton;
+    // addbutton.addEventListener('click', function () {
+    //   additem(productname);
+    // })
   });
+  
 }
 
-// function delitemlist(productname,productprice){
-
-//     totalprice -= list[productname]*productprice;
-//     document.getElementById('li'+ productname).remove();
-//     delete list[productname];
-//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
-
-// }
-
-// function additem(productname,productprice){
-  
-//     totalprice += productprice;
-//     list[productname] += 1;
-//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
-//     document.getElementById("multiplier"+ productname).innerText = list[productname];
-  
-// }
-
-// function minusitem(button,productname,productprice){
-
-//   button.addEventListener('click',function (){
-//     totalprice -= productprice;
-//     list[productname] -= 1;
-//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
-//     console.log(totalprice.toFixed(2));
-//     document.getElementById("multiplier"+ productname).innerText = list[productname];
-    
-//     if (list[productname]==0){
-//       console.log(list[productname]);
-//       delete list[productname];
+// function delitemlist(button,productname,productprice){
+//     button.addEventListener('click',function(){
+//       totalprice -= list[productname].total*productprice;
 //       document.getElementById('li'+ productname).remove();
-//     }
-//   });
-
+//       delete list[productname];
+//       document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+//     })
 // }
+
+function delitemlist(productname) {
+
+  totalprice -= list[productname].total * list[productname].price;
+  document.getElementById('li' + productname).remove();
+  delete list[productname];
+  document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+}
+
+
+function additem(productname) {
+
+  totalprice += list[productname].price;
+  list[productname].total += 1;
+  document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+  document.getElementById("multiplier" + productname).innerText = list[productname].total;
+
+}
+
+function minusitem(productname){
+
+    totalprice -= list[productname].price;
+    list[productname].total -= 1;
+    document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+    console.log(totalprice.toFixed(2));
+    document.getElementById("multiplier"+ productname).innerText = list[productname].total;
+
+    if (list[productname].total==0){
+      delete list[productname];
+      document.getElementById('li'+ productname).remove();
+    }
+
+}
 
 function toggleCart() {
   var cart = document.querySelector(".cart");
