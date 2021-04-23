@@ -286,65 +286,72 @@ function addtolist(button, productname, productprice) {
     if (list.hasOwnProperty(productname)) {
       list[productname] += 1;
       totalprice += productprice;
-      document.getElementById(
-        "total-price-value"
-      ).innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier" + productname).innerHTML =
-        "×" + list[productname];
-    } else {
+      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
+      document.getElementById("multiplier"+ productname).innerHTML = list[productname];
+    }
+    else {
       list[productname] = 1;
       var paper = document.getElementById("list_items");
-
-      var productAdded =
-        '<li class="list-group-item" id="li' +
-        productname +
-        '"><div class="inlist width-auto"><div class="row"><div class="col">' +
-        productname +
-        '</div><div class="col align-right">RM ' +
-        productprice.toFixed(2) +
-        '</div><div id="multiplier' +
-        productname +
-        '" > ×' +
-        list[productname] +
-        ' </div><div class="col"><a href="#"><img id="Bin' +
-        productname +
-        '" alt="" src="../images/delete.png" width="35"></a></div></div></div></li>';
+      
+      var productAdded ='<li class="list-group-item" id="li'+ productname +'"><div class="inlist width-auto"><div class="row"><div class="col">' + productname + '</div><div class="col align-right">RM ' + productprice.toFixed(2) + '</div><div class="col"> <a href="#"><img id="Minus'+ productname +'" alt="" src="../images/redminus.png" width="28"></a><span id="multiplier'+productname+'"> '+ list[productname] +'</span> <a href="#"><img id="Add'+ productname +'" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col"><a href="#"><img id="Bin'+ productname +'" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
-      document.getElementById(
-        "total-price-value"
-      ).innerHTML = totalprice.toFixed(2);
+      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
     }
-    var deleteitem = document.getElementById("Bin" + productname + "");
+    // var deletebutton = document.getElementById('Bin'+ productname);
+    //   deletebutton.addEventListener('click',function(){
+    //   delitemlist(productname,productprice);
+    // });
 
-    deleteitem.addEventListener("click", function () {
-      delitemlist(productname, productprice);
-    });
+    // var adbutton = document.getElementById('Add'+ productname);
+    //   adbutton.addEventListener('click',function(){
+    //     additem(productname,productprice);
+    //   })
+    // delitemlist(document.getElementById('Bin'+ productname),productname,productprice)
+    // minusitem(document.getElementById('Minus'+ productname),productname,productprice);
+    // additem(document.getElementById('Add'+ productname),productname,productprice)
   });
 }
-// '+productname+','+ productprice +'
-// productname,productprice
-function delitemlist(productname, productprice) {
-  console.log(productname + "  lol  " + productprice);
-  document.getElementById("li" + productname + "").remove();
-  totalprice -= list[productname] * productprice;
-  document.getElementById("total-price-value").innerHTML = totalprice.toFixed(
-    2
-  );
-  list[productname] = 0;
-  document.getElementById("multiplier" + productname + "").innerHTML = list[
-    productname
-  ] = 0;
-}
+
+// function delitemlist(productname,productprice){
+
+//     totalprice -= list[productname]*productprice;
+//     document.getElementById('li'+ productname).remove();
+//     delete list[productname];
+//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+
+// }
+
+// function additem(productname,productprice){
+  
+//     totalprice += productprice;
+//     list[productname] += 1;
+//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+//     document.getElementById("multiplier"+ productname).innerText = list[productname];
+  
+// }
+
+// function minusitem(button,productname,productprice){
+
+//   button.addEventListener('click',function (){
+//     totalprice -= productprice;
+//     list[productname] -= 1;
+//     document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+//     console.log(totalprice.toFixed(2));
+//     document.getElementById("multiplier"+ productname).innerText = list[productname];
+    
+//     if (list[productname]==0){
+//       console.log(list[productname]);
+//       delete list[productname];
+//       document.getElementById('li'+ productname).remove();
+//     }
+//   });
+
+// }
 
 function toggleCart() {
   var cart = document.querySelector(".cart");
   console.log(cart);
-  // if (cart.style.display == "none") {
-  //   cart.style.display = "block";
-  // } else {
-  //   cart.style.display = "none";
-  // }
   cart.classList.toggle("display-cart");
 }
