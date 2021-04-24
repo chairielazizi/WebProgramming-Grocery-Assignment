@@ -214,3 +214,29 @@ html {
     width: 10px;
     padding: 0px 0px;
 }
+
+/* dummy search bar */
+.dummy-search-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    width: 150px;
+}
+
+/* dummy search results page */
+.search-results {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-results-header {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 7px;
+}
+
+#search-input {
+    color: #d4af37;
+}
