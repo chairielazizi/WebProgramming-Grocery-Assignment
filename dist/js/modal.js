@@ -1,16 +1,29 @@
 // modal page
-const beveragesModal = document.querySelector(".beverages-modal");
-const breadbakeryModal = document.querySelector(".breadbakery-modal");
-const cannedModal = document.querySelector(".canned-modal");
-const dairyModal = document.querySelector(".dairy-modal");
-const drybakingModal = document.querySelector(".drybaking-modal");
-const frozenModal = document.querySelector(".frozen-modal");
-const meatModal = document.querySelector(".meat-modal");
-const produceModal = document.querySelector(".produce-modal");
-const cleanersModal = document.querySelector(".cleaners-modal");
-const paperModal = document.querySelector(".paper-modal");
-const personalCareModal = document.querySelector(".personalCare-modal");
-const othersModal = document.querySelector(".others-modal");
+// const beveragesModal = document.querySelector(".beverages-modal");
+// const breadbakeryModal = document.querySelector(".breadbakery-modal");
+// const cannedModal = document.querySelector(".canned-modal");
+// const drybakingModal = document.querySelector(".drybaking-modal");
+// const dairyModal = document.querySelector(".dairy-modal");
+// const frozenModal = document.querySelector(".frozen-modal");
+// const meatModal = document.querySelector(".meat-modal");
+// const produceModal = document.querySelector(".produce-modal");
+// const cleanersModal = document.querySelector(".cleaners-modal");
+// const paperModal = document.querySelector(".paper-modal");
+// const personalCareModal = document.querySelector(".personalCare-modal");
+// const othersModal = document.querySelector(".others-modal");
+
+const beveragesModal = document.querySelector(".row-beverage");
+const breadbakeryModal = document.querySelector(".row-breadbakery");
+const cannedModal = document.querySelector(".row-canned");
+const drybakingModal = document.querySelector(".row-drybaking");
+const dairyModal = document.querySelector(".row-dairy");
+const frozenModal = document.querySelector(".row-frozen");
+const meatModal = document.querySelector(".row-meat");
+const produceModal = document.querySelector(".row-produce");
+const cleanersModal = document.querySelector(".row-cleaners");
+const paperModal = document.querySelector(".row-paper");
+const personalCareModal = document.querySelector(".row-personalCare");
+const othersModal = document.querySelector(".row-others");
 
 // modal data
 const modalbeverages = [
@@ -711,7 +724,7 @@ const modalothers = [
 
 modalbeverages.forEach((products) => {
   var beverageCard = document.createElement("div");
-  beverageCard.className = "card card-block mx-2 text-center";
+  beverageCard.className = "card card-block mx-2 text-center mb-2";
 
   var beveragePhoto = document.createElement("img");
   beveragePhoto.className = "card-img-top";
@@ -740,7 +753,7 @@ modalbeverages.forEach((products) => {
 
 modalbreadbakery.forEach((products) => {
   var breadBakeryCard = document.createElement("div");
-  breadBakeryCard.className = "card card-block mx-2 text-center";
+  breadBakeryCard.className = "card card-block mx-2 text-center mb-2";
 
   var breadBakeryPhoto = document.createElement("img");
   breadBakeryPhoto.className = "card-img-top";
@@ -771,7 +784,7 @@ modalbreadbakery.forEach((products) => {
 
 modalcanned.forEach((products) => {
   var cannedGoodsCard = document.createElement("div");
-  cannedGoodsCard.className = "card card-block mx-2 text-center";
+  cannedGoodsCard.className = "card card-block mx-2 text-center mb-2";
 
   var cannedGoodsPhoto = document.createElement("img");
   cannedGoodsPhoto.className = "card-img-top";
@@ -801,7 +814,7 @@ modalcanned.forEach((products) => {
 
 modaldairy.forEach((products) => {
   var dairyCard = document.createElement("div");
-  dairyCard.className = "card card-block mx-2 text-center";
+  dairyCard.className = "card card-block mx-2 text-center mb-2";
 
   var dairyPhoto = document.createElement("img");
   dairyPhoto.className = "card-img-top";
@@ -831,7 +844,7 @@ modaldairy.forEach((products) => {
 
 modaldrybaking.forEach((products) => {
   var drybakingCard = document.createElement("div");
-  drybakingCard.className = "card card-block mx-2 text-center";
+  drybakingCard.className = "card card-block mx-2 text-center mb-2";
 
   var drybakingPhoto = document.createElement("img");
   drybakingPhoto.className = "card-img-top";
@@ -861,7 +874,7 @@ modaldrybaking.forEach((products) => {
 
 modalfrozen.forEach((products) => {
   var frozenFoodCard = document.createElement("div");
-  frozenFoodCard.className = "card card-block mx-2 text-center";
+  frozenFoodCard.className = "card card-block mx-2 text-center mb-2";
 
   var frozenFoodPhoto = document.createElement("img");
   frozenFoodPhoto.className = "card-img-top";
@@ -892,7 +905,7 @@ modalfrozen.forEach((products) => {
 
 modalmeat.forEach((products) => {
   var meatCard = document.createElement("div");
-  meatCard.className = "card card-block mx-2 text-center";
+  meatCard.className = "card card-block mx-2 text-center mb-2";
 
   var meatPhoto = document.createElement("img");
   meatPhoto.className = "card-img-top";
@@ -922,7 +935,7 @@ modalmeat.forEach((products) => {
 
 modalproduce.forEach((products) => {
   var produceCard = document.createElement("div");
-  produceCard.className = "card card-block mx-2 text-center";
+  produceCard.className = "card card-block mx-2 text-center mb-2";
 
   var producePhoto = document.createElement("img");
   producePhoto.className = "card-img-top";
@@ -952,7 +965,7 @@ modalproduce.forEach((products) => {
 
 modalcleaners.forEach((products) => {
   var cleanersCard = document.createElement("div");
-  cleanersCard.className = "card card-block mx-2 text-center";
+  cleanersCard.className = "card card-block mx-2 text-center mb-2";
 
   var cleanersPhoto = document.createElement("img");
   cleanersPhoto.className = "card-img-top";
@@ -982,7 +995,7 @@ modalcleaners.forEach((products) => {
 
 modalpaper.forEach((products) => {
   var paperCard = document.createElement("div");
-  paperCard.className = "card card-block mx-2 text-center";
+  paperCard.className = "card card-block mx-2 text-center mb-2";
 
   var paperPhoto = document.createElement("img");
   paperPhoto.className = "card-img-top";
@@ -1012,7 +1025,7 @@ modalpaper.forEach((products) => {
 
 modalpersonalCareProducts.forEach((products) => {
   var personalCareCard = document.createElement("div");
-  personalCareCard.className = "card card-block mx-2 text-center";
+  personalCareCard.className = "card card-block mx-2 text-center mb-2";
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
@@ -1042,7 +1055,7 @@ modalpersonalCareProducts.forEach((products) => {
 
 modalothers.forEach((products) => {
   var othersCard = document.createElement("div");
-  othersCard.className = "card card-block mx-2 text-center";
+  othersCard.className = "card card-block mx-2 text-center mb-2";
 
   var othersPhoto = document.createElement("img");
   othersPhoto.className = "card-img-top";
