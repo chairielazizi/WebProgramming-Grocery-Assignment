@@ -90,6 +90,11 @@ html {
     max-width: 250px; */
     width: 15vw;
     margin: 20px;
+    display: block;
+}
+
+.display-sidebar {
+    display: none;
 }
 
 .sidebar-header {
@@ -241,4 +246,49 @@ input {
 
 #search-input {
     color: #d4af37;
+}
+
+#showCategories {
+    display: none;
+}
+
+@media screen and (max-width: 380px) {
+    .carousel {
+        display: none;
+    }
+
+    .navbar-brand {
+        margin: 0 auto;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row !important;
+    }
+
+    .view-cart-text {
+        margin-top: -28px;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100vw;
+        z-index: 100;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    #showCategories {
+        display: block;
+    }
+
+    .categories-content {
+        width: 80vw;
+    }
 }

@@ -21,7 +21,7 @@
                 <!-- upperleft logo -->
                 <div class="navbar-brand p-0 me-2" >
                     <a href="homepage.html">
-                        <img src="images/trolimart rect2.png" width="180" alt="">
+                        <img class='trolimart-logo' src="images/trolimart rect2.png" width="180" alt="">
                     </a>
                 </div>
 
@@ -64,6 +64,7 @@
                         </a>
                     </li>
                 </ul>
+                <button id='showCategories' class='btn btn-primary' onclick="return toggleCategories()">Categories</button>
             </div>
         </nav>
     </header>
@@ -72,8 +73,8 @@
 
         <!-- sidebar -->
         <div class="wrapper">
-            <nav id="sidebar" class=" category-bg ">
-                <div class="sidebar-header ">
+            <nav id="sidebar" class="category-bg display-sidebar">
+                <div class="sidebar-header">
                     <br>
                     <h3>All Categories</h3>
 

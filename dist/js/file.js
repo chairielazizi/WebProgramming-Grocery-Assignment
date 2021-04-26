@@ -383,3 +383,8 @@ function toggleCart() {
   console.log(cart);
   cart.classList.toggle("display-cart");
 }
+
+function toggleCategories() {
+  var sidebar = document.querySelector('#sidebar')  
+  sidebar.classList.toggle("display-sidebar")
+}
