@@ -220,6 +220,7 @@ html {
 .dummy-search-bar {
     display: flex;
     flex-direction: row;
+    width: 45rem;
 }
 
 input {
