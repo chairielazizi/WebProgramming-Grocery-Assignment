@@ -34,11 +34,11 @@ const frozen = [
     price: 7.6,
     img: "./images/products/frozen/vegetables.jpg",
   },
-  {
-    name: "Paratha",
-    price: 10.0,
-    img: "./images/products/frozen/paratha.jpg",
-  },
+  // {
+  //   name: "Paratha",
+  //   price: 10.0,
+  //   img: "./images/products/frozen/paratha.jpg",
+  // },
   // { name: 'Pau', price: 'RM8.50' },
   // { name: 'Frozen Fried Rice', price: 'RM4.50' },
   // { name: 'Beef Patties', price: 'RM9.00' },
@@ -72,11 +72,11 @@ const canned = [
     price: 7.6,
     img: "./images/products/canned/pineapple.jfif",
   },
-  {
-    name: "Baked Beans",
-    price: 10.0,
-    img: "./images/products/canned/bakedbeans.jfif",
-  },
+  // {
+  //   name: "Baked Beans",
+  //   price: 10.0,
+  //   img: "./images/products/canned/bakedbeans.jfif",
+  // },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
   // { name: 'Rendang', price: 'RM9.00' },
@@ -110,11 +110,11 @@ const beverages = [
     price: 7.6,
     img: "./images/products/beverages/carlsberg.jpg",
   },
-  {
-    name: "Sagota",
-    price: 10.0,
-    img: "./images/products/beverages/sagota.jpg",
-  },
+  // {
+  //   name: "Sagota",
+  //   price: 10.0,
+  //   img: "./images/products/beverages/sagota.jpg",
+  // },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
   // { name: 'Asahi', price: 'RM9.00' },
@@ -148,11 +148,11 @@ const personalCareProducts = [
     price: 7.6,
     img: "./images/products/personalcare/hairwax.jfif",
   },
-  {
-    name: "Razors",
-    price: 10.0,
-    img: "./images/products/personalcare/razors.jpg",
-  },
+  // {
+  //   name: "Razors",
+  //   price: 10.0,
+  //   img: "./images/products/personalcare/razors.jpg",
+  // },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
   // { name: 'Deodorant Spray', price: 'RM9.00' },
@@ -257,6 +257,8 @@ personalCareProducts.forEach(function (products) {
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
+  personalCarePhoto.src = products.img;
+  personalCarePhoto.style.height = "9em";
 
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "add-to-cart-button btn btn-success";
@@ -279,82 +281,101 @@ personalCareProducts.forEach(function (products) {
   personalCare.appendChild(personalCareCard);
 });
 
-
-
 function addtolist(button, productname, productprice) {
   button.addEventListener("click", function () {
     if (list.hasOwnProperty(productname)) {
       list[productname].total += 1;
       totalprice += productprice;
-      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
-      document.getElementById("multiplier" + productname).innerHTML = list[productname].total;
-    }
-    else {
+      document.getElementById(
+        "total-price-value"
+      ).innerHTML = totalprice.toFixed(2);
+      document.getElementById("multiplier" + productname).innerHTML =
+        list[productname].total;
+    } else {
       list[productname] = {
-
         total: 1,
         price: productprice,
-        deletebutton: document.getElementById('Bin' + productname)
-
+        deletebutton: document.getElementById("Bin" + productname),
       };
 
       var paper = document.getElementById("list_items");
 
-      var productAdded = '<li class="list-group-item" id="li' + productname + '"><div class="inlist width-auto"><div class="row"><div class="col" id="divinrow">' + productname + '</div><div class="col" id="divinrow">RM ' + productprice.toFixed(2) + '</div><div class="col" id="minusbutton"> <a href="#"><img id="Minus' + productname + '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col" id="multipliervalue"><span id="multiplier' + productname + '"> ' + list[productname].total + '</span></div><div class="col" id="plusbutton"><a href="#"><img id="Add' + productname + '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col" id= id="deletebutton"><a href="#"><img id="Bin' + productname + '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
+      var productAdded =
+        '<li class="list-group-item" id="li' +
+        productname +
+        '"><div class="inlist width-auto"><div class="row"><div class="col" id="divinrow">' +
+        productname +
+        '</div><div class="col" id="divinrow">RM ' +
+        productprice.toFixed(2) +
+        '</div><div class="col" id="minusbutton"> <a href="#"><img id="Minus' +
+        productname +
+        '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col" id="multipliervalue"><span id="multiplier' +
+        productname +
+        '"> ' +
+        list[productname].total +
+        '</span></div><div class="col" id="plusbutton"><a href="#"><img id="Add' +
+        productname +
+        '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col" id= id="deletebutton"><a href="#"><img id="Bin' +
+        productname +
+        '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 
       paper.insertAdjacentHTML("beforeend", productAdded);
       totalprice += productprice;
-      document.getElementById("total-price-value").innerHTML = totalprice.toFixed(2);
+      document.getElementById(
+        "total-price-value"
+      ).innerHTML = totalprice.toFixed(2);
 
-      var addbutton = document.getElementById('Add' + productname);
-        addbutton.addEventListener('click',function (){
+      var addbutton = document.getElementById("Add" + productname);
+      addbutton.addEventListener("click", function () {
         additem(productname);
-      })
+      });
 
-      var minusbutton = document.getElementById('Minus' + productname);
-        minusbutton.addEventListener('click',function(){
+      var minusbutton = document.getElementById("Minus" + productname);
+      minusbutton.addEventListener("click", function () {
         minusitem(productname);
-      })
+      });
     }
 
-    var deletebutton = document.getElementById('Bin' + productname);
-      deletebutton.addEventListener('click', function () {
+    var deletebutton = document.getElementById("Bin" + productname);
+    deletebutton.addEventListener("click", function () {
       delitemlist(productname);
     });
   });
-  
 }
 
 function delitemlist(productname) {
-
   totalprice -= list[productname].total * list[productname].price;
-  document.getElementById('li' + productname).remove();
+  document.getElementById("li" + productname).remove();
   delete list[productname];
-  document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
+  document.getElementById("total-price-value").innerText = totalprice.toFixed(
+    2
+  );
 }
-
 
 function additem(productname) {
-
   totalprice += list[productname].price;
   list[productname].total += 1;
-  document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
-  document.getElementById("multiplier" + productname).innerText = list[productname].total;
-
+  document.getElementById("total-price-value").innerText = totalprice.toFixed(
+    2
+  );
+  document.getElementById("multiplier" + productname).innerText =
+    list[productname].total;
 }
 
-function minusitem(productname){
+function minusitem(productname) {
+  totalprice -= list[productname].price;
+  list[productname].total -= 1;
+  document.getElementById("total-price-value").innerText = totalprice.toFixed(
+    2
+  );
+  console.log(totalprice.toFixed(2));
+  document.getElementById("multiplier" + productname).innerText =
+    list[productname].total;
 
-    totalprice -= list[productname].price;
-    list[productname].total -= 1;
-    document.getElementById('total-price-value').innerText = totalprice.toFixed(2);
-    console.log(totalprice.toFixed(2));
-    document.getElementById("multiplier"+ productname).innerText = list[productname].total;
-
-    if (list[productname].total==0){
-      delete list[productname];
-      document.getElementById('li'+ productname).remove();
-    }
+  if (list[productname].total == 0) {
+    delete list[productname];
+    document.getElementById("li" + productname).remove();
+  }
 }
 
 function toggleCart() {

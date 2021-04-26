@@ -43,6 +43,7 @@ html {
 
 .categories-content {
     width: 81vw;
+    justify-content: center;
 }
 
 .categories-header {
