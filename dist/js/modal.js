@@ -19,9 +19,9 @@ const drybakingModal = document.querySelector(".row-drybaking");
 const dairyModal = document.querySelector(".row-dairy");
 const frozenModal = document.querySelector(".row-frozen");
 const meatModal = document.querySelector(".row-meat");
-const produceModal = document.querySelector(".row-produce");
+const fruitModal = document.querySelector(".row-fruit");
+const vegeModal = document.querySelector(".row-vege");
 const cleanersModal = document.querySelector(".row-cleaners");
-const paperModal = document.querySelector(".row-paper");
 const personalCareModal = document.querySelector(".row-personalCare");
 const othersModal = document.querySelector(".row-others");
 
@@ -59,28 +59,28 @@ const modalbeverages = [
   },
   {
     name: "Lipton Green Tea",
-    price: 8.5,
-    img: "./images/products/beverages/sagota.jpg",
+    price: 7.5,
+    img: "./images/products/beverages/greentea.jpg",
   },
   {
     name: "Lipton Iced Lemon Tea",
     price: 4.5,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/beverages/lemontea.jpg",
   },
   {
     name: "Asahi",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/beverages/asahi.jpg",
   },
   {
     name: "Heineken",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/beverages/heineken.png",
   },
   {
     name: "Soya",
     price: 13.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/beverages/soya.png",
   },
 ];
 
@@ -126,19 +126,19 @@ const modalbreadbakery = [
     img: "./images/products/bread/garlic.jfif",
   },
   {
-    name: "Asahi",
+    name: "Roti Sweetie",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/bread/sweetie.jfif",
   },
   {
-    name: "Heineken",
+    name: "Panko Bread Crumbs",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/bread/panko.jpg",
   },
   {
-    name: "Soya",
+    name: "Nazri Bread Crumbs",
     price: 13.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/bread/nazri.jpg",
   },
 ];
 
@@ -176,27 +176,27 @@ const modalcanned = [
   {
     name: "Button Mushrooms",
     price: 8.5,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/canned/mushroom.jfif",
   },
   {
-    name: "Chicken Curry",
+    name: "Yeos Chicken Curry",
     price: 4.5,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/canned/kari.jpg",
   },
   {
     name: "Rendang",
     price: 9.0,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/canned/rendang.jpg",
   },
   {
     name: "Sambal",
     price: 9.0,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/canned/sambal.jpg",
   },
   {
     name: "Ayam Brand Sardines",
     price: 13.0,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/canned/ayamsardin.jpg",
   },
 ];
 
@@ -237,24 +237,24 @@ const modaldairy = [
     img: "./images/products/dairy/fullcream.jpg",
   },
   {
-    name: "Lipton Iced Lemon Tea",
+    name: "Ballantyne Cheese Slices",
     price: 4.5,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/dairy/ballancheese.jpg",
   },
   {
-    name: "Asahi",
+    name: "Beqa Cheddar Cheese",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/dairy/beqa.jfif",
   },
   {
-    name: "Heineken",
+    name: "Farmcow Butter",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/dairy/farmcow.jpg",
   },
   {
-    name: "Soya",
+    name: "Anchor Butter",
     price: 13.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/dairy/anchor.jpg",
   },
 ];
 
@@ -295,24 +295,24 @@ const modaldrybaking = [
     img: "./images/products/drybakery/rice.jfif",
   },
   {
-    name: "Deodorant",
-    price: 4.5,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "MFM Self-Raising Flour",
+    price: 3.5,
+    img: "./images/products/drybakery/mfm.jfif",
   },
   {
-    name: "Deodorant Spray",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Blue Key Self-Raising Flour",
+    price: 3.8,
+    img: "./images/products/drybakery/blue.jpg",
   },
   {
-    name: "Hair Serum",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "MFM Tepung Paling Halus",
+    price: 4.0,
+    img: "./images/products/drybakery/halus.jpg",
   },
   {
-    name: "Body Wash",
-    price: 13.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Alagappa's Tepung Atta",
+    price: 3.76,
+    img: "./images/products/drybakery/atta.jpg",
   },
 ];
 
@@ -350,27 +350,27 @@ const modalfrozen = [
   {
     name: "Pau Krapau",
     price: 8.5,
-    img: "./images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/pao.jpg",
   },
   {
     name: "Frozen Fried Rice",
     price: 4.5,
-    img: "./images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/friedrice.jpg",
   },
   {
     name: "Beef Patties",
     price: 9.0,
-    img: "./images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/beefpatty.jfif",
   },
   {
     name: "Chicken Patties",
     price: 9.0,
-    img: "./images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/chicpatty.png",
   },
   {
     name: "Tilapia Fish",
     price: 13.0,
-    img: "./images/products/frozen/paratha.jpg",
+    img: "./images/products/frozen/tilapia.jpg",
   },
 ];
 
@@ -411,82 +411,82 @@ const modalmeat = [
     img: "./images/products/meat/meatloaf.jpg",
   },
   {
-    name: "Lipton Iced Lemon Tea",
+    name: "Beyond Meat",
     price: 4.5,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/meat/beyond.png",
   },
   {
-    name: "Asahi",
+    name: "Tony Roma's Pork",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/meat/tonypork.jpeg",
   },
   {
-    name: "Heineken",
+    name: "Chicken Thighs",
     price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/meat/thigh.jpg",
   },
   {
-    name: "Soya",
+    name: "Chicken Drumsticks",
     price: 13.0,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/meat/drumsticks.jpg",
   },
 ];
 
-const modalproduce = [
+const modalfruit = [
   {
-    name: "Sardines",
+    name: "Orange",
     price: 12.0,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/fruit/orange.jpg",
   },
   {
-    name: "Spaghetti Sauce",
-    price: 14.5,
-    img: "./images/products/canned/spaghettisauce.jpg",
+    name: "Apple",
+    price: 6.99,
+    img: "./images/products/fruit/apple.jpg",
   },
   {
-    name: "Carbonara Sauce",
+    name: "Watermelon",
     price: 8.0,
-    img: "./images/products/canned/carbonarasauce.jpg",
+    img: "./images/products/fruit/watermelon.png",
   },
   {
-    name: "Mackerels",
-    price: 9.0,
-    img: "./images/products/canned/mackerel.jfif",
+    name: "Honey Dew",
+    price: 5.9,
+    img: "./images/products/fruit/honeydew.jfif",
   },
   {
-    name: "Canned Pineapples",
-    price: 7.6,
-    img: "./images/products/canned/pineapple.jfif",
+    name: "Pineapple",
+    price: 6.0,
+    img: "./images/products/fruit/pineapple.jpg",
   },
   {
-    name: "Baked Beans",
-    price: 10.0,
-    img: "./images/products/canned/bakedbeans.jfif",
+    name: "Star Fruit",
+    price: 3.99,
+    img: "./images/products/fruit/starfruit.jpeg",
   },
   {
-    name: "Button Mushrooms",
+    name: "Dragon Fruit",
     price: 8.5,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/fruit/dragon.jpg",
   },
   {
-    name: "Chicken Curry",
-    price: 4.5,
-    img: "./images/products/canned/sardine.jfif",
+    name: "Durian",
+    price: 20.0,
+    img: "./images/products/fruit/durian.png",
   },
   {
-    name: "Rendang",
-    price: 9.0,
-    img: "./images/products/canned/sardine.jfif",
+    name: "Papaya",
+    price: 5.99,
+    img: "./images/products/fruit/papaya.jpg",
   },
   {
-    name: "Sambal",
-    price: 9.0,
-    img: "./images/products/canned/sardine.jfif",
+    name: "mango",
+    price: 4.99,
+    img: "./images/products/fruit/mango.jpg",
   },
   {
-    name: "Ayam Brand Sardines",
+    name: "Banana",
     price: 13.0,
-    img: "./images/products/canned/sardine.jfif",
+    img: "./images/products/fruit/banana.jpg",
   },
 ];
 
@@ -532,77 +532,77 @@ const modalcleaners = [
     img: "./images/products/cleaners/mop.jfif",
   },
   {
-    name: "Deodorant Spray",
+    name: "Klorox",
     price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    img: "./images/products/cleaners/clorox.jpg",
   },
   {
-    name: "Hair Serum",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Broom",
+    price: 7.5,
+    img: "./images/products/cleaners/broom.jpg",
   },
   {
-    name: "Body Wash",
-    price: 13.0,
-    img: "./images/products/personalcare/hairgel.png",
+    name: "Cloth Piece",
+    price: 3.9,
+    img: "./images/products/cleaners/kain.jfif",
   },
 ];
 
-const modalpaper = [
+const modalvege = [
   {
-    name: "Coca-Cola",
+    name: "Asparagus",
     price: 12.0,
-    img: "./images/products/beverages/cocacola.jpg",
+    img: "./images/products/vegetable/asparagus.jpg",
   },
   {
-    name: "Sprite",
-    price: 14.5,
-    img: "./images/products/beverages/sprite.jpg",
+    name: "Broccoli",
+    price: 12.0,
+    img: "./images/products/vegetable/broccoli.jpg",
   },
   {
-    name: "Milo",
+    name: "Brussel Sprout",
+    price: 11.69,
+    img: "./images/products/vegetable/sprout.jpg",
+  },
+  {
+    name: "Cabbage",
+    price: 3.89,
+    img: "./images/products/vegetable/cabbage.jpg",
+  },
+  {
+    name: "Carrot",
+    price: 3.3,
+    img: "./images/products/vegetable/carrot.jpg",
+  },
+  {
+    name: "Cauliflower",
     price: 8.0,
-    img: "./images/products/beverages/milo.jfif",
+    img: "./images/products/vegetable/cauli.png",
   },
   {
-    name: "Chrysanthemum",
-    price: 9.0,
-    img: "./images/products/beverages/chrysanthemum.png",
+    name: "Celery",
+    price: 7.22,
+    img: "./images/products/vegetable/celery.jpg",
   },
   {
-    name: "Carlsberg",
-    price: 7.6,
-    img: "./images/products/beverages/carlsberg.jpg",
-  },
-  {
-    name: "Sagota",
-    price: 10.0,
-    img: "./images/products/beverages/sagota.jpg",
-  },
-  {
-    name: "Lipton Green Tea",
-    price: 8.5,
-    img: "./images/products/beverages/sagota.jpg",
-  },
-  {
-    name: "Lipton Iced Lemon Tea",
+    name: "Corn",
     price: 4.5,
-    img: "./images/products/beverages/sagota.jpg",
+    img: "./images/products/vegetable/corn.jpg",
   },
   {
-    name: "Asahi",
-    price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Cucumber",
+    price: 3.56,
+    img: "./images/products/vegetable/cucumber.jpg",
   },
   {
-    name: "Heineken",
-    price: 9.0,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Eggplant",
+    price: 5.8,
+    img: "./images/products/vegetable/eggplant.jpeg",
   },
   {
-    name: "Soya",
-    price: 13.0,
-    img: "./images/products/beverages/sagota.jpg",
+    name: "Potato",
+    price: 4.7,
+    img: "./images/products/vegetable/potato.jpg",
   },
 ];
 
@@ -640,27 +640,27 @@ const modalpersonalCareProducts = [
   {
     name: "Baby Oil",
     price: 8.5,
-    img: "./images/products/personalcare/hairgel.png",
-  },
-  {
-    name: "Deodorant",
-    price: 4.5,
-    img: "./images/products/personalcare/hairgel.png",
-  },
-  {
-    name: "Deodorant Spray",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
-  },
-  {
-    name: "Hair Serum",
-    price: 9.0,
-    img: "./images/products/personalcare/hairgel.png",
+    img: "./images/products/personalcare/baby.png",
   },
   {
     name: "Body Wash",
+    price: 4.5,
+    img: "./images/products/personalcare/body.jpg",
+  },
+  {
+    name: "Deodorant Roller",
+    price: 9.0,
+    img: "./images/products/personalcare/roller.jfif",
+  },
+  {
+    name: "Dove Hair Serum",
+    price: 9.0,
+    img: "./images/products/personalcare/dove.jfif",
+  },
+  {
+    name: "Deodorant Spray",
     price: 13.0,
-    img: "./images/products/personalcare/hairgel.png",
+    img: "./images/products/personalcare/spray.jpg",
   },
 ];
 
@@ -933,7 +933,7 @@ modalmeat.forEach((products) => {
   meatModal.appendChild(meatCard);
 });
 
-modalproduce.forEach((products) => {
+modalfruit.forEach((products) => {
   var produceCard = document.createElement("div");
   produceCard.className = "card card-block mx-2 text-center mb-2";
 
@@ -960,7 +960,7 @@ modalproduce.forEach((products) => {
   produceCard.appendChild(producePrice);
   produceCard.appendChild(produceButton);
 
-  produceModal.appendChild(produceCard);
+  fruitModal.appendChild(produceCard);
 });
 
 modalcleaners.forEach((products) => {
@@ -993,7 +993,7 @@ modalcleaners.forEach((products) => {
   cleanersModal.appendChild(cleanersCard);
 });
 
-modalpaper.forEach((products) => {
+modalvege.forEach((products) => {
   var paperCard = document.createElement("div");
   paperCard.className = "card card-block mx-2 text-center mb-2";
 
@@ -1020,7 +1020,7 @@ modalpaper.forEach((products) => {
   paperCard.appendChild(paperPrice);
   paperCard.appendChild(paperButton);
 
-  paperModal.appendChild(paperCard);
+  vegeModal.appendChild(paperCard);
 });
 
 modalpersonalCareProducts.forEach((products) => {
@@ -1053,35 +1053,35 @@ modalpersonalCareProducts.forEach((products) => {
   personalCareModal.appendChild(personalCareCard);
 });
 
-modalothers.forEach((products) => {
-  var othersCard = document.createElement("div");
-  othersCard.className = "card card-block mx-2 text-center mb-2";
+// modalothers.forEach((products) => {
+//   var othersCard = document.createElement("div");
+//   othersCard.className = "card card-block mx-2 text-center mb-2";
 
-  var othersPhoto = document.createElement("img");
-  othersPhoto.className = "card-img-top";
-  othersPhoto.src = products.img;
-  othersPhoto.style.height = "9em";
+//   var othersPhoto = document.createElement("img");
+//   othersPhoto.className = "card-img-top";
+//   othersPhoto.src = products.img;
+//   othersPhoto.style.height = "9em";
 
-  var othersButton = document.createElement("button");
-  othersButton.className = "add-to-cart-button btn btn-success";
-  othersButton.textContent = "Add to List";
-  addtolist(othersButton, products.name, products.price);
+//   var othersButton = document.createElement("button");
+//   othersButton.className = "add-to-cart-button btn btn-success";
+//   othersButton.textContent = "Add to List";
+//   addtolist(othersButton, products.name, products.price);
 
-  var othersName = document.createElement("h6");
-  othersName.className = "card-title";
-  othersName.textContent = products.name;
+//   var othersName = document.createElement("h6");
+//   othersName.className = "card-title";
+//   othersName.textContent = products.name;
 
-  var othersPrice = document.createElement("p");
-  othersPrice.className = "card-text";
-  othersPrice.textContent = "RM " + products.price.toFixed(2);
+//   var othersPrice = document.createElement("p");
+//   othersPrice.className = "card-text";
+//   othersPrice.textContent = "RM " + products.price.toFixed(2);
 
-  othersCard.appendChild(othersPhoto);
-  othersCard.appendChild(othersName);
-  othersCard.appendChild(othersPrice);
-  othersCard.appendChild(othersButton);
+//   othersCard.appendChild(othersPhoto);
+//   othersCard.appendChild(othersName);
+//   othersCard.appendChild(othersPrice);
+//   othersCard.appendChild(othersButton);
 
-  othersModal.appendChild(othersCard);
-});
+//   othersModal.appendChild(othersCard);
+// });
 
 const searchButton = document.querySelector(".search-btn");
 
