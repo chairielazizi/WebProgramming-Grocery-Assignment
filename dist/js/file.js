@@ -301,11 +301,11 @@ function addtolist(button, productname, productprice) {
       var paper = document.getElementById("list_items");
 
       var productAdded =
-        '<li class="list-group-item" id="li' +
+        '<li class="list-group-item mx-4 px-2px py-2px" id="li' +
         productname +
-        '"><div class="inlist width-auto"><div class="row"><div class="col px-0" id="divinrowname">' +
+        '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' +
         productname +
-        '</div><div class="col px-0 float right mx-4" id="divinrowprice">RM ' +
+        '</div><div class="col px-0 float right my-auto mx-2" id="divinrowprice">RM ' +
         productprice.toFixed(2) +
         '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' +
         productname +
