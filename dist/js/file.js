@@ -334,12 +334,17 @@ function addtolist(button, productname, productprice) {
       minusbutton.addEventListener("click", function () {
         minusitem(productname);
       });
+      var deletebutton = document.getElementById("Bin" + productname);
+    deletebutton.addEventListener("click", function () {
+      var result = confirm("Remove this product?");
+      if (result) {
+        delitemlist(productname);
+      }
+      
+    });
     }
 
-    var deletebutton = document.getElementById("Bin" + productname);
-    deletebutton.addEventListener("click", function () {
-      delitemlist(productname);
-    });
+    
   });
 }
 
@@ -364,17 +369,20 @@ function additem(productname) {
 
 function minusitem(productname) {
   totalprice -= list[productname].price;
-  list[productname].total -= 1;
-  document.getElementById("total-price-value").innerText = totalprice.toFixed(
-    2
-  );
-  console.log(totalprice.toFixed(2));
-  document.getElementById("multiplier" + productname).innerText =
-    list[productname].total;
-
-  if (list[productname].total == 0) {
-    delete list[productname];
-    document.getElementById("li" + productname).remove();
+  if (list[productname].total == 1) {
+    var result = confirm("Remove this product?");
+    if (result) {
+      delete list[productname];
+      document.getElementById("li" + productname).remove();
+    }
+  } else {
+    list[productname].total -= 1;
+    document.getElementById("total-price-value").innerText = totalprice.toFixed(
+      2
+    );
+    console.log(totalprice.toFixed(2));
+    document.getElementById("multiplier" + productname).innerText =
+      list[productname].total;
   }
 }
 
@@ -385,6 +393,6 @@ function toggleCart() {
 }
 
 function toggleCategories() {
-  var sidebar = document.querySelector('#sidebar')  
+  var sidebar = document.querySelector('#sidebar')
   sidebar.classList.toggle("display-sidebar")
 }
