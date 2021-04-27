@@ -335,16 +335,16 @@ function addtolist(button, productname, productprice) {
         minusitem(productname);
       });
       var deletebutton = document.getElementById("Bin" + productname);
-    deletebutton.addEventListener("click", function () {
-      var result = confirm("Remove this product?");
-      if (result) {
-        delitemlist(productname);
-      }
-      
-    });
+      deletebutton.addEventListener("click", function () {
+        var result = confirm("Are you sure you want to remove "+ productname +" ?");
+        if (result) {
+          delitemlist(productname);
+        }
+
+      });
     }
 
-    
+
   });
 }
 
@@ -370,7 +370,7 @@ function additem(productname) {
 function minusitem(productname) {
   totalprice -= list[productname].price;
   if (list[productname].total == 1) {
-    var result = confirm("Remove this product?");
+    var result = confirm("Are you sure you want to remove "+ productname +" ?");
     if (result) {
       delete list[productname];
       document.getElementById("li" + productname).remove();
