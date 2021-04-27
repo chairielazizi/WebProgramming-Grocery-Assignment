@@ -303,19 +303,19 @@ function addtolist(button, productname, productprice) {
       var productAdded =
         '<li class="list-group-item" id="li' +
         productname +
-        '"><div class="inlist width-auto"><div class="row"><div class="col" id="divinrowname">' +
+        '"><div class="inlist width-auto"><div class="row"><div class="col px-0" id="divinrowname">' +
         productname +
-        '</div><div class="col" id="divinrowprice">RM ' +
+        '</div><div class="col px-0 float right mx-4" id="divinrowprice">RM ' +
         productprice.toFixed(2) +
-        '</div><div class="col " id="minusbutton"> <a href="#"><img id="Minus' +
+        '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' +
         productname +
-        '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col px-0 mx-auto" id="multipliervalue"><span id="multiplier' +
+        '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col px-0 m-auto" id="multipliervalue"><span id="multiplier' +
         productname +
         '"> ' +
         list[productname].total +
-        '</span></div><div class="col px-0" id="plusbutton"><a href="#"><img id="Add' +
+        '</span></div><div class="col px-0 mx-2" id="plusbutton"><a href="#"><img id="Add' +
         productname +
-        '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col px-0" id= id="deletebutton"><a href="#"><img id="Bin' +
+        '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col px-0 ml-2 mr-2 float-right" id="deletebutton"><a href="#"><img id="Bin' +
         productname +
         '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 

@@ -301,7 +301,7 @@ input {
 }
 
 #divinrowprice{
-    display: inline-block;
+    max-width: 50px;
     white-space: nowrap;
 }
 
@@ -319,6 +319,7 @@ input {
 
 #deletebutton{
     max-width: 28px;
+    float: right;
     /* padding-top: 100%; */
 }
 
