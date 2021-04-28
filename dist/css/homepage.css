@@ -293,6 +293,16 @@ input {
     }
 }
 
+.nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
 #divinrowname{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -326,4 +336,15 @@ input {
 #multipliervalue{
     text-align: center;
     max-width: 40px;
+}
+
+.delete-list-btn{
+    border: none;
+    background: none;
+    padding-right: 0px;
+}
+.add-tab-btn{
+    /* border: none; */
+    background: none;
+    padding: 0px;
 }

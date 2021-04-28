@@ -4,6 +4,8 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="dist/css/homepage.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,8 +17,9 @@
   <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
 
   <ul id="testnav" class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">List 1</a></li>
-    <li id="addtab"><a data-toggle="tab" href="#addnewlist"  onclick="return togglelist('addnewlist')"> + </a></li>
+    <li class="" id="initialtab" ><a class="nav-link active"data-toggle="tab" href="#home">List 1 <button class="delete-list-btn" onclick="return deletetab('initialtab')">❌</button></a></li>
+
+    <li id="addtab"><a href="#" onclick="return addlist()">➕</a></li>
   </ul>
 
   <div class="tab-content">
@@ -24,9 +27,10 @@
       <h3>HOME</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
-    <div id="addnewlist" class="tab-pane fade" onclick="return togglelist('addnewlist')">
-        <p>k</p>
-    </div>
+    <div id="menu1" class="tab-pane fade in active">
+        <h3>booksdafds</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
   </divks>
 </div>
 <script src="dist/js/file.js"></script>

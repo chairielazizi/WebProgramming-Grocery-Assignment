@@ -7,8 +7,9 @@ const cartContent = document.querySelector(".cart-content");
 const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 var list = {};
-var currentlist;
-
+var currentlist = {};
+var numoftab = 1;
+currentlist[numoftab]="tabdiv"+numoftab;
 const frozen = [
   {
     name: "Waffles",
@@ -337,7 +338,7 @@ function addtolist(button, productname, productprice) {
       });
       var deletebutton = document.getElementById("Bin" + productname);
       deletebutton.addEventListener("click", function () {
-        var result = confirm("Are you sure you want to remove "+ productname +" ?");
+        var result = confirm("Are you sure you want to remove " + productname + " ?");
         if (result) {
           delitemlist(productname);
         }
@@ -371,7 +372,7 @@ function additem(productname) {
 function minusitem(productname) {
   totalprice -= list[productname].price;
   if (list[productname].total == 1) {
-    var result = confirm("Are you sure you want to remove "+ productname +" ?");
+    var result = confirm("Are you sure you want to remove " + productname + " ?");
     if (result) {
       delete list[productname];
       document.getElementById("li" + productname).remove();
@@ -398,18 +399,22 @@ function toggleCategories() {
   sidebar.classList.toggle("display-sidebar")
 }
 
-function togglelist(state) {
 
-  currentlist = state;
+function addlist() {
+  numoftab += 1;
   var testlist = document.getElementById("addtab");
-  if (state == 'addnewlist'){
-    console.log(state);
-    // alert(state);
-    var newlist = '<li><a data-toggle="tab" href="#menu1">Menu 2</a></li>';
 
-    testlist.insertAdjacentHTML("beforebegin", newlist);
-  }
+  var newlist = '<li id="tab' + numoftab + '"><a class="nav-link" data-toggle="tab" href="#tabdiv1">Menu 2 <button id="tab' + numoftab + 'btn"class="delete-list-btn">❌</button></a></li>';
+  testlist.insertAdjacentHTML("beforebegin", newlist);
+  document.getElementById("tab" + numoftab + "btn").addEventListener("click", function () {
+    deletetab("tab" + numoftab);
 
+  });
+  console.log(numoftab);
+}
+function deletetab(deletedid) {
+  document.getElementById(deletedid).remove();
+  
 }
 // "afterbegin"
 // "afterend"
