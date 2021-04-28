@@ -7,6 +7,7 @@ const cartContent = document.querySelector(".cart-content");
 const cartItems = document.querySelector(".cart-items");
 var totalprice = 0; //total price of the list
 var list = {};
+var currentlist;
 
 const frozen = [
   {
@@ -396,3 +397,21 @@ function toggleCategories() {
   var sidebar = document.querySelector('#sidebar')
   sidebar.classList.toggle("display-sidebar")
 }
+
+function togglelist(state) {
+
+  currentlist = state;
+  var testlist = document.getElementById("addtab");
+  if (state == 'addnewlist'){
+    console.log(state);
+    // alert(state);
+    var newlist = '<li><a data-toggle="tab" href="#menu1">Menu 2</a></li>';
+
+    testlist.insertAdjacentHTML("beforebegin", newlist);
+  }
+
+}
+// "afterbegin"
+// "afterend"
+// "beforebegin"
+// "beforeend"
