@@ -402,17 +402,19 @@ function toggleCategories() {
 
 function addlist() {
   numoftab += 1;
+  var currenttabnum = numoftab;
   var testlist = document.getElementById("addtab");
 
   var newlist = '<li id="tab' + numoftab + '"><a class="nav-link" data-toggle="tab" href="#tabdiv1">Menu 2 <button id="tab' + numoftab + 'btn"class="delete-list-btn">❌</button></a></li>';
   testlist.insertAdjacentHTML("beforebegin", newlist);
   document.getElementById("tab" + numoftab + "btn").addEventListener("click", function () {
-    deletetab("tab" + numoftab);
-
+    deletetab("tab" + currenttabnum);
+console.log("tab" + currenttabnum);
   });
-  console.log(numoftab);
+  console.log(currenttabnum);
 }
 function deletetab(deletedid) {
+  console.log(deletedid);
   document.getElementById(deletedid).remove();
   
 }
