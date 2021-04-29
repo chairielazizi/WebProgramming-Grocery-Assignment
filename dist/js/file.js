@@ -412,6 +412,7 @@ function addlist() {
   whichtabiam.addEventListener("click", function () {
     whatiscurrenttab("list_itemstab" + currenttabnum);
   });
+
   totalprice["list_itemstab"+currenttabnum] = 0 ;
   console.log(totalprice["list_itemstab"+currenttabnum]);
 
@@ -419,14 +420,14 @@ function addlist() {
 
   divreference.insertAdjacentHTML("beforeend", newdiv);
   console.log(divreference); 
-  
+
   document.getElementById("tab" + numoftab + "btn").addEventListener("click", function () {
 
     var result = confirm("Are you sure you want to remove List " + currenttabnum + " ?");
     if (result) {
       deletetab("tab" + currenttabnum,"tabdiv" + currenttabnum);
     }
-    
+
   });
 
   
