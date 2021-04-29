@@ -1034,3 +1034,6 @@ modalpersonalCareProducts.forEach((products) => {
   personalCareModal.appendChild(personalCareCard);
 });
 
+function deleteproduct(){
+  
+}

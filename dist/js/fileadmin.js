@@ -70,11 +70,11 @@ const canned = [
     price: "RM7.60",
     img: "./images/products/canned/pineapple.jfif",
   },
-  {
-    name: "Baked Beans",
-    price: "RM10.00",
-    img: "./images/products/canned/bakedbeans.jfif",
-  },
+  // {
+  //   name: "Baked Beans",
+  //   price: "RM10.00",
+  //   img: "./images/products/canned/bakedbeans.jfif",
+  // },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
   // { name: 'Rendang', price: 'RM9.00' },
@@ -108,11 +108,11 @@ const beverages = [
     price: "RM7.60",
     img: "./images/products/beverages/carlsberg.jpg",
   },
-  {
-    name: "Sagota",
-    price: "RM10.00",
-    img: "./images/products/beverages/sagota.jpg",
-  },
+  // {
+  //   name: "Sagota",
+  //   price: "RM10.00",
+  //   img: "./images/products/beverages/sagota.jpg",
+  // },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
   // { name: 'Asahi', price: 'RM9.00' },
@@ -146,11 +146,11 @@ const personalCareProducts = [
     price: "RM7.60",
     img: "./images/products/personalcare/hairwax.jfif",
   },
-  {
-    name: "Razors",
-    price: "RM10.00",
-    img: "./images/products/personalcare/razors.jpg",
-  },
+  // {
+  //   name: "Razors",
+  //   price: "RM10.00",
+  //   img: "./images/products/personalcare/razors.jpg",
+  // },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
   // { name: 'Deodorant Spray', price: 'RM9.00' },
@@ -158,9 +158,10 @@ const personalCareProducts = [
   // { name: 'Body Wash', price: 'RM13.00' },
 ];
 
-for (var i = 0; i < frozen.length; i++) {
+for (var i = 0; i < frozen.length-1; i++) {
   var frozenFoodCard = document.createElement("div");
   frozenFoodCard.className = "card card-block mx-2 text-center";
+  frozenFoodCard.id = frozen[i].name + "card";
 
   var frozenFoodPhoto = document.createElement("img");
   frozenFoodPhoto.className = "card-img-top";
@@ -170,7 +171,7 @@ for (var i = 0; i < frozen.length; i++) {
   var frozenFoodButton = document.createElement("button");
   frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
   frozenFoodButton.textContent = "Delete";
-  
+  deleteproduct(frozenFoodButton,frozen,i,frozen[i].name);
   
   
 
@@ -190,9 +191,10 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoods.appendChild(frozenFoodCard);
 }
 
-beverages.forEach(function (products) {
+beverages.forEach(function (products,i) {
   var beverageCard = document.createElement("div");
   beverageCard.className = "card card-block mx-2 text-center";
+  beverageCard.id = products.name + "card";
 
   var beveragePhoto = document.createElement("img");
   beveragePhoto.className = "card-img-top";
@@ -202,6 +204,7 @@ beverages.forEach(function (products) {
   var beverageButton = document.createElement("button");
   beverageButton.className = "delete-button btn btn-danger";
   beverageButton.textContent = "Delete";
+  deleteproduct(beverageButton,beverages,i,products.name);
 
   var deleteCheckBox = document.createElement("input")
   deleteCheckBox.className = "checkbox";
@@ -223,9 +226,10 @@ beverages.forEach(function (products) {
   beverage.appendChild(beverageCard);
 });
 
-canned.forEach(function (products) {
+canned.forEach(function (products,i) {
   var cannedGoodsCard = document.createElement("div");
   cannedGoodsCard.className = "card card-block mx-2 text-center";
+  cannedGoodsCard.id = products.name + "card";
 
   var cannedGoodsPhoto = document.createElement("img");
   cannedGoodsPhoto.className = "card-img-top";
@@ -235,6 +239,7 @@ canned.forEach(function (products) {
   var cannedButton = document.createElement("button");
   cannedButton.className = "delete-button btn btn-danger";
   cannedButton.textContent = "Delete";
+  deleteproduct(cannedButton,beverages,i,products.name);
 
 
   var deleteCheckBox = document.createElement("input")
@@ -256,9 +261,10 @@ canned.forEach(function (products) {
   cannedGoods.appendChild(cannedGoodsCard);
 });
 
-personalCareProducts.forEach(function (products) {
+personalCareProducts.forEach(function (products,i) {
   var personalCareCard = document.createElement("div");
   personalCareCard.className = "card card-block mx-2 text-center";
+  personalCareCard.id = products.name + "card";
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
@@ -269,6 +275,7 @@ personalCareProducts.forEach(function (products) {
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "delete-button btn btn-danger";
   personalCareButton.textContent = "Delete";
+  deleteproduct(personalCareButton,beverages,i,products.name);
   
   
 
@@ -289,3 +296,15 @@ personalCareProducts.forEach(function (products) {
 });
 
 
+function deleteproduct(deletebutton,arr,i,name){
+  deletebutton.addEventListener("click",function (){
+    
+  var result = confirm("Are you sure you want to remove this product from the store ?");
+  if (result) {
+    arr.splice(i,1);
+    var deletedcard =  document.getElementById(name+ "card");
+    console.log(deletedcard);
+    deletedcard.remove();
+  }
+  });
+}
