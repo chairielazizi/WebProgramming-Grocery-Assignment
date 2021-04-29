@@ -707,9 +707,10 @@ const modalbeverages = [
     },
   ];
 
-modalbeverages.forEach((products) => {
+modalbeverages.forEach(function (products,i){
   var beverageCard = document.createElement("div");
   beverageCard.className = "card card-block mx-2 text-center mb-2";
+  beverageCard.id = products.name + "model";
 
   var beveragePhoto = document.createElement("img");
   beveragePhoto.className = "card-img-top";
@@ -719,6 +720,7 @@ modalbeverages.forEach((products) => {
   var beverageButton = document.createElement("button");
   beverageButton.className = "delete-button btn btn-danger";
   beverageButton.textContent = "Delete";
+  deleteproduct(beverageButton,modalbeverages,i,products.name);
 
 
   var beverageName = document.createElement("h6");
@@ -736,9 +738,10 @@ modalbeverages.forEach((products) => {
   beveragesModal.appendChild(beverageCard);
 });
 
-modalbreadbakery.forEach((products) => {
+modalbreadbakery.forEach(function (products,i){
   var breadBakeryCard = document.createElement("div");
   breadBakeryCard.className = "card card-block mx-2 text-center mb-2";
+  breadBakeryCard.id = products.name + "model";
 
   var breadBakeryPhoto = document.createElement("img");
   breadBakeryPhoto.className = "card-img-top";
@@ -746,9 +749,9 @@ modalbreadbakery.forEach((products) => {
   breadBakeryPhoto.style.height = "9em";
 
   var breadBakeryButton = document.createElement("button");
-  breadBakeryButton.className =
-    "delete-button btn btn-danger align-self-end";
-  breadBakeryButton.textContent = "Add to List";
+  breadBakeryButton.className = "delete-button btn btn-danger align-self-end";
+  breadBakeryButton.textContent = "Delete";
+  deleteproduct(breadBakeryButton,modalbreadbakery,i,products.name);
   
   var breadBakeryName = document.createElement("h6");
   breadBakeryName.className = "card-title";
@@ -766,9 +769,10 @@ modalbreadbakery.forEach((products) => {
   breadbakeryModal.appendChild(breadBakeryCard);
 });
 
-modalcanned.forEach((products) => {
+modalcanned.forEach(function (products,i){
   var cannedGoodsCard = document.createElement("div");
   cannedGoodsCard.className = "card card-block mx-2 text-center mb-2";
+  cannedGoodsCard.id = products.name + "model";
 
   var cannedGoodsPhoto = document.createElement("img");
   cannedGoodsPhoto.className = "card-img-top";
@@ -778,6 +782,7 @@ modalcanned.forEach((products) => {
   var cannedButton = document.createElement("button");
   cannedButton.className = "delete-button btn btn-danger";
   cannedButton.textContent = "Delete";
+  deleteproduct(cannedButton,modalcanned,i,products.name);
   
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
@@ -795,9 +800,10 @@ modalcanned.forEach((products) => {
   cannedModal.appendChild(cannedGoodsCard);
 });
 
-modaldairy.forEach((products) => {
+modaldairy.forEach(function (products,i){
   var dairyCard = document.createElement("div");
   dairyCard.className = "card card-block mx-2 text-center mb-2";
+  dairyCard.id = products.name + "model";
 
   var dairyPhoto = document.createElement("img");
   dairyPhoto.className = "card-img-top";
@@ -807,6 +813,7 @@ modaldairy.forEach((products) => {
   var dairyButton = document.createElement("button");
   dairyButton.className = "delete-button btn btn-danger";
   dairyButton.textContent = "Delete";
+  deleteproduct(dairyButton,modaldairy,i,products.name);
   
 
   var dairyName = document.createElement("h6");
@@ -825,9 +832,10 @@ modaldairy.forEach((products) => {
   dairyModal.appendChild(dairyCard);
 });
 
-modaldrybaking.forEach((products) => {
+modaldrybaking.forEach(function (products,i){
   var drybakingCard = document.createElement("div");
   drybakingCard.className = "card card-block mx-2 text-center mb-2";
+  drybakingCard.id = products.name + "model";
 
   var drybakingPhoto = document.createElement("img");
   drybakingPhoto.className = "card-img-top";
@@ -837,7 +845,7 @@ modaldrybaking.forEach((products) => {
   var drybakingButton = document.createElement("button");
   drybakingButton.className = "delete-button btn btn-danger";
   drybakingButton.textContent = "Delete";
-  
+  deleteproduct(drybakingButton,modaldrybaking,i,products.name);
 
   var drybakingName = document.createElement("h6");
   drybakingName.className = "card-title";
@@ -855,9 +863,10 @@ modaldrybaking.forEach((products) => {
   drybakingModal.appendChild(drybakingCard);
 });
 
-modalfrozen.forEach((products) => {
+modalfrozen.forEach(function (products,i){
   var frozenFoodCard = document.createElement("div");
   frozenFoodCard.className = "card card-block mx-2 text-center mb-2";
+  frozenFoodCard.id = products.name + "model";
 
   var frozenFoodPhoto = document.createElement("img");
   frozenFoodPhoto.className = "card-img-top";
@@ -865,10 +874,9 @@ modalfrozen.forEach((products) => {
   frozenFoodPhoto.style.height = "9em";
 
   var frozenFoodButton = document.createElement("button");
-  frozenFoodButton.className =
-    "delete-button btn btn-danger align-self-end";
+  frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
   frozenFoodButton.textContent = "Delete";
-  
+  deleteproduct(frozenFoodButton,modalfrozen,i,products.name);
 
   var frozenFoodName = document.createElement("h6");
   frozenFoodName.className = "card-title";
@@ -886,9 +894,10 @@ modalfrozen.forEach((products) => {
   frozenModal.appendChild(frozenFoodCard);
 });
 
-modalmeat.forEach((products) => {
+modalmeat.forEach(function (products,i) {
   var meatCard = document.createElement("div");
   meatCard.className = "card card-block mx-2 text-center mb-2";
+  meatCard.id = products.name + "model";
 
   var meatPhoto = document.createElement("img");
   meatPhoto.className = "card-img-top";
@@ -898,6 +907,7 @@ modalmeat.forEach((products) => {
   var meatButton = document.createElement("button");
   meatButton.className = "delete-button btn btn-danger";
   meatButton.textContent = "Delete";
+  deleteproduct(meatButton,modalmeat,i,products.name);
   
 
   var meatName = document.createElement("h6");
@@ -916,9 +926,10 @@ modalmeat.forEach((products) => {
   meatModal.appendChild(meatCard);
 });
 
-modalfruit.forEach((products) => {
+modalfruit.forEach(function (products,i){
   var produceCard = document.createElement("div");
   produceCard.className = "card card-block mx-2 text-center mb-2";
+  produceCard.id = products.name + "model";
 
   var producePhoto = document.createElement("img");
   producePhoto.className = "card-img-top";
@@ -928,7 +939,7 @@ modalfruit.forEach((products) => {
   var produceButton = document.createElement("button");
   produceButton.className = "delete-button btn btn-danger";
   produceButton.textContent = "Delete";
-
+  deleteproduct(produceButton,modalfruit,i,products.name);
 
   var produceName = document.createElement("h6");
   produceName.className = "card-title";
@@ -946,9 +957,10 @@ modalfruit.forEach((products) => {
   fruitModal.appendChild(produceCard);
 });
 
-modalcleaners.forEach((products) => {
+modalcleaners.forEach(function (products,i){
   var cleanersCard = document.createElement("div");
   cleanersCard.className = "card card-block mx-2 text-center mb-2";
+  cleanersCard.id = products.name + "model";
 
   var cleanersPhoto = document.createElement("img");
   cleanersPhoto.className = "card-img-top";
@@ -958,7 +970,7 @@ modalcleaners.forEach((products) => {
   var cleanersButton = document.createElement("button");
   cleanersButton.className = "delete-button btn btn-danger";
   cleanersButton.textContent = "Delete";
-  
+  deleteproduct(cleanersButton,modalcleaners,i,products.name);
 
   var cleanersName = document.createElement("h6");
   cleanersName.className = "card-title";
@@ -976,9 +988,10 @@ modalcleaners.forEach((products) => {
   cleanersModal.appendChild(cleanersCard);
 });
 
-modalvege.forEach((products) => {
+modalvege.forEach(function (products,i){
   var paperCard = document.createElement("div");
   paperCard.className = "card card-block mx-2 text-center mb-2";
+  paperCard.id = products.name + "model";
 
   var paperPhoto = document.createElement("img");
   paperPhoto.className = "card-img-top";
@@ -988,6 +1001,7 @@ modalvege.forEach((products) => {
   var paperButton = document.createElement("button");
   paperButton.className = "delete-button btn btn-danger";
   paperButton.textContent = "Delete";
+  deleteproduct(paperButton,modalvege,i,products.name);
  
   var paperName = document.createElement("h6");
   paperName.className = "card-title";
@@ -1005,9 +1019,10 @@ modalvege.forEach((products) => {
   vegeModal.appendChild(paperCard);
 });
 
-modalpersonalCareProducts.forEach((products) => {
+modalpersonalCareProducts.forEach(function (products,i){
   var personalCareCard = document.createElement("div");
   personalCareCard.className = "card card-block mx-2 text-center mb-2";
+  personalCareCard.id = products.name + "model";
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
@@ -1016,7 +1031,8 @@ modalpersonalCareProducts.forEach((products) => {
 
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "delete-button btn btn-danger";
-  personalCareButton.textContent = "delete";
+  personalCareButton.textContent = "Delete";
+  deleteproduct(personalCareButton,modalpersonalCareProducts,i,products.name);
   
   var personalCareName = document.createElement("h6");
   personalCareName.className = "card-title";
@@ -1034,6 +1050,15 @@ modalpersonalCareProducts.forEach((products) => {
   personalCareModal.appendChild(personalCareCard);
 });
 
-function deleteproduct(){
-  
+function deleteproduct(deletebutton,arr,i,name){
+  deletebutton.addEventListener("click",function (){
+    
+  var result = confirm("Are you sure you want to remove this product from the store ?");
+  if (result) {
+    arr.splice(i,1);
+    var deletedcard =  document.getElementById(name+ "model");
+    console.log(deletedcard);
+    deletedcard.remove();
+  }
+  });
 }
