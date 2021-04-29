@@ -240,8 +240,6 @@ canned.forEach(function (products) {
 
   var deleteCheckBox = document.createElement("input")
   deleteCheckBox.className = "checkbox";
-  
-
 
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
