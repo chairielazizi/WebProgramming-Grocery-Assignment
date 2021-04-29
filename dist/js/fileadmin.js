@@ -171,6 +171,9 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
   frozenFoodButton.textContent = "Delete";
   
+  var deleteCheckBox = document.createElement("input")
+  deleteCheckBox.type = "checkbox";
+  
 
   var frozenFoodName = document.createElement("h6");
   frozenFoodName.className = "card-title";
@@ -200,6 +203,9 @@ beverages.forEach(function (products) {
   var beverageButton = document.createElement("button");
   beverageButton.className = "delete-button btn btn-danger";
   beverageButton.textContent = "Delete";
+
+  var deleteCheckBox = document.createElement("input")
+  deleteCheckBox.className = "checkbox";
   
 
   var beverageName = document.createElement("h6");
@@ -230,7 +236,12 @@ canned.forEach(function (products) {
   var cannedButton = document.createElement("button");
   cannedButton.className = "delete-button btn btn-danger";
   cannedButton.textContent = "Delete";
+
+
+  var deleteCheckBox = document.createElement("input")
+  deleteCheckBox.className = "checkbox";
   
+
 
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
@@ -258,6 +269,10 @@ personalCareProducts.forEach(function (products) {
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "delete-button btn btn-danger";
   personalCareButton.textContent = "Delete";
+
+  var deleteCheckBox = document.createElement("input")
+  deleteCheckBox.className = "checkbox";
+  
   
 
   var personalCareName = document.createElement("h6");

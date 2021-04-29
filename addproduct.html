@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel= "stylesheet" type="text/css" href="dist\css\addproduct.css">
+
+	<script type="text/javascript"src="profile.js"></script>
+    
+</head>
+<body>
+    <div class="text-dark">
+        
+        <header class="p-2 text-light" style="background-color: #0c143c">
+            <img src="images/trolimart rect2.png" alt="TroliMart Logo" width="180" class="ml-4">
+        </header>
+
+    
+    <main class="container">
+      <br>
+        
+        <div class="row">
+          <div class="col-2">
+
+          </div>
+          <div class="col-sm" style="background-color: #D0D0D0">
+            <h3 class="text-center pt-2">Add Product</h3>
+            <hr>
+            <form width=20%>
+			<div class="form-row">
+                <div class="col">
+                  <div class="profile-pic-div">
+            <img src="images/user.png" id="profilePic"></img>
+            <input type= "file" name="" id= "file" accept= "image/*">
+            <label id="editPic" for= "file"> PRODUCT PIC </label>
+          </div>
+                </div>
+              </div>
+			  <br>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Product Name" id="productName" required>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <input list="browsers" name="browser" id="browser" class="form-control" placeholder="Categories" id="Categories" required>
+					<datalist id="browsers">
+						<option value="Beverages">
+						<option value="Bread/Bakery">
+						<option value="Canned/Jarred Goods">
+						<option value="Dairy">
+						<option value="Dry/Baking Goods">
+						<option value="Frozen Foods">
+						<option value="Meat">
+						<option value="Produce">
+						<option value="Cleaners">
+						<option value="Paper Goods">
+						<option value="Personal Care">
+						<option value="Others">
+					</datalist>
+                </div>
+              </div>
+			  <br>
+			  <div class="form-row">
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Price" id="Price" required>
+                </div>
+              </div>
+              
+             
+             
+              
+              <div class="form-group text-center">
+                <p id="error" class="text-danger"></p>
+                <button id="myButton" class="btn btn-secondary btn-block" id="submitForm">ADD NOW</button>
+               </div>
+            </form>
+            
+          </div> <!--end of col no 2-->
+          <div class="col-2">
+            
+          </div>
+
+        </div>
+
+        </div>
+    </main>
+    
+    
+    </div> <!-- end of container-->
+	
+	<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+         alert("Product Added Successfully !");
+		 location.reload();
+    };
+</script>
+	<script type="text/javascript" src="dist\js\addproduct.js"></script>
+    <script type="text/javascript" src="dist\js\signup.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
