@@ -837,7 +837,7 @@ modaldrybaking.forEach((products) => {
   var drybakingButton = document.createElement("button");
   drybakingButton.className = "delete-button btn btn-danger";
   drybakingButton.textContent = "Delete";
-  addtolist(drybakingButton, products.name, products.price);
+  
 
   var drybakingName = document.createElement("h6");
   drybakingName.className = "card-title";
