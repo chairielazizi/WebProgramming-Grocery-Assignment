@@ -416,7 +416,7 @@ function addlist() {
   totalprice["list_itemstab"+currenttabnum] = 0 ;
   console.log(totalprice["list_itemstab"+currenttabnum]);
 
-  var newdiv = '<div id="tabdiv' + currenttabnum + '" class="tab-pane fade ml-15px"><div class="cart-items overflow-auto"><ol id="list_itemstab' + currenttabnum + '" class="list-group list-group-flush"></ol></div><div class="row total-price-container"><div class="col "><h5>Total price: </h5></div><div class="col align-right"><h5>RM <span id="list_itemstab' + currenttabnum +'-total-price-value">0.00 hello</span></h5></div></div></div>';
+  var newdiv = '<div id="tabdiv' + currenttabnum + '" class="tab-pane fade ml-15px"><div class="cart-items overflow-auto"><ol id="list_itemstab' + currenttabnum + '" class="list-group list-group-flush"></ol></div><div class="row total-price-container"><div class="col "><h5>Total price: </h5></div><div class="col align-right"><h5>RM <span id="list_itemstab' + currenttabnum +'-total-price-value">0.00</span></h5></div></div></div>';
 
   divreference.insertAdjacentHTML("beforeend", newdiv);
   console.log(divreference); 

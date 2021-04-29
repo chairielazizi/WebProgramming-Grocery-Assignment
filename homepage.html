@@ -474,7 +474,8 @@
       <!-- cart -->
       <div class="cart">
         <h3 class='cart-header text-center'>📝 List 📝</h3>
-        <ul id="testnav" class="nav nav-tabs justify-content-center">
+        <div>
+          <ul id="testnav" class="nav nav-tabs justify-content-center">
           <li class="" id="initialtab"><a class="nav-link active" data-toggle="tab" aria-current="page" href="#tabdiv1"
               onclick="whatiscurrenttab('list_itemstab1')">List 1 <button class="delete-list-btn"
                 onclick="return  deletedefaulttab('tabdiv1','initialtab');">❌</button></a></li>
@@ -482,9 +483,10 @@
           <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn"
                 onclick="return addlist()"> ➕ </button></a></li>
         </ul>
+        </div>
         <!-- inside the list -->
-        <div id="contentd" class="tab-content">
 
+        <div id="contentd" class="tab-content">
           <div id="tabdiv1" class="tab-pane in active ml-15px">
             <div class="cart-items overflow-auto overflow-hidden">
               <ol id="list_itemstab1" class='list-group list-group-flush '>
@@ -492,11 +494,11 @@
               </ol>
             </div>
             <div id="calculatedprice" class="row total-price-container">
-              <div class="col ">
-                Total price:
+              <div class="col px-0 w-20px">
+                <span>Total price:</span> 
               </div>
-              <div class="col justify-content-center">
-                RM <span class="spantotalprice" id="list_itemstab1-total-price-value">0.00</span>
+              <div class="col px-0 w-10px">
+                <span>RM </span> <span class="spantotalprice" id="list_itemstab1-total-price-value">0.00</span>
               </div>
             </div>
           </div>

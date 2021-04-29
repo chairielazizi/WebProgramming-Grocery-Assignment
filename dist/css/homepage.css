@@ -188,12 +188,9 @@ html {
 }
 
 #calculatedprice{
-    background-color: #d2b48c;
+    
 }
 
-#calculatedprice>h5{
-    color:red;
-}
 .view-cart {
     display: flex;
     flex-direction: row
@@ -215,12 +212,12 @@ html {
     width: 120px;
     margin: 0 auto;
 }
-
+/* 
 .total-price-container {
     position: absolute;
     bottom: 0;
     width: 30vw;
-}
+} */
 
 .list-group-item{
     font-size: 14px;
