@@ -172,9 +172,7 @@ html {
     margin-left: 15px;
 }
 
-.cart {
-    margin-top: 10px;
-}
+
  .cart>h3{
     font-size:1.5vw;
  }
@@ -182,13 +180,17 @@ html {
  .cart>ul>li>a{
      font-size: 1vw;
  }
- 
-.spantotalprice{
-    align-self: center;
+
+.cart {
+    max-height: 38vw;
+    margin-top: 10px;
+    overflow-x: hidden;
+    background-color:bisque;
 }
 
 #calculatedprice{
-    
+    padding-top: 3px;
+    text-align: center;
 }
 
 .view-cart {
@@ -219,6 +221,10 @@ html {
     width: 30vw;
 } */
 
+.cart-items{
+    max-height: 30vw;
+    overflow-y: auto;
+}
 .list-group-item{
     font-size: 14px;
 }
@@ -271,6 +277,7 @@ input {
 
 #showCategories {
     display: none;
+
 }
 
 @media screen and (max-width: 380px) {
@@ -289,6 +296,7 @@ input {
 
     .view-cart-text {
         margin-top: -28px;
+        height: 100px;
     }
 
     .main-content {
