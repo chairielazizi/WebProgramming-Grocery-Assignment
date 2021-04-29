@@ -57,10 +57,12 @@ html {
     max-width: 200px;
 }
 
-.jumbotron{
-    width: 1000px;
-    height: 400px;
+.dummy-search-bar {
+    display: flex;
+    flex-direction: row;
+    width: 45rem;
 }
+
 
 .wrapper {
     display: table-cell;

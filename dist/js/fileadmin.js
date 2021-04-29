@@ -171,8 +171,7 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
   frozenFoodButton.textContent = "Delete";
   
-  var deleteCheckBox = document.createElement("input")
-  deleteCheckBox.type = "checkbox";
+  
   
 
   var frozenFoodName = document.createElement("h6");
@@ -263,13 +262,13 @@ personalCareProducts.forEach(function (products) {
 
   var personalCarePhoto = document.createElement("img");
   personalCarePhoto.className = "card-img-top";
+  personalCarePhoto.src = products.img;
+  personalCarePhoto.style.height = "9em";
+
 
   var personalCareButton = document.createElement("button");
   personalCareButton.className = "delete-button btn btn-danger";
   personalCareButton.textContent = "Delete";
-
-  var deleteCheckBox = document.createElement("input")
-  deleteCheckBox.className = "checkbox";
   
   
 
