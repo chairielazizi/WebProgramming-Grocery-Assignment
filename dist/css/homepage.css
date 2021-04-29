@@ -24,9 +24,9 @@ html {
 .carousel {
     /* here you can edit the carousel of homepage*/
     background-color: #18a0fb;
-    width: 90%;
+    width: 1120px;
     height: 200px;
-    margin: auto;
+    margin: none;
 }
 
 #carouselinnerhomepage>.carousel-item>img {
@@ -42,8 +42,10 @@ html {
 }
 
 .categories-content {
-    width: 81vw;
+    max-width: 1120px;
     justify-content: center;
+    margin-top: 20px;
+    padding-top: 0px;
 }
 
 .categories-header {
@@ -131,6 +133,10 @@ html {
     display: table;
     width: 100%;
     height: 100%;
+    padding-bottom: auto;
+    /* min-height: 100px;
+    max-height: 200px; */
+    /* padding-bottom: ; */
 }
 
 .content {
@@ -159,17 +165,35 @@ html {
 }
 
 .display-cart {
-    display: block;
+    display: block; 
 }
 
 .cart-content {
     margin-left: 15px;
 }
 
-.cart-header {
+.cart {
     margin-top: 10px;
 }
+ .cart>h3{
+    font-size:1.5vw;
+ }
 
+ .cart>ul>li>a{
+     font-size: 1vw;
+ }
+ 
+.spantotalprice{
+    align-self: center;
+}
+
+#calculatedprice{
+    background-color: #d2b48c;
+}
+
+#calculatedprice>h5{
+    color:red;
+}
 .view-cart {
     display: flex;
     flex-direction: row
@@ -271,8 +295,10 @@ input {
     }
 
     .main-content {
+        min-height: 100%;
         display: flex;
         flex-direction: column;
+        padding-bottom: 100px;
     }
 
     #sidebar {
@@ -347,4 +373,21 @@ input {
     /* border: none; */
     background: none;
     padding: 0px;
+}
+
+footer{
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    margin-top: 40px;
+    padding: 3px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    position: absolute;
+    position: relative;
+    bottom: 0;
+    
 }

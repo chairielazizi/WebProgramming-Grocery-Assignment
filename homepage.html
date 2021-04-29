@@ -449,7 +449,7 @@
         </div>
       </div>
 
-      <div class="categories categories-content ml-5">
+      <div class="categories categories-content">
         <h3 class='categories-header'>Frozen Foods</h3>
         <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill">
 
@@ -486,17 +486,17 @@
         <div id="contentd" class="tab-content">
 
           <div id="tabdiv1" class="tab-pane in active ml-15px">
-            <div class="cart-items overflow-auto">
+            <div class="cart-items overflow-auto overflow-hidden">
               <ol id="list_itemstab1" class='list-group list-group-flush '>
 
               </ol>
             </div>
-            <div class="row total-price-container">
+            <div id="calculatedprice" class="row total-price-container">
               <div class="col ">
-                <h5>Total price: </h5>
+                Total price:
               </div>
-              <div class="col align-right">
-                <h5>RM <span id="list_itemstab1-total-price-value">0.00</span></h5>
+              <div class="col justify-content-center">
+                RM <span class="spantotalprice" id="list_itemstab1-total-price-value">0.00</span>
               </div>
             </div>
           </div>
@@ -505,9 +505,9 @@
       </div>
     </div>
   </div>
-
-  <footer class="text-center font-italic p-3 pb-4 mt-3 text-light" style="background-color: #0c143c;">
-    <div class="container">
+  <!-- class="text-center font-italic p-3 pb-4 mt-3 text-light bottom-0"  -->
+  <footer style="background-color: #0c143c;">
+    <div class="container bottom-0">
       <div class="row">
         <div class="col-sm">
           <p type="button" data-toggle="collapse" data-target="#collapseContactUs" aria-expanded="false"
