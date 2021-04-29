@@ -29,7 +29,7 @@ const frozen = [
   {
     name: "Instant Pizza",
     price: 9.0,
-    img: "./images/products/frozen/waffle.jpg",
+    img: "./images/products/frozen/pizza.jpg",
   },
   {
     name: "Frozen Vegetables",
