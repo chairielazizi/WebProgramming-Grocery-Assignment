@@ -126,7 +126,7 @@ html {
     width: 30px;
     height: 2px;
     margin: auto 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px co;
 }
 
 .main-content {
@@ -156,7 +156,9 @@ html {
     position: absolute;
     z-index: 100;
     width: 30vw;
-    height: 90vh;
+    min-height: 50vh;
+    max-height: 90vh;
+    height: min-content;
     background-color: whitesmoke;
     right: 0;
     top: 75px;
@@ -175,6 +177,7 @@ html {
 
  .cart>h3{
     font-size:1.5vw;
+    color: white;
  }
 
  .cart>ul>li>a{
@@ -185,12 +188,17 @@ html {
     max-height: 38vw;
     margin-top: 10px;
     overflow-x: hidden;
-    background-color:bisque;
+    /* background-color: #fcebb6; */
+    background-color: #1e285a;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 #calculatedprice{
-    padding-top: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
+    color: white;
 }
 
 .view-cart {
@@ -227,6 +235,9 @@ html {
 }
 .list-group-item{
     font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
 }
 
 #plusbutton{

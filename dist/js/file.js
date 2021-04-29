@@ -303,7 +303,7 @@ function addtolist(button, productname, productprice) {
       var paper = document.getElementById(currenttab);
 
       var productAdded =
-        '<li class="list-group-item mx-4 px-2px py-2px" id="li'+ currenttab +
+        '<li class="list-group-item mx-4" id="li'+ currenttab +
         productname +
         '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' +
         productname +
@@ -355,7 +355,7 @@ function delitemlist(productname) {
   console.log(totalprice[currenttab]+" -= " + list[currenttab + productname].total + " X " + list[currenttab + productname].price);
   document.getElementById("li" + currenttab + productname).remove();
   delete list[currenttab + productname];
-  document.getElementById( currenttab +"-total-price-value").innerText = totalprice[currenttab].toFixed(2);
+  document.getElementById( currenttab +"-total-price-value").innerText = Math.abs(totalprice[currenttab]).toFixed(2);
 }
 
 function additem(productname) {
@@ -382,7 +382,7 @@ function minusitem(productname) {
     document.getElementById("multiplier"+ currenttab + productname).innerText =
       list[currenttab + productname].total;
   }
-  document.getElementById( currenttab + "-total-price-value").innerText = totalprice[currenttab].toFixed(2);
+  document.getElementById( currenttab + "-total-price-value").innerText = Math.abs(totalprice[currenttab]).toFixed(2);
 }
 
 function toggleCart() {
@@ -416,7 +416,7 @@ function addlist() {
   totalprice["list_itemstab"+currenttabnum] = 0 ;
   console.log(totalprice["list_itemstab"+currenttabnum]);
 
-  var newdiv = '<div id="tabdiv' + currenttabnum + '" class="tab-pane fade ml-15px"><div class="cart-items overflow-auto"><ol id="list_itemstab' + currenttabnum + '" class="list-group list-group-flush"></ol></div><div class="row total-price-container"><div class="col "><h5>Total price: </h5></div><div class="col align-right"><h5>RM <span id="list_itemstab' + currenttabnum +'-total-price-value">0.00</span></h5></div></div></div>';
+  var newdiv = '<div id="tabdiv' + currenttabnum + '" class="tab-pane fade ml-15px"><div class="cart-items overflow-auto"><ol id="list_itemstab' + currenttabnum + '" class="list-group list-group-flush"></ol></div><div id="calculatedprice" class="row total-price-container"><div class="col">Total Price: <span>RM </span><span class="spantotalprice" id="list_itemstab' + currenttabnum +'-total-price-value">0.00</span></div></div></div>';
 
   divreference.insertAdjacentHTML("beforeend", newdiv);
   console.log(divreference); 
