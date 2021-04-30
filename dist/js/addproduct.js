@@ -22,7 +22,7 @@ file.addEventListener('change', function(){
 
 document.getElementById("myButton").onclick = function () {
          alert("Product Added Successfully !");
-		 location.href = "adminpage.html";
+		 location.href = "addproduct.html";
     };
 
 
