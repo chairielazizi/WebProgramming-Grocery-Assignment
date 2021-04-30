@@ -90,7 +90,7 @@ input[type="datetime-local"]:focus{
     color: red;
     position: absolute;
     margin: 20px;
-    left: 190px;
+    left: 160px;
     bottom: -8px;
 }
 
