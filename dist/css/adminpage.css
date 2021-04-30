@@ -31,7 +31,7 @@ html {
 }
 
 .categories-content {
-    max-width: 2000px;
+    max-width: 1350px;
     justify-content: center;
     margin-top: 20px;
     padding-top: 0px;
@@ -127,9 +127,9 @@ html {
 }
 
 footer{
-    max-width: 1000%;
-    min-height: 200px;
-    max-height: 500px;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
     margin-top: 40px;
     padding: 3px;
     padding-top: 5px;
@@ -137,8 +137,8 @@ footer{
     text-align: center;
     color: white;
     font-style: italic;
-    position: absolute;
-    position: relative;
+    position: fixed;
+    width: 100%;
     bottom: 0;
     
 }

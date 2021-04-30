@@ -190,6 +190,8 @@ html {
     overflow-x: hidden;
     /* background-color: #fcebb6; */
     background-color: #1e285a;
+    background-color: #24306b;
+    /* background-color: #5c67bb; */
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -404,6 +406,8 @@ footer{
     font-style: italic;
     position: absolute;
     position: relative;
+    position: fixed;
+    width: 100%;
     bottom: 0;
     
 }

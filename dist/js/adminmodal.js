@@ -1058,6 +1058,7 @@ function deleteproduct(deletebutton,arr,i,name){
     arr.splice(i,1);
     var deletedcard =  document.getElementById(name+ "model");
     console.log(deletedcard);
+    console.log(arr);
     deletedcard.remove();
   }
   });

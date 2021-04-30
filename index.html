@@ -30,11 +30,7 @@
             <label for="inputPassword">Password:</label>
             <input type="password" id="inputPassword" class="form-control col-sm-10" placeholder="Password" required>
           </div>
-          <div class="checkbox ml-5">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
+          <a class="ml-4 pl-4 mb-1 btn text-primary" data-toggle="modal" data-target="#passwordModal" role="button">Forgot Password? &raquo;</a><br>
           <div class="btn-group btn-group-toggle ml-5" data-toggle="buttons">
             <label class="btn btn-secondary btn-sm p-1 active">
               <input type="radio" name="options" id="option1" value="customer" autocomplete="off" checked> Customer
@@ -49,6 +45,30 @@
           <p class="text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" id="newToTroliMart" href="signup.html" role="button">Sign Up &raquo;</a></p>
       </form>
           
+      <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <input type="text" class="form-control mb-1 validate" placeholder="Username" id="username"> 
+                <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="passwordInput">
+                <input type="password" class="form-control validate" placeholder="Confirm New Password" id="confirmPassword">
+                <p id="modalError" class="text-center text-danger"></p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="updatePassword">Update Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
   
       </main>

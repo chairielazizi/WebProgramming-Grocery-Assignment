@@ -14,7 +14,7 @@ main{
 .box{
     box-sizing:  border-box;
     width: 360px;
-    height: 500px;
+    height: 550px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -25,7 +25,7 @@ main{
     box-shadow: -3px -3px 7px #685c5c73, 3px 3px 5px rgba(94,104,121,0.288);
     border-radius: 5px;
     background-color: rgb(204, 202, 202);
-    margin-top: 20px;
+    margin-top: 40px;
     overflow: hidden;
     box-align:center;
     text-align:center;
@@ -82,9 +82,15 @@ input[type="datetime-local"]:focus{
     width: 100px;
     border-radius: 5px;
     margin: 30px;
-    transition: all 0,3s;
+    font-size: 11px;
+    transition: all 0,5s;
     
 }
+.text-right {
+    color: red;
+}
+
+
 button:hover{
     transform: scale(1.1);
 }
