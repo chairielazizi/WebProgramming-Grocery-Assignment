@@ -20,12 +20,17 @@ file.addEventListener('change', function(){
 }
 );
 function displayAlert2(){
-    confirm('Are you sure you want to delete your account?');
-    window.location.href = 'index.html';
-    alert("Your account has successfully been deleted!");
+    var confirm2 = confirm('Are you sure you want to delete your account?');
+    if(confirm2 == true){
+        alert("Your account has successfully been deleted!");
+        window.location.href = 'index.html';
+    }
 }
 function displayAlert1(){
-    confirm('Are you sure with the changes?');
-    alert("Your profile has been updated!");
-    window.location.href = 'homepage.html';
+    var confirm1 = confirm('Are you sure with the changes?');
+    if(confirm1 == true){
+        alert("Your profile has been updated!");
+        window.location.href = 'homepage.html';
+    }
+    
 }
