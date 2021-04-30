@@ -12,10 +12,22 @@ form{
     color: red;
 }
 footer{
-    background-color: #0c143c;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    margin-top: 20px;
+    padding: 3px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    /* position: absolute;
+    position: relative;
+    position: fixed; */
     width: 100%;
-    position: fixed;
     bottom: 0;
+    
 }
 #callus{
     color:#3385ff;
