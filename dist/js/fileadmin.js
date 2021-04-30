@@ -32,11 +32,11 @@ const frozen = [
     price: "RM7.60",
     img: "./images/products/frozen/vegetables.jpg",
   },
-  {
-    name: "Paratha",
-    price: "RM10.00",
-    img: "./images/products/frozen/paratha.jpg",
-  },
+  // {
+  //   name: "Paratha",
+  //   price: "RM10.00",
+  //   img: "./images/products/frozen/paratha.jpg",
+  // },
   // { name: 'Pau', price: 'RM8.50' },
   // { name: 'Frozen Fried Rice', price: 'RM4.50' },
   // { name: 'Beef Patties', price: 'RM9.00' },
@@ -70,11 +70,11 @@ const canned = [
     price: "RM7.60",
     img: "./images/products/canned/pineapple.jfif",
   },
-  {
-    name: "Baked Beans",
-    price: "RM10.00",
-    img: "./images/products/canned/bakedbeans.jfif",
-  },
+  // {
+  //   name: "Baked Beans",
+  //   price: "RM10.00",
+  //   img: "./images/products/canned/bakedbeans.jfif",
+  // },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
   // { name: 'Rendang', price: 'RM9.00' },
@@ -108,11 +108,11 @@ const beverages = [
     price: "RM7.60",
     img: "./images/products/beverages/carlsberg.jpg",
   },
-  {
-    name: "Sagota",
-    price: "RM10.00",
-    img: "./images/products/beverages/sagota.jpg",
-  },
+  // {
+  //   name: "Sagota",
+  //   price: "RM10.00",
+  //   img: "./images/products/beverages/sagota.jpg",
+  // },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
   // { name: 'Asahi', price: 'RM9.00' },
@@ -146,11 +146,11 @@ const personalCareProducts = [
     price: "RM7.60",
     img: "./images/products/personalcare/hairwax.jfif",
   },
-  {
-    name: "Razors",
-    price: "RM10.00",
-    img: "./images/products/personalcare/razors.jpg",
-  },
+  // {
+  //   name: "Razors",
+  //   price: "RM10.00",
+  //   img: "./images/products/personalcare/razors.jpg",
+  // },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
   // { name: 'Deodorant Spray', price: 'RM9.00' },
@@ -158,7 +158,7 @@ const personalCareProducts = [
   // { name: 'Body Wash', price: 'RM13.00' },
 ];
 
-for (var i = 0; i < frozen.length; i++) {
+for (var i = 0; i < frozen.length-1; i++) {
   var frozenFoodCard = document.createElement("div");
   frozenFoodCard.className = "card card-block mx-2 text-center";
   frozenFoodCard.id = frozen[i].name + "card";
@@ -172,6 +172,10 @@ for (var i = 0; i < frozen.length; i++) {
   frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
   frozenFoodButton.textContent = "Delete";
   deleteproduct(frozenFoodButton,frozen,i,frozen[i].name);
+
+  var frozenFoodEditButton = document.createElement("button");
+  frozenFoodEditButton.className = "edit-button btn btn-success align-self-end";
+  frozenFoodEditButton.textContent = "Edit";
   
   
 
@@ -206,8 +210,10 @@ beverages.forEach(function (products,i) {
   beverageButton.textContent = "Delete";
   deleteproduct(beverageButton,beverages,i,products.name);
 
-  var deleteCheckBox = document.createElement("input")
-  deleteCheckBox.className = "checkbox";
+  var beverageEditButton = document.createElement("button");
+  beverageEditButton.className = "edit-button btn btn-success";
+  beverageEditButton.textContent = "Edit";
+
   
 
   var beverageName = document.createElement("h6");
@@ -241,9 +247,9 @@ canned.forEach(function (products,i) {
   cannedButton.textContent = "Delete";
   deleteproduct(cannedButton,beverages,i,products.name);
 
-
-  var deleteCheckBox = document.createElement("input")
-  deleteCheckBox.className = "checkbox";
+  var cannedEditButton = document.createElement("button");
+  cannnedEditButton.className = "edit-button btn btn-success";
+  cannedEditButton.textContent = "Edit";
 
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
@@ -277,7 +283,9 @@ personalCareProducts.forEach(function (products,i) {
   personalCareButton.textContent = "Delete";
   deleteproduct(personalCareButton,beverages,i,products.name);
   
-  
+  var personalCareEditButton = document.createElement("button");
+  personalCareEditButton.className = "edit-button btn btn-success";
+  personalCareEditButton.textContent = "Edit";
 
   var personalCareName = document.createElement("h6");
   personalCareName.className = "card-title";
