@@ -70,11 +70,11 @@ const canned = [
     price: "RM7.60",
     img: "./images/products/canned/pineapple.jfif",
   },
-  // {
-  //   name: "Baked Beans",
-  //   price: "RM10.00",
-  //   img: "./images/products/canned/bakedbeans.jfif",
-  // },
+  {
+    name: "Baked Beans",
+    price: "RM10.00",
+    img: "./images/products/canned/bakedbeans.jfif",
+  },
   // { name: 'Button Mushrooms', price: 'RM8.50' },
   // { name: 'Chicken Curry', price: 'RM4.50' },
   // { name: 'Rendang', price: 'RM9.00' },
@@ -108,11 +108,11 @@ const beverages = [
     price: "RM7.60",
     img: "./images/products/beverages/carlsberg.jpg",
   },
-  // {
-  //   name: "Sagota",
-  //   price: "RM10.00",
-  //   img: "./images/products/beverages/sagota.jpg",
-  // },
+  {
+    name: "Sagota",
+    price: "RM10.00",
+    img: "./images/products/beverages/sagota.jpg",
+  },
   // { name: 'Lipton Green Tea', price: 'RM8.50' },
   // { name: 'Lipton Iced Lemon Tea', price: 'RM4.50' },
   // { name: 'Asahi', price: 'RM9.00' },
@@ -146,11 +146,11 @@ const personalCareProducts = [
     price: "RM7.60",
     img: "./images/products/personalcare/hairwax.jfif",
   },
-  // {
-  //   name: "Razors",
-  //   price: "RM10.00",
-  //   img: "./images/products/personalcare/razors.jpg",
-  // },
+  {
+    name: "Razors",
+    price: "RM10.00",
+    img: "./images/products/personalcare/razors.jpg",
+  },
   // { name: 'Baby Oil', price: 'RM8.50' },
   // { name: 'Deodorant', price: 'RM4.50' },
   // { name: 'Deodorant Spray', price: 'RM9.00' },
@@ -158,7 +158,7 @@ const personalCareProducts = [
   // { name: 'Body Wash', price: 'RM13.00' },
 ];
 
-for (var i = 0; i < frozen.length-1; i++) {
+for (var i = 0; i < frozen.length; i++) {
   var frozenFoodCard = document.createElement("div");
   frozenFoodCard.className = "card card-block mx-2 text-center";
   frozenFoodCard.id = frozen[i].name + "card";
