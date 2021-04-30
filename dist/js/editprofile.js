@@ -19,3 +19,13 @@ file.addEventListener('change', function(){
     }
 }
 );
+function displayAlert2(){
+    confirm('Are you sure you want to delete your account?');
+    window.location.href = 'index.html';
+    alert("Your account has successfully been deleted!");
+}
+function displayAlert1(){
+    confirm('Are you sure with the changes?');
+    alert("Your profile has been updated!");
+    window.location.href = 'homepage.html';
+}
