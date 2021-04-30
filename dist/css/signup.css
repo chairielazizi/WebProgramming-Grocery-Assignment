@@ -6,6 +6,9 @@ header{
 }
 footer{
     background-color: #0c143c;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 #callus{
     color:#3385ff;
