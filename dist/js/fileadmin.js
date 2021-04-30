@@ -173,11 +173,6 @@ for (var i = 0; i < frozen.length-1; i++) {
   frozenFoodButton.textContent = "Delete";
   deleteproduct(frozenFoodButton,frozen,i,frozen[i].name);
 
-  var frozenFoodEditButton = document.createElement("button");
-  frozenFoodEditButton.className = "edit-button btn btn-success align-self-end";
-  frozenFoodEditButton.textContent = "Edit";
-  
-  
 
   var frozenFoodName = document.createElement("h6");
   frozenFoodName.className = "card-title";
@@ -210,9 +205,6 @@ beverages.forEach(function (products,i) {
   beverageButton.textContent = "Delete";
   deleteproduct(beverageButton,beverages,i,products.name);
 
-  var beverageEditButton = document.createElement("button");
-  beverageEditButton.className = "edit-button btn btn-success";
-  beverageEditButton.textContent = "Edit";
 
   
 
@@ -247,10 +239,7 @@ canned.forEach(function (products,i) {
   cannedButton.textContent = "Delete";
   deleteproduct(cannedButton,beverages,i,products.name);
 
-  var cannedEditButton = document.createElement("button");
-  cannnedEditButton.className = "edit-button btn btn-success";
-  cannedEditButton.textContent = "Edit";
-
+  
   var cannedGoodsName = document.createElement("h6");
   cannedGoodsName.className = "card-title";
   cannedGoodsName.textContent = products.name;
@@ -283,9 +272,7 @@ personalCareProducts.forEach(function (products,i) {
   personalCareButton.textContent = "Delete";
   deleteproduct(personalCareButton,beverages,i,products.name);
   
-  var personalCareEditButton = document.createElement("button");
-  personalCareEditButton.className = "edit-button btn btn-success";
-  personalCareEditButton.textContent = "Edit";
+
 
   var personalCareName = document.createElement("h6");
   personalCareName.className = "card-title";
