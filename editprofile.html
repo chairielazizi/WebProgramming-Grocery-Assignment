@@ -5,10 +5,9 @@
 
 <!-- metadata goes in head - Contains information that describes the web page document -->
 	<title>Edit Profile</title>
-    <link rel= "stylesheet" type="text/css" href="editprofile.css">
+    <link rel= "stylesheet" type="text/css" href="dist\css\editprofile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script type="text/javascript"src="profile.js"></script>
 </head>
 
 <body>
@@ -29,24 +28,21 @@
          
             <input type="text" name=""placeholder= "User Name">
             <input type="email" name=""placeholder= "Email ID">
-            <input type="text" name=""placeholder= "Change password">
-            <label for="birth-date">Birth Date:</label><br> 
+            <input type="text" name=""placeholder= "Change password"><br>
+            <label for="birth-date">Birth Date:</label><br>
             <input type="datetime-local" name=""placeholder ="birthdate" >
                  
           
             
             <button class="formBtn" style="float: left;" onclick="window.location.href = 'homepage.html';">CANCEL</button>
-            <button class="formBtn" style="float: right;" onclick="alert();">DONE</button>
-            <div class = "deleteacc">
-            <p class="text-right mt-2 mb-0"> <a class="btn pt-0" style="color: red;" onclick="alert();" role="button"> Delete Acc? &raquo;</a></p>
-             
-          </div>
+            <button class="formBtn" style="float: right;" onclick="displayAlert1();">DONE</button>
+            <p class="text-right mt-0"> <a class="btn mt-0 pt-0" style="color: red;" onclick="displayAlert2();" role="button"> Delete Account? &raquo;</a></p>
             
          
            
         
     </main>
-                         <script src=editprofile.js></script>
+                         
     <footer class="text-center font-italic p-3 pb-4 mt-3 text-light" style="background-color: #0c143c;">
         <div class="container">
           <div class="row">
@@ -107,7 +103,7 @@
               Copyright &copy; 2021 TroliMart Co. <br>
           </p>
       </footer>
-    
+      <script src="dist\js\editprofile.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     
