@@ -34,6 +34,8 @@ html {
     justify-content: center;
     margin-top: 20px;
     padding-top: 0px;
+    top:10px;
+    left:1000px;
 }
 
 .categories-header {
@@ -138,9 +140,4 @@ footer{
     position: relative;
     bottom: 0;
     
-}
-
-#syah{
-    max-width: 100%;
-    max-height: 100%;
 }
