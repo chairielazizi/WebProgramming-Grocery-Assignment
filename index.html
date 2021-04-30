@@ -20,30 +20,33 @@
 
     
       <main class="container">
-        <form>
-          <h4 class="font-weight-bold text-center pt-3">Please Sign In</h4><hr>
-          <div class="form-group ml-5">
-            <label for="inputEmail">Email: </label>
-            <input type="email" id="inputEmail" class="form-control col-sm-10" placeholder="name@example.com" required autofocus> 
-          </div> 
-          <div class="form-group ml-5">
-            <label for="inputPassword">Password:</label>
-            <input type="password" id="inputPassword" class="form-control col-sm-10" placeholder="Password" required>
-          </div>
-          <a class="ml-4 pl-4 mb-1 btn text-primary" data-toggle="modal" data-target="#passwordModal" role="button">Forgot Password? &raquo;</a><br>
-          <div class="btn-group btn-group-toggle ml-5" data-toggle="buttons">
-            <label class="btn btn-secondary btn-sm p-1 active">
-              <input type="radio" name="options" id="option1" value="customer" autocomplete="off" checked> Customer
-            </label>
-            <label class="btn btn-secondary btn-sm p-1 px-3">
-              <input type="radio" name="options" id="option2" value="admin" autocomplete="off"> Admin
-            </label>
-          </div><br>
-          <div class="text-center">
-            <button onclick="checkForm()" class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
-          </div>
-          <p class="text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" id="newToTroliMart" href="signup.html" role="button">Sign Up &raquo;</a></p>
-      </form>
+        <div class="form">
+          <form>
+            <h4 class="font-weight-bold text-center pt-3">Please Sign In</h4><hr>
+            <div class="form-group ml-5">
+              <label for="inputEmail">Email: </label>
+              <input type="email" id="inputEmail" class="form-control col-sm-10" placeholder="name@example.com" required autofocus> 
+            </div> 
+            <div class="form-group ml-5">
+              <label for="inputPassword">Password:</label>
+              <input type="password" id="inputPassword" class="form-control col-sm-10" placeholder="Password" required>
+            </div>
+            <a class="ml-4 pl-4 mb-1 btn text-primary" data-toggle="modal" data-target="#passwordModal" role="button">Forgot Password? &raquo;</a><br>
+            <div class="btn-group btn-group-toggle ml-5" data-toggle="buttons">
+              <label class="btn btn-secondary btn-sm p-1 active">
+                <input type="radio" name="options" id="option1" value="customer" autocomplete="off" checked> Customer
+              </label>
+              <label class="btn btn-secondary btn-sm p-1 px-3">
+                <input type="radio" name="options" id="option2" value="admin" autocomplete="off"> Admin
+              </label>
+            </div><br>
+            <div class="text-center">
+              <button onclick="checkForm()" class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
+            </div>
+            <p class="text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" id="newToTroliMart" href="signup.html" role="button">Sign Up &raquo;</a></p>
+          </form>
+        </div>
+        
           
       <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

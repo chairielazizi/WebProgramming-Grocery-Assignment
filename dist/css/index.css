@@ -1,6 +1,7 @@
 main.container {
+    margin: 0 auto;
     max-width: 540px;
-    
+    height: 74vh;
 }
 header{
     background-color: #0c143c;
@@ -31,4 +32,9 @@ footer{
 }
 #callus{
     color:#3385ff;
+}
+
+.form {
+    margin: auto;
+    padding-top: 20%;
 }
