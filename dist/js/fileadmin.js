@@ -25,7 +25,7 @@ const frozen = [
   {
     name: "Instant Pizza",
     price: "RM9.00",
-    img: "./images/products/frozen/waffle.jpg",
+    img: "./images/products/frozen/pizza.jpg",
   },
   {
     name: "Frozen Vegetables",
@@ -158,7 +158,7 @@ const personalCareProducts = [
   // { name: 'Body Wash', price: 'RM13.00' },
 ];
 
-for (var i = 0; i < frozen.length-1; i++) {
+for (var i = 0; i < frozen.length; i++) {
   var frozenFoodCard = document.createElement("div");
   frozenFoodCard.className = "card card-block mx-2 text-center";
   frozenFoodCard.id = frozen[i].name + "card";
@@ -169,9 +169,22 @@ for (var i = 0; i < frozen.length-1; i++) {
   frozenFoodPhoto.style.height = "9em";
 
   var frozenFoodButton = document.createElement("button");
-  frozenFoodButton.className = "delete-button btn btn-danger align-self-end";
+  frozenFoodButton.className = "delete-button btn btn-danger";
   frozenFoodButton.textContent = "Delete";
   deleteproduct(frozenFoodButton,frozen,i,frozen[i].name);
+
+  var frozenFoodEditButton = document.createElement("button");
+  frozenFoodEditButton.className = "edit-button btn btn-info";
+  frozenFoodEditButton.textContent = "Edit";
+  
+  
+  // $(".edit-button").attr("data-toggle", "modal");
+
+  editproduct(frozenFoodEditButton);
+
+// <button type="button" class="add-button btn btn-success" data-toggle="modal" data-target="#addModal">
+//             Add Products
+//         </button>
 
 
   var frozenFoodName = document.createElement("h6");
@@ -186,6 +199,7 @@ for (var i = 0; i < frozen.length-1; i++) {
   frozenFoodCard.appendChild(frozenFoodName);
   frozenFoodCard.appendChild(frozenFoodPrice);
   frozenFoodCard.appendChild(frozenFoodButton);
+  frozenFoodCard.appendChild(frozenFoodEditButton);
 
   frozenFoods.appendChild(frozenFoodCard);
 }
@@ -301,5 +315,23 @@ function deleteproduct(deletebutton,arr,i,name){
     console.log(deletedcard);
     deletedcard.remove();
   }
+  });
+}
+
+function editproduct(EditButton,Imgtag,anchortag){
+  EditButton.addEventListener("click", function(){
+    var editmodal = document.getElementById("EditModal");
+    var newmodal = '<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="addLabel" aria-hidden="false"><div class="modal-dialog modal-dialog-centered modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="addLabel">Edit Product</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="iframe-container"><iframe class="video"src="addproduct.html" name="targetframe" allowTransparency="true" frameborder="-1" scrolling="yes" ></iframe></div><div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button><!-- <button type="button" class="btn btn-primary">Save changes</button> --></div></div></div></div>';
+    
+    editmodal.insertAdjacentElement("beforeend",newmodal);
+    // console.log("adfa");
+    // var newEditProductDiv = document.getElementById("EditProductContent");
+  
+    // var newEditProductContent = '<h1>Hello<h1><img src="'+Imgtag+'" alt="">';
+    // console.log(newEditProductDiv);
+    // newEditProductDiv.insertAdjacentHTML("beforeend",newEditProductContent);
+    // console.log(newEditProductContent);
+    // alert("a");
+    // window.location.href = anchortag;
   });
 }

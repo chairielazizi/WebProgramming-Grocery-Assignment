@@ -103,19 +103,11 @@ html {
 	vertical-align: top;
 }
 
-
-.add-button{
-    width: 200px;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+.delete-button{
 }
 
-.delete-button{
-    width: 200px;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+.edit-button{
+
 }
 
 .price-range-button {
