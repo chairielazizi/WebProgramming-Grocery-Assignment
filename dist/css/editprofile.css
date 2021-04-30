@@ -1,10 +1,12 @@
 body{
     background-color: white;
     
+    
 }
 main{
     text-align:center;
     box-align:center;
+    color: black;
 }
 *:focus{
     outline: none;
@@ -19,10 +21,10 @@ main{
     left: 0;
     right: 0;
     position: relative;
-    border: 2px solid #3498db;
+    border: 2px solid black;
     box-shadow: -3px -3px 7px #685c5c73, 3px 3px 5px rgba(94,104,121,0.288);
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(204, 202, 202);
     margin-top: 20px;
     overflow: hidden;
     box-align:center;
@@ -35,7 +37,7 @@ img#profilePic{
     height: 149px;
     border-radius: 50%;
     margin:0;
-    border: 5px solid #0082e6;
+    border: 5px solid  #0c143c;
     padding: 3px;
     background-color: whitesmoke;
 }
@@ -44,33 +46,36 @@ input[type="text"],
 input[type="email"]{
     display: block;
     box-sizing: border-box;
-    background: none;
-    color: #3498db;
+    background: rgb(204, 202, 202);
+    color: black;
     margin-bottom: 30px;
     padding: 4px;
     width: 220px;
     height: 60px;
     margin: auto;
     border: none;
-    border-bottom: 1px solid #0082e6;
+    border-bottom: 1px solid black;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;
     text-align:center;
-   
 
 }
 input[type="text"]:focus
 input[type="email"]:focus{
     border-bottom: 2px solid #3498db;
     border-bottom-right-radius: 20px;
-    color: #349db3;
+    color: black;
     transition: 0.2 ease;
     
 }
+input[type="datetime-local"]:focus{
+    background: rgb(204, 202, 202);
+    margin: auto;
+}
 .formBtn{
-    border: 1px solid #3498db;
+    border: 1px solid black;
     background-color: black;
     color: whitesmoke;
     height: 30px;
@@ -98,5 +103,8 @@ input[type="file"]{
 }
 #editPic:hover{
     background-color: #3498db;
+    color: black;    
+}
+::placeholder {
     color: black;
 }
