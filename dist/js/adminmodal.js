@@ -1062,3 +1062,5 @@ function deleteproduct(deletebutton,arr,i,name){
   }
   });
 }
+
+
