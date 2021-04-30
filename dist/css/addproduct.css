@@ -31,12 +31,11 @@ main{
 }
 #productImage{
     box-sizing: border-box;
-    width: 30px;
-    height: 30px;
-    border-radius: 20%;
-    margin-right: auto;
-    margin-left: auto;
-    border: 5px solid #0082e6;
+    width: 149px;
+    height: 149px;
+    border-radius: 50%;
+    margin:0;
+    border: 5px solid  #0c143c;
     padding: 3px;
     background-color: whitesmoke;
 }

@@ -31,11 +31,11 @@
           <div class="col-sm" style="background-color: #D0D0D0">
             <h3 class="text-center pt-2">Add Product</h3>
             <hr>
-            <form width=20%>
+            <form width=20% >
 			<div class="form-row">
                 <div class="col">
                   <div class="profile-pic-div">
-            <img src="images/user.png" id="profilePic"></img>
+            <img src="images/user.png" id="productImage"></img>
             <input type= "file" name="" id= "file" accept= "image/*">
             <label id="editPic" for= "file"> PRODUCT PIC </label>
           </div>
@@ -70,7 +70,7 @@
 			  <br>
 			  <div class="form-row">
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Price" id="Price" min="0" required>
+                  <input type="number" class="form-control" placeholder="Price" id="Price" min="1" required>
                 </div>
               </div>
               
@@ -79,7 +79,7 @@
               
               <div class="form-group text-center">
                 <p id="error" class="text-danger"></p>
-                <button id="myButton" class="btn btn-secondary btn-block" id="submitForm">ADD NOW</button>
+                <button onclick="checkForm()" class="btn btn-secondary btn-block" id="submitForm">ADD NOW</button>
                </div>
             </form>
             
