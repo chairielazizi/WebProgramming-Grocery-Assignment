@@ -14,6 +14,8 @@ form{
 footer{
     background-color: #0c143c;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 #callus{
     color:#3385ff;
