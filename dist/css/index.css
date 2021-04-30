@@ -1,7 +1,7 @@
 main.container {
     margin: 0 auto;
     max-width: 540px;
-    height: 74vh;
+    height: 70vh;
 }
 header{
     background-color: #0c143c;
@@ -16,25 +16,26 @@ footer{
     max-width: 100%;
     min-height: 100px;
     max-height: 200px;
-    margin-top: 20px;
+    margin-top: 12px;
     padding: 3px;
     padding-top: 5px;
     padding-bottom: 4px;
     text-align: center;
     color: white;
     font-style: italic;
-    /* position: absolute;
-    position: relative;
-    position: fixed; */
+    position: absolute;
+    /* position: relative; */
+    /* position: static;  */
     width: 100%;
     bottom: 0;
     
 }
+
 #callus{
     color:#3385ff;
 }
 
 .form {
     margin: auto;
-    padding-top: 20%;
+    padding-top: 5%;
 }
