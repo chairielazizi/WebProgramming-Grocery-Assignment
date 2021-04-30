@@ -404,9 +404,9 @@ footer{
     text-align: center;
     color: white;
     font-style: italic;
-    position: absolute;
+    /* position: absolute;
     position: relative;
-    position: fixed;
+    position: fixed; */
     width: 100%;
     bottom: 0;
     
