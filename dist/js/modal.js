@@ -722,65 +722,65 @@ const modalothers = [
   },
 ];
 
-modalbeverages.forEach((products) => {
-  var beverageCard = document.createElement("div");
-  beverageCard.className = "card card-block mx-2 text-center mb-2";
+// modalbeverages.forEach((products) => {
+//   var beverageCard = document.createElement("div");
+//   beverageCard.className = "card card-block mx-2 text-center mb-2";
 
-  var beveragePhoto = document.createElement("img");
-  beveragePhoto.className = "card-img-top";
-  beveragePhoto.src = products.img;
-  beveragePhoto.style.height = "9em";
+//   var beveragePhoto = document.createElement("img");
+//   beveragePhoto.className = "card-img-top";
+//   beveragePhoto.src = products.img;
+//   beveragePhoto.style.height = "9em";
 
-  var beverageButton = document.createElement("button");
-  beverageButton.className = "add-to-cart-button btn btn-success";
-  beverageButton.textContent = "Add to List";
-  addtolist(beverageButton, products.name, products.price);
+//   var beverageButton = document.createElement("button");
+//   beverageButton.className = "add-to-cart-button btn btn-success";
+//   beverageButton.textContent = "Add to List";
+//   addtolist(beverageButton, products.name, products.price);
 
-  var beverageName = document.createElement("h6");
-  beverageName.className = "card-title";
-  beverageName.textContent = products.name;
+//   var beverageName = document.createElement("h6");
+//   beverageName.className = "card-title";
+//   beverageName.textContent = products.name;
 
-  var beveragePrice = document.createElement("p");
-  beveragePrice.className = "card-text";
-  beveragePrice.textContent = "RM " + products.price.toFixed(2);
+//   var beveragePrice = document.createElement("p");
+//   beveragePrice.className = "card-text";
+//   beveragePrice.textContent = "RM " + products.price.toFixed(2);
 
-  beverageCard.appendChild(beveragePhoto);
-  beverageCard.appendChild(beverageName);
-  beverageCard.appendChild(beveragePrice);
-  beverageCard.appendChild(beverageButton);
-  beveragesModal.appendChild(beverageCard);
-});
+//   beverageCard.appendChild(beveragePhoto);
+//   beverageCard.appendChild(beverageName);
+//   beverageCard.appendChild(beveragePrice);
+//   beverageCard.appendChild(beverageButton);
+//   beveragesModal.appendChild(beverageCard);
+// });
 
-modalbreadbakery.forEach((products) => {
-  var breadBakeryCard = document.createElement("div");
-  breadBakeryCard.className = "card card-block mx-2 text-center mb-2";
+// modalbreadbakery.forEach((products) => {
+//   var breadBakeryCard = document.createElement("div");
+//   breadBakeryCard.className = "card card-block mx-2 text-center mb-2";
 
-  var breadBakeryPhoto = document.createElement("img");
-  breadBakeryPhoto.className = "card-img-top";
-  breadBakeryPhoto.src = products.img;
-  breadBakeryPhoto.style.height = "9em";
+//   var breadBakeryPhoto = document.createElement("img");
+//   breadBakeryPhoto.className = "card-img-top";
+//   breadBakeryPhoto.src = products.img;
+//   breadBakeryPhoto.style.height = "9em";
 
-  var breadBakeryButton = document.createElement("button");
-  breadBakeryButton.className =
-    "add-to-cart-button btn btn-success align-self-end";
-  breadBakeryButton.textContent = "Add to List";
-  addtolist(breadBakeryButton, products.name, products.price);
+//   var breadBakeryButton = document.createElement("button");
+//   breadBakeryButton.className =
+//     "add-to-cart-button btn btn-success align-self-end";
+//   breadBakeryButton.textContent = "Add to List";
+//   addtolist(breadBakeryButton, products.name, products.price);
 
-  var breadBakeryName = document.createElement("h6");
-  breadBakeryName.className = "card-title";
-  breadBakeryName.textContent = products.name;
+//   var breadBakeryName = document.createElement("h6");
+//   breadBakeryName.className = "card-title";
+//   breadBakeryName.textContent = products.name;
 
-  var breadBakeryPrice = document.createElement("p");
-  breadBakeryPrice.className = "card-text";
-  breadBakeryPrice.textContent = "RM " + products.price.toFixed(2);
+//   var breadBakeryPrice = document.createElement("p");
+//   breadBakeryPrice.className = "card-text";
+//   breadBakeryPrice.textContent = "RM " + products.price.toFixed(2);
 
-  breadBakeryCard.appendChild(breadBakeryPhoto);
-  breadBakeryCard.appendChild(breadBakeryName);
-  breadBakeryCard.appendChild(breadBakeryPrice);
-  breadBakeryCard.appendChild(breadBakeryButton);
+//   breadBakeryCard.appendChild(breadBakeryPhoto);
+//   breadBakeryCard.appendChild(breadBakeryName);
+//   breadBakeryCard.appendChild(breadBakeryPrice);
+//   breadBakeryCard.appendChild(breadBakeryButton);
 
-  breadbakeryModal.appendChild(breadBakeryCard);
-});
+//   breadbakeryModal.appendChild(breadBakeryCard);
+// });
 
 modalcanned.forEach((products) => {
   var cannedGoodsCard = document.createElement("div");
@@ -1089,5 +1089,113 @@ searchButton.addEventListener("click", function () {
   console.log("Hi search button");
 });
 
+const categorySection = document.querySelector(".categories-content");
+const categoryHeader = document.querySelector(".category-header");
 
+function changeToBeverages() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Beverages</h3>";
+  categorySection.innerHTML = "";
+  modalbeverages.forEach((products) => {
+    var beverageCard = document.createElement("div");
+    beverageCard.className = "card card-block mx-2 text-center mb-2";
 
+    var beveragePhoto = document.createElement("img");
+    beveragePhoto.className = "card-img-top";
+    beveragePhoto.src = products.img;
+    beveragePhoto.style.height = "9em";
+
+    var beverageButton = document.createElement("button");
+    beverageButton.className = "add-to-cart-button btn btn-success";
+    beverageButton.textContent = "Add to List";
+    addtolist(beverageButton, products.name, products.price);
+
+    var beverageName = document.createElement("h6");
+    beverageName.className = "card-title";
+    beverageName.textContent = products.name;
+
+    var beveragePrice = document.createElement("p");
+    beveragePrice.className = "card-text";
+    beveragePrice.textContent = "RM " + products.price.toFixed(2);
+
+    beverageCard.appendChild(beveragePhoto);
+    beverageCard.appendChild(beverageName);
+    beverageCard.appendChild(beveragePrice);
+    beverageCard.appendChild(beverageButton);
+    categorySection.appendChild(beverageCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToBread() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Bread/Bakery</h3>";
+  categorySection.innerHTML = "";
+  modalbreadbakery.forEach((products) => {
+    var breadBakeryCard = document.createElement("div");
+    breadBakeryCard.className = "card card-block mx-2 text-center mb-2";
+
+    var breadBakeryPhoto = document.createElement("img");
+    breadBakeryPhoto.className = "card-img-top";
+    breadBakeryPhoto.src = products.img;
+    breadBakeryPhoto.style.height = "9em";
+
+    var breadBakeryButton = document.createElement("button");
+    breadBakeryButton.className =
+      "add-to-cart-button btn btn-success align-self-end";
+    breadBakeryButton.textContent = "Add to List";
+    addtolist(breadBakeryButton, products.name, products.price);
+
+    var breadBakeryName = document.createElement("h6");
+    breadBakeryName.className = "card-title";
+    breadBakeryName.textContent = products.name;
+
+    var breadBakeryPrice = document.createElement("p");
+    breadBakeryPrice.className = "card-text";
+    breadBakeryPrice.textContent = "RM " + products.price.toFixed(2);
+
+    breadBakeryCard.appendChild(breadBakeryPhoto);
+    breadBakeryCard.appendChild(breadBakeryName);
+    breadBakeryCard.appendChild(breadBakeryPrice);
+    breadBakeryCard.appendChild(breadBakeryButton);
+
+    categorySection.appendChild(breadBakeryCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToCanned() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Canned/Jarred Goods</h3>";
+  categorySection.innerHTML = "";
+  modalcanned.forEach((products) => {
+    var cannedGoodsCard = document.createElement("div");
+    cannedGoodsCard.className = "card card-block mx-2 text-center mb-2";
+
+    var cannedGoodsPhoto = document.createElement("img");
+    cannedGoodsPhoto.className = "card-img-top";
+    cannedGoodsPhoto.src = products.img;
+    cannedGoodsPhoto.style.height = "9em";
+
+    var cannedButton = document.createElement("button");
+    cannedButton.className = "add-to-cart-button btn btn-success";
+    cannedButton.textContent = "Add to List";
+    addtolist(cannedButton, products.name, products.price);
+
+    var cannedGoodsName = document.createElement("h6");
+    cannedGoodsName.className = "card-title";
+    cannedGoodsName.textContent = products.name;
+
+    var cannedGoodsPrice = document.createElement("p");
+    cannedGoodsPrice.className = "card-text";
+    cannedGoodsPrice.textContent = "RM " + products.price.toFixed(2);
+
+    cannedGoodsCard.appendChild(cannedGoodsPhoto);
+    cannedGoodsCard.appendChild(cannedGoodsName);
+    cannedGoodsCard.appendChild(cannedGoodsPrice);
+    cannedGoodsCard.appendChild(cannedButton);
+
+    categorySection.appendChild(cannedGoodsCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}

@@ -85,37 +85,48 @@
           <div class="categories overflow-auto">
             <ul class="list-unstyled components">
               <li>
-                <a href="#" data-toggle="modal" data-target="#beveragesModal">Beverages</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#beveragesModal">Beverages</a> -->
+                <a href="#" onclick="return changeToBeverages()">Beverages</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#breadbakeryModal">Bread/Bakery</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#breadbakeryModal">Bread/Bakery</a> -->
+                <a href="#" onclick="return changeToBread()">Bread/Bakery</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#cannedModal">Canned/Jarred Goods</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#cannedModal">Canned/Jarred Goods</a> -->
+                <a href="#" onclick="return changeToCanned()">Canned/Jarred Goods</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#dairyModal">Dairy</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#dairyModal">Dairy</a> -->
+                <a href="#" onclick="return changeToDairy()">Dairy</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#drybakingModal">Dry/Baking Goods</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#drybakingModal">Dry/Baking Goods</a> -->
+                <a href="#" onclick="return changeToBaking()">Dry/Baking Goods</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#frozenModal">Frozen Foods</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#frozenModal">Frozen Foods</a> -->
+                <a href="#" onclick="return changeToFrozen()">Frozen Foods</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#meatModal">Meat</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#meatModal">Meat</a> -->
+                <a href="#" onclick="return changeToMeat()">Meat</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#fruitModal">Fruits</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#fruitModal">Fruits</a> -->
+                <a href="#" onclick="return changeToFruits()">Fruits</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#vegeModal">Vegetables</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#vegeModal">Vegetables</a> -->
+                <a href="#" onclick="return changeToVegetables()">Vegetables</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#cleanersModal">Cleaners</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#cleanersModal">Cleaners</a> -->
+                <a href="#" onclick="return changeToCleaner()">Cleaners</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#personalCareModal">Personal Care</a>
+                <!-- <a href="#" data-toggle="modal" data-target="#personalCareModal">Personal Care</a> -->
+                <a href="#" onclick="return changeToPersonal()">Personal Care</a>
               </li>
               <!-- <li>
                                 <a href="#" data-toggle="modal" data-target="#othersModal">Others</a>
@@ -448,6 +459,8 @@
         </div>
       </div>
 
+      <!-- the categories content -->
+      <div class="category-header" style="display: none;"></div> 
       <div class="categories categories-content">
         <h3 class='categories-header'>Frozen Foods</h3>
         <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill">
@@ -461,6 +474,9 @@
 
         <h3 class='categories-header'>Beverages</h3>
         <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto">
+
+        </div>
+        <div id='c-beverages-content' class="d-flex flex-row flex-nowrap overflow-auto" style="display: none;">
 
         </div>
 

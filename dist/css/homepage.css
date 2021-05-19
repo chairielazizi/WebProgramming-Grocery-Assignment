@@ -48,7 +48,7 @@ html {
     padding-top: 0px;
 }
 
-.categories-header {
+.categories-header, .category-header {
     margin-top: 20px;
     margin-left: 8px;
 }
