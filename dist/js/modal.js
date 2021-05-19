@@ -782,186 +782,186 @@ const modalothers = [
 //   breadbakeryModal.appendChild(breadBakeryCard);
 // });
 
-modalcanned.forEach((products) => {
-  var cannedGoodsCard = document.createElement("div");
-  cannedGoodsCard.className = "card card-block mx-2 text-center mb-2";
+// modalcanned.forEach((products) => {
+//   var cannedGoodsCard = document.createElement("div");
+//   cannedGoodsCard.className = "card card-block mx-2 text-center mb-2";
 
-  var cannedGoodsPhoto = document.createElement("img");
-  cannedGoodsPhoto.className = "card-img-top";
-  cannedGoodsPhoto.src = products.img;
-  cannedGoodsPhoto.style.height = "9em";
+//   var cannedGoodsPhoto = document.createElement("img");
+//   cannedGoodsPhoto.className = "card-img-top";
+//   cannedGoodsPhoto.src = products.img;
+//   cannedGoodsPhoto.style.height = "9em";
 
-  var cannedButton = document.createElement("button");
-  cannedButton.className = "add-to-cart-button btn btn-success";
-  cannedButton.textContent = "Add to List";
-  addtolist(cannedButton, products.name, products.price);
+//   var cannedButton = document.createElement("button");
+//   cannedButton.className = "add-to-cart-button btn btn-success";
+//   cannedButton.textContent = "Add to List";
+//   addtolist(cannedButton, products.name, products.price);
 
-  var cannedGoodsName = document.createElement("h6");
-  cannedGoodsName.className = "card-title";
-  cannedGoodsName.textContent = products.name;
+//   var cannedGoodsName = document.createElement("h6");
+//   cannedGoodsName.className = "card-title";
+//   cannedGoodsName.textContent = products.name;
 
-  var cannedGoodsPrice = document.createElement("p");
-  cannedGoodsPrice.className = "card-text";
-  cannedGoodsPrice.textContent = "RM " + products.price.toFixed(2);
+//   var cannedGoodsPrice = document.createElement("p");
+//   cannedGoodsPrice.className = "card-text";
+//   cannedGoodsPrice.textContent = "RM " + products.price.toFixed(2);
 
-  cannedGoodsCard.appendChild(cannedGoodsPhoto);
-  cannedGoodsCard.appendChild(cannedGoodsName);
-  cannedGoodsCard.appendChild(cannedGoodsPrice);
-  cannedGoodsCard.appendChild(cannedButton);
+//   cannedGoodsCard.appendChild(cannedGoodsPhoto);
+//   cannedGoodsCard.appendChild(cannedGoodsName);
+//   cannedGoodsCard.appendChild(cannedGoodsPrice);
+//   cannedGoodsCard.appendChild(cannedButton);
 
-  cannedModal.appendChild(cannedGoodsCard);
-});
+//   cannedModal.appendChild(cannedGoodsCard);
+// });
 
-modaldairy.forEach((products) => {
-  var dairyCard = document.createElement("div");
-  dairyCard.className = "card card-block mx-2 text-center mb-2";
+// modaldairy.forEach((products) => {
+//   var dairyCard = document.createElement("div");
+//   dairyCard.className = "card card-block mx-2 text-center mb-2";
 
-  var dairyPhoto = document.createElement("img");
-  dairyPhoto.className = "card-img-top";
-  dairyPhoto.src = products.img;
-  dairyPhoto.style.height = "9em";
+//   var dairyPhoto = document.createElement("img");
+//   dairyPhoto.className = "card-img-top";
+//   dairyPhoto.src = products.img;
+//   dairyPhoto.style.height = "9em";
 
-  var dairyButton = document.createElement("button");
-  dairyButton.className = "add-to-cart-button btn btn-success";
-  dairyButton.textContent = "Add to List";
-  addtolist(dairyButton, products.name, products.price);
+//   var dairyButton = document.createElement("button");
+//   dairyButton.className = "add-to-cart-button btn btn-success";
+//   dairyButton.textContent = "Add to List";
+//   addtolist(dairyButton, products.name, products.price);
 
-  var dairyName = document.createElement("h6");
-  dairyName.className = "card-title";
-  dairyName.textContent = products.name;
+//   var dairyName = document.createElement("h6");
+//   dairyName.className = "card-title";
+//   dairyName.textContent = products.name;
 
-  var dairyPrice = document.createElement("p");
-  dairyPrice.className = "card-text";
-  dairyPrice.textContent = "RM " + products.price.toFixed(2);
+//   var dairyPrice = document.createElement("p");
+//   dairyPrice.className = "card-text";
+//   dairyPrice.textContent = "RM " + products.price.toFixed(2);
 
-  dairyCard.appendChild(dairyPhoto);
-  dairyCard.appendChild(dairyName);
-  dairyCard.appendChild(dairyPrice);
-  dairyCard.appendChild(dairyButton);
+//   dairyCard.appendChild(dairyPhoto);
+//   dairyCard.appendChild(dairyName);
+//   dairyCard.appendChild(dairyPrice);
+//   dairyCard.appendChild(dairyButton);
 
-  dairyModal.appendChild(dairyCard);
-});
+//   dairyModal.appendChild(dairyCard);
+// });
 
-modaldrybaking.forEach((products) => {
-  var drybakingCard = document.createElement("div");
-  drybakingCard.className = "card card-block mx-2 text-center mb-2";
+// modaldrybaking.forEach((products) => {
+//   var drybakingCard = document.createElement("div");
+//   drybakingCard.className = "card card-block mx-2 text-center mb-2";
 
-  var drybakingPhoto = document.createElement("img");
-  drybakingPhoto.className = "card-img-top";
-  drybakingPhoto.src = products.img;
-  drybakingPhoto.style.height = "9em";
+//   var drybakingPhoto = document.createElement("img");
+//   drybakingPhoto.className = "card-img-top";
+//   drybakingPhoto.src = products.img;
+//   drybakingPhoto.style.height = "9em";
 
-  var drybakingButton = document.createElement("button");
-  drybakingButton.className = "add-to-cart-button btn btn-success";
-  drybakingButton.textContent = "Add to List";
-  addtolist(drybakingButton, products.name, products.price);
+//   var drybakingButton = document.createElement("button");
+//   drybakingButton.className = "add-to-cart-button btn btn-success";
+//   drybakingButton.textContent = "Add to List";
+//   addtolist(drybakingButton, products.name, products.price);
 
-  var drybakingName = document.createElement("h6");
-  drybakingName.className = "card-title";
-  drybakingName.textContent = products.name;
+//   var drybakingName = document.createElement("h6");
+//   drybakingName.className = "card-title";
+//   drybakingName.textContent = products.name;
 
-  var drybakingPrice = document.createElement("p");
-  drybakingPrice.className = "card-text";
-  drybakingPrice.textContent = "RM " + products.price.toFixed(2);
+//   var drybakingPrice = document.createElement("p");
+//   drybakingPrice.className = "card-text";
+//   drybakingPrice.textContent = "RM " + products.price.toFixed(2);
 
-  drybakingCard.appendChild(drybakingPhoto);
-  drybakingCard.appendChild(drybakingName);
-  drybakingCard.appendChild(drybakingPrice);
-  drybakingCard.appendChild(drybakingButton);
+//   drybakingCard.appendChild(drybakingPhoto);
+//   drybakingCard.appendChild(drybakingName);
+//   drybakingCard.appendChild(drybakingPrice);
+//   drybakingCard.appendChild(drybakingButton);
 
-  drybakingModal.appendChild(drybakingCard);
-});
+//   drybakingModal.appendChild(drybakingCard);
+// });
 
-modalfrozen.forEach((products) => {
-  var frozenFoodCard = document.createElement("div");
-  frozenFoodCard.className = "card card-block mx-2 text-center mb-2";
+// modalfrozen.forEach((products) => {
+//   var frozenFoodCard = document.createElement("div");
+//   frozenFoodCard.className = "card card-block mx-2 text-center mb-2";
 
-  var frozenFoodPhoto = document.createElement("img");
-  frozenFoodPhoto.className = "card-img-top";
-  frozenFoodPhoto.src = products.img;
-  frozenFoodPhoto.style.height = "9em";
+//   var frozenFoodPhoto = document.createElement("img");
+//   frozenFoodPhoto.className = "card-img-top";
+//   frozenFoodPhoto.src = products.img;
+//   frozenFoodPhoto.style.height = "9em";
 
-  var frozenFoodButton = document.createElement("button");
-  frozenFoodButton.className =
-    "add-to-cart-button btn btn-success align-self-end";
-  frozenFoodButton.textContent = "Add to List";
-  addtolist(frozenFoodButton, products.name, products.price);
+//   var frozenFoodButton = document.createElement("button");
+//   frozenFoodButton.className =
+//     "add-to-cart-button btn btn-success align-self-end";
+//   frozenFoodButton.textContent = "Add to List";
+//   addtolist(frozenFoodButton, products.name, products.price);
 
-  var frozenFoodName = document.createElement("h6");
-  frozenFoodName.className = "card-title";
-  frozenFoodName.textContent = products.name;
+//   var frozenFoodName = document.createElement("h6");
+//   frozenFoodName.className = "card-title";
+//   frozenFoodName.textContent = products.name;
 
-  var frozenFoodPrice = document.createElement("p");
-  frozenFoodPrice.className = "card-text";
-  frozenFoodPrice.textContent = "RM " + products.price.toFixed(2);
+//   var frozenFoodPrice = document.createElement("p");
+//   frozenFoodPrice.className = "card-text";
+//   frozenFoodPrice.textContent = "RM " + products.price.toFixed(2);
 
-  frozenFoodCard.appendChild(frozenFoodPhoto);
-  frozenFoodCard.appendChild(frozenFoodName);
-  frozenFoodCard.appendChild(frozenFoodPrice);
-  frozenFoodCard.appendChild(frozenFoodButton);
+//   frozenFoodCard.appendChild(frozenFoodPhoto);
+//   frozenFoodCard.appendChild(frozenFoodName);
+//   frozenFoodCard.appendChild(frozenFoodPrice);
+//   frozenFoodCard.appendChild(frozenFoodButton);
 
-  frozenModal.appendChild(frozenFoodCard);
-});
+//   frozenModal.appendChild(frozenFoodCard);
+// });
 
-modalmeat.forEach((products) => {
-  var meatCard = document.createElement("div");
-  meatCard.className = "card card-block mx-2 text-center mb-2";
+// modalmeat.forEach((products) => {
+//   var meatCard = document.createElement("div");
+//   meatCard.className = "card card-block mx-2 text-center mb-2";
 
-  var meatPhoto = document.createElement("img");
-  meatPhoto.className = "card-img-top";
-  meatPhoto.src = products.img;
-  meatPhoto.style.height = "9em";
+//   var meatPhoto = document.createElement("img");
+//   meatPhoto.className = "card-img-top";
+//   meatPhoto.src = products.img;
+//   meatPhoto.style.height = "9em";
 
-  var meatButton = document.createElement("button");
-  meatButton.className = "add-to-cart-button btn btn-success";
-  meatButton.textContent = "Add to List";
-  addtolist(meatButton, products.name, products.price);
+//   var meatButton = document.createElement("button");
+//   meatButton.className = "add-to-cart-button btn btn-success";
+//   meatButton.textContent = "Add to List";
+//   addtolist(meatButton, products.name, products.price);
 
-  var meatName = document.createElement("h6");
-  meatName.className = "card-title";
-  meatName.textContent = products.name;
+//   var meatName = document.createElement("h6");
+//   meatName.className = "card-title";
+//   meatName.textContent = products.name;
 
-  var meatPrice = document.createElement("p");
-  meatPrice.className = "card-text";
-  meatPrice.textContent = "RM " + products.price.toFixed(2);
+//   var meatPrice = document.createElement("p");
+//   meatPrice.className = "card-text";
+//   meatPrice.textContent = "RM " + products.price.toFixed(2);
 
-  meatCard.appendChild(meatPhoto);
-  meatCard.appendChild(meatName);
-  meatCard.appendChild(meatPrice);
-  meatCard.appendChild(meatButton);
+//   meatCard.appendChild(meatPhoto);
+//   meatCard.appendChild(meatName);
+//   meatCard.appendChild(meatPrice);
+//   meatCard.appendChild(meatButton);
 
-  meatModal.appendChild(meatCard);
-});
+//   meatModal.appendChild(meatCard);
+// });
 
-modalfruit.forEach((products) => {
-  var produceCard = document.createElement("div");
-  produceCard.className = "card card-block mx-2 text-center mb-2";
+// modalfruit.forEach((products) => {
+//   var produceCard = document.createElement("div");
+//   produceCard.className = "card card-block mx-2 text-center mb-2";
 
-  var producePhoto = document.createElement("img");
-  producePhoto.className = "card-img-top";
-  producePhoto.src = products.img;
-  producePhoto.style.height = "9em";
+//   var producePhoto = document.createElement("img");
+//   producePhoto.className = "card-img-top";
+//   producePhoto.src = products.img;
+//   producePhoto.style.height = "9em";
 
-  var produceButton = document.createElement("button");
-  produceButton.className = "add-to-cart-button btn btn-success";
-  produceButton.textContent = "Add to List";
-  addtolist(produceButton, products.name, products.price);
+//   var produceButton = document.createElement("button");
+//   produceButton.className = "add-to-cart-button btn btn-success";
+//   produceButton.textContent = "Add to List";
+//   addtolist(produceButton, products.name, products.price);
 
-  var produceName = document.createElement("h6");
-  produceName.className = "card-title";
-  produceName.textContent = products.name;
+//   var produceName = document.createElement("h6");
+//   produceName.className = "card-title";
+//   produceName.textContent = products.name;
 
-  var producePrice = document.createElement("p");
-  producePrice.className = "card-text";
-  producePrice.textContent = "RM " + products.price.toFixed(2);
+//   var producePrice = document.createElement("p");
+//   producePrice.className = "card-text";
+//   producePrice.textContent = "RM " + products.price.toFixed(2);
 
-  produceCard.appendChild(producePhoto);
-  produceCard.appendChild(produceName);
-  produceCard.appendChild(producePrice);
-  produceCard.appendChild(produceButton);
+//   produceCard.appendChild(producePhoto);
+//   produceCard.appendChild(produceName);
+//   produceCard.appendChild(producePrice);
+//   produceCard.appendChild(produceButton);
 
-  fruitModal.appendChild(produceCard);
-});
+//   fruitModal.appendChild(produceCard);
+// });
 
 modalcleaners.forEach((products) => {
   var cleanersCard = document.createElement("div");
@@ -993,65 +993,65 @@ modalcleaners.forEach((products) => {
   cleanersModal.appendChild(cleanersCard);
 });
 
-modalvege.forEach((products) => {
-  var paperCard = document.createElement("div");
-  paperCard.className = "card card-block mx-2 text-center mb-2";
+// modalvege.forEach((products) => {
+//   var paperCard = document.createElement("div");
+//   paperCard.className = "card card-block mx-2 text-center mb-2";
 
-  var paperPhoto = document.createElement("img");
-  paperPhoto.className = "card-img-top";
-  paperPhoto.src = products.img;
-  paperPhoto.style.height = "9em";
+//   var paperPhoto = document.createElement("img");
+//   paperPhoto.className = "card-img-top";
+//   paperPhoto.src = products.img;
+//   paperPhoto.style.height = "9em";
 
-  var paperButton = document.createElement("button");
-  paperButton.className = "add-to-cart-button btn btn-success";
-  paperButton.textContent = "Add to List";
-  addtolist(paperButton, products.name, products.price);
+//   var paperButton = document.createElement("button");
+//   paperButton.className = "add-to-cart-button btn btn-success";
+//   paperButton.textContent = "Add to List";
+//   addtolist(paperButton, products.name, products.price);
 
-  var paperName = document.createElement("h6");
-  paperName.className = "card-title";
-  paperName.textContent = products.name;
+//   var paperName = document.createElement("h6");
+//   paperName.className = "card-title";
+//   paperName.textContent = products.name;
 
-  var paperPrice = document.createElement("p");
-  paperPrice.className = "card-text";
-  paperPrice.textContent = "RM " + products.price.toFixed(2);
+//   var paperPrice = document.createElement("p");
+//   paperPrice.className = "card-text";
+//   paperPrice.textContent = "RM " + products.price.toFixed(2);
 
-  paperCard.appendChild(paperPhoto);
-  paperCard.appendChild(paperName);
-  paperCard.appendChild(paperPrice);
-  paperCard.appendChild(paperButton);
+//   paperCard.appendChild(paperPhoto);
+//   paperCard.appendChild(paperName);
+//   paperCard.appendChild(paperPrice);
+//   paperCard.appendChild(paperButton);
 
-  vegeModal.appendChild(paperCard);
-});
+//   vegeModal.appendChild(paperCard);
+// });
 
-modalpersonalCareProducts.forEach((products) => {
-  var personalCareCard = document.createElement("div");
-  personalCareCard.className = "card card-block mx-2 text-center mb-2";
+// modalpersonalCareProducts.forEach((products) => {
+//   var personalCareCard = document.createElement("div");
+//   personalCareCard.className = "card card-block mx-2 text-center mb-2";
 
-  var personalCarePhoto = document.createElement("img");
-  personalCarePhoto.className = "card-img-top";
-  personalCarePhoto.src = products.img;
-  personalCarePhoto.style.height = "9em";
+//   var personalCarePhoto = document.createElement("img");
+//   personalCarePhoto.className = "card-img-top";
+//   personalCarePhoto.src = products.img;
+//   personalCarePhoto.style.height = "9em";
 
-  var personalCareButton = document.createElement("button");
-  personalCareButton.className = "add-to-cart-button btn btn-success";
-  personalCareButton.textContent = "Add to List";
-  addtolist(personalCareButton, products.name, products.price);
+//   var personalCareButton = document.createElement("button");
+//   personalCareButton.className = "add-to-cart-button btn btn-success";
+//   personalCareButton.textContent = "Add to List";
+//   addtolist(personalCareButton, products.name, products.price);
 
-  var personalCareName = document.createElement("h6");
-  personalCareName.className = "card-title";
-  personalCareName.textContent = products.name;
+//   var personalCareName = document.createElement("h6");
+//   personalCareName.className = "card-title";
+//   personalCareName.textContent = products.name;
 
-  var personalCarePrice = document.createElement("p");
-  personalCarePrice.className = "card-text";
-  personalCarePrice.textContent = products.price.toFixed(2);
+//   var personalCarePrice = document.createElement("p");
+//   personalCarePrice.className = "card-text";
+//   personalCarePrice.textContent = products.price.toFixed(2);
 
-  personalCareCard.appendChild(personalCarePhoto);
-  personalCareCard.appendChild(personalCareName);
-  personalCareCard.appendChild(personalCarePrice);
-  personalCareCard.appendChild(personalCareButton);
+//   personalCareCard.appendChild(personalCarePhoto);
+//   personalCareCard.appendChild(personalCareName);
+//   personalCareCard.appendChild(personalCarePrice);
+//   personalCareCard.appendChild(personalCareButton);
 
-  personalCareModal.appendChild(personalCareCard);
-});
+//   personalCareModal.appendChild(personalCareCard);
+// });
 
 // modalothers.forEach((products) => {
 //   var othersCard = document.createElement("div");
@@ -1196,6 +1196,295 @@ function changeToCanned() {
     cannedGoodsCard.appendChild(cannedButton);
 
     categorySection.appendChild(cannedGoodsCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToDairy() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Dairy</h3>";
+  categorySection.innerHTML = "";
+  modaldairy.forEach((products) => {
+    var dairyCard = document.createElement("div");
+    dairyCard.className = "card card-block mx-2 text-center mb-2";
+
+    var dairyPhoto = document.createElement("img");
+    dairyPhoto.className = "card-img-top";
+    dairyPhoto.src = products.img;
+    dairyPhoto.style.height = "9em";
+
+    var dairyButton = document.createElement("button");
+    dairyButton.className = "add-to-cart-button btn btn-success";
+    dairyButton.textContent = "Add to List";
+    addtolist(dairyButton, products.name, products.price);
+
+    var dairyName = document.createElement("h6");
+    dairyName.className = "card-title";
+    dairyName.textContent = products.name;
+
+    var dairyPrice = document.createElement("p");
+    dairyPrice.className = "card-text";
+    dairyPrice.textContent = "RM " + products.price.toFixed(2);
+
+    dairyCard.appendChild(dairyPhoto);
+    dairyCard.appendChild(dairyName);
+    dairyCard.appendChild(dairyPrice);
+    dairyCard.appendChild(dairyButton);
+
+    categorySection.appendChild(dairyCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToBaking() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Dry/Baking Goods</h3>";
+  categorySection.innerHTML = "";
+  modaldrybaking.forEach((products) => {
+    var drybakingCard = document.createElement("div");
+    drybakingCard.className = "card card-block mx-2 text-center mb-2";
+
+    var drybakingPhoto = document.createElement("img");
+    drybakingPhoto.className = "card-img-top";
+    drybakingPhoto.src = products.img;
+    drybakingPhoto.style.height = "9em";
+
+    var drybakingButton = document.createElement("button");
+    drybakingButton.className = "add-to-cart-button btn btn-success";
+    drybakingButton.textContent = "Add to List";
+    addtolist(drybakingButton, products.name, products.price);
+
+    var drybakingName = document.createElement("h6");
+    drybakingName.className = "card-title";
+    drybakingName.textContent = products.name;
+
+    var drybakingPrice = document.createElement("p");
+    drybakingPrice.className = "card-text";
+    drybakingPrice.textContent = "RM " + products.price.toFixed(2);
+
+    drybakingCard.appendChild(drybakingPhoto);
+    drybakingCard.appendChild(drybakingName);
+    drybakingCard.appendChild(drybakingPrice);
+    drybakingCard.appendChild(drybakingButton);
+
+    categorySection.appendChild(drybakingCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToFrozen() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Frozen Foods</h3>";
+  categorySection.innerHTML = "";
+  modalfrozen.forEach((products) => {
+    var frozenFoodCard = document.createElement("div");
+    frozenFoodCard.className = "card card-block mx-2 text-center mb-2";
+
+    var frozenFoodPhoto = document.createElement("img");
+    frozenFoodPhoto.className = "card-img-top";
+    frozenFoodPhoto.src = products.img;
+    frozenFoodPhoto.style.height = "9em";
+
+    var frozenFoodButton = document.createElement("button");
+    frozenFoodButton.className =
+      "add-to-cart-button btn btn-success align-self-end";
+    frozenFoodButton.textContent = "Add to List";
+    addtolist(frozenFoodButton, products.name, products.price);
+
+    var frozenFoodName = document.createElement("h6");
+    frozenFoodName.className = "card-title";
+    frozenFoodName.textContent = products.name;
+
+    var frozenFoodPrice = document.createElement("p");
+    frozenFoodPrice.className = "card-text";
+    frozenFoodPrice.textContent = "RM " + products.price.toFixed(2);
+
+    frozenFoodCard.appendChild(frozenFoodPhoto);
+    frozenFoodCard.appendChild(frozenFoodName);
+    frozenFoodCard.appendChild(frozenFoodPrice);
+    frozenFoodCard.appendChild(frozenFoodButton);
+
+    categorySection.appendChild(frozenFoodCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToMeat() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Meat</h3>";
+  categorySection.innerHTML = "";
+  modalmeat.forEach((products) => {
+    var meatCard = document.createElement("div");
+    meatCard.className = "card card-block mx-2 text-center mb-2";
+
+    var meatPhoto = document.createElement("img");
+    meatPhoto.className = "card-img-top";
+    meatPhoto.src = products.img;
+    meatPhoto.style.height = "9em";
+
+    var meatButton = document.createElement("button");
+    meatButton.className = "add-to-cart-button btn btn-success";
+    meatButton.textContent = "Add to List";
+    addtolist(meatButton, products.name, products.price);
+
+    var meatName = document.createElement("h6");
+    meatName.className = "card-title";
+    meatName.textContent = products.name;
+
+    var meatPrice = document.createElement("p");
+    meatPrice.className = "card-text";
+    meatPrice.textContent = "RM " + products.price.toFixed(2);
+
+    meatCard.appendChild(meatPhoto);
+    meatCard.appendChild(meatName);
+    meatCard.appendChild(meatPrice);
+    meatCard.appendChild(meatButton);
+
+    categorySection.appendChild(meatCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToFruits() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Fruits</h3>";
+  categorySection.innerHTML = "";
+  modalfruit.forEach((products) => {
+    var produceCard = document.createElement("div");
+    produceCard.className = "card card-block mx-2 text-center mb-2";
+
+    var producePhoto = document.createElement("img");
+    producePhoto.className = "card-img-top";
+    producePhoto.src = products.img;
+    producePhoto.style.height = "9em";
+
+    var produceButton = document.createElement("button");
+    produceButton.className = "add-to-cart-button btn btn-success";
+    produceButton.textContent = "Add to List";
+    addtolist(produceButton, products.name, products.price);
+
+    var produceName = document.createElement("h6");
+    produceName.className = "card-title";
+    produceName.textContent = products.name;
+
+    var producePrice = document.createElement("p");
+    producePrice.className = "card-text";
+    producePrice.textContent = "RM " + products.price.toFixed(2);
+
+    produceCard.appendChild(producePhoto);
+    produceCard.appendChild(produceName);
+    produceCard.appendChild(producePrice);
+    produceCard.appendChild(produceButton);
+
+    categorySection.appendChild(produceCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToVegetables() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Vegetables</h3>";
+  categorySection.innerHTML = "";
+  modalvege.forEach((products) => {
+    var paperCard = document.createElement("div");
+    paperCard.className = "card card-block mx-2 text-center mb-2";
+
+    var paperPhoto = document.createElement("img");
+    paperPhoto.className = "card-img-top";
+    paperPhoto.src = products.img;
+    paperPhoto.style.height = "9em";
+
+    var paperButton = document.createElement("button");
+    paperButton.className = "add-to-cart-button btn btn-success";
+    paperButton.textContent = "Add to List";
+    addtolist(paperButton, products.name, products.price);
+
+    var paperName = document.createElement("h6");
+    paperName.className = "card-title";
+    paperName.textContent = products.name;
+
+    var paperPrice = document.createElement("p");
+    paperPrice.className = "card-text";
+    paperPrice.textContent = "RM " + products.price.toFixed(2);
+
+    paperCard.appendChild(paperPhoto);
+    paperCard.appendChild(paperName);
+    paperCard.appendChild(paperPrice);
+    paperCard.appendChild(paperButton);
+
+    categorySection.appendChild(paperCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToCleaner() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Cleaners</h3>";
+  categorySection.innerHTML = "";
+  modalcleaners.forEach((products) => {
+    var cleanersCard = document.createElement("div");
+    cleanersCard.className = "card card-block mx-2 text-center mb-2";
+
+    var cleanersPhoto = document.createElement("img");
+    cleanersPhoto.className = "card-img-top";
+    cleanersPhoto.src = products.img;
+    cleanersPhoto.style.height = "9em";
+
+    var cleanersButton = document.createElement("button");
+    cleanersButton.className = "add-to-cart-button btn btn-success";
+    cleanersButton.textContent = "Add to List";
+    addtolist(cleanersButton, products.name, products.price);
+
+    var cleanersName = document.createElement("h6");
+    cleanersName.className = "card-title";
+    cleanersName.textContent = products.name;
+
+    var cleanersPrice = document.createElement("p");
+    cleanersPrice.className = "card-text";
+    cleanersPrice.textContent = "RM " + products.price.toFixed(2);
+
+    cleanersCard.appendChild(cleanersPhoto);
+    cleanersCard.appendChild(cleanersName);
+    cleanersCard.appendChild(cleanersPrice);
+    cleanersCard.appendChild(cleanersButton);
+
+    categorySection.appendChild(cleanersCard);
+  });
+  categorySection.classList.add("row", "d-flex");
+}
+
+function changeToPersonal() {
+  categoryHeader.style.display = "block";
+  categoryHeader.innerHTML = "<h3>Personal Care</h3>";
+  categorySection.innerHTML = "";
+  modalpersonalCareProducts.forEach((products) => {
+    var personalCareCard = document.createElement("div");
+    personalCareCard.className = "card card-block mx-2 text-center mb-2";
+
+    var personalCarePhoto = document.createElement("img");
+    personalCarePhoto.className = "card-img-top";
+    personalCarePhoto.src = products.img;
+    personalCarePhoto.style.height = "9em";
+
+    var personalCareButton = document.createElement("button");
+    personalCareButton.className = "add-to-cart-button btn btn-success";
+    personalCareButton.textContent = "Add to List";
+    addtolist(personalCareButton, products.name, products.price);
+
+    var personalCareName = document.createElement("h6");
+    personalCareName.className = "card-title";
+    personalCareName.textContent = products.name;
+
+    var personalCarePrice = document.createElement("p");
+    personalCarePrice.className = "card-text";
+    personalCarePrice.textContent = products.price.toFixed(2);
+
+    personalCareCard.appendChild(personalCarePhoto);
+    personalCareCard.appendChild(personalCareName);
+    personalCareCard.appendChild(personalCarePrice);
+    personalCareCard.appendChild(personalCareButton);
+
+    categorySection.appendChild(personalCareCard);
   });
   categorySection.classList.add("row", "d-flex");
 }
