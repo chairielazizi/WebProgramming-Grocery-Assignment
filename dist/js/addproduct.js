@@ -6,6 +6,13 @@ const img = document.querySelector('#productImage');
 const file = document.querySelector('#file');
 const editPic = document.querySelector('#editPic');
 
+function validateForm() {
+  var x = document.forms["myform"]["productName"].value;
+  if (x == "" || x == null) {
+    alert("Product Name must be filled out");
+    return false;
+  }
+}
 
 file.addEventListener('change', function(){
     const choosedFile = this.files[0];
@@ -22,11 +29,20 @@ file.addEventListener('change', function(){
 }
 );
 
-document.getElementById("myButton").onclick = function () {
+document.getElementById("submit").onclick = function () {
 	
 
         alert("Product Added Successfully !");
-		location.href = "addproduct.html";
+		location.href = "adminpage.html";
+    
+         
+    };
+	
+	document.getElementById("cancel").onclick = function () {
+	
+
+        alert("Cancel Adding Product!");
+		location.href = "adminpage.html";
     
          
     };
