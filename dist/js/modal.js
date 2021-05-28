@@ -479,7 +479,7 @@ const modalfruit = [
     img: "./images/products/fruit/papaya.jpg",
   },
   {
-    name: "mango",
+    name: "Mango",
     price: 4.99,
     img: "./images/products/fruit/mango.jpg",
   },
@@ -654,12 +654,12 @@ const modalpersonalCareProducts = [
   },
   {
     name: "Dove Hair Serum",
-    price: 9.0,
+    price: 9.45,
     img: "./images/products/personalcare/dove.jfif",
   },
   {
     name: "Deodorant Spray",
-    price: 13.0,
+    price: 11.95,
     img: "./images/products/personalcare/spray.jpg",
   },
 ];
