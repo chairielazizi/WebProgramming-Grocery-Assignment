@@ -1,74 +1,114 @@
-var firstName = document.getElementById("firstName");
-var lastName = document.getElementById("lastName");
-var emailInput = document.getElementById("emailInput");
-var passwordInput = document.getElementById("passwordInput");
-var birthdate = document.getElementById("birthdate");
-var confirmPassword = document.getElementById("confirmPassword");
-var terms = document.getElementById("terms");
-var submmit = document.getElementById("submitForm");
-var errorMsg = document.getElementById("error");
-var male = document.getElementById("male");
-var female = document.getElementById("female");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const emailInput = document.getElementById("emailInput");
+const passwordInput = document.getElementById("passwordInput");
+const birthdate = document.getElementById("birthdate");
+const confirmPassword = document.getElementById("confirmPassword");
+const terms = document.getElementById("terms");
+const submmit = document.getElementById("submitForm");
+const male = document.getElementById("male");
+const female = document.getElementById("female");
 
-checkForm();
+firstName.addEventListener('keyup', checkValid)
+lastName.addEventListener('keyup', checkValid)
+emailInput.addEventListener('keyup', checkEmail)
+passwordInput.addEventListener('keyup', goodPassword)
+confirmPassword.addEventListener('keyup', matchPassword)
+birthdate.addEventListener('click', ckeckDate)
+terms.addEventListener('keyup', checkValid)
 
-function checkForm(){
-    if (firstName.checkValidity() && lastName.checkValidity() && emailInput.checkValidity() && passwordInput.checkValidity()
-        && birthdate.checkValidity() && confirmPassword.checkValidity() && terms.checkValidity() && matchPassword()
-        && goodPassword() && checkTerms()){
-        submmit.setAttribute("type", "reset");
-        window.location.href = "homepage.html";
+function checkValid(e) {
+    if(e.target.value !== '') {
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
+    } else {
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
     }
 }
 
-function checkTerms(){
-    if(terms.checked == false){
-        errorMsg.innerHTML = "Please agree to TroliMart's Terms of Use and Privacy Policy.";
-        terms.checked == true;
-        return false;
-    }else{
-        return true;
+function checkEmail(e){
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(e.target.value.match(mailformat) && e.target.value !== '' && e.target.value.includes(".com")){
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
+    }else {
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
     }
+
 }
 
-function goodPassword(){
+function goodPassword(e){
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
-    if(passwordInput.value.length < 8 || passwordInput.value.length > 10){
-        errorMsg.innerHTML = "Password length must be between 8 to 10 characters";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    if(e.target.value.length < 8 || e.target.value.length > 10){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(upperCaseLetters)){
-        errorMsg.innerHTML = "Password must contain atleast one uppercase letter";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(upperCaseLetters)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(lowerCaseLetters)){
-        errorMsg.innerHTML = "Password must contain atleast one lowercase letter";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(lowerCaseLetters)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(numbers)){
-        errorMsg.innerHTML = "Password must contain atleast one number";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(numbers)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
     }else{
-        errorMsg.innerHTML = "";
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
         return true;
     }
 }
 
-function matchPassword(){
-    if(passwordInput.value === confirmPassword.value){
-        errorMsg.innerHTML = "";
+function matchPassword(e){
+    if(passwordInput.value === e.target.value && e.target.value !== '' && goodPassword(e)){
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
         return true;
     }else{
-        errorMsg.innerHTML = "Please make sure both passwords match";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
     }
 }
+
+function checkDate(e){
+    if (e.target.value == "" || e.target.value == null) {
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
+    }else{
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
+    }
+}
+// checkForm();
+
+// function checkForm(){
+//     if (firstName.checkValidity() && lastName.checkValidity() && emailInput.checkValidity() && passwordInput.checkValidity()
+//         && birthdate.checkValidity() && confirmPassword.checkValidity() && terms.checkValidity() && matchPassword()
+//         && goodPassword() && checkTerms()){
+//         submmit.setAttribute("type", "reset");
+//         window.location.href = "homepage.html";
+//     }
+// }
+
+// function checkTerms(){
+//     if(terms.checked == false){
+//         errorMsg.innerHTML = "Please agree to TroliMart's Terms of Use and Privacy Policy.";
+//         terms.checked == true;
+//         return false;
+//     }else{
+//         return true;
+//     }
+// }
+
+
+
+
+
