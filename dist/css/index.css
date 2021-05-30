@@ -1,41 +1,38 @@
-main.container {
-    margin: 0 auto;
-    max-width: 540px;
-    height: 70vh;
+*{
+    margin: 0;
+    padding: 0;
 }
 header{
     background-color: #0c143c;
 }
-form{
-    background-color: #D0D0D0
+html, body{
+    height: 100%;
+}
+#container{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #0c143c;
+    position: relative;
+    clear: both;
+}
+p{
+    text-align: center;
+    color: aliceblue;
+}
+.form{
+    margin: auto;
+    width: 30%;
+}
+#callus{
+    color:#3385ff;
 }
 #newToTroliMart{
     color: red;
 }
-footer{
-    max-width: 100%;
-    min-height: 100px;
-    max-height: 200px;
-    margin-top: 12px;
-    padding: 3px;
-    padding-top: 5px;
-    padding-bottom: 4px;
-    text-align: center;
+ul{
     color: white;
-    font-style: italic;
-    position: absolute;
-    /* position: relative; */
-    /* position: static;  */
-    width: 100%;
-    bottom: 0;
-    
-}
-
-#callus{
-    color:#3385ff;
-}
-
-.form {
-    margin: auto;
-    padding-top: 5%;
 }
