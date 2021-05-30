@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TroliMart Admin Page</title>
+
+  <link rel="stylesheet" href="dist/css/adminpage.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+
+<body class="text-dark">
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark nav-bg m-0">
+        <div class="container-fluid">
+            <!-- upperleft logo -->
+            <div class="navbar-brand p-0 me-2">
+                <a href="homepage.html">
+                    <img class='trolimart-logo' src="images/trolimart rect2.png" width="180" alt="">
+                </a>
+            </div>
+
+            <div class="align-items-center w-50">
+                <form class="input-group align-items-center w-auto" action="">
+                    <input type="search" class="align-self-center form-control border rounded w-50"
+                        placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
+                    <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
+                        <a class="navbar-brand m-0" href="searchresults.html">
+                            <img src="images/search.png" width="35" height="35" alt="">
+                        </a>
+                    </button>
+                </form>
+            </div>
+
+            <ul class="navbar-nav">
+                <li class="nav-item text-light dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="images/user.png" width="30" height="30" alt="" class="mr-2">
+                        Hello Admin
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="index.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+  <div class="main-content">
+
+    <div id="product list">
+
+    
+    <table class="table">
+      <h3 class='categories-header'>Beverages</h3>
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Product image</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Asahi</td>
+            <td>RM10</td>
+          </tr> 
+          <tr>
+            <th scope="row">2</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td> <img src= "images/products/beverages/asahi.jpg" height="100" width="100"> </td>
+            <td>Thornton</td>
+            <td>RM20</td>
+          </tr>
+
+      
+          
+        </tbody>
+      </table>
+    </div>
+
+
+    
+        
+        
+    </div>
+
+  
+
+  <script src="dist/js/adminscript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
