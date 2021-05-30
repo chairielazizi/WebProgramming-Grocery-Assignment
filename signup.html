@@ -19,19 +19,31 @@
           <form>
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="First name" id="firstName" required>
+                <input type="text" class="form-control" placeholder="First name" id="firstName">
+                <div class="invalid-feedback">
+                  Please fill in your first name.
+                </div>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
+                <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                <div class="invalid-feedback">
+                  Please fill in your last name.
+                </div>
               </div>
             </div>
             <br>
             <div class="form-row">
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email" id="emailInput" required>
+                <input type="email" class="form-control" placeholder="Email" id="emailInput">
+                <div class="invalid-feedback">
+                  Please fill in valid email.
+                </div>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Password" id="passwordInput" required>
+                <input type="password" class="form-control" placeholder="Password" id="passwordInput">
+                <div class="invalid-feedback">
+                  Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
+                </div>
               </div>
             </div>
             <br>
@@ -42,12 +54,18 @@
                     <label for="birth-date">Birthdate:</label>
                   </div>
                   <div class="col-9">
-                    <input type="datetime-local" class="form-control" id="birthdate" required>
+                    <input type="datetime-local" class="form-control" id="birthdate">
+                    <div class="invalid-feedback">
+                      Please choose a valid date.
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword" required>
+                <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword">
+                <div class="invalid-feedback">
+                  Make sure both passwords match.
+                </div>
               </div>
             </div>
             <br>
@@ -78,9 +96,11 @@
               <label class="form-check-label" for="flexCheckChecked">
                 *By clicking "SIGN UP"; I agree to TroliMart's Terms of Use and Privacy Policy.
               </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
             </div>
             <div class="form-group text-center">
-              <p id="error" class="text-danger"></p>
               <button onclick="checkForm()" class="btn btn-secondary btn-block" id="submitForm">SIGN UP!</button>
              </div>
           </form>
