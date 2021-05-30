@@ -1,15 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 header{
     background-color: #0c143c;
 }
-#formcolour{
-    background-color: #D0D0D0;
+html, body{
+    height: 100%;
+}
+#container{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 footer{
     background-color: #0c143c;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    position: relative;
+    clear: both;
+}
+p{
+    text-align: center;
+    color: aliceblue;
+}
+.form{
+    margin: auto;
+    width: 50%;
+    padding: 1.5%;
 }
 #callus{
     color:#3385ff;
+}
+ul{
+    color: white;
 }
