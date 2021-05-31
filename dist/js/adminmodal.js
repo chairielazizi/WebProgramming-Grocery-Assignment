@@ -1064,4 +1064,5 @@ function deleteproduct(deletebutton,arr,i,name){
   });
 }
 
-
+document.getElementById("add").onclick = function () {
+        location.href = "addp.html";

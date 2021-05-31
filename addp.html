@@ -87,7 +87,7 @@
           </div>
           <div class="form-group pb-2">
 		  
-          <button class="btn btn-success" type="submit" onsubmit="return validateForm()" method="post">
+          <button class="btn btn-success" id="submit" type="submit" onsubmit="return validateForm()" method="post">
             Add Product
           </button>
 		  </div>
@@ -161,6 +161,26 @@
               Copyright &copy; 2021 TroliMart Co. <br>
           </p>
       </footer>
+
+<script type="text/javascript">
+    document.getElementById("submit").onclick = function () {
+	
+
+        alert("Product Added Successfully !");
+		location.href = "adminpage.html";
+    
+         
+    };
+	
+	document.getElementById("cancel").onclick = function () {
+	
+
+        alert("Cancel Adding Product!");
+		location.href = "adminpage.html";
+    
+         
+    };
+</script>
 
 	<script type="text/javascript" src="dist\js\addproduct.js"></script>
     <script type="text/javascript" src="dist\js\signup.js"></script>
