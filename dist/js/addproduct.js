@@ -32,7 +32,7 @@ file.addEventListener('change', function(){
 document.getElementById("submit").onclick = function () {
 	
 
-        alert("Product Added Successfully !");
+        
 		location.href = "adminpage.html";
     
          
