@@ -19,11 +19,17 @@
               <h4 class="font-weight-bold text-center pt-3">Please Sign In</h4><hr>
               <div class="form-group mx-5">
                 <label for="inputEmail">Email: </label>
-                <input type="email" id="inputEmail" class="form-control col-sm-12" placeholder="name@example.com" required autofocus> 
+                <input type="email" id="inputEmail" class="form-control col-sm-12" placeholder="name@example.com" autofocus> 
+                <div class="invalid-feedback">
+                  Please fill in valid email.
+                </div>
               </div> 
               <div class="form-group mx-5">
                 <label for="inputPassword">Password:</label>
-                <input type="password" id="inputPassword" class="form-control col-sm-12" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control col-sm-12" placeholder="Password">
+                <div class="invalid-feedback">
+                  Please fill in correct password.
+                </div>
               </div>
               <a class="ml-4 pl-4 mb-1 btn text-primary" data-toggle="modal" data-target="#passwordModal" role="button">Forgot Password? &raquo;</a><br>
               <div class="btn-group btn-group-toggle mx-5" data-toggle="buttons">
@@ -35,7 +41,7 @@
                 </label>
               </div><br>
               <div class="text-center">
-                <button onclick="checkForm()" class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
+                <button class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
               </div>
               <p class="text-dark text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" id="newToTroliMart" href="signup.html" role="button">Sign Up &raquo;</a></p>
             </form>
@@ -50,12 +56,26 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body shadow rounded">
                   <form>
-                    <input type="text" class="form-control mb-1 validate" placeholder="Username" id="username"> 
-                    <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="passwordInput">
-                    <input type="password" class="form-control validate" placeholder="Confirm New Password" id="confirmPassword">
-                    <p id="modalError" class="text-center text-danger"></p>
+                    <div class="form-group mx-5">
+                      <input type="text" class="form-control mb-1 validate" placeholder="Email" id="fInputEmail"> 
+                      <div class="invalid-feedback">
+                        Please fill in valid email.
+                      </div>
+                    </div>
+                    <div class="form-group mx-5">
+                      <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="fInputPassword">
+                      <div class="invalid-feedback">
+                        Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
+                      </div>
+                    </div>
+                    <div class="form-group mx-5">
+                      <input type="password" class="form-control validate" placeholder="Confirm New Password" id="fConfirmPassword">
+                      <div class="invalid-feedback">
+                        Make sure both passwords match.
+                      </div>
+                    </div>
                   </form>
                 </div>
                 <div class="modal-footer">
