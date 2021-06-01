@@ -33,7 +33,7 @@ document.getElementById("submit").onclick = function () {
 	
 
         
-		location.href = "adminpage.html";
+		//location.href = "adminpage.html";
     
          
     };

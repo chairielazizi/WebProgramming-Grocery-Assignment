@@ -163,7 +163,3 @@ input[type="file"]{
 	width: 115px;
 }
 
-input[type="file"] {
-    display: none;
-}
-

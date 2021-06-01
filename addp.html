@@ -23,18 +23,18 @@
 
     <main>
       <div class="container shadow rounded pt-4 pb-4 mt-4 mb-4">
-        <form class="form-container" name="myform">
+        <form class="form-container" name="myform" action="dist/php/addproduct.php" method="POST" enctype="multipart/form-data">
           <h2 class='pb-4'>Add Product</h2>
           <div class="form-row">
             <div class="form-group col center">
-              <img src="images/user.png" id="productImage" class="img img-thumbnail rounded mx-auto d-block " alt="...">
+              <img src="images/user.png" id="productImage" name="productImage" class="img img-thumbnail rounded mx-auto d-block " alt="...">
             </div>
             
           </div>
 		  <div class="form-row">
 		  <div class="form-group col-md-12 text-center">
               <label class="btn btn-primary" type="button" id="editPic" onclick= "file">
-			  <input type= "file" name="" id= "file" accept= "image/*">
+			  <input type= "file" name="image" id="file" accept= "image/*" enctype="multipart/form-data" value="image">
                 <i class="fa fa-fw fa-camera" for= "file"></i>
                 <span>Change Photo</span>
               </label>
@@ -43,7 +43,7 @@
          
           <div class="form-group">
             <label for="exampleInputEmail1">Product Name :</label>
-            <input type="text" id='productName' class='form-control' required>
+            <input type="text" name="productName" id='productName' class='form-control' required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -52,8 +52,8 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Categories :</label>
-              <input list="browsers" name="browser" id="browser" class="form-control" id="categories" required>
+            <label ">Categories :</label>
+              <input list="browsers" name="categories" id="browser" class="form-control" id="categories" required>
 					<datalist id="browsers">
 						<option value="Beverages">
 						<option value="Bread/Bakery">
@@ -77,7 +77,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="exampleInputEmail1">Price :</label>
-            <input type="number" class="form-control"  id="price" min="1" required>
+            <input type="number" class="form-control" name="price"  id="price" min="1" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -164,12 +164,8 @@
 
 <script type="text/javascript">
     document.getElementById("submit").onclick = function () {
-	
-
         //alert("Product Added Successfully !");
-		location.href = "adminpage.html";
-    
-         
+		//location.href = "adminpage.html";
     };
 	
 	document.getElementById("cancel").onclick = function () {
