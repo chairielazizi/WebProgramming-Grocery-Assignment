@@ -9,14 +9,14 @@ const submmit = document.getElementById("submitForm");
 const male = document.getElementById("male");
 const female = document.getElementById("female");
 
-firstName.addEventListener('keyup', checkValid)
-lastName.addEventListener('keyup', checkValid)
-emailInput.addEventListener('keyup', checkEmail)
-passwordInput.addEventListener('keyup', goodPassword)
-confirmPassword.addEventListener('keyup', matchPassword)
-birthdate.addEventListener('click', checkDate)
-birthdate.addEventListener('input', checkDate)
-terms.addEventListener('change', checkTerms)
+firstName.addEventListener('keyup', checkValid);
+lastName.addEventListener('keyup', checkValid);
+emailInput.addEventListener('keyup', checkEmail);
+passwordInput.addEventListener('keyup', goodPassword);
+confirmPassword.addEventListener('keyup', matchPassword);
+birthdate.addEventListener('click', checkDate);
+birthdate.addEventListener('input', checkDate);
+terms.addEventListener('change', checkTerms);
 
 function checkValid(e) {
     if(e.target.value !== '') {
