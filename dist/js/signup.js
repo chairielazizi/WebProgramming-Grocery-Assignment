@@ -14,8 +14,9 @@ lastName.addEventListener('keyup', checkValid)
 emailInput.addEventListener('keyup', checkEmail)
 passwordInput.addEventListener('keyup', goodPassword)
 confirmPassword.addEventListener('keyup', matchPassword)
-birthdate.addEventListener('click', ckeckDate)
-terms.addEventListener('keyup', checkValid)
+birthdate.addEventListener('click', checkDate)
+birthdate.addEventListener('input', checkDate)
+terms.addEventListener('change', checkTerms)
 
 function checkValid(e) {
     if(e.target.value !== '') {
@@ -79,7 +80,7 @@ function matchPassword(e){
 }
 
 function checkDate(e){
-    if (e.target.value == "" || e.target.value == null) {
+    if (!e.target.value) {
         e.target.classList.remove('is-valid')
         e.target.classList.add('is-invalid')
     }else{
@@ -87,7 +88,18 @@ function checkDate(e){
         e.target.classList.remove('is-invalid')
     }
 }
-// checkForm();
+
+function checkTerms(e){
+        if(!e.target.checked){
+            e.target.classList.remove('is-valid')
+            e.target.classList.add('is-invalid')
+            return false;
+        }else{
+            e.target.classList.add('is-valid')
+            e.target.classList.remove('is-invalid')
+            return true;
+        }
+    }
 
 // function checkForm(){
 //     if (firstName.checkValidity() && lastName.checkValidity() && emailInput.checkValidity() && passwordInput.checkValidity()
@@ -98,15 +110,6 @@ function checkDate(e){
 //     }
 // }
 
-// function checkTerms(){
-//     if(terms.checked == false){
-//         errorMsg.innerHTML = "Please agree to TroliMart's Terms of Use and Privacy Policy.";
-//         terms.checked == true;
-//         return false;
-//     }else{
-//         return true;
-//     }
-// }
 
 
 
