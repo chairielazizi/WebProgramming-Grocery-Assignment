@@ -21,21 +21,21 @@
         <div class="container-fluid">
             <!-- upperleft logo -->
             <div class="navbar-brand p-0 me-2">
-                <a href="homepage.html">
+                <a href="homepage.php">
                     <img class='trolimart-logo' src="images/trolimart rect2.png" width="180" alt="">
                 </a>
             </div>
 
             <div class="align-items-center w-50">
-                <form class="input-group align-items-center w-auto" action="">
-                    <input type="search" class="align-self-center form-control border rounded w-50"
-                        placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
-                    <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
-                        <a class="navbar-brand m-0" href="searchresults.html">
-                            <img src="images/search.png" width="35" height="35" alt="">
-                        </a>
-                    </button>
-                </form>
+              <form class="input-group align-items-center w-auto" action="searchresults.php" method="POST">
+                <input name='search-query' type="search" class="align-self-center form-control border rounded w-50"
+                    placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
+                <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
+                    <a class="navbar-brand m-0" href="#">
+                        <img src="../images/search.png" width="35" height="35" alt="">
+                    </a>
+                </button>
+              </form>
             </div>
 
             <ul class="navbar-nav">

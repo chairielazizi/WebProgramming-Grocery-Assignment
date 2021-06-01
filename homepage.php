@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TroliMart HomePage</title>
 
-  <link rel="stylesheet" href="dist/css/homepage.css">
+  <link rel="stylesheet" href="./dist/css/homepage.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 </head>
+
 
 <body class="text-dark">
   <!-- upper navbar -->
@@ -20,21 +21,21 @@
       <div class="container-fluid">
         <!-- upperleft logo -->
         <div class="navbar-brand p-0 me-2">
-          <a href="homepage.html">
+          <a href="homepage.php">
             <img class='trolimart-logo' src="images/trolimart rect2.png" width="180" alt="">
           </a>
         </div>
 
         <div class="align-items-center w-50">
-          <form class="input-group align-items-center w-auto" action="">
-              <input type="search" class="align-self-center form-control border rounded w-50"
-                  placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
-              <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
-                  <a class="navbar-brand m-0" href="searchresults.html">
-                      <img src="images/search.png" width="35" height="35" alt="">
-                  </a>
-              </button>
-          </form>
+            <form class="input-group align-items-center w-auto" action="searchresults.php" method="POST">
+                <input name='search-query' type="search" class="align-self-center form-control border rounded w-50"
+                    placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
+                <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
+                    <a class="navbar-brand m-0" href="#">
+                        <img src="./images/search.png" width="35" height="35" alt="">
+                    </a>
+                </button>
+            </form>
         </div>
         
         <!-- <div class="dummy-search-bar">
@@ -86,7 +87,8 @@
             <ul class="list-unstyled components">
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#beveragesModal">Beverages</a> -->
-                <a href="#" onclick="return changeToBeverages()">Beverages</a>
+                <!-- <a href="#" onclick="return changeToBeverages()">Beverages</a> -->
+                <a href="./categories/beveragespage.php" >Beverages</a>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#breadbakeryModal">Bread/Bakery</a> -->
@@ -135,16 +137,18 @@
           </div>
         </div>
         <div class="sidebar-header">
-          <h3>Search Filter</h3>
-          <div class="price-range">
-            <h5>Price Range</h5>
-            <div class="price-range-selector">
-              <input type="text" class='price-range-input' placeholder="RM MIN">
-              <div class="price-range-line"></div>
-              <input type="text" class='price-range-input' placeholder="RM MAX">
-            </div>
-            <button class="price-range-button btn btn-success">APPLY</button>
-          </div>
+            <form action="searchresults.php" method="POST">
+                <h3>Search Filter</h3>
+                <div class="price-range">
+                    <h5>Price Range</h5>
+                    <div class="price-range-selector">
+                        <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN">
+                        <div class="price-range-line"></div>
+                        <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX">
+                    </div>
+                    <button class="price-range-button btn btn-success">APPLY</button>
+                </div>
+            </form>
         </div>
 
 
@@ -166,7 +170,9 @@
           </div>
           <div class="modal-body beverages-modal d-flex flex-row flex-nowrap overflow-auto">
             <div class="row row-beverage d-flex justify-content-center">
-              <!-- <div class="col-md-6">
+            
+            
+            <!-- <div class="col-md-6">
 
                     </div>
                     <div class="col-md-6">
@@ -174,6 +180,7 @@
                     </div> -->
             </div>
           </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
@@ -460,11 +467,56 @@
       </div>
 
       <!-- the categories content -->
-      <div class="category-header" style="display: none;"></div> 
+      <div class="category-header" style="display: none;">
+        <?php
+            
+            include_once './dist/php/connection.php';
+
+            $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
+            $result = $conn->query($sql);
+            
+            while ($row = $result->fetch_assoc()) {
+                $product_name = $row['product_name'];
+                $product_image = $row['product_image'];
+                $product_price = $row['product_price'];
+            ?>
+            <div class="card card-block mx-2 text-center">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                <h6 class="card-title"><?php echo $product_name ?></h6>
+                <p class="card-text">RM<?php echo $product_price ?></p>
+                <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+            </div>
+            <?php
+            }
+        ?>
+      </div> 
       <div class="categories categories-content">
         <h3 class='categories-header'>Frozen Foods</h3>
         <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill">
 
+        </div>
+        <div>
+        <?php
+            
+            include_once './dist/php/connection.php';
+
+            $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
+            $result = $conn->query($sql);
+            
+            while ($row = $result->fetch_assoc()) {
+                $product_name = $row['product_name'];
+                $product_image = $row['product_image'];
+                $product_price = $row['product_price'];
+            ?>
+            <div class="card card-block mx-2 text-center">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                <h6 class="card-title"><?php echo $product_name ?></h6>
+                <p class="card-text">RM<?php echo $product_price ?></p>
+                <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+            </div>
+            <?php
+            }
+        ?>
         </div>
 
         <h3 class='categories-header'>Canned/Jarred Goods</h3>
