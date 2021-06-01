@@ -1,88 +1,63 @@
-checkForm();
-function checkForm(){
-    var emailInput = document.getElementById("inputEmail");
-    var passwordInput = document.getElementById("inputPassword");
-    var submmit = document.getElementById("submitForm");
-    if (emailInput.checkValidity() && passwordInput.checkValidity()){
-        submmit.setAttribute("type", "reset");
-        if(document.getElementById("option1").checked == true){
-            window.location.href = "homepage.html";
-        }else{
-            window.location.href = "adminpage.html";
-    }
-    }
-}
+const email = document.getElementById("inputEmail");
+const password = document.getElementById("inputPassword");
+const fEmail = document.getElementById("fInputEmail");
+const fPassword = document.getElementById("fInputPassword");
+const cfmPassword = document.getElementById("fConfirmPassword");
 
-const updatePassword = document.getElementById("updatePassword");
-const modalError = document.getElementById("modalError");
-const username = document.getElementById("username");
-const passwordInput = document.getElementById("passwordInput");
-const confirmPassword = document.getElementById("confirmPassword");
-const passwordModal = document.getElementById("passwordModal");
+email.addEventListener('keyup', checkEmail);
+password.addEventListener('keyup', goodPassword);
+fEmail.addEventListener('keyup', checkEmail);
+fPassword.addEventListener('keyup', goodPassword);
+cfmPassword.addEventListener('keyup', confirmPassword);
 
-updatePassword.addEventListener("click", function(){
-    if(checkFormModal()==true && matchPassword()==true && goodPassword()==true){
-        alert("You have successfully changed your password!");
-        $('#passwordModal').modal('hide');
-    }
-});
-
-
-function checkFormModal(){
-    if(username.value==""){
-        modalError.innerHTML = "Please insert your username";
-        return false;
-    }if(passwordInput.value==""){
-        modalError.innerHTML = "Please insert your password";
-        return false;
-    }if(confirmPassword.value==""){
-        modalError.innerHTML = "Please insert your confirmed password";
-        return false;
-    }else{
-        modalError.innerHTML = "";
-        return true;
+function checkEmail(e){
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(e.target.value.match(mailformat) && e.target.value !== '' && e.target.value.includes(".com")){
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
+    }else {
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
     }
 }
 
-function goodPassword(){
+function goodPassword(e){
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
-    if(passwordInput.value.length < 8 || passwordInput.value.length > 10){
-        modalError.innerHTML = "Password length must be between 8 to 10 characters";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    if(e.target.value.length < 8 || e.target.value.length > 10){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(upperCaseLetters)){
-        modalError.innerHTML = "Password must contain atleast one uppercase letter";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(upperCaseLetters)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(lowerCaseLetters)){
-        modalError.innerHTML = "Password must contain atleast one lowercase letter";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(lowerCaseLetters)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
-    }else if(!passwordInput.value.match(numbers)){
-        modalError.innerHTML = "Password must contain atleast one number";
-        passwordInput.value = "";
-        confirmPassword.value = "";
+    }else if(!e.target.value.match(numbers)){
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
         return false;
     }else{
-        modalError.innerHTML = "";
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
         return true;
     }
 }
 
-function matchPassword(){
-    if(passwordInput.value === confirmPassword.value){
-        modalError.innerHTML = "";
-        return true;
+function confirmPassword(e){
+    if(goodPassword(e) && fPassword.value === cfmPassword.value){
+        e.target.classList.add('is-valid')
+        e.target.classList.remove('is-invalid')
     }else{
-        modalError.innerHTML = "Please make sure both passwords match";
-        passwordInput.value = "";
-        confirmPassword.value = "";
-        return false;
+        e.target.classList.remove('is-valid')
+        e.target.classList.add('is-invalid')
     }
 }
+
+
+
 
