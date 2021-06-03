@@ -16,16 +16,16 @@
       <div class="form shadow rounded" id="formcolour">
           <h3 class="text-center pt-2">Sign Up</h3>
           <hr>
-          <form>
+          <form class="needs-validation"action="index.html" method="POST" novalidate>
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="First name" id="firstName">
+                <input type="text" class="form-control" placeholder="First name" id="firstName" required>
                 <div class="invalid-feedback">
                   Please fill in your first name.
                 </div>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
                 <div class="invalid-feedback">
                   Please fill in your last name.
                 </div>
@@ -34,13 +34,13 @@
             <br>
             <div class="form-row">
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email" id="emailInput">
+                <input type="email" class="form-control" placeholder="Email" id="emailInput" required>
                 <div class="invalid-feedback">
                   Please fill in valid email.
                 </div>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Password" id="passwordInput">
+                <input type="password" class="form-control" placeholder="Password" id="passwordInput" required>
                 <div class="invalid-feedback">
                   Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
                 </div>
@@ -54,7 +54,7 @@
                     <label for="birth-date">Birthdate:</label>
                   </div>
                   <div class="col-9">
-                    <input type="date" class="form-control" id="birthdate">
+                    <input type="date" class="form-control" id="birthdate" required>
                     <div class="invalid-feedback">
                       Please choose a valid date.
                     </div>
@@ -62,7 +62,7 @@
                 </div>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword">
+                <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword" required>
                 <div class="invalid-feedback">
                   Make sure both passwords match.
                 </div>
@@ -95,7 +95,7 @@
               </div>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="terms" id="terms" checked>
+              <input class="form-check-input" type="checkbox" value="terms" id="terms" checked required>
               <label class="form-check-label" for="flexCheckChecked">
                 *By clicking "SIGN UP"; I agree to TroliMart's Terms of Use and Privacy Policy.
               </label>
@@ -104,10 +104,10 @@
               </div>
             </div>
             <div class="form-group text-center">
-              <button class="btn btn-secondary btn-block" id="submitForm">SIGN UP!</button>
+              <p id="error"></p>
+              <button class="btn btn-secondary btn-block" type="submit" id="submitForm">SIGN UP!</button>
              </div>
           </form>
-          
         </div>
   </main>
 
