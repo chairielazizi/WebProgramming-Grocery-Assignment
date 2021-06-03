@@ -71,34 +71,34 @@
                     <div class="categories overflow-auto">
                     <ul class="list-unstyled components">
                             <li>
-                                <a href="./categories/beveragespage.php">Beverages</a>
+                                <?php $product='beverages'; echo "<a href='content.php?category=$product' >Beverages</a>"; ?>
                             </li>
                             <li>
-                                <a href='./categories/bakerypage.php'>Bread/Bakery</a>
+                                <?php $product='bread'; echo "<a href='content.php?category=$product' >Bread/Bakery</a>"; ?>
                             </li>
                             <li>
-                                <a href="./categories/cannedpage.php">Canned/Jarred Goods</a>
+                                <?php $product='canned'; echo "<a href='content.php?category=$product' >Canned/Jarred Goods</a>"; ?>
                             </li>
                             <li>
-                                <a href="./categories/dairypage.php">Dairy</a>
+                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy"; ?>
                             </li>
                             <li>
-                                <a href="./categories/drypage.php">Dry/Baking Goods</a>
+                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods"; ?>
                             </li>
                             <li>
-                                <a href="./categories/frozenpage.php">Frozen Foods</a>
+                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
                             </li>
                             <li>
-                                <a href="./categories/meatpage.php">Meat</a>
+                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
                             </li>
                             <li>
-                                <a href="./categories/producepage.php">Produce</a>
+                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
                             </li>
                             <li>
-                                <a href="./categories/cleanerspage.php">Cleaners</a>
+                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
                             </li>
                             <li>
-                                <a href="./categories/paperpage.php">Paper Goods</a>
+                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
                             </li>
                             <li>
                                 <a href="./categories/personalcarepage.php">Personal Care</a>

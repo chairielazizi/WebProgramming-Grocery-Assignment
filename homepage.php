@@ -119,26 +119,28 @@
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#meatModal">Meat</a> -->
                 <a href="#" onclick="return changeToMeat()">Meat</a>
+                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#fruitModal">Fruits</a> -->
-                <a href="#" onclick="return changeToFruits()">Fruits</a>
+                <!-- <a href="#" onclick="return changeToFruits()">Fruits</a> -->
+                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#vegeModal">Vegetables</a> -->
-                <a href="#" onclick="return changeToVegetables()">Vegetables</a>
+                <!-- <a href="#" onclick="return changeToVegetables()">Vegetables</a> -->
+                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#cleanersModal">Cleaners</a> -->
-                <a href="#" onclick="return changeToCleaner()">Cleaners</a>
+                <!-- <a href="#" onclick="return changeToCleaner()">Cleaners</a> -->
+                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#personalCareModal">Personal Care</a> -->
                 <a href="#" onclick="return changeToPersonal()">Personal Care</a>
+                <!-- <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Cares"; ?> -->
               </li>
-              <!-- <li>
-                                <a href="#" data-toggle="modal" data-target="#othersModal">Others</a>
-                            </li> -->
             </ul>
           </div>
         </div>
@@ -161,279 +163,6 @@
       </nav>
     </div>
     <!-- end of sidebar -->
-
-    <!-- MODAL FOR EACH CATEGORY -->
-    <!-- beverage -->
-    <div class="modal fade" id="beveragesModal" tabindex="-1" role="dialog" aria-labelledby="beveragesLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Beverages</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body beverages-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-beverage d-flex justify-content-center">
-            
-            
-            <!-- <div class="col-md-6">
-
-                    </div>
-                    <div class="col-md-6">
-
-                    </div> -->
-            </div>
-          </div>
-          
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- bread/bakery -->
-    <div class="modal fade" id="breadbakeryModal" tabindex="-1" role="dialog" aria-labelledby="breadbakeryLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="breadbakeryLabel">Bread/Bakery</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body breadbakery-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-breadbakery d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- canned/jar -->
-    <div class="modal fade" id="cannedModal" tabindex="-1" role="dialog" aria-labelledby="cannedLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cannedLabel">Canned/Jarred</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body canned-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-canned d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- dry/baking -->
-    <div class="modal fade" id="drybakingModal" tabindex="-1" role="dialog" aria-labelledby="drybakingLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="drybakingLabel">Dry/Baking Goods</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body drybaking-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-drybaking d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- dairy -->
-    <div class="modal fade" id="dairyModal" tabindex="-1" role="dialog" aria-labelledby="dairyLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="dairyLabel">Dairy</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body dairy-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-dairy d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- frozen -->
-    <div class="modal fade" id="frozenModal" tabindex="-1" role="dialog" aria-labelledby="frozenLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="frozenLabel">Frozen Foods</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body frozen-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-frozen d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- meat -->
-    <div class="modal fade" id="meatModal" tabindex="-1" role="dialog" aria-labelledby="meatLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="meatLabel">Meat</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body meat-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-meat d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- fruits -->
-    <div class="modal fade" id="fruitModal" tabindex="-1" role="dialog" aria-labelledby="fruitLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="fruitLabel">Produce</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body fruit-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-fruit d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- cleaners -->
-    <div class="modal fade" id="cleanersModal" tabindex="-1" role="dialog" aria-labelledby="cleanersLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleanersLabel">Cleaners</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body cleaners-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-cleaners d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- vegetables -->
-    <div class="modal fade" id="vegeModal" tabindex="-1" role="dialog" aria-labelledby="vegeLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="vegeLabel">Paper</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body vege-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-vege d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- personal care -->
-    <div class="modal fade" id="personalCareModal" tabindex="-1" role="dialog" aria-labelledby="personalCareLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="personalCareLabel">Personal Care</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body personalCare-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-personalCare d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- others -->
-    <div class="modal fade" id="othersModal" tabindex="-1" role="dialog" aria-labelledby="othersLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="othersLabel">Others</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body others-modal d-flex flex-row flex-nowrap overflow-auto">
-            <div class="row row-others d-flex justify-content-center"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- end of modal -->
 
     <!-- items -->
     <div class='content'>

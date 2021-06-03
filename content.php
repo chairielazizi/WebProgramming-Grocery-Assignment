@@ -98,19 +98,24 @@
                                 <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
                             </li>
                             <li>
-                                <a href="meatpage.php">Meat</a>
+                                <!-- <a href="meatpage.php">Meat</a> -->
+                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
                             </li>
                             <li>
-                                <a href="fruitpage.php">Fruits</a>
+                                <!-- <a href="fruitpage.php">Fruits</a> -->
+                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
                             </li>
                             <li>
-                                <a href="vegetablepage.php">Vegetables</a>
+                                <!-- <a href="vegetablepage.php">Vegetables</a> -->
+                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
                             </li>
                             <li>
-                                <a href="cleanerspage.php">Cleaners</a>
+                                <!-- <a href="cleanerspage.php">Cleaners</a> -->
+                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
                             </li>
                             <li>
                                 <a href="personalcarepage.php">Personal Care</a>
+                                <!-- <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care"; ?> -->
                             </li>
                         </ul>
                     </div>
@@ -283,6 +288,111 @@
                     else if($product=='frozen'){
                         echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Frozen Foods\" </script>";
                         $sql = "SELECT * FROM products WHERE (product_category = 'frozen')";
+                        // $sql = "SELECT * FROM products";
+                        $result = $conn->query($sql);
+                        
+                        while ($row = $result->fetch_assoc()) {
+                                $product_name = $row['product_name'];
+                                $product_image = $row['product_image'];
+                                $product_price = $row['product_price'];
+                            
+                        ?>
+                        <div class="card card-block mx-2 text-center">
+                            <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                            <h6 class="card-title"><?php echo $product_name ?></h6>
+                            <p class="card-text">RM<?php echo $product_price ?></p>
+                            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+                        </div>
+                        <?php
+                        }
+                    }
+                    else if($product=='meat'){
+                        echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Meats\" </script>";
+                        $sql = "SELECT * FROM products WHERE (product_category = 'meat')";
+                        // $sql = "SELECT * FROM products";
+                        $result = $conn->query($sql);
+                        
+                        while ($row = $result->fetch_assoc()) {
+                                $product_name = $row['product_name'];
+                                $product_image = $row['product_image'];
+                                $product_price = $row['product_price'];
+                            
+                        ?>
+                        <div class="card card-block mx-2 text-center">
+                            <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                            <h6 class="card-title"><?php echo $product_name ?></h6>
+                            <p class="card-text">RM<?php echo $product_price ?></p>
+                            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+                        </div>
+                        <?php
+                        }
+                    }
+                    else if($product=='fruit'){
+                        echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Fruits\" </script>";
+                        $sql = "SELECT * FROM products WHERE (product_category = 'fruit')";
+                        // $sql = "SELECT * FROM products";
+                        $result = $conn->query($sql);
+                        
+                        while ($row = $result->fetch_assoc()) {
+                                $product_name = $row['product_name'];
+                                $product_image = $row['product_image'];
+                                $product_price = $row['product_price'];
+                            
+                        ?>
+                        <div class="card card-block mx-2 text-center">
+                            <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                            <h6 class="card-title"><?php echo $product_name ?></h6>
+                            <p class="card-text">RM<?php echo $product_price ?></p>
+                            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+                        </div>
+                        <?php
+                        }
+                    }
+                    else if($product=='vegetable'){
+                        echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Vegetables\" </script>";
+                        $sql = "SELECT * FROM products WHERE (product_category = 'vegetable')";
+                        // $sql = "SELECT * FROM products";
+                        $result = $conn->query($sql);
+                        
+                        while ($row = $result->fetch_assoc()) {
+                                $product_name = $row['product_name'];
+                                $product_image = $row['product_image'];
+                                $product_price = $row['product_price'];
+                            
+                        ?>
+                        <div class="card card-block mx-2 text-center">
+                            <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                            <h6 class="card-title"><?php echo $product_name ?></h6>
+                            <p class="card-text">RM<?php echo $product_price ?></p>
+                            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+                        </div>
+                        <?php
+                        }
+                    }
+                    else if($product=='cleaner'){
+                        echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Cleaners\" </script>";
+                        $sql = "SELECT * FROM products WHERE (product_category = 'Cleaner')";
+                        // $sql = "SELECT * FROM products";
+                        $result = $conn->query($sql);
+                        
+                        while ($row = $result->fetch_assoc()) {
+                                $product_name = $row['product_name'];
+                                $product_image = $row['product_image'];
+                                $product_price = $row['product_price'];
+                            
+                        ?>
+                        <div class="card card-block mx-2 text-center">
+                            <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                            <h6 class="card-title"><?php echo $product_name ?></h6>
+                            <p class="card-text">RM<?php echo $product_price ?></p>
+                            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+                        </div>
+                        <?php
+                        }
+                    }
+                    else if($product=='personalcare'){
+                        echo "<script type=\"text/javascript\">document.querySelector('.categories-header').innerText = \"Personal Cares\" </script>";
+                        $sql = "SELECT * FROM products WHERE (product_category = 'personalcare')";
                         // $sql = "SELECT * FROM products";
                         $result = $conn->query($sql);
                         
