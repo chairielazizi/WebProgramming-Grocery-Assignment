@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TroliMart Search Results</title>
 
-    <link rel="stylesheet" href="../dist/css/homepage.css">
+    <link rel="stylesheet" href="./dist/css/homepage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
@@ -24,8 +24,8 @@
             <div class="container-fluid">
                 <!-- upperleft logo -->
                 <div class="navbar-brand p-0 me-2" >
-                    <a href="../homepage.php">
-                        <img src="../images/trolimart rect2.png" width="180" alt="">
+                    <a href="./homepage.php">
+                        <img src="./images/trolimart rect2.png" width="180" alt="">
                     </a>
                 </div>
 
@@ -35,7 +35,7 @@
                             placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
                         <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
                             <a class="navbar-brand m-0" href="#">
-                                <img src="../images/search.png" width="35" height="35" alt="">
+                                <img src="./images/search.png" width="35" height="35" alt="">
                             </a>
                         </button>
                     </form>
@@ -44,7 +44,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item text-light dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="../images/user.png" width="30" height="30" alt="" class="mr-2">
+                            <img src="./images/user.png" width="30" height="30" alt="" class="mr-2">
                             Hello WP Boyz
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -54,7 +54,7 @@
                     </li>
                     <li class="nav-item text-light ml-5">
                         <a class="view-cart navbar-brand" href="#" onclick="return toggleCart()">
-                            <img src="../images/shopping-cart.png" width="30" height="30" alt="">
+                            <img src="./images/shopping-cart.png" width="30" height="30" alt="">
                             <p class="view-cart-text">View List</p>
                         </a>
                     </li>
@@ -87,35 +87,35 @@
                             </li>
                             <li>
                                 <!-- <a href="dairypage.php">Dairy</a> -->
-                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy</a>"; ?>
+                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy"; ?>
                             </li>
                             <li>
                                 <!-- <a href="drypage.php">Dry/Baking Goods</a> -->
-                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods</a>"; ?>
+                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods"; ?>
                             </li>
                             <li>
                                 <!-- <a href="frozenpage.php">Frozen Foods</a> -->
-                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods</a>"; ?>
+                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
                             </li>
                             <li>
                                 <!-- <a href="meatpage.php">Meat</a> -->
-                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats</a>"; ?>
+                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
                             </li>
                             <li>
                                 <!-- <a href="fruitpage.php">Fruits</a> -->
-                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits</a>"; ?>
+                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
                             </li>
                             <li>
                                 <!-- <a href="vegetablepage.php">Vegetables</a> -->
-                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables</a>"; ?>
+                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
                             </li>
                             <li>
                                 <!-- <a href="cleanerspage.php">Cleaners</a> -->
-                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners</a>"; ?>
+                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
                             </li>
                             <li>
-                                <!-- <a href="personalcarepage.php">Personal Care</a> -->
-                                <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care</a>"; ?>
+                                <a href="personalcarepage.php">Personal Care</a>
+                                <!-- <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care"; ?> -->
                             </li>
                         </ul>
                     </div>
@@ -148,21 +148,21 @@
                 </ol>
                 <div class="carousel-inner" id="carouselinnerhomepage">
                     <div class="carousel-item active">
-                        <img class="d-block align-items-center" src="../images/trolimart rectangle.png" alt="First slide">
+                        <img class="d-block align-items-center" src="./images/trolimart rectangle.png" alt="First slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block align-items-center" src="../images/banner5.jpg" alt="Second slide"
+                        <img class="d-block align-items-center" src="./images/banner5.jpg" alt="Second slide"
                         style="object-fit:cover; object-position: 50% 30%;">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block align-items-center" src="../images/banner3.jpg" alt="Third slide"
+                        <img class="d-block align-items-center" src="./images/banner3.jpg" alt="Third slide"
                         style="object-fit:cover; object-position: 50% 35%;">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block align-items-center" src="../images/banner4.jpg" alt="Third slide"
+                        <img class="d-block align-items-center" src="./images/banner4.jpg" alt="Third slide"
                         style="object-fit:cover; object-position: 50% 35%;">
                     </div>
 
