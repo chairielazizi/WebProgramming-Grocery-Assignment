@@ -74,34 +74,34 @@
                                 <a href="./categories/beveragespage.php">Beverages</a>
                             </li>
                             <li>
-                                <a href='bakerypage.php'>Bread/Bakery</a>
+                                <a href='./categories/bakerypage.php'>Bread/Bakery</a>
                             </li>
                             <li>
-                                <a href="cannedpage.php">Canned/Jarred Goods</a>
+                                <a href="./categories/cannedpage.php">Canned/Jarred Goods</a>
                             </li>
                             <li>
-                                <a href="dairypage.php">Dairy</a>
+                                <a href="./categories/dairypage.php">Dairy</a>
                             </li>
                             <li>
-                                <a href="drypage.php">Dry/Baking Goods</a>
+                                <a href="./categories/drypage.php">Dry/Baking Goods</a>
                             </li>
                             <li>
-                                <a href="frozenpage.php">Frozen Foods</a>
+                                <a href="./categories/frozenpage.php">Frozen Foods</a>
                             </li>
                             <li>
-                                <a href="meatpage.php">Meat</a>
+                                <a href="./categories/meatpage.php">Meat</a>
                             </li>
                             <li>
-                                <a href="producepage.php">Produce</a>
+                                <a href="./categories/producepage.php">Produce</a>
                             </li>
                             <li>
-                                <a href="cleanerspage.php">Cleaners</a>
+                                <a href="./categories/cleanerspage.php">Cleaners</a>
                             </li>
                             <li>
-                                <a href="paperpage.php">Paper Goods</a>
+                                <a href="./categories/paperpage.php">Paper Goods</a>
                             </li>
                             <li>
-                                <a href="personalcarepage.php">Personal Care</a>
+                                <a href="./categories/personalcarepage.php">Personal Care</a>
                             </li>
                         </ul>
                     </div>
