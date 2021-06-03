@@ -963,35 +963,35 @@ const modalothers = [
 //   fruitModal.appendChild(produceCard);
 // });
 
-modalcleaners.forEach((products) => {
-  var cleanersCard = document.createElement("div");
-  cleanersCard.className = "card card-block mx-2 text-center mb-2";
+// modalcleaners.forEach((products) => {
+//   var cleanersCard = document.createElement("div");
+//   cleanersCard.className = "card card-block mx-2 text-center mb-2";
 
-  var cleanersPhoto = document.createElement("img");
-  cleanersPhoto.className = "card-img-top";
-  cleanersPhoto.src = products.img;
-  cleanersPhoto.style.height = "9em";
+//   var cleanersPhoto = document.createElement("img");
+//   cleanersPhoto.className = "card-img-top";
+//   cleanersPhoto.src = products.img;
+//   cleanersPhoto.style.height = "9em";
 
-  var cleanersButton = document.createElement("button");
-  cleanersButton.className = "add-to-cart-button btn btn-success";
-  cleanersButton.textContent = "Add to List";
-  addtolist(cleanersButton, products.name, products.price);
+//   var cleanersButton = document.createElement("button");
+//   cleanersButton.className = "add-to-cart-button btn btn-success";
+//   cleanersButton.textContent = "Add to List";
+//   addtolist(cleanersButton, products.name, products.price);
 
-  var cleanersName = document.createElement("h6");
-  cleanersName.className = "card-title";
-  cleanersName.textContent = products.name;
+//   var cleanersName = document.createElement("h6");
+//   cleanersName.className = "card-title";
+//   cleanersName.textContent = products.name;
 
-  var cleanersPrice = document.createElement("p");
-  cleanersPrice.className = "card-text";
-  cleanersPrice.textContent = "RM " + products.price.toFixed(2);
+//   var cleanersPrice = document.createElement("p");
+//   cleanersPrice.className = "card-text";
+//   cleanersPrice.textContent = "RM " + products.price.toFixed(2);
 
-  cleanersCard.appendChild(cleanersPhoto);
-  cleanersCard.appendChild(cleanersName);
-  cleanersCard.appendChild(cleanersPrice);
-  cleanersCard.appendChild(cleanersButton);
+//   cleanersCard.appendChild(cleanersPhoto);
+//   cleanersCard.appendChild(cleanersName);
+//   cleanersCard.appendChild(cleanersPrice);
+//   cleanersCard.appendChild(cleanersButton);
 
-  cleanersModal.appendChild(cleanersCard);
-});
+//   cleanersModal.appendChild(cleanersCard);
+// });
 
 // modalvege.forEach((products) => {
 //   var paperCard = document.createElement("div");

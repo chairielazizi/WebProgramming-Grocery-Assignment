@@ -91,13 +91,13 @@
                                 <a href="meatpage.php">Meat</a>
                             </li>
                             <li>
-                                <a href="producepage.php">Produce</a>
+                                <a href="fruitpage.php">Fruits</a>
+                            </li>
+                            <li>
+                                <a href="vegetablepage.php">Vegetables</a>
                             </li>
                             <li>
                                 <a href="cleanerspage.php">Cleaners</a>
-                            </li>
-                            <li>
-                                <a href="paperpage.php">Paper Goods</a>
                             </li>
                             <li>
                                 <a href="personalcarepage.php">Personal Care</a>

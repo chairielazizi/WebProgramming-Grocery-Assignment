@@ -158,13 +158,13 @@
                 </div>
             </div>
             
-            <h3 class="categories-header">Bread/Bakery</h3>
+            <h3 class="categories-header">Produce</h3>
             <div class="categories categories-content row d-flex">
                 <?php
                         
                     include_once '../dist/php/connection.php';
 
-                    $sql = "SELECT * FROM products WHERE product_category = 'bread'";
+                    $sql = "SELECT * FROM products WHERE product_category = 'vegetable'";
                     $result = $conn->query($sql);
                     
                     while ($row = $result->fetch_assoc()) {
