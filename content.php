@@ -87,35 +87,35 @@
                             </li>
                             <li>
                                 <!-- <a href="dairypage.php">Dairy</a> -->
-                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy"; ?>
+                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="drypage.php">Dry/Baking Goods</a> -->
-                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods"; ?>
+                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="frozenpage.php">Frozen Foods</a> -->
-                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
+                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="meatpage.php">Meat</a> -->
-                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
+                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="fruitpage.php">Fruits</a> -->
-                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
+                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="vegetablepage.php">Vegetables</a> -->
-                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
+                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables</a>"; ?>
                             </li>
                             <li>
                                 <!-- <a href="cleanerspage.php">Cleaners</a> -->
-                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
+                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners</a>"; ?>
                             </li>
                             <li>
-                                <a href="personalcarepage.php">Personal Care</a>
-                                <!-- <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care"; ?> -->
+                                <!-- <a href="personalcarepage.php">Personal Care</a> -->
+                                <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care</a>"; ?>
                             </li>
                         </ul>
                     </div>

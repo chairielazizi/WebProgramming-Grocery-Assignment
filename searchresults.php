@@ -80,28 +80,28 @@
                                 <?php $product='canned'; echo "<a href='content.php?category=$product' >Canned/Jarred Goods</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy"; ?>
+                                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods"; ?>
+                                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
+                                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
+                                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
+                                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
+                                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables</a>"; ?>
                             </li>
                             <li>
-                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
+                                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners</a>"; ?>
                             </li>
                             <li>
-                                <a href="./categories/personalcarepage.php">Personal Care</a>
+                                <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Care</a>"; ?>
                             </li>
                         </ul>
                     </div>

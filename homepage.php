@@ -104,42 +104,42 @@
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#dairyModal">Dairy</a> -->
                 <!-- <a href="#" onclick="return changeToDairy()">Dairy</a> -->
-                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy"; ?>
+                <?php $product='dairy'; echo "<a href='content.php?category=$product' >Dairy</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#drybakingModal">Dry/Baking Goods</a> -->
                 <!-- <a href="#" onclick="return changeToBaking()">Dry/Baking Goods</a> -->
-                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods"; ?>
+                <?php $product='baking'; echo "<a href='content.php?category=$product' >Dry/Baking Goods</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#frozenModal">Frozen Foods</a> -->
                 <!-- <a href="#" onclick="return changeToFrozen()">Frozen Foods</a> -->
-                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods"; ?>
+                <?php $product='frozen'; echo "<a href='content.php?category=$product' >Frozen Foods</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#meatModal">Meat</a> -->
                 <a href="#" onclick="return changeToMeat()">Meat</a>
-                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats"; ?>
+                <?php $product='meat'; echo "<a href='content.php?category=$product' >Meats</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#fruitModal">Fruits</a> -->
                 <!-- <a href="#" onclick="return changeToFruits()">Fruits</a> -->
-                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits"; ?>
+                <?php $product='fruit'; echo "<a href='content.php?category=$product' >Fruits</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#vegeModal">Vegetables</a> -->
                 <!-- <a href="#" onclick="return changeToVegetables()">Vegetables</a> -->
-                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables"; ?>
+                <?php $product='vegetable'; echo "<a href='content.php?category=$product' >Vegetables</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#cleanersModal">Cleaners</a> -->
                 <!-- <a href="#" onclick="return changeToCleaner()">Cleaners</a> -->
-                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners"; ?>
+                <?php $product='cleaner'; echo "<a href='content.php?category=$product' >Cleaners</a>"; ?>
               </li>
               <li>
                 <!-- <a href="#" data-toggle="modal" data-target="#personalCareModal">Personal Care</a> -->
-                <a href="#" onclick="return changeToPersonal()">Personal Care</a>
-                <!-- <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Cares"; ?> -->
+                <!-- <a href="#" onclick="return changeToPersonal()">Personal Care</a> -->
+                <?php $product='personalcare'; echo "<a href='content.php?category=$product' >Personal Cares</a>"; ?>
               </li>
             </ul>
           </div>
