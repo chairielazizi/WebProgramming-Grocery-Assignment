@@ -225,26 +225,32 @@
             }
         ?>
       </div> 
+
       <div class="categories categories-content">
         <h3 class='categories-header'>Frozen Foods</h3>
-        <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill">
+        <!-- <div id='c-frozen-foods' class="d-flex flex-row flex-nowrap overflow-auto flex-fill" style="display:none;">
 
-        </div>
-        <div>
+        </div> -->
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
         <?php
             
             include_once './dist/php/connection.php';
 
-            $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
+            $sql = "SELECT * FROM products WHERE product_category = 'frozen'";
             $result = $conn->query($sql);
             
+            $i = 0;
             while ($row = $result->fetch_assoc()) {
                 $product_name = $row['product_name'];
                 $product_image = $row['product_image'];
                 $product_price = $row['product_price'];
+                $i++;
+                if($i > 5){
+                  break;
+                }
             ?>
             <div class="card card-block mx-2 text-center">
-                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'"/><br>'; ?>
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
                 <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
@@ -255,21 +261,102 @@
         </div>
 
         <h3 class='categories-header'>Canned/Jarred Goods</h3>
-        <div id='c-canned-goods' class="d-flex flex-row flex-nowrap overflow-auto">
+        <!-- <div id='c-canned-goods' class="d-flex flex-row flex-nowrap overflow-auto" style="display:none;">
 
+        </div> -->
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <?php
+            
+            include_once './dist/php/connection.php';
+
+            $sql = "SELECT * FROM products WHERE product_category = 'canned'";
+            $result = $conn->query($sql);
+            
+            $i = 0;
+            while ($row = $result->fetch_assoc()) {
+                $product_name = $row['product_name'];
+                $product_image = $row['product_image'];
+                $product_price = $row['product_price'];
+                $i++;
+                if($i > 5){
+                  break;
+                }
+            ?>
+            <div class="card card-block mx-2 text-center">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'" style=height:9em;/><br>'; ?>
+                <h6 class="card-title"><?php echo $product_name ?></h6>
+                <p class="card-text">RM<?php echo $product_price ?></p>
+                <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+            </div>
+            <?php
+            }
+        ?>
         </div>
 
         <h3 class='categories-header'>Beverages</h3>
-        <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto">
+        <!-- <div id='c-beverages' class="d-flex flex-row flex-nowrap overflow-auto" style="display:none;">
 
-        </div>
-        <div id='c-beverages-content' class="d-flex flex-row flex-nowrap overflow-auto" style="display: none;">
+        </div> -->
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <?php
+            
+            include_once './dist/php/connection.php';
 
+            $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
+            $result = $conn->query($sql);
+            
+            $i = 0;
+            while ($row = $result->fetch_assoc()) {
+                $product_name = $row['product_name'];
+                $product_image = $row['product_image'];
+                $product_price = $row['product_price'];
+                $i++;
+                if($i > 5){
+                  break;
+                }
+            ?>
+            <div class="card card-block mx-2 text-center">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'" style=height:9em;/><br>'; ?>
+                <h6 class="card-title"><?php echo $product_name ?></h6>
+                <p class="card-text">RM<?php echo $product_price ?></p>
+                <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+            </div>
+            <?php
+            }
+        ?>
         </div>
 
         <h3 class='categories-header'>Personal Care Products</h3>
-        <div id='c-personal-care' class="d-flex flex-row flex-nowrap overflow-auto">
+        <!-- <div id='c-personal-care' class="d-flex flex-row flex-nowrap overflow-auto">
 
+        </div> -->
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <?php
+            
+            include_once './dist/php/connection.php';
+
+            $sql = "SELECT * FROM products WHERE product_category = 'personalcare'";
+            $result = $conn->query($sql);
+            
+            $i = 0;
+            while ($row = $result->fetch_assoc()) {
+                $product_name = $row['product_name'];
+                $product_image = $row['product_image'];
+                $product_price = $row['product_price'];
+                $i++;
+                if($i > 5){
+                  break;
+                }
+            ?>
+            <div class="card card-block mx-2 text-center">
+                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $product_image ).'" style=height:9em;/><br>'; ?>
+                <h6 class="card-title"><?php echo $product_name ?></h6>
+                <p class="card-text">RM<?php echo $product_price ?></p>
+                <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+            </div>
+            <?php
+            }
+        ?>
         </div>
       </div>
 
