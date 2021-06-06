@@ -16,16 +16,16 @@
       <div class="form shadow rounded" id="formcolour">
           <h3 class="text-center pt-2">Sign Up</h3>
           <hr>
-          <form class="needs-validation"action="index.html" method="POST" novalidate>
+          <form class="needs-validation" action="processSignup.php" method="POST" novalidate>
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="First name" id="firstName" required>
+                <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName" required>
                 <div class="invalid-feedback">
                   Please fill in your first name.
                 </div>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" id="lastName" required>
+                <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName" required>
                 <div class="invalid-feedback">
                   Please fill in your last name.
                 </div>
@@ -34,13 +34,13 @@
             <br>
             <div class="form-row">
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email" id="emailInput" required>
+                <input type="email" class="form-control" placeholder="Email" id="emailInput" name="emailInput" required>
                 <div class="invalid-feedback">
                   Please fill in valid email.
                 </div>
               </div>
               <div class="col">
-                <input type="password" class="form-control" placeholder="Password" id="passwordInput" required>
+                <input type="password" class="form-control" placeholder="Password" id="passwordInput" name="passwordInput" required>
                 <div class="invalid-feedback">
                   Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
                 </div>
@@ -54,7 +54,7 @@
                     <label for="birth-date">Birthdate:</label>
                   </div>
                   <div class="col-9">
-                    <input type="date" class="form-control" id="birthdate" required>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
                     <div class="invalid-feedback">
                       Please choose a valid date.
                     </div>
@@ -77,11 +77,11 @@
                   </div>
                   <div class="col-9">
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="option1" checked>
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male" checked>
                       <label class="form-check-label" for="inlineRadio1">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="female">
                       <label class="form-check-label" for="inlineRadio2">Female</label>
                     </div>
                     <div class="invalid-feedback">
