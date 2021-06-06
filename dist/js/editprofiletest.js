@@ -3,6 +3,25 @@ const username = document.querySelector('#username')
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
 const newPassword = document.querySelector('#newPassword')
+const imgDiv = document.querySelector('form-group col-md-4')
+const img = document.querySelector('#profilePic');
+const file = document.querySelector('#file');
+const editPic = document.querySelector('#editPic');
+
+file.addEventListener('change', function(){
+    const choosedFile = this.files[0];
+
+    if (choosedFile){
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function(){
+            img.setAttribute('src',reader.result);
+        }
+        );
+       reader.readAsDataURL(choosedFile);
+    }
+}
+);
 
 
 
@@ -30,3 +49,12 @@ function checkValid(e) {
 fullName.addEventListener('input', checkValid)
 username.addEventListener('input', checkValid)
 email.addEventListener('input', checkValid)
+
+function displayAlert1(){
+    var confirm1 = confirm('Are you sure with the changes?');
+    if(confirm1 == true){
+        alert("Your profile has been updated!");
+        window.location.href = 'homepage.html';
+    }
+    
+}

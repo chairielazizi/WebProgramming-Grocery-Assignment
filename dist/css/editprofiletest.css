@@ -129,4 +129,13 @@ input[type="file"]{
     width: 150px;
     height: 150px;
 }
-
+img#profilePic{
+    box-sizing: border-box;
+    width: 149px;
+    height: 149px;
+    border-radius: 50%;
+    margin:0;
+    border: 5px solid  #0c143c;
+    padding: 3px;
+    background-color: whitesmoke;
+}
