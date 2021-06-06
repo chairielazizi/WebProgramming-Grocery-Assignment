@@ -15,7 +15,7 @@
 
         <main id="container">
           <div class="form shadow rounded">
-            <form>
+            <form class="needs-validation" action="processLogin.php" method="POST" novalidate>
             <?php
                 // get action value in url to display message
                 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -23,19 +23,22 @@
                 if($action == "signup_success"){
                     echo "<div class='alert alert-success margin-top-40' role='alert'> Signed up successfully <br /> Please sign in with username and password. </div>";
                 }
+                if($action == "login_failed"){
+                  echo "<div class='alert alert-danger margin-top-40' role='alert'> Invalid username or password! </div>";
+              }
             ?>
 
               <h4 class="font-weight-bold text-center pt-3">Please Sign In</h4><hr>
               <div class="form-group mx-5">
                 <label for="inputEmail">Email: </label>
-                <input type="email" id="inputEmail" class="form-control col-sm-12" placeholder="name@example.com" autofocus> 
+                <input type="email" id="inputEmail" name="inputEmail" class="form-control col-sm-12" placeholder="name@example.com" autofocus required> 
                 <div class="invalid-feedback">
                   Please fill in valid email.
                 </div>
               </div> 
               <div class="form-group mx-5">
                 <label for="inputPassword">Password:</label>
-                <input type="password" id="inputPassword" class="form-control col-sm-12" placeholder="Password">
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control col-sm-12" placeholder="Password" required>
                 <div class="invalid-feedback">
                   Please fill in correct password.
                 </div>
@@ -50,7 +53,7 @@
                 </label>
               </div><br>
               <div class="text-center">
-                <button class="btn btn-primary text-center mt-1" id="submitForm">SIGN IN</button>
+                <button class="btn btn-primary text-center mt-1" type="submit" id="submitForm">SIGN IN</button>
               </div>
               <p class="text-dark text-right mt-2 mb-0">New to TroliMart?   <a class="btn pt-0" id="newToTroliMart" href="signup.php" role="button">Sign Up &raquo;</a></p>
             </form>
