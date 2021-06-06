@@ -20,17 +20,14 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
         $sql = "SELECT Email FROM account WHERE Email = '".$email."'";
         $result = $conn->query($sql);
         if($result->num_rows >= 1){
-            echo "<h2>Email already exist!</h2>";
-            echo "<a class=\"nav-link\" a href=\"signup.html\">Sign Up</a>";
-            echo "<a class=\"nav-link\" a href=\"index.html\">Log In</a>";
+            header("Location: signup.php?action=signup_failed");
         }else{
-            $stmt = $conn->prepare("INSERT INTO account(Email, First name, Last name, Password, Birth date, 
+            $stmt = $conn->prepare("INSERT INTO account(Email, `First name`, `Last name`, Password, `Birth date`, 
                     Gender) VALUES(?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssss", $email, $firstName, $lastName, $password, $birthdate, $gender);
             $stmt->execute();
 
-            echo "<h2>Registration successful</h2>";
-            echo "<a class=\"nav-link\" a href=\"index.html\">Log In</a>";
+            header("Location: index.php?action=signup_success");
             $stmt->close();
             }
     }
