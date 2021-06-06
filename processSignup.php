@@ -22,9 +22,10 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
         if($result->num_rows >= 1){
             header("Location: signup.php?action=signup_failed");
         }else{
+            $hashedpassword = sha1($password);
             $stmt = $conn->prepare("INSERT INTO account(Email, `First name`, `Last name`, Password, `Birth date`, 
                     Gender) VALUES(?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssss", $email, $firstName, $lastName, $password, $birthdate, $gender);
+            $stmt->bind_param("ssssss", $email, $firstName, $lastName, $hashedpassword, $birthdate, $gender);
             $stmt->execute();
 
             header("Location: index.php?action=signup_success");
