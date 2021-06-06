@@ -1,121 +1,4 @@
-/* body{
-    background-color: white;
-    
-    
-}
-main{
-    text-align:center;
-    box-align:center;
-    color: black;
-}
-*:focus{
-    outline: none;
-}
-.box{
-    box-sizing:  border-box;
-    width: 360px;
-    height: 550px;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: relative;
-    border: 2px solid black;
-    box-shadow: -3px -3px 7px #685c5c73, 3px 3px 5px rgba(94,104,121,0.288);
-    border-radius: 5px;
-    background-color: rgb(204, 202, 202);
-    margin-top: 40px;
-    overflow: hidden;
-    box-align:center;
-    text-align:center;
-    padding: 20px 0 0 20px;
-}
-img#profilePic{
-    box-sizing: border-box;
-    width: 149px;
-    height: 149px;
-    border-radius: 50%;
-    margin:0;
-    border: 5px solid  #0c143c;
-    padding: 3px;
-    background-color: whitesmoke;
-}
 
-input[type="text"],
-input[type="email"]{
-    display: block;
-    box-sizing: border-box;
-    background: rgb(204, 202, 202);
-    color: black;
-    margin-bottom: 30px;
-    padding: 4px;
-    width: 220px;
-    height: 60px;
-    margin: auto;
-    border: none;
-    border-bottom: 1px solid black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    transition: 0.2s ease;
-    text-align:center;
-
-}
-input[type="text"]:focus
-input[type="email"]:focus{
-    border-bottom: 2px solid #3498db;
-    border-bottom-right-radius: 20px;
-    color: black;
-    transition: 0.2 ease;
-    
-}
-input[type="datetime-local"]:focus{
-    background: rgb(204, 202, 202);
-    margin: auto;
-}
-.formBtn{
-    border: 1px solid black;
-    background-color: black;
-    color: whitesmoke;
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
-    margin: 30px;
-    font-size: 11px;
-    transition: all 0,5s;
-    
-}
-.text-right {
-    color: red;
-    position: absolute;
-    margin: 20px;
-    left: 160px;
-    bottom: -8px;
-}
-button:hover{
-    transform: scale(1.1);
-}
-input[type="file"]{
-    display: none;
-}
-#editPic{
-    box-sizing: border-box;
-    font-size: 20px;
-    background-color: black;
-    color: whitesmoke;
-    border: 1px solid #3498db;
-    padding: 2px 15px;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-#editPic:hover{
-    background-color: #3498db;
-    color: black;    
-}
-::placeholder {
-    color: black;
-} */
 #productImage{
     box-sizing: border-box;
     width: 149px;
@@ -128,18 +11,18 @@ input[type="file"]{
 }
 
 .container {
-    width: 55vw !important
+    width: 100%;
 }
 
 .form-container {
-    width: 45vw;
+    width: 100%;
     margin: 0 auto;
 }
 
 .form-row {
     display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto;
 }
 
 .img {
@@ -155,7 +38,17 @@ input[type="file"]{
 }
 
 .cancel{
+	
 	background-color: red;
+	border-radius: 4px;
+	color: white;
+	height: 38px;
+	font-size: 16px;
+	width: 115px;
+}
+
+.submit{
+	background-color: green;
 	border-radius: 4px;
 	color: white;
 	height: 38px;
@@ -168,3 +61,38 @@ input[type="file"] {
   position: absolute; /* don't let it take up space */
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #0c143c;
+}
+html, body{
+    height: 100%;
+}
+#container{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #0c143c;
+    position: relative;
+    clear: both;
+}
+p{
+    text-align: center;
+    color: aliceblue;
+}
+
+#callus{
+    color:#3385ff;
+}
+#newToTroliMart{
+    color: red;
+}
+ul{
+    color: white;
+}

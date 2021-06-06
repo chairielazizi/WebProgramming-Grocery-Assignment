@@ -5,10 +5,15 @@
 	$product_category = $_POST['categories'];
 	$product_price = $_POST['price'];
 	
+	$sql="select * from products where (product_name='$product_name');";
+            $res=mysqli_query($conn,$sql);
+    if (mysqli_num_rows($res) > 0) {
+         echo '<script>alert("Cannot add, product is already available!"); window.location.href="../../addp.html";</script>';
+    }
+
+	else{
 	
-	
-    
-    $fileName = basename($_FILES["image"]["name"]); 
+		$fileName = basename($_FILES["image"]["name"]); 
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          
         // Allow certain file formats 
@@ -23,7 +28,8 @@
 		echo '<script>alert("Product Added !"); window.location.href="../../addp.html";</script>';
 		
 	else
-		echo '<script>alert("fAIL !")</script>';
+		echo '<script>alert("fail !"); window.location.href="../../addp.html";</script>';
 	
+	}
 	
 ?>
