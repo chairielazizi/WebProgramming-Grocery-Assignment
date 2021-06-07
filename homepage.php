@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once './dist/php/connection.php';
+include_once './dist/php/HomepageManipulation.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +50,19 @@ include_once './dist/php/connection.php';
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
-              <a class="dropdown-item" href="index.html">Logout</a>
+              <a class="dropdown-item" href="index.php">Logout</a>
             </div>
           </li>
           <li class="nav-item text-light ml-5">
             <div class="view-list-nav">
               <a class="view-cart navbar-brand" href="#" onclick="return toggleCart()">
+                <script>
+                  function toggleCart() {
+                    var cart = document.querySelector(".cart");
+                    console.log(cart);
+                    cart.classList.toggle("display-cart");
+                  }
+                </script>
                 <img src="images/shopping-cart.png" width="30" height="30" alt="">
                 <!-- View List -->
                 <p class="view-cart-text">View List</p>
@@ -179,27 +187,6 @@ include_once './dist/php/connection.php';
       </div>
 
       <!-- the categories content -->
-      <div class="category-header" style="display: none;">
-        <?php
-
-        $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
-        $result = $conn->query($sql);
-
-        while ($row = $result->fetch_assoc()) {
-          $product_name = $row['product_name'];
-          $product_image = $row['product_image'];
-          $product_price = $row['product_price'];
-        ?>
-          <div class="card card-block mx-2 text-center">
-            <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
-            <h6 class="card-title"><?php echo $product_name ?></h6>
-            <p class="card-text">RM<?php echo $product_price ?></p>
-            <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
-          </div>
-        <?php
-        }
-        ?>
-      </div>
 
       <div class="categories categories-content">
         <h3 class='categories-header'>Frozen Foods</h3>
@@ -334,7 +321,6 @@ include_once './dist/php/connection.php';
         <h3 class='cart-header text-center'>📝 List 📝</h3>
         <div>
           <ul id="testnav" class="nav nav-tabs justify-content-center">
-            <li class="" id="initialtab"><a class="nav-link active" data-toggle="tab" aria-current="page" href="#tabdiv1" onclick="whatiscurrenttab('list_itemstab1')">List 1 <button class="delete-list-btn" onclick="return  deletedefaulttab('tabdiv1','initialtab');">❌</button></a></li>
 
             <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist()"> ➕ </button></a></li>
           </ul>
