@@ -124,9 +124,10 @@ html {
 
 .price-range-line {
     width: 30px;
-    height: 2px;
-    margin: auto 10px;
-    border-bottom: 1px co;
+    height: 50px;
+    margin: auto 3px;
+    border-bottom: 3px solid black !important;
+    z-index: 100;
 }
 
 .main-content {

@@ -30,7 +30,7 @@ session_start();
                 </div>
 
                 <div class="align-items-center w-50">
-                    <form class="input-group align-items-center w-auto" action="../searchresults.php" method="POST">
+                    <form class="input-group align-items-center w-auto" action="searchresults.php" method="POST">
                         <input name='search-query' type="search" class="align-self-center form-control border rounded w-50" placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
                         <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
                             <a class="navbar-brand m-0" href="#">
@@ -44,7 +44,8 @@ session_start();
                     <li class="nav-item text-light dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="./images/user.png" width="30" height="30" alt="" class="mr-2">
-                            Hello <?php print_r($_SESSION['user_name']); ?>
+                            <!-- if dont use isset, if there are no session then this line will return error bcs no value -->
+                            Hello <?php if (isset($_SESSION['user_name'])) { print_r($_SESSION['user_name']); } ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
@@ -119,9 +120,9 @@ session_start();
                         <div class="price-range">
                             <h5>Price Range</h5>
                             <div class="price-range-selector">
-                                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN">
+                                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN" required>
                                 <div class="price-range-line"></div>
-                                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX">
+                                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX" required>
                             </div>
                             <button class="price-range-button btn btn-success">APPLY</button>
                         </div>

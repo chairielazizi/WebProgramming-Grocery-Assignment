@@ -44,7 +44,8 @@ include_once './dist/php/connection.php';
           <li class="nav-item text-light dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="images/user.png" width="30" height="30" alt="" class="mr-2">
-              Hello <?php print_r($_SESSION['user_name']); ?>
+              <!-- if dont use isset, if there are no session then this line will return error bcs no value -->
+              Hello <?php if (isset($_SESSION['user_name'])) { print_r($_SESSION['user_name']); } ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
@@ -129,9 +130,9 @@ include_once './dist/php/connection.php';
             <div class="price-range">
               <h5>Price Range</h5>
               <div class="price-range-selector">
-                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN">
+                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN" required>
                 <div class="price-range-line"></div>
-                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX">
+                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX" required>
               </div>
               <button class="price-range-button btn btn-success">APPLY</button>
             </div>
