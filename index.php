@@ -15,7 +15,7 @@
 
         <main id="container">
           <div class="form shadow rounded">
-            <form class="needs-validation" action="processLogin.php" method="POST" novalidate>
+            <form class="needs-validation" action="processLogin.php?action=login" method="POST" novalidate>
             <?php
                 // get action value in url to display message
                 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -69,30 +69,33 @@
                   </button>
                 </div>
                 <div class="modal-body shadow rounded">
-                  <form>
+                  <form class="needs-validation2" action="processLogin.php?action=forgotPassword" method="POST" novalidate>
                     <div class="form-group mx-5">
-                      <input type="text" class="form-control mb-1 validate" placeholder="Email" id="fInputEmail"> 
+                      <input type="email" class="form-control mb-1 validate" placeholder="Email" id="fInputEmail" required> 
                       <div class="invalid-feedback">
                         Please fill in valid email.
                       </div>
                     </div>
                     <div class="form-group mx-5">
-                      <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="fInputPassword">
+                      <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="fInputPassword" required>
                       <div class="invalid-feedback">
                         Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
                       </div>
                     </div>
                     <div class="form-group mx-5">
-                      <input type="password" class="form-control validate" placeholder="Confirm New Password" id="fConfirmPassword">
+                      <input type="password" class="form-control validate" placeholder="Confirm New Password" id="fConfirmPassword" required>
                       <div class="invalid-feedback">
                         Make sure both passwords match.
                       </div>
                     </div>
+                    <div >
+                      <button type="button" class="btn btn-secondary float-start" data-dismiss="modal">Close</button>
+                      <button type = "submit" class="btn btn-primary float-right" id="updatePassword">Update Password</button>
+                    </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="updatePassword">Update Password</button>
+                  
                 </div>
               </div>
             </div>
