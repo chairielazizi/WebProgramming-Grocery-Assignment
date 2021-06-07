@@ -112,9 +112,9 @@
                         <div class="price-range">
                             <h5>Price Range</h5>
                             <div class="price-range-selector">
-                                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN">
+                                <input name='min-price' type="text" class='price-range-input' placeholder="RM MIN" required>
                                 <div class="price-range-line"></div>
-                                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX">
+                                <input name='max-price' type="text" class='price-range-input' placeholder="RM MAX" required>
                             </div>
                             <button class="price-range-button btn btn-success">APPLY</button>
                         </div>
@@ -170,14 +170,18 @@
                         
                         global $searchQuery;
                         $searchQuery = $_POST['search-query'];
-                        ?>
-                            <h3 class="categories-header">Search Results for <?php echo $searchQuery; ?></h3>
-                            <div class="categories categories-content row d-flex">
-                        <?php
+                        
                         $sql = "SELECT * FROM products WHERE product_name LIKE '%$searchQuery%'";
                         $result = $conn->query($sql);
 
+                        ?>
+                            <h3 class="categories-header">Search Results for <?php echo $searchQuery; ?></h3>
+                        <?php
+
                         if ($result->num_rows > 0) {
+                            ?>
+                                <div class="categories categories-content row d-flex">
+                            <?php
                             while ($row = $result->fetch_assoc()) {
                                 $product_name = $row['product_name'];
                                 $product_image = $row['product_image'];
@@ -195,7 +199,11 @@
                             ?>
                                 </div>
                             <?php
-                        } 
+                        } else {
+                            echo '<div class="alert alert-danger mt-3" style="width: 1120px;"role="alert">
+                                        Item not found!
+                                    </div>'; 
+                        }
                     } else if ($_POST['min-price'] && $_POST['max-price']) {
 
                         global $minPrice, $maxPrice;
