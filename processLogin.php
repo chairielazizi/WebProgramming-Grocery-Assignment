@@ -2,7 +2,7 @@
 session_start();
 include_once("./dist/php/connection.php");
 
-if($_SERVER["REQUEST_METHOD"] = "POST"){
+if($_SERVER["REQUEST_METHOD"] = "POST" && $_GET["action"] == 'login'){
 
     if(isset($_POST["inputEmail"]) && isset($_POST["inputPassword"]) && isset($_POST["options"])){
         $user_email = $_POST["inputEmail"];
@@ -57,6 +57,8 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
         
         
     }
+}else if($_SERVER["REQUEST_METHOD"] = "POST" && $_GET["action"] == 'forgotPassword'){
+    echo "haha";
 }
 $conn->close();
 ?>
