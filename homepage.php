@@ -117,8 +117,6 @@ include_once './dist/php/connection.php';
                 echo "<a href='content.php?category=$product' >Cleaners</a>"; ?>
               </li>
               <li>
-                <!-- <a href="#" data-toggle="modal" data-target="#personalCareModal">Personal Care</a> -->
-                <!-- <a href="#" onclick="return changeToPersonal()">Personal Care</a> -->
                 <?php $product = 'personalcare';
                 echo "<a href='content.php?category=$product' >Personal Cares</a>"; ?>
               </li>
