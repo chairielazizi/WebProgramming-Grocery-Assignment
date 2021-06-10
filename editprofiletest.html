@@ -16,7 +16,7 @@
     <!-- content goes in the body - contains text and elements that display in the web page document -->
     <header class="p-2 mb-2 text-light" style="background-color: #0c143c">
       <a href="homepage.php">
-        <img src="trolimart rect2.png" alt="TroliMart Logo" width="180" class="ml-4">
+        <img src="images/trolimart rect2.png" alt="TroliMart Logo" width="180" class="ml-4">
       </a>
     </header>
 
@@ -63,8 +63,8 @@
             </div>
           </div> -->
           <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="text" id='fullName' class='form-control' value="Mohamad Fairuz">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" id='firstName' class='form-control' value="Mohamad Fairuz">
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -73,6 +73,26 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="text" id='lastName' class='form-control' value="Mohamad Fairuz">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Name cannot be empty.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="birth-date">Birthdate:</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Birth date is invalid.
+            </div>
+          </div>
+          <!-- <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
               <input type="text" id='username' class='form-control' value="fai">
               <div class="valid-feedback">
@@ -81,10 +101,10 @@
               <div class="invalid-feedback">
                 Username cannot be empty.
               </div>
-          </div>
+          </div> -->
           <div class="form-group pb-2">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" id='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="fai@gmail.com">
+            <label for="emailInput">Email address</label>
+            <input type="email" class="form-control" id="emailInput"name="emailInput"  value="fai@gmail.com">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
@@ -92,6 +112,7 @@
             <div class="invalid-feedback">
               Please provide a valid email.
             </div>
+      
           </div>
           <h4 class="mb-3">Change Password</h4>
           <div class="form-group">
@@ -103,12 +124,12 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">New Password</label>
-            <input type="password" id='newPassword' class='form-control'>
+            <input type="password" id='passwordInput' class='form-control'>
             <small id="passwordHelpBlock" class="form-text text-muted">
-              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+              Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
             </small>
             <div id="validationServer03Feedback" class="invalid-feedback">
-              Please provide a valid city.
+              Please provide a valid password.
             </div>
             <div class="valid-feedback">
               Looks good!
@@ -116,12 +137,14 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Confirm New Password</label>
-            <input type="password" id='confirmNewPassword' class='form-control'>
+            <input type="password" id='confirmPassword' class='form-control'>
             <div class="valid-feedback">
               Looks good!
             </div>
+            <div class="invalid-feedback">
+              Make sure both passwords match.
           </div>
-          <button class="btn btn-success"type="submit"" onclick="displayAlert1();">
+          <button class="btn btn-success"type="submit" id="submitForm" onclick="displayAlert1();">
             Save Changes
           </button>
         </form>
