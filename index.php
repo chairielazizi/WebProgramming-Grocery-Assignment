@@ -25,7 +25,13 @@
                 }
                 if($action == "login_failed"){
                   echo "<div class='alert alert-danger margin-top-40' role='alert'> Invalid username or password! </div>";
-              }
+                }
+                if($action == "passwordUpdate_success"){
+                  echo "<div class='alert alert-success margin-top-40' role='alert'> Password updated successfully <br /> Please sign in with username and password. </div>";
+                }
+                if($action == "passwordUpdate_failed"){
+                  echo "<div class='alert alert-danger margin-top-40' role='alert'> Email does not exist to change password! </div>";
+                }
             ?>
 
               <h4 class="font-weight-bold text-center pt-3">Please Sign In</h4><hr>
@@ -71,19 +77,19 @@
                 <div class="modal-body shadow rounded">
                   <form class="needs-validation2" action="processLogin.php?action=forgotPassword" method="POST" novalidate>
                     <div class="form-group mx-5">
-                      <input type="email" class="form-control mb-1 validate" placeholder="Email" id="fInputEmail" required> 
+                      <input type="email" class="form-control mb-1 validate" placeholder="Email" id="fInputEmail" name="fInputEmail" required> 
                       <div class="invalid-feedback">
                         Please fill in valid email.
                       </div>
                     </div>
                     <div class="form-group mx-5">
-                      <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="fInputPassword" required>
+                      <input type="password" class="form-control mb-1 validate" placeholder="New Password" id="fInputPassword" name="fInputPassword" required>
                       <div class="invalid-feedback">
                         Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
                       </div>
                     </div>
                     <div class="form-group mx-5">
-                      <input type="password" class="form-control validate" placeholder="Confirm New Password" id="fConfirmPassword" required>
+                      <input type="password" class="form-control validate" placeholder="Confirm New Password" id="fConfirmPassword" name="fConfirmPassword" required>
                       <div class="invalid-feedback">
                         Make sure both passwords match.
                       </div>
