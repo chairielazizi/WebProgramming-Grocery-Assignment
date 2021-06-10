@@ -58,7 +58,25 @@ if($_SERVER["REQUEST_METHOD"] = "POST" && $_GET["action"] == 'login'){
         
     }
 }else if($_SERVER["REQUEST_METHOD"] = "POST" && $_GET["action"] == 'forgotPassword'){
-    echo "haha";
+    
+    if(isset($_POST["fInputEmail"]) && isset($_POST["fInputPassword"]) && isset($_POST["fConfirmPassword"])){
+        $user_email = $_POST["fInputEmail"];
+        $password = $_POST["fInputPassword"];
+        $hashedpassword = sha1($password);
+
+        $sql = "SELECT * FROM account WHERE Email = '$user_email'";
+        $result = $conn->query($sql);
+            
+        if($result->num_rows > 0){
+            //if they are in the database, register the user in session
+            $sql2 = "UPDATE account SET Password = '$hashedpassword' WHERE Email = '$user_email'";
+            $result = $conn->query($sql2);
+
+            header("Location: index.php?action=passwordUpdate_success");
+        }else{
+            header("Location: index.php?action=passwordUpdate_failed");
+        }
+    }
 }
 $conn->close();
 ?>
