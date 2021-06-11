@@ -4,6 +4,7 @@
 	$product_name = $_POST['productName'];
 	$product_category = $_POST['categories'];
 	$product_price = $_POST['price'];
+	$product_quantity = $_POST['quantity'];
 	
 	$sql="select * from products where (product_name='$product_name');";
             $res=mysqli_query($conn,$sql);
@@ -24,7 +25,7 @@
 		}
 	$product_image = $imgContent;
 	
-	if(mysqli_query($conn, "INSERT INTO products (product_name, product_category, product_image, product_price) VALUES('$product_name', '$product_category', '$product_image','$product_price')"))
+	if(mysqli_query($conn, "INSERT INTO products (product_name, product_category, product_image, product_price, product_quantity) VALUES('$product_name', '$product_category', '$product_image','$product_price','$product_quantity')"))
 		echo '<script>alert("Product Added !"); window.location.href="../../addp.html";</script>';
 		
 	else
