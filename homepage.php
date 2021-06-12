@@ -1,7 +1,8 @@
 <?php
 session_start();
 include_once './dist/php/connection.php';
-include_once './dist/php/HomepageManipulation.php';
+// include_once './dist/php/HomepageManipulation.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,9 @@ include_once './dist/php/HomepageManipulation.php';
             <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="images/user.png" width="30" height="30" alt="" class="mr-2">
               <!-- if dont use isset, if there are no session then this line will return error bcs no value -->
-              Hello <?php if (isset($_SESSION['user_name'])) { print_r($_SESSION['user_name']); } ?>
+              Hello <?php if (isset($_SESSION['user_name'])) {
+                      print_r($_SESSION['user_name']);
+                    } ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
@@ -56,13 +59,6 @@ include_once './dist/php/HomepageManipulation.php';
           <li class="nav-item text-light ml-5">
             <div class="view-list-nav">
               <a class="view-cart navbar-brand" href="#" onclick="return toggleCart()">
-                <script>
-                  function toggleCart() {
-                    var cart = document.querySelector(".cart");
-                    console.log(cart);
-                    cart.classList.toggle("display-cart");
-                  }
-                </script>
                 <img src="images/shopping-cart.png" width="30" height="30" alt="">
                 <!-- View List -->
                 <p class="view-cart-text">View List</p>
@@ -213,7 +209,10 @@ include_once './dist/php/HomepageManipulation.php';
               <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
               <h6 class="card-title"><?php echo $product_name ?></h6>
               <p class="card-text">RM<?php echo $product_price ?></p>
-              <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+              <button onclick="addtolist('<?php $product_name ?>','<?php $product_price ?>')" class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+              <!-- <script>
+                
+              </script> -->
             </div>
           <?php
           }
@@ -276,7 +275,12 @@ include_once './dist/php/HomepageManipulation.php';
               <h6 class="card-title"><?php echo $product_name ?></h6>
               <p class="card-text">RM<?php echo $product_price ?></p>
               <button class="add-to-cart-button btn btn-success align-self-end">Add to List</button>
+
             </div>
+            <?php echo '<script> function name() {
+  console.log("jadi");
+
+};</script>'; ?>
           <?php
           }
           ?>
@@ -321,14 +325,34 @@ include_once './dist/php/HomepageManipulation.php';
         <h3 class='cart-header text-center'>📝 List 📝</h3>
         <div>
           <ul id="testnav" class="nav nav-tabs justify-content-center">
-
             <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist()"> ➕ </button></a></li>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            
+            <script> //*TODO
+              $(document).ready(function() {
+
+                $('.add-tab-btn').click(function() {
+                  $.ajax({
+                    url: "dist/php/HomepageManipulation.php",
+                    type: 'post',
+                    data: {
+                      value: "true"
+                    },
+                    success: function(reponse) {
+                      console.log("jadi");
+                    }
+
+                  });
+                });
+              });
+            </script>
+
           </ul>
         </div>
         <!-- inside the list -->
 
         <div id="contentd" class="tab-content">
-          <div id="tabdiv1" class="tab-pane in active ml-15px overflow-block">
+          <!-- <div id="tabdiv1" class="tab-pane in active ml-15px overflow-block">
             <div class="cart-items">
               <ol id="list_itemstab1" class='list-group list-group-flush '>
 
@@ -338,12 +362,13 @@ include_once './dist/php/HomepageManipulation.php';
               <div class="col">
                 Total Price: <span>RM </span> <span class="spantotalprice" id="list_itemstab1-total-price-value">0.00</span>
               </div>
-            </div>
-          </div>
-          <!-- NEW DIV HERE -->
+            </div> -->
         </div>
+        <!-- NEW DIV HERE -->
       </div>
     </div>
+
+  </div>
   </div>
   <!-- class="text-center font-italic p-3 pb-4 mt-3 text-light bottom-0"  -->
   <footer style="background-color: #0c143c;">
@@ -410,10 +435,12 @@ include_once './dist/php/HomepageManipulation.php';
     </p>
   </footer>
 
-  <script src="dist/js/file.js"></script>
+  <!-- <script src="dist/js/file.js"></script> -->
+  <?php include_once './dist/php/HomepageManipulation.php'; ?>
   <script src="dist/js/modal.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
