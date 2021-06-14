@@ -1,27 +1,27 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
     // Include config file
     require_once "dist/php/connection.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM products WHERE id = ?";
+    $sql = "SELECT * FROM products WHERE product_id = ?";
     
     if($stmt = mysqli_prepare($conn, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_GET["id"]);
+        $param_id = trim($_GET["product_id"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
-            $res = mysqli_stmt_get_result($stmt);
+            $result = mysqli_stmt_get_result($stmt);
     
             if(mysqli_num_rows($result) == 1){
                 /* Fetch result row as an associative array. Since the result set
                 contains only one row, no need to use while loop */
-                $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
                 $image = $row["product_image"];
