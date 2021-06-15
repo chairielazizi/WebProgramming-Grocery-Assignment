@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] = "POST" && $_GET["action"] == 'login'){
                 $_SESSION['user_id'] = $userid;
                 $_SESSION['user_email'] = $email;
 
-                header("Location: adminpage.html?action=login_success");
+                header("Location: landing_Adminpage.php?action=login_success");
             }else{
                 header("Location: index.php?action=login_failed");
             }

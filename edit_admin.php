@@ -7,17 +7,17 @@ $image = $name = $price = "";
 $image_err = $name_err = $price_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
+if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $id = $_POST["product_id"];
+    $id = $_POST["id"];
 
     //validate image
     //TO-DO!!!!!!!!!
-    $input_image = trim($_POST["product_image"]);
+    $input_image = base64_encode($_POST["product_image"]);
     if(empty($input_name)){
         $image_err = "Please choose a new image for the product.";
     } elseif(!filter_var($input_image, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $image_err = "Please choose the iamge again.";
+        $image_err = "Please choose the image again.";
     } else{
         $image = $input_image;
     }

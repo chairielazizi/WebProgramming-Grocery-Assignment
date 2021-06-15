@@ -1,6 +1,6 @@
 <?php
 // Process delete operation after confirmation
-if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
+if(isset($_GET["id"])){
     // Include config file
     require_once "dist/php/connection.php";
     
@@ -12,7 +12,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_POST["product_id"]);
+        $param_id = trim($_GET["id"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -31,7 +31,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     mysqli_close($conn);
 } else{
     // Check existence of id parameter
-    if(empty(trim($_GET["product_id"]))){
+    if(empty(trim($_GET["id"]))){
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
         exit();

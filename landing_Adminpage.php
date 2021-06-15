@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+<?php
+session_start();
+?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +15,7 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://kit.fontawesome.com/d4305da033.js" crossorigin="anonymous"></script>
     <style>
         .wrapper{
             width: 600px;
@@ -56,7 +60,7 @@
           <li class="nav-item text-light dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="images/user.png" width="30" height="30" alt="" class="mr-2">
-              Hello <?php print_r($_SESSION['user_name']); ?>
+              Hello Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
@@ -78,7 +82,7 @@
   </header>
 
   <!--Products table-->
-  <div class="wrapper">
+  <div class="wrapper afageh">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -105,15 +109,15 @@
                                 echo "</tr>";
                             echo "</thead>";
                             echo "<tbody>";
-                            while($row = mysqli_fetch_array($res)){
+                            while($row = mysqli_fetch_array($result)){
                                 echo "<tr>";
                                     echo "<td>" . $row['product_id'] . "</td>";
-                                    echo "<td>" . $row['product_image'] . "</td>";
+                                    echo "<td>  <img class='geh' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
                                     echo "<td>" . $row['product_name'] . "</td>";
                                     echo "<td>" . $row['product_price'] . "</td>";
                                     echo "<td>";
                                         echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                        echo '<a href="update.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="edit_admin.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
                                         echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                     echo "</td>";
                                 echo "</tr>";

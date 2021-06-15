@@ -1,6 +1,6 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
     require_once "dist/php/connection.php";
     
@@ -12,7 +12,7 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_GET["product_id"]);
+        $param_id = trim($_GET["id"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -71,7 +71,7 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                     <h1 class="mt-5 mb-3">View Product</h1>
                     <div class="form-group">
                         <label>Product Image</label>
-                        <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($row["product_image"]) . '"/><br>'; ?>
+                        <?php echo '<img class=\'card-img-top\' style=\'height: 10em;\' src="data:image/jpeg;base64,' . base64_encode($row["product_image"]) . '"/><br>'; ?>
                     </div>
                     <div class="form-group">
                         <label>Product Name</label>
