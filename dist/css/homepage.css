@@ -414,3 +414,11 @@ footer{
     bottom: 0;
     
 }
+
+.picture {
+    max-width: 10rem;
+    max-height: 10rem;
+}
+.center {
+    display: contents;
+}

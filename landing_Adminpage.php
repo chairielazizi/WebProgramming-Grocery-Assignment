@@ -82,12 +82,12 @@ session_start();
   </header>
 
   <!--Products table-->
-  <div class="wrapper afageh">
+  <div class="wrapper center">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
-                    <h2 class="pull-left">Canned Food</h2>
+                    <h2 class="pull-left">Beverages</h2>
                     <a href="dist/php/addproduct.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
@@ -112,7 +112,7 @@ session_start();
                             while($row = mysqli_fetch_array($result)){
                                 echo "<tr>";
                                     echo "<td>" . $row['product_id'] . "</td>";
-                                    echo "<td>  <img class='geh' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
                                     echo "<td>" . $row['product_name'] . "</td>";
                                     echo "<td>" . $row['product_price'] . "</td>";
                                     echo "<td>";
