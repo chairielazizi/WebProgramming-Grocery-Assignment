@@ -18,7 +18,7 @@ session_start();
     <script src="https://kit.fontawesome.com/d4305da033.js" crossorigin="anonymous"></script>
     <style>
         .wrapper{
-            width: 600px;
+            width: 400px;
             margin: 0 auto;
         }
         table tr td:last-child{
@@ -82,21 +82,25 @@ session_start();
   </header>
 
   <!--Products table-->
+  <!--Beverages 1-->
+  
   <div class="wrapper center">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Beverages</h2>
-                    <a href="dist/php/addproduct.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
                 require_once "dist/php/connection.php";
                 
                 // Attempt select query execution
-                $sql = "SELECT * FROM products";
-                if($result = mysqli_query($conn, $sql)){
+                $sql = "SELECT * FROM products WHERE product_category = 'beverages'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
                     if(mysqli_num_rows($result) > 0){
                         echo '<table class="table table-bordered">';
                             echo "<thead>";
@@ -104,7 +108,7 @@ session_start();
                                     echo "<th>#</th>";
                                     echo "<th>Product Image</th>";
                                     echo "<th>Name of Product</th>";
-                                    echo "<th>Price</th>";
+                                    echo "<th>Price (RM)</th>";
                                     echo "<th>Action</th>";
                                 echo "</tr>";
                             echo "</thead>";
@@ -116,8 +120,618 @@ session_start();
                                     echo "<td>" . $row['product_name'] . "</td>";
                                     echo "<td>" . $row['product_price'] . "</td>";
                                     echo "<td>";
-                                        echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                        echo '<a href="edit_admin.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+  
+<!--Bread 2-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Bread</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'bread'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+  
+<!--Canned 3-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Canned Products</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'canned'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+  
+<!--Dairy 4-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Dairy</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'dairy'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+               
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Baking 5-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Products for Baking</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'baking'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+               
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Frozen 6-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Frozen Food</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'frozen'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Meat 7-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Meat</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'meat'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Fruit 8-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Fruits</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'fruit'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Cleaner 9-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Cleaning Products</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'cleaner'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Vegetable 10-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Vegetables</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'vegetable'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                        echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                
+                ?>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<!--Personal Care 11-->
+<div class="wrapper center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 mb-3 clearfix">
+                    <h2 class="pull-left">Personal Care Products</h2>
+                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                </div>
+                <?php
+                // Include config file
+                require_once "dist/php/connection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM products WHERE product_category = 'personalcare'";
+                
+                // $result = mysqli_query($conn, $sql
+                if($result = $conn->query($sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table class="table table-bordered">';
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>#</th>";
+                                    echo "<th>Product Image</th>";
+                                    echo "<th>Name of Product</th>";
+                                    echo "<th>Price (RM)</th>";
+                                    echo "<th>Action</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['product_id'] . "</td>";
+                                    echo "<td>  <img class='picture' src='data:image/jpeg;base64,". base64_encode($row['product_image']) . "'></td>";
+                                    echo "<td>" . $row['product_name'] . "</td>";
+                                    echo "<td>" . $row['product_price'] . "</td>";
+                                    echo "<td>";
+                                        //echo '<a href="read.php?id='. $row['product_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                        echo '<a href="edit.php?id='. $row['product_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
                                         echo '<a href="delete.php?id='. $row['product_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                     echo "</td>";
                                 echo "</tr>";

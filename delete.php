@@ -63,7 +63,7 @@ if(isset($_GET["id"])){
                             <input type="hidden" name="id" value="<?php echo trim($_GET["product_id"]); ?>"/>
                             <p>Are you sure you want to delete this product?</p>
                             <p>
-                                <input type="submit" value="Yes" class="btn btn-danger">
+                                <input onclick="" value="Yes" class="btn btn-danger">
                                 <a href="landing_Adminpage.php" class="btn btn-secondary">No</a>
                             </p>
                         </div>
