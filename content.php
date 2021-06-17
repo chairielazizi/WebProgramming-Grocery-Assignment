@@ -42,9 +42,61 @@ include_once './dist/php/connection.php';
                 </div>
 
                 <ul class="navbar-nav">
+                    <li class="nav-item text-light">
+                        <img src="./images/user.png" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;">
+                    </li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="userprofile" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="userprofile">User Profile</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <?php 
+                                        $uname = $_SESSION['user_name'];
+                                        $uid = $_SESSION['user_id'];
+                                        $sql = "SELECT * FROM account WHERE (user_id='$uid')";
+                                        $result = $conn->query($sql);
+                                        while ($row = $result->fetch_assoc()) {
+                                            if($uname == $row['First name']){
+                                                $firstName  = $row["First name"];
+                                                $lastName = $row["Last name"];
+                                                $email = $row["Email"];
+                                                $password = $row["Password"];
+                                                $birthdate = $row["Birth date"];
+                                                $gender = $row["Gender"];
+                                                $photo = $row["Account_picture"];
+                                            }
+                                        }
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <?php echo '<img style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($photo) . '"/><br>'; ?>
+                                        </div>
+                                        <div class="col-md-6 user-mod">
+                                            <h5>First Name: <?php echo $firstName ?></h5>
+                                            <h5>Last Name: <?php echo $lastName ?></h5>
+                                            <h5>Email: <?php echo $email ?></h5>
+                                            <h5>Birth date: <?php echo $birthdate ?></h5>
+                                            <h5>Gender: <?php echo $gender ?></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <li class="nav-item text-light dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="./images/user.png" width="30" height="30" alt="" class="mr-2">
+                            <!-- <img src="./images/user.png" width="30" height="30" alt="" class="mr-2"> -->
                             <!-- if dont use isset, if there are no session then this line will return error bcs no value -->
                             Hello <?php if (isset($_SESSION['user_name'])) {
                                         print_r($_SESSION['user_name']);
@@ -487,8 +539,7 @@ include_once './dist/php/connection.php';
             Copyright &copy; 2021 TroliMart Co. <br>
         </p>
     </footer>
-    <?php include_once './dist/php/retrievelist.php'; ?>
-    <?php include_once './dist/php/homepagefunction.php'; ?>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../dist/js/modal.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
