@@ -1,6 +1,8 @@
 <?php
 session_start();
+
 include_once './dist/php/connection.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -104,7 +106,7 @@ include_once './dist/php/connection.php';
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.php">Edit Profile</a>
-              <a class="dropdown-item" href="index.php">Logout</a>
+              <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>
           <li class="nav-item text-light ml-5">
@@ -120,7 +122,7 @@ include_once './dist/php/connection.php';
       </div>
     </nav>
   </header>
-
+  <?php if(isset($_SESSION['logged_in'])){ ?>
   <div class="main-content">
 
     <!-- sidebar -->
@@ -242,6 +244,8 @@ include_once './dist/php/connection.php';
         </div> -->
         <div class="d-flex flex-row flex-nowrap overflow-auto">
           <?php
+          if(isset($_SESSION['logged_in'])){
+            
 
           $sql = "SELECT * FROM products WHERE product_category = 'frozen'";
           $result = $conn->query($sql);
@@ -367,6 +371,10 @@ include_once './dist/php/connection.php';
             </div>
           <?php
           }
+        }
+        else{
+            echo "<h1 style='color:red; font-size:200px;'>Session is destroyed</h1>.<br>";
+        }
           ?>
         </div>
       </div>
@@ -473,3 +481,9 @@ include_once './dist/php/connection.php';
 </body>
 
 </html>
+<?php }
+      else{
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed eheh</h1>";
+        echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
+    }
+?>

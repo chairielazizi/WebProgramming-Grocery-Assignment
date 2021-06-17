@@ -104,7 +104,7 @@ include_once './dist/php/connection.php';
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </li>
                     <li class="nav-item text-light ml-5">
@@ -117,7 +117,7 @@ include_once './dist/php/connection.php';
             </div>
         </nav>
     </header>
-
+<?php if(isset($_SESSION['logged_in'])){ ?>
     <div class="main-content">
         <!-- sidebar -->
         <div class="wrapper">
@@ -547,3 +547,9 @@ include_once './dist/php/connection.php';
 </body>
 
 </html>
+<?php }
+      else{
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed eheh</h1>";
+        echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
+    }
+?>
