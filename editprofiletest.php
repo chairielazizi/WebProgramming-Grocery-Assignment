@@ -1,10 +1,13 @@
 <?php
-include_once("./dist/php/connection.php");
-session_start();
-$id=$_SESSION['id'];
-$query=mysqli_query($db,"SELECT * FROM account where user_id='$id'");
-$row=mysqli_fetch_array($query);
-  ?>
+  include_once("./dist/php/connection.php");
+  session_start();
+
+  global $id;
+  $id=$_SESSION['user_id'];
+  $query = "SELECT * FROM account WHERE user_id = '$id'";
+  $result = $conn->query($query);
+  $row = $result->fetch_assoc();
+?>
 
 
 <!DOCTYPE html>
@@ -31,7 +34,39 @@ $row=mysqli_fetch_array($query);
 
     <main>
       <div class="container shadow rounded pt-4 pb-4 mt-4 mb-4">
-        <form class="form-container">
+      <?php
+          if(isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['emailInput']) && isset($_POST['birthdate'])) {
+            global $firstName, $lastName, $email, $birthdate;
+            $firstName  = $_POST["firstName"];
+            $lastName = $_POST["lastName"];
+            $email = $_POST["emailInput"];
+            $password = $_POST["password"];
+            $newPassword = $_POST["newPassword"];
+            $confirmNewPassword = $_POST["confirmNewPassword"];
+            $birthdate = $_POST["birthdate"];
+
+            $sql = "SELECT Password FROM account WHERE user_id = '$id'";
+            $result = $conn->query($sql);
+            while ($row =  $result->fetch_assoc()) {
+                $checkPassword = $row['Password'];
+            }
+
+            if ($id) {
+                $query = "UPDATE account 
+                          SET `First name` = '$firstName', `Last name` = '$lastName', `Email` = '$email', 
+                          Password = '$password', `Birth date` = '$birthdate' WHERE user_id = '$id'";
+                $result = $conn->query($query);
+                ?>
+                <div class="alert alert-success">Updated profile.</div>
+                <?php
+            } else {
+              ?>
+              <div class="alert alert-danger">Wrong password!</div>
+              <?php
+            }
+          }
+      ?>
+        <form class="form-container" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <h2 class='pb-4'>Edit Profile</h2>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -49,31 +84,9 @@ $row=mysqli_fetch_array($query);
             </div>
             </div>
           </div>
-          <!-- <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">First Name</label>
-              <input type="text" id='firstName' class='form-control' value="Mohamad Fairuz">
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                First name cannot be empty.
-              </div>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" id='lastName' class='form-control' value="Abdullah">
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Last name cannot be empty.
-              </div>
-            </div>
-          </div> -->
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" id='firstName' class='form-control' value="<?php echo $row['First name']; ?>">
+            <input type="text" name='firstName' class='form-control' value="">
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -83,7 +96,7 @@ $row=mysqli_fetch_array($query);
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" id='lastName' class='form-control' value="<?php echo $row['Last name']; ?>">
+            <input type="text" name='lastName' class='form-control' value="">
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -93,7 +106,7 @@ $row=mysqli_fetch_array($query);
           </div>
           <div class="form-group">
             <label for="birth-date">Birthdate:</label>
-            <input type="date" class="form-control" id="birthdate" name="birthdate" value="<?php echo $row['Birth date']; ?>">
+            <input type="date" class="form-control" name="birthdate" name="birthdate" value="">
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -101,19 +114,9 @@ $row=mysqli_fetch_array($query);
               Birth date is invalid.
             </div>
           </div>
-          <!-- <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-              <input type="text" id='username' class='form-control' value="fai">
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Username cannot be empty.
-              </div>
-          </div> -->
           <div class="form-group pb-2">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" id="emailInput"name="emailInput"  value="<?php echo $row['Email']; ?>">
+            <input type="email" class="form-control" name="emailInput"  value="">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
@@ -126,14 +129,14 @@ $row=mysqli_fetch_array($query);
           <h4 class="mb-3">Change Password</h4>
           <div class="form-group">
             <label for="exampleInputEmail1">Current Password</label>
-            <input type="password" id='password' class='form-control' value="<?php echo $row['Password']; ?>">
+            <input type="password" name='password' class='form-control'">
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">New Password</label>
-            <input type="password" id='passwordInput' class='form-control'>
+            <input type="password" name='newPassword' class='form-control'>
             <small id="passwordHelpBlock" class="form-text text-muted">
               Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
             </small>
@@ -146,40 +149,18 @@ $row=mysqli_fetch_array($query);
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Confirm New Password</label>
-            <input type="password" id='confirmPassword' class='form-control'>
+            <input type="password" name='confirmNewPassword' class='form-control'>
             <div class="valid-feedback">
               Looks good!
             </div>
             <div class="invalid-feedback">
               Make sure both passwords match.
           </div>
-          <button class="btn btn-success"type="submit" id="submitForm" onclick="displayAlert1();">
+          <button class="btn btn-success"type="submit" id="submitForm">
             Save Changes
           </button>
         </form>
       </div>
-      
-        <!-- <div class="profile-pic-div">
-            <img src="user.png" id="profilePic"></img>
-            <input type= "file" name="" id= "file" accept= "image/*">
-            <label id="editPic" for= "file"> EDIT PIC </label>
-          </div>
-         
-            <input type="text" name=""placeholder= "User Name">
-            <input type="email" name=""placeholder= "Email ID">
-            <input type="text" name=""placeholder= "Change password"><br>
-            <label for="birth-date">Birth Date:</label><br>
-            <input type="datetime-local" name=""placeholder ="birthdate" >
-                 
-          
-            
-            <button class="formBtn" style="float: left;" onclick="window.location.href = 'homepage.html';">CANCEL</button>
-            <button class="formBtn" style="float: right;" onclick="displayAlert1();">DONE</button>
-            <p class="text-right"> <a class="btn mt-0 pt-0" style="color: red;" onclick="displayAlert2();" role="button"> Delete Account? &raquo;</a></p> -->
-            
-         
-           
-        
     </main>
                          
     <footer class="text-center font-italic p-3 pb-4 mt-3 text-light" style="background-color: #0c143c;">
@@ -242,33 +223,11 @@ $row=mysqli_fetch_array($query);
               Copyright &copy; 2021 TroliMart Co. <br>
           </p>
       </footer>
-      <script src="dist/js/editprofiletest.js"></script>
+      <!-- <script src="dist/js/editprofiletest.js"></script> -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     
 </body>
 </html>
-<?php
-      if(isset($_POST['submit'])){
-        $firstName  = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $email = $_POST["emailInput"];
-        $password = $_POST["passwordInput"];
-        $birthdate = $_POST["birthdate"];
-        $birthdate = date("d/m/y");
-        // $gender = $_POST["inlineRadioOptions"];
-        $photo = 'images/user.png';
-      $query = "UPDATE account SET First name = '$firstname',
-                      Last name = '$lastname', Email = $email, Password = '$password'
-                      Birth date = '$birthdate'
-                      WHERE user_id = '$id'";
-                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                        ?>
-                    <script type="text/javascript">
-            alert("Update Successfull.");
-            window.location = "homepage.php";
-        </script>
-        <?php
-             }              
-
-             ?>
+  
+  
