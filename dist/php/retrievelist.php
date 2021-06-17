@@ -1,7 +1,7 @@
 <!-- all items and list retrieved from the database -->
 <?php
-include_once("connection.php");
-include_once './dist/php/homepagefunction.php';
+include_once 'connection.php';
+include_once 'homepagefunction.php';
 
 if (isset($_SESSION['user_name'])) {
     echo '<script>console.log("' . $_SESSION['user_name'] . '");</script>';

@@ -1,14 +1,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <?php
 session_start();
-include_once './connection.php';
+include_once 'connection.php';
 
 
 if (isset($_SESSION['user_name'])) {
 
     $user_id = $_SESSION['user_id'];
 
-    switch ($_POST['functionname']) {
+    switch (isset($_POST['functionname'])) {
 
         case 'addlist':
 

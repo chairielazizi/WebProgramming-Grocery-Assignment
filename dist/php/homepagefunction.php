@@ -1,6 +1,6 @@
 <?php
 
-include_once './listdatabase.php';
+include_once 'listdatabase.php';
 
 ?>
 
