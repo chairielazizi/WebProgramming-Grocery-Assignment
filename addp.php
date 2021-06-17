@@ -16,7 +16,7 @@
 
     <!-- content goes in the body - contains text and elements that display in the web page document -->
     <header class="p-2 mb-2 text-light" style="background-color: #0c143c">
-      <a href="adminpage.html">
+      <a href="landing_Adminpage.php">
         <img src="images/trolimart rect2.png" alt="TroliMart Logo" width="180" class="ml-4">
       </a>
     </header>
@@ -101,7 +101,7 @@
             Add Product
           </button>
 		  
-		  <button id="cancel" class="cancel" type="button" style="float: right;">
+		  <button id="cancel1" class="cancel" type="button" style="float: right;">
             Cancel
           </button>
 		  </div>
@@ -186,11 +186,11 @@
 		//location.href = "adminpage.html";
     };
 	
-	document.getElementById("cancel").onclick = function () {
+	document.getElementById("cancel1").onclick = function () {
 	
 
         alert("Cancel Adding Product!");
-		location.href = "adminpage.html";
+		location.href = "landing_Adminpage.php";
     
          
     };

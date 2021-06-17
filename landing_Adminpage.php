@@ -90,7 +90,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Beverages</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -151,7 +151,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Bread</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -212,7 +212,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Canned Products</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -273,7 +273,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Dairy</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -334,7 +334,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Products for Baking</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -395,7 +395,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Frozen Food</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -456,7 +456,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Meat</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -517,7 +517,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Fruits</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -578,7 +578,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Cleaning Products</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -639,7 +639,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Vegetables</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file
@@ -700,7 +700,7 @@ session_start();
             <div class="col-md-12">
                 <div class="mt-5 mb-3 clearfix">
                     <h2 class="pull-left">Personal Care Products</h2>
-                    <a href="addp.html" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                    <a href="addp.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                 </div>
                 <?php
                 // Include config file

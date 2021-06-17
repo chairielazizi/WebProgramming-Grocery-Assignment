@@ -9,7 +9,7 @@
 	$sql="select * from products where (product_name='$product_name');";
             $res=mysqli_query($conn,$sql);
     if (mysqli_num_rows($res) > 0) {
-         echo '<script>alert("Cannot add, product is already available!"); window.location.href="../../addp.html";</script>';
+         echo '<script>alert("Cannot add, product is already available!"); window.location.href="../../addp.php";</script>';
     }
 
 	else{
@@ -26,10 +26,10 @@
 	$product_image = $imgContent;
 	
 	if(mysqli_query($conn, "INSERT INTO products (product_name, product_category, product_image, product_price, product_quantity) VALUES('$product_name', '$product_category', '$product_image','$product_price','$product_quantity')"))
-		echo '<script>alert("Product Added !"); window.location.href="../../addp.html";</script>';
+		echo '<script>alert("Product Added !"); window.location.href="../../addp.php";</script>';
 		
 	else
-		echo '<script>alert("fail !"); window.location.href="../../addp.html";</script>';
+		echo '<script>alert("fail !"); window.location.href="../../addp.php";</script>';
 	
 	}
 	
