@@ -58,7 +58,8 @@ include_once './dist/php/connection.php';
                       <div class="modal-body">
                           <?php 
                               $uname = $_SESSION['user_name'];
-                              $sql = "SELECT * FROM account";
+                              $uid = $_SESSION['user_id'];
+                              $sql = "SELECT * FROM account WHERE (user_id='$uid')";
                               $result = $conn->query($sql);
                               while ($row = $result->fetch_assoc()) {
                                   if($uname == $row['First name']){
