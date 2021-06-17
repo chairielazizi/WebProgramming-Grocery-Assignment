@@ -1,6 +1,7 @@
 <?php
-include_once './dist/php/connection.php';
 session_start();
+include_once './dist/php/connection.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,9 @@ session_start();
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="./images/user.png" width="30" height="30" alt="" class="mr-2">
                             <!-- if dont use isset, if there are no session then this line will return error bcs no value -->
-                            Hello <?php if (isset($_SESSION['user_name'])) { print_r($_SESSION['user_name']); } ?>
+                            Hello <?php if (isset($_SESSION['user_name'])) {
+                                        print_r($_SESSION['user_name']);
+                                    } ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
@@ -399,10 +402,7 @@ session_start();
             <div class="cart">
                 <h3 class='cart-header text-center'>📝 List 📝</h3>
                 <div>
-                    <ul id="testnav" class="nav nav-tabs justify-content-center">
-                        <li class="" id="initialtab"><a class="nav-link active" data-toggle="tab" aria-current="page" href="#tabdiv1" onclick="whatiscurrenttab('list_itemstab1')">List 1 <button class="delete-list-btn" onclick="return  deletedefaulttab('tabdiv1','initialtab');">❌</button></a></li>
-
-                        <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist()"> ➕ </button></a></li>
+                    <ul id="testnav" class="nav nav-tabs justify-content-center"><li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist('<?=$_SESSION['user_id']?>')"> ➕ </button></a></li>
                     </ul>
                 </div>
                 <!-- inside the list -->
@@ -487,8 +487,9 @@ session_start();
             Copyright &copy; 2021 TroliMart Co. <br>
         </p>
     </footer>
-
-    <script src="../dist/js/file.js"></script>
+    <?php include_once './dist/php/retrievelist.php'; ?>
+    <?php include_once './dist/php/homepagefunction.php'; ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../dist/js/modal.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once './dist/php/connection.php';
-// include_once './dist/php/HomepageManipulation.php';
 
 ?>
 <!DOCTYPE html>
@@ -325,27 +324,8 @@ include_once './dist/php/connection.php';
         <h3 class='cart-header text-center'>📝 List 📝</h3>
         <div>
           <ul id="testnav" class="nav nav-tabs justify-content-center">
-            <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist()"> ➕ </button></a></li>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <li id="addtab"><a class="nav-link px-0px py-0px" href="#"><button class="add-tab-btn" onclick="return addlist('<?=$_SESSION['user_id']?>')"> ➕ </button></a></li>
             
-            <script> //*TODO
-              $(document).ready(function() {
-
-                $('.add-tab-btn').click(function() {
-                  $.ajax({
-                    url: "dist/php/HomepageManipulation.php",
-                    type: 'post',
-                    data: {
-                      value: "true"
-                    },
-                    success: function(reponse) {
-                      console.log("jadi");
-                    }
-
-                  });
-                });
-              });
-            </script>
 
           </ul>
         </div>
@@ -434,11 +414,11 @@ include_once './dist/php/connection.php';
       Copyright &copy; 2021 TroliMart Co. <br>
     </p>
   </footer>
-
-  <!-- <script src="dist/js/file.js"></script> -->
-  <?php include_once './dist/php/HomepageManipulation.php'; ?>
+  <?php  include_once './dist/php/retrievelist.php'; ?>
+  <?php include_once './dist/php/homepagefunction.php'; ?>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="dist/js/modal.js"></script>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 </body>
