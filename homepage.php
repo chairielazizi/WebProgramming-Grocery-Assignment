@@ -51,7 +51,7 @@ include_once './dist/php/connection.php';
                     } ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
+              <a class="dropdown-item" href="editprofiletest.php">Edit Profile</a>
               <a class="dropdown-item" href="index.php">Logout</a>
             </div>
           </li>
