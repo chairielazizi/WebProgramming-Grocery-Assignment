@@ -181,15 +181,12 @@
           </footer>
 
 <script type="text/javascript">
-    document.getElementById("submit").onclick = function () {
-        //alert("Product Added Successfully !");
-		//location.href = "adminpage.html";
-    };
+   
 	
 	document.getElementById("cancel1").onclick = function () {
 	
 
-        alert("Cancel Adding Product!");
+        
 		location.href = "landing_Adminpage.php";
     
          
