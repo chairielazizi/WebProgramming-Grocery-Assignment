@@ -46,7 +46,7 @@ session_start();
         </div>
 
         <div class="align-items-center w-50">
-          <form class="input-group align-items-center w-auto" action="searchresults.php" method="POST">
+          <form class="input-group align-items-center w-auto" action="searchresults_admin.php" method="POST">
             <input name='search-query' type="search" class="align-self-center form-control border rounded w-50" placeholder="Search for groceries..." aria-label="Search" aria-describedby="button-addon2">
             <button class="align-items-center btn search-btn" type="submit" id="button-addon2">
               <a class="navbar-brand m-0" href="#">
@@ -64,16 +64,7 @@ session_start();
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
-              <a class="dropdown-item" href="index.html">Logout</a>
-            </div>
-          </li>
-          <li class="nav-item text-light ml-5">
-            <div class="view-list-nav">
-              <a class="view-cart navbar-brand" href="#" onclick="return toggleCart()">
-                <img src="images/shopping-cart.png" width="30" height="30" alt="">
-                <!-- View List -->
-                <p class="view-cart-text">View List</p>
-              </a>
+              <a class="dropdown-item" href="index.php">Logout</a>
             </div>
           </li>
         </ul>
@@ -754,6 +745,71 @@ session_start();
         </div>        
     </div>
 </div>
+
+
+<footer style="background-color: #0c143c;">
+    <div class="container bottom-0">
+      <div class="row">
+        <div class="col-sm">
+          <p type="button" data-toggle="collapse" data-target="#collapseContactUs" aria-expanded="false" aria-controls="collapseExample">
+            <u>Contact Us</u>
+          </p>
+          <div class="collapse" id="collapseContactUs">
+            <div class="fs-6 fw-lighter text-left">
+              <ul>
+                <li>Call us at <p style="color:#3385ff;">03-5657 5432</p>
+                </li>
+                <li>Email us at <a href="mailto:jcustomerservice@TroliMart.com.my">customerservice@TroliMart.com.my</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <p type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+            <u>About Us</u>
+          </p>
+          <div class="collapse" id="collapseAboutUs">
+            <div class="fs-6 fw-lighter text-left">
+              <p>TroliMart system is intended to help the consumers to manage grocery shopping list before going to the
+                shop to purchase the products.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <p type="button" data-toggle="collapse" data-target="#collapseFollowUs" aria-expanded="false" aria-controls="collapseExample">
+            <u>Follow Us</u>
+          </p>
+          <div class="collapse" id="collapseFollowUs">
+            <div class="fs-6 fw-lighter text-left">
+              <ul>
+                <li>
+                  <nav class="navbar navbar-light">
+                    <a class="navbar-brand text-primary" href="https://www.facebook.com/">
+                      <img src="images/fb.png" width="30" height="30" alt="" class="d-inline-block align-top">
+                      Facebook
+                    </a>
+                  </nav>
+                </li>
+                <li>
+                  <nav class="navbar navbar-light">
+                    <a class="navbar-brand text-primary" href="https://www.instagram.com/">
+                      <img src="images/insta.png" width="30" height="30" alt="" class="d-inline-block align-top">
+                      Instagram
+                    </a>
+                  </nav>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      Copyright &copy; 2021 TroliMart Co. <br>
+    </p>
+  </footer>
   
 
     
