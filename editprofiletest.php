@@ -39,9 +39,9 @@ $row=mysqli_fetch_array($query);
               <img src="images/user.png" id="profilePic"></img>
             </div>
             <div class="form-group col-md-8">
-              <h4>Mohamad Fairuz</h4>
-              <p>@fai</p>
-              <small id="emailHelp" class="form-text text-muted pb-2">Joined April 2021</small>
+              <h4></h4>
+              <p></p>
+              <small id="emailHelp" class="form-text text-muted pb-2"></small>
               <div class="profile-pic-div">
                 <i class="fa fa-fw fa-camera"></i>
                 <input type= "file" name="" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*">
