@@ -31,7 +31,9 @@ session_start();
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
-
+    <script type="text/javascript">
+        window.history.forward();
+    </script>
 </head>
 
 <body class="text-dark">
