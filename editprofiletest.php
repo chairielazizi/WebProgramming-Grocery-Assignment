@@ -52,6 +52,7 @@
             $newPassword = $_POST["newPassword"];
             $confirmNewPassword = $_POST["confirmNewPassword"];
             $birthdate = $_POST["birthdate"];
+            $hashedpassword = sha1($newPassword);
 
             $sql = "SELECT Password FROM account WHERE user_id = '$id'";
             $result = $conn->query($sql);
@@ -63,7 +64,7 @@
             if ($id) {
                 $query = "UPDATE account 
                           SET `First name` = '$firstName', `Last name` = '$lastName', `Email` = '$email', 
-                          Password = '$password', `Birth date` = '$birthdate' WHERE user_id = '$id'";
+                          Password = '$hashedpassword', `Birth date` = '$birthdate' WHERE user_id = '$id'";
                 $result = $conn->query($query);
                 ?>
                 <div class="alert alert-success">Updated profile.</div>
