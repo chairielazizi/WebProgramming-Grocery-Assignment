@@ -429,7 +429,7 @@ include_once './dist/php/connection.php';
 </html>
 <?php }
     else{
-        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed eheh</h1>";
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed</h1>";
         echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
     }
 ?>
