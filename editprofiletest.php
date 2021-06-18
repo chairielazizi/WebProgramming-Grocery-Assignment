@@ -7,7 +7,13 @@
   $query = "SELECT * FROM account WHERE user_id = '$id'";
   $result = $conn->query($query);
   $row = $result->fetch_assoc();
-  
+    $firstName  = $row["First name"];
+    $lastName = $row["Last name"];
+    $email = $row["Email"];
+    $password = $row["Password"];
+    $birthdate = $row["Birth date"];
+    $gender = $row["Gender"];
+    $photo = $row["Account_picture"];
 ?>
 
 
@@ -21,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="dist/css/editprofiletest.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="dist/js/editprofiletest.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 
@@ -50,6 +57,13 @@
             $result = $conn->query($sql);
             while ($row =  $result->fetch_assoc()) {
                 $checkPassword = $row['Password'];
+                $firstName  = $row["First name"];
+                $lastName = $row["Last name"];
+                $email = $row["Email"];
+                $password = $row["Password"];
+                $birthdate = $row["Birth date"];
+                $gender = $row["Gender"];
+                $photo = $row["Account_picture"];
             }
 
             if ($id) {
@@ -81,7 +95,7 @@
               <small id="emailHelp" class="form-text text-muted pb-2"></small>
               <div class="profile-pic-div">
                 <i class="fa fa-fw fa-camera"></i>
-                <input type= "file" name="" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*" required>
+                <input type= "file" name="photo" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*" required>
                 <label id="editPic" for= "file"> </label>
             </div>
             </div>
