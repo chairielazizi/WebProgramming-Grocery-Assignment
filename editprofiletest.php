@@ -81,14 +81,14 @@
               <small id="emailHelp" class="form-text text-muted pb-2"></small>
               <div class="profile-pic-div">
                 <i class="fa fa-fw fa-camera"></i>
-                <input type= "file" name="" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*">
+                <input type= "file" name="" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*" required>
                 <label id="editPic" for= "file"> </label>
             </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" name='firstName' class='form-control' value="<?php echo $firstName ?>"required>
+            <input type="text" name='firstName' class='form-control' value="<?php echo $row[`First name`]; ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -98,7 +98,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name='lastName' class='form-control' value="<?php echo $lastName ?>"required>
+            <input type="text" name='lastName' class='form-control' value="<?php echo $row[`Last name`] ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="form-group">
             <label for="birth-date">Birthdate:</label>
-            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $birthdate ?>"required>
+            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $row[`Birth date`] ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -118,7 +118,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" name="emailInput"  value="<?php echo $email ?>"required>
+            <input type="email" class="form-control" name="emailInput"  value="<?php echo $row[`Email`] ?>"required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
@@ -225,7 +225,7 @@
               Copyright &copy; 2021 TroliMart Co. <br>
           </p>
       </footer>
-      <script src="dist/js/editprofiletest.js"></script>
+      <script type="text/javascript" src="dist/js/editprofiletest.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     
