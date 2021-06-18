@@ -98,7 +98,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name='lastName' class='form-control' value="<?php echo $row[`Last name`] ?>"required>
+            <input type="text" name='lastName' class='form-control' <?php echo $row[`Last name`] ?>required>
             <div class="valid-feedback">
               Looks good!
             </div>
