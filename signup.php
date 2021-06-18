@@ -59,7 +59,7 @@
               <div class="col">
                 <div class="form-row">
                   <div class="col-3 pt-1">
-                    <label for="birth-date">Birthdate:</label>
+                    <label for="birth-date">Birthday:</label>
                   </div>
                   <div class="col-9">
                     <input type="date" class="form-control" id="birthdate" name="birthdate" required>
