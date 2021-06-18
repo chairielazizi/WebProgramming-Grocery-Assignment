@@ -23,6 +23,14 @@ if (isset($_SESSION['user_name'])) {
             cart.classList.toggle("display-cart");
         }
 
+        function additem(list_name, productname) {
+            totalprice[currenttab] += list[currenttab + productname].price;
+            list[currenttab + productname].total += 1;
+            document.getElementById(currenttab + "-total-price-value").innerHTML = totalprice[currenttab].toFixed(2);
+            document.getElementById("multiplier" + currenttab + productname).innerHTML =
+                list[currenttab + productname].total;
+        }
+
         function currentlist(list_name) {
             console.log(list_name + "before" + '<?= $_SESSION['currentlist'] ?>');
             jQuery.ajax({
@@ -57,29 +65,29 @@ if (isset($_SESSION['user_name'])) {
             //insert to the left of "add tab button
             tablist.insertAdjacentHTML("beforebegin", newlist);
 
-            // $(document).ready(function() {
-            //     $("#newlistname").keydown(function() {
-            //         var newlistname = $(this).val();
-            //         if(even.keyCode == 13){
-            //             this.form.submit();
-            //             jQuery.ajax({
-            //             type: "POST",
-            //             url: './dist/php/checkexistinglist.php',
-            //             dataType: 'json',
-            //             data: {
-            //                 newlistname: newlistname,
-            //                 list_name: list_name
-            //             },
+            $(document).ready(function() {
+                $("#newlistname").keydown(function() {
+                    var newlistname = $(this).val();
+                    if(even.keyCode == 13){
+                        this.form.submit();
+                        jQuery.ajax({
+                        type: "POST",
+                        // url: './dist/php/checkexistinglist.php',
+                        dataType: 'json',
+                        data: {
+                            newlistname: newlistname,
+                            list_name: list_name
+                        },
 
-            //             success: function(html) {
-            //                 $('#availablity').html(html);
-            //             }
-            //         });
-            //         }
-                    
+                        success: function(html) {
+                            $('#availablity').html(html);
+                        }
+                    });
+                    }
 
-            //     });
-            // });
+
+                });
+            });
 
 
 
@@ -144,91 +152,112 @@ if (isset($_SESSION['user_name'])) {
 
 
         function addtolist(product_id, product_name, productprice) {
-            $list_name = '<?= $_SESSION['currentlist'] ?>';
-            jQuery.ajax({
-                type: "POST",
-                url: './dist/php/listdatabase.php',
-                dataType: 'json',
-                data: {
-                    functionname: 'additem',
-                    list_name: $list_name,
-                    product_id: product_id,
-                    product_price: productprice
-                },
 
-                success: function(obj, textstatus) {
-                    if (!('error' in obj)) {
-                        yourVariable = obj.result;
-                    } else {
-                        console.log(obj.error);
+            if (list.hasOwnProperty('<?= $_SESSION['currentlist'] ?>' + product_name)) {
+                list['<?= $_SESSION['currentlist'] ?>' + product_name].total += 1;
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: './dist/php/listdatabase.php',
+                    dataType: 'json',
+                    data: {
+                        functionname: 'increaseitem',
+                        list_name: list_name,
+                        product_id: product_id,
+                        product_price:productprice,
+                        
+                    },
+
+                    success: function(obj, textstatus) {
+                        if (!('error' in obj)) {
+                            yourVariable = obj.result;
+                        } else {
+                            console.log(obj.error);
+                        }
                     }
-                }
-            });
+                });
+                document.getElementById("multiplier" + "<?= $_SESSION['currentlist'] ?>" + product_name).innerHTML = list['<?= $_SESSION['currentlist'] ?>' + product_name].total;
+                
 
-            // if (list.hasOwnProperty(currenttab + product_name)) {
-            //     list[currenttab + product_name].total += 1;
-            //     totalprice[currenttab] += productprice;
-            //     var temp = totalprice[currenttab];
-            //     document.getElementById(
-            //         currenttab + "-total-price-value"
-            //     ).innerHTML = temp.toFixed(2);
-            //     document.getElementById("multiplier" + currenttab + product_name).innerHTML =
-            //         list[currenttab + product_name].total;
-            // } else {
-            list['<?= $_SESSION['currentlist'] ?>' + product_name] = {
-                total: 1,
-                price: productprice,
-            };
+            } else {
+                list['<?= $_SESSION['currentlist'] ?>' + product_name] = {
+                    total: 1,
+                    price: productprice,
+                };
 
-            var paper = document.getElementById('<?= $_SESSION['currentlist'] ?>');
+                $list_name = '<?= $_SESSION['currentlist'] ?>';
+                jQuery.ajax({
+                    type: "POST",
+                    url: './dist/php/listdatabase.php',
+                    dataType: 'json',
+                    data: {
+                        functionname: 'additem',
+                        list_name: $list_name,
+                        product_id: product_id,
+                        product_price: productprice
+                    },
 
-            var productAdded =
-                '<li class="list-group-item mx-4" id="li' + "<?= $_SESSION['currentlist'] ?>" +
-                product_name +
-                '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' +
-                product_name +
-                '</div><div class="col px-0 float right my-auto mx-2" id="divinrowprice">RM ' +
-                productprice.toFixed(2) +
-                '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' + "<?= $_SESSION['currentlist'] ?>" +
-                product_name +
-                '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col px-0 m-auto" id="multipliervalue"><span id="multiplier' + "<?= $_SESSION['currentlist'] ?>" + product_name +
-                '"> ' +
-                list["<?= $_SESSION['currentlist'] ?>" + product_name].total +
-                '</span></div><div class="col px-0 mx-2" id="plusbutton"><a href="#"><img id="Add' + "<?= $_SESSION['currentlist'] ?>" +
-                product_name +
-                '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col px-0 ml-2 mr-2 float-right" id="deletebutton"><a href="#"><img id="Bin' + "<?= $_SESSION['currentlist'] ?>" +
-                product_name +
-                '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
+                    success: function(obj, textstatus) {
+                        if (!('error' in obj)) {
+                            yourVariable = obj.result;
+                        } else {
+                            console.log(obj.error);
+                        }
+                    }
+                });
 
-            paper.insertAdjacentHTML("beforeend", productAdded);
+                var paper = document.getElementById('<?= $_SESSION['currentlist'] ?>');
+                    console.log(paper);
+                    
+                var productAdded =
+                    '<li class="list-group-item mx-4" id="li' + "<?= $_SESSION['currentlist'] ?>" +
+                    product_name +
+                    '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' +
+                    product_name +
+                    '</div><div class="col px-0 float right my-auto mx-2" id="divinrowprice">RM ' +
+                    productprice.toFixed(2) +
+                    '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' + "<?= $_SESSION['currentlist'] ?>" +
+                    product_name +
+                    '" alt="" src="../images/redminus.png" width="28"></div></a><div class="col px-0 m-auto" id="multipliervalue"><span id="multiplier' + "<?= $_SESSION['currentlist'] ?>" + product_name +
+                    '"> ' +
+                    list["<?= $_SESSION['currentlist'] ?>" + product_name].total +
+                    '</span></div><div class="col px-0 mx-2" id="plusbutton"><a href="#"><img id="Add' + "<?= $_SESSION['currentlist'] ?>" +
+                    product_name +
+                    '" alt="" src="../images/Green pluss.png" width="28"></a></div><div class="col px-0 ml-2 mr-2 float-right" id="deletebutton"><a href="#"><img id="Bin' + "<?= $_SESSION['currentlist'] ?>" +
+                    product_name +
+                    '" alt="" src="../images/delete.png" width="28"></a></div></div></div></li>';
 
-            totalprice["<?= $_SESSION['currentlist'] ?>"] += productprice;
-            document.getElementById("<?= $_SESSION['currentlist'] ?>" + "-total-price-value").innerHTML = totalprice["<?= $_SESSION['currentlist'] ?>"].toFixed(2);
+                    document.getElementById("multiplier" + "<?= $_SESSION['currentlist'] ?>" + product_name).innerHTML = list['<?= $_SESSION['currentlist'] ?>' + product_name].total;
+                
 
-            var addbutton = document.getElementById("Add" + "<?= $_SESSION['currentlist'] ?>" + product_name);
-            addbutton.addEventListener("click", function() {
-                additem(product_name);
-            });
+                paper.insertAdjacentHTML("beforeend", productAdded);
 
-            var minusbutton = document.getElementById("Minus" + "<?= $_SESSION['currentlist'] ?>" + product_name);
-            minusbutton.addEventListener("click", function() {
-                minusitem(product_name);
-            });
-            var deletebutton = document.getElementById("Bin" + "<?= $_SESSION['currentlist'] ?>" + product_name);
-            deletebutton.addEventListener("click", function() {
-                var result = confirm("Are you sure you want to remove " + product_name + " ?");
-                if (result) {
-                    delitemlist(product_name);
-                }
+                totalprice["<?= $_SESSION['currentlist'] ?>"] += productprice;
+                document.getElementById("<?= $_SESSION['currentlist'] ?>" + "-total-price-value").innerHTML = totalprice["<?= $_SESSION['currentlist'] ?>"].toFixed(2);
 
-            });
-            // }
+                var addbutton = document.getElementById("Add" + "<?= $_SESSION['currentlist'] ?>" + product_name);
+                addbutton.addEventListener("click", function() {
+                    additem(product_name);
+                });
 
+                var minusbutton = document.getElementById("Minus" + "<?= $_SESSION['currentlist'] ?>" + product_name);
+                minusbutton.addEventListener("click", function() {
+                    minusitem(product_name);
+                });
+                var deletebutton = document.getElementById("Bin" + "<?= $_SESSION['currentlist'] ?>" + product_name);
+                deletebutton.addEventListener("click", function() {
+                    var result = confirm("Are you sure you want to remove " + product_name + " ?");
+                    if (result) {
+                        delitemlist(product_name);
+                    }
+
+                });
+            }
 
         };
 
         function retrievelist(list_id, list_name, list_cost, active) {
-            console.log(list_name);
+
 
             var tabstate, divstate;
             var htmltabid = 'T' + "<?= $user_id ?>" + list_name;
@@ -259,10 +288,10 @@ if (isset($_SESSION['user_name'])) {
         }
 
         function retrieveitems(list_name, product_name, total, total_item_cost, product_price) {
-            console.log(product_name);
-            console.log(total);
-            console.log(total_item_cost);
-            console.log(product_price);
+            list['<?= $_SESSION['currentlist'] ?>' + product_name] = {
+                total: total,
+                price: product_price,
+            };
             var htmlitemid = "LI" + "<?= $user_id ?>" + list_name + product_name;
             // htmltabid = 'T' + user_id + list_id;
             console.log(list_name);
@@ -270,8 +299,7 @@ if (isset($_SESSION['user_name'])) {
             var paper = document.getElementById(list_name);
 
             var productAdded =
-                '<li class="list-group-item mx-4" id="' + htmlitemid + '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' + product_name + '</div><div class="col px-0 float right my-auto mx-2" id="divinrowprice">RM ' + product_price + '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' + htmlitemid + '" alt="" src="../../images/redminus.png" width="28"></div></a><div class="col px-0 m-auto" id="multipliervalue"><span id="multiplier' + htmlitemid +
-                '"> ' + total +
+                '<li class="list-group-item mx-4" id="' + htmlitemid + '"><div class="inlist width-auto"><div class="row"><div class="col px-0 my-auto" id="divinrowname">' + product_name + '</div><div class="col px-0 float right my-auto mx-2" id="divinrowprice">RM ' + product_price + '</div><div class="col mx-2 px-0 float-right" id="minusbutton"> <a href="#"><img id="Minus' + htmlitemid + '" alt="" src="../../images/redminus.png" width="28"></div></a><div class="col px-0 m-auto" id="multipliervalue"><span id="multiplier' +'<?= $_SESSION['currentlist'] ?>' + product_name+'"> ' + total +
                 '</span></div><div class="col px-0 mx-2" id="plusbutton"><a href="#"><img id="Add' + htmlitemid +
                 '" alt="" src="../../images/Green pluss.png" width="28"></a></div><div class="col px-0 ml-2 mr-2 float-right" id="deletebutton"><a href="#"><img id="Bin' + htmlitemid +
                 '" alt="" src="../../images/delete.png" width="28"></a></div></div></div></li>';
