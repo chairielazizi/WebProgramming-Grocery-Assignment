@@ -141,66 +141,7 @@
 
         
 
-    <footer class="text-center font-italic p-3 pb-4 mt-3 text-light" style="background-color: #0c143c;">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <p type="button" data-toggle="collapse" data-target="#collapseContactUs" aria-expanded="false" aria-controls="collapseExample">
-                  <u>Contact Us</u>
-              </p>
-              <div class="collapse" id="collapseContactUs">
-                <div class="fs-6 fw-lighter text-left">
-                  <ul>
-                    <li>Call us at <p style="color:#3385ff;">03-5657 5432</p></li>
-                    <li>Email us at <a href="mailto:jcustomerservice@TroliMart.com.my">customerservice@TroliMart.com.my</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <p type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
-                <u>About Us</u>
-            </p>
-            <div class="collapse" id="collapseAboutUs">
-              <div class="fs-6 fw-lighter text-left">
-                <p>TroliMart system is intended to help the consumers to manage grocery shopping list before going to the shop to purchase the products. 
-                </p>
-              </div>
-            </div>
-            </div>
-            <div class="col-sm">
-              <p type="button" data-toggle="collapse" data-target="#collapseFollowUs" aria-expanded="false" aria-controls="collapseExample">
-                <u>Follow Us</u>
-            </p>
-            <div class="collapse" id="collapseFollowUs">
-              <div class="fs-6 fw-lighter text-left">
-                <ul>
-                  <li>
-                    <nav class="navbar navbar-light">
-                      <a class="navbar-brand text-primary" href="https://www.facebook.com/">
-                        <img src="images/fb.png" width="30" height="30" alt="" class="d-inline-block align-top">
-                          Facebook
-                      </a>
-                    </nav>
-                  </li>
-                  <li>
-                    <nav class="navbar navbar-light">
-                      <a class="navbar-brand text-primary" href="https://www.instagram.com/">
-                        <img src="images/insta.png" width="30" height="30" alt="" class="d-inline-block align-top">
-                        Instagram
-                      </a>
-                    </nav>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-          <p>
-              Copyright &copy; 2021 TroliMart Co. <br>
-          </p>
-      </footer>
+    
     
     <script src="dist/js/file.js"></script>
     <script src="dist/js/modal.js"></script>
