@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once './dist/php/connection.php';
-include_once './dist/php/homepagefunction.php';
 
 ?>
 
@@ -44,7 +43,25 @@ include_once './dist/php/homepagefunction.php';
 
                 <ul class="navbar-nav">
                     <li class="nav-item text-light">
-                        <img src="./images/user.png" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;">
+                                <?php
+                                $uname = $_SESSION['user_name'];
+                                $uid = $_SESSION['user_id'];
+                                $sql = "SELECT * FROM account WHERE (user_id='$uid')";
+                                $result = $conn->query($sql);
+                                while ($row = $result->fetch_assoc()) {
+                                    if ($uname == $row['First name']) {
+                                    $firstName  = $row["First name"];
+                                    $lastName = $row["Last name"];
+                                    $email = $row["Email"];
+                                    $password = $row["Password"];
+                                    $birthdate = $row["Birth date"];
+                                    $gender = $row["Gender"];
+                                    $photo = $row["Account_picture"];
+                                    }
+                                }
+                                echo '<img src="data:image/jpeg;base64,' . base64_encode($photo) . '" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;">';
+                                ?>
+                        <!-- <img src="./images/user.png" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;"> -->
                     </li>
                     <!-- Modal -->
                     <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="userprofile" aria-hidden="true">
@@ -57,23 +74,6 @@ include_once './dist/php/homepagefunction.php';
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <?php
-                                    $uname = $_SESSION['user_name'];
-                                    $uid = $_SESSION['user_id'];
-                                    $sql = "SELECT * FROM account WHERE (user_id='$uid')";
-                                    $result = $conn->query($sql);
-                                    while ($row = $result->fetch_assoc()) {
-                                        if ($uname == $row['First name']) {
-                                            $firstName  = $row["First name"];
-                                            $lastName = $row["Last name"];
-                                            $email = $row["Email"];
-                                            $password = $row["Password"];
-                                            $birthdate = $row["Birth date"];
-                                            $gender = $row["Gender"];
-                                            $photo = $row["Account_picture"];
-                                        }
-                                    }
-                                    ?>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <?php echo '<img style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($photo) . '"/><br>'; ?>
@@ -234,6 +234,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -243,7 +244,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>', '<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -254,6 +255,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -263,7 +265,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -274,6 +276,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -283,7 +286,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -294,6 +297,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -303,7 +307,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -314,6 +318,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -323,7 +328,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -334,6 +339,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -343,7 +349,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -354,6 +360,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -363,7 +370,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -374,6 +381,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -383,7 +391,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -394,6 +402,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -403,7 +412,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -414,6 +423,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -423,7 +433,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                         <?php
                         }
@@ -434,6 +444,7 @@ include_once './dist/php/homepagefunction.php';
                         $result = $conn->query($sql);
 
                         while ($row = $result->fetch_assoc()) {
+                            $product_id = $row['product_id'];
                             $product_name = $row['product_name'];
                             $product_image = $row['product_image'];
                             $product_price = $row['product_price'];
@@ -443,7 +454,7 @@ include_once './dist/php/homepagefunction.php';
                                 <?php echo '<img class=\'card-img-top\' style=\'height: 9em;\' src="data:image/jpeg;base64,' . base64_encode($product_image) . '"/><br>'; ?>
                                 <h6 class="card-title"><?php echo $product_name ?></h6>
                                 <p class="card-text">RM<?php echo $product_price ?></p>
-                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                             </div>
                     <?php
                         }
@@ -541,10 +552,15 @@ include_once './dist/php/homepagefunction.php';
                 Copyright &copy; 2021 TroliMart Co. <br>
             </p>
         </footer>
+<<<<<<< Updated upstream
 
-        <?php include_once './dist/php/retrievelist.php'; ?>
+        <?php 
+        // include_once './dist/php/retrievelist.php'; 
+        ?>
+=======
+>>>>>>> Stashed changes
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <?php include_once './dist/php/retrievelist.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 
