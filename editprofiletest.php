@@ -57,13 +57,7 @@
             $result = $conn->query($sql);
             while ($row =  $result->fetch_assoc()) {
                 $checkPassword = $row['Password'];
-                $firstName  = $row["First name"];
-                $lastName = $row["Last name"];
-                $email = $row["Email"];
-                $password = $row["Password"];
-                $birthdate = $row["Birth date"];
-                $gender = $row["Gender"];
-                $photo = $row["Account_picture"];
+               
             }
 
             if ($id) {
@@ -102,7 +96,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" name='firstName' class='form-control' value="<?php echo $row[`First name`]; ?>"required>
+            <input type="text" name='firstName' class='form-control' value="<?php echo $firstName; ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -112,7 +106,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name='lastName' class='form-control' <?php echo $row[`Last name`] ?>required>
+            <input type="text" name='lastName' class='form-control' value="<?php echo $lastName; ?>" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -122,7 +116,7 @@
           </div>
           <div class="form-group">
             <label for="birth-date">Birthday:</label>
-            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $row[`Birth date`] ?>"required>
+            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $birthdate; ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -132,7 +126,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" name="emailInput"  value="<?php echo $row[`Email`] ?>"required>
+            <input type="email" class="form-control" name="emailInput"  value="<?php echo $email; ?>" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
