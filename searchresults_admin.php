@@ -37,7 +37,7 @@
             <div class="container-fluid">
                 <!-- upperleft logo -->
                 <div class="navbar-brand p-0 me-2" >
-                    <a href="homepage.php">
+                    <a href="landing_Adminpage.php">
                         <img src="images/trolimart rect2.png" width="180" alt="">
                     </a>
                 </div>
