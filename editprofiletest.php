@@ -107,7 +107,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="birth-date">Birthdate:</label>
+            <label for="birth-date">Birthday:</label>
             <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $row[`Birth date`] ?>"required>
             <div class="valid-feedback">
               Looks good!
