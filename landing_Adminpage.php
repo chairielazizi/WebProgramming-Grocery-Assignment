@@ -66,7 +66,6 @@ session_start();
               Hello Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>
