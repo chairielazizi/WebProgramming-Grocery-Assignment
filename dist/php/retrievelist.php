@@ -20,8 +20,8 @@ if (isset($_SESSION['user_name'])) {
         function retrievelist(list_id, list_name, list_cost, active) {
 
             var tabstate, divstate;
-            var htmltabid = 'T' + "<?= $user_id ?>" + list_id;
-            var htmldivid = 'D' + "<?= $user_id ?>" + list_id;
+            var htmltabid = 'T' + "<?= $user_id ?>" + list_name;
+            var htmldivid = 'D' + "<?= $user_id ?>" + list_name;
             var deletebtnid = "delete" + htmltabid + "btn";
             var olid = "list_itemstab" + list_id;
             if (active == true) {
@@ -33,9 +33,7 @@ if (isset($_SESSION['user_name'])) {
                 divstate = "fade";
             }
             //html for list
-            var newlist = '<li class="" id="' + htmltabid + '" ><a id="href_tab' + list_name + '" class="nav-link ' + tabstate + '" data-toggle="tab" aria-current="page" href="#' + htmldivid + '" >' + list_name + '<button id="' + deletebtnid + '" class="delete-list-btn">❌</button></a></li>';
-
-          
+            var newlist = '<li class="" id="' + htmltabid + '" ><a id="href_tab' + list_name + '" class="nav-link ' + tabstate + '" data-toggle="tab" aria-current="page" href="#' + htmldivid + '" onclick ="currentlist(\''+ list_name+'\')" >' + list_name + '<button id="' + deletebtnid + '" class="delete-list-btn">❌</button></a></li>';
 
             //insert to the left of "add tab button
             tablist.insertAdjacentHTML("beforebegin", newlist);
@@ -96,13 +94,19 @@ if (isset($_SESSION['user_name'])) {
         $list_name = $row['list_name'];
         $total_cost = $row['total_cost'];
         $list_id = $row['list_id'];
+        if ($i == 0 and !isset($_COOKIE["currentlist"])) {
+            $_SESSION['currentlist'] = $list_name;
+            echo "<script>console.log('" . $_SESSION['currentlist'] . "');</script>";
+        }
+
+
     ?>
         <script>
             var list_id = <?= $list_id ?>;
             var list_name = "<?= $list_name ?>";
             var list_cost = <?= $total_cost ?>;
 
-            if (<?= $i ?> == 0) {
+            if (list_name == '<?= $_SESSION["currentlist"] ?>') {
                 retrievelist(list_id, list_name, list_cost, true);
             } else {
                 retrievelist(list_id, list_name, list_cost, false);

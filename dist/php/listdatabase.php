@@ -1,15 +1,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <?php
-session_start();
 include_once 'connection.php';
 
-
 if (isset($_SESSION['user_name'])) {
-
     $user_id = $_SESSION['user_id'];
-
+    
     switch (isset($_POST['functionname'])) {
-
         case 'addlist':
 
             $defaultname = strval($_POST['defaultname']);
@@ -52,7 +48,8 @@ if (isset($_SESSION['user_name'])) {
         case 'renamelist':
             # code...
             break;
-
+        case 'currentlist':
+            break;
         default:
             # code...
             break;
