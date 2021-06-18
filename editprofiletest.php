@@ -1,12 +1,13 @@
 <?php
   include_once("./dist/php/connection.php");
+  session_start();
 
   global $id;
   $id=$_SESSION['user_id'];
   $query = "SELECT * FROM account WHERE user_id = '$id'";
   $result = $conn->query($query);
   $row = $result->fetch_assoc();
-  session_start();
+  
 ?>
 
 
