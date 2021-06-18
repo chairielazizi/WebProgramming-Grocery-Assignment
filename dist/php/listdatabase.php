@@ -1,57 +1,82 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <?php
 include_once 'connection.php';
 
-if (isset($_SESSION['user_name'])) {
-    $user_id = $_SESSION['user_id'];
+if (isset($_SESSION['user_name']) && isset($_POST['functionname'])) {
     
-    switch (isset($_POST['functionname'])) {
-        case 'addlist':
+    $user_id = $_SESSION['user_id'];
+    switch ($_POST['functionname']) {
 
-            $defaultname = strval($_POST['defaultname']);
+        case 'addlist':
+            $list_name = strval($_POST['list_name']);
             $addlistsql = "INSERT INTO lists ( `user_id`, list_name)
-                VALUES ($user_id, '$defaultname')";
+                VALUES ('$user_id', '$list_name')";
             if (mysqli_query($conn, $addlistsql)) {
-                $last_id = $conn->insert_id;
-                echo "Records inserted successfully." . $last_id;
+                echo "Records inserted successfully.";
                 ?><?php
             } else {
                 echo "ERROR: Could not able to execute $addlistsql. " . mysqli_error($conn);
             }
+
+            unset($_POST['functionname']);
+            unset($_POST['list_name']);
             break;
 
         case 'deletelist':
             //*TODO still cannot delete newly created list because id is unknown
-            $list_id = intval($_POST['list_id']);
-            $deletelistsql = "DELETE FROM lists WHERE list_id = $list_id";
+            $list_name = strval($_POST['list_name']);
+            $deletelistsql = "DELETE FROM lists WHERE list_name = $list_name";
 
             if (mysqli_query($conn, $deletelistsql)) {
                 echo "Records deleted successfully.";
             } else {
                 echo "ERROR: Could not able to execute $deletelistsql. " . mysqli_error($conn);
             }
+            unset($_POST['functionname']);
+            unset($_POST['list_name']);
             break;
 
-            break;
         case 'additem':
-            # code...
+            $product_id =   intval($_POST['product_id']);
+            $product_price = floatval($_POST['product_price']);
+            $list_name = strval($_POST['list_name']);
+            $additemsql = "INSERT INTO item ( `product_id`, `list_name`, `user_id`, `total`, `total_item_cost`) VALUES ('$product_id', '$list_name', '$user_id', 1, '$product_price')";
+            if (mysqli_query($conn, $additemsql)) {
+                echo "Records inserted successfully.";
+                ?><?php
+            } else {
+                echo "ERROR: Could not able to execute $addlitemsql. " . mysqli_error($conn);
+            }
+
+            unset($_POST['functionname']);
+            unset($_POST['product_id']);
+            unset($_POST['product_price']);
+            unset($_POST['list_name']);
             break;
+
         case 'deleteitem':
             # code...
             break;
+
         case 'increaseitem':
             # code...
             break;
+
         case 'decreaseitem':
             # code...
             break;
+
         case 'renamelist':
             # code...
             break;
+
         case 'currentlist':
+            unset($_SESSION['currentlist']);
+            $_SESSION['currentlist'] = $_POST['list_name'];
+            unset($_POST['functionname']);
+            unset($_POST['list_name']);
             break;
+
         default:
-            # code...
             break;
     }
 }

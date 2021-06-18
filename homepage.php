@@ -269,6 +269,7 @@ include_once './dist/php/connection.php';
 
               $i = 0;
               while ($row = $result->fetch_assoc()) {
+                $product_id = $row['product_id'];
                 $product_name = $row['product_name'];
                 $product_image = $row['product_image'];
                 $product_price = $row['product_price'];
@@ -281,7 +282,7 @@ include_once './dist/php/connection.php';
                   <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                   <h6 class="card-title"><?php echo $product_name ?></h6>
                   <p class="card-text">RM<?php echo $product_price ?></p>
-                  <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                  <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                   <!-- <script>
                 
               </script> -->
@@ -303,6 +304,7 @@ include_once './dist/php/connection.php';
 
               $i = 0;
               while ($row = $result->fetch_assoc()) {
+                $product_id = $row['product_id'];
                 $product_name = $row['product_name'];
                 $product_image = $row['product_image'];
                 $product_price = $row['product_price'];
@@ -315,7 +317,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
               </div>
             <?php
               }
@@ -334,6 +336,7 @@ include_once './dist/php/connection.php';
 
               $i = 0;
               while ($row = $result->fetch_assoc()) {
+                $product_id = $row['product_id'];
                 $product_name = $row['product_name'];
                 $product_image = $row['product_image'];
                 $product_price = $row['product_price'];
@@ -346,7 +349,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
 
               </div>
               <?php echo '<script> function name() {
@@ -372,6 +375,7 @@ include_once './dist/php/connection.php';
 
               $i = 0;
               while ($row = $result->fetch_assoc()) {
+                $product_id = $row['product_id'];
                 $product_name = $row['product_name'];
                 $product_image = $row['product_image'];
                 $product_price = $row['product_price'];
@@ -384,7 +388,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
               </div>
           <?php
               }
