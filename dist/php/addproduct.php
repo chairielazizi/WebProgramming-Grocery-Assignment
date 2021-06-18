@@ -25,11 +25,11 @@
 		}
 	$product_image = $imgContent;
 	
-	if(mysqli_query($conn, "INSERT INTO products (product_name, product_category, product_image, product_price, product_quantity) VALUES('$product_name', '$product_category', '$product_image','$product_price','$product_quantity')"))
+	if(mysqli_query($conn, "INSERT INTO products (product_name, product_category, product_image, product_price, product_quantity) VALUES('$product_name', '$product_category', '$product_image','$product_price','$product_quantity')")){
 		echo '<script>alert("Product Added !"); window.location.href="../../addp.php";</script>';
-		
+	}
 	else
-		echo '<script>alert("fail !"); window.location.href="../../addp.php";</script>';
+		{echo '<script>alert("fail !"); window.location.href="../../addp.php";</script>';}
 	
 	}
 	//it should
