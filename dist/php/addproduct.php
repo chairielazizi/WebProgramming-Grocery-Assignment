@@ -32,5 +32,6 @@
 		echo '<script>alert("fail !"); window.location.href="../../addp.php";</script>';
 	
 	}
+	//it should
 	
 ?>
