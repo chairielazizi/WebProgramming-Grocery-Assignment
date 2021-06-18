@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,9 @@
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
-
+    <script type="text/javascript">
+        window.history.forward();
+    </script>
 </head>
 
 <body class="text-dark">
@@ -37,7 +42,7 @@
             <div class="container-fluid">
                 <!-- upperleft logo -->
                 <div class="navbar-brand p-0 me-2" >
-                    <a href="homepage.php">
+                    <a href="landing_Adminpage.php">
                         <img src="images/trolimart rect2.png" width="180" alt="">
                     </a>
                 </div>
@@ -62,14 +67,14 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="editprofile.html">Edit Profile</a>
-                            <a class="dropdown-item" href="index.html">Logout</a>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                           </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    
+    <?php if (isset($_SESSION['logged_in'])) { ?>
     <div class="main-content">
 
         
@@ -154,3 +159,8 @@
 </body>
 
 </html>
+<?php } else {
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed</h1>";
+        echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
+    }
+?>

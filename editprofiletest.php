@@ -7,7 +7,13 @@
   $query = "SELECT * FROM account WHERE user_id = '$id'";
   $result = $conn->query($query);
   $row = $result->fetch_assoc();
-  
+    $firstName  = $row["First name"];
+    $lastName = $row["Last name"];
+    $email = $row["Email"];
+    $password = $row["Password"];
+    $birthdate = $row["Birth date"];
+    $gender = $row["Gender"];
+    $photo = $row["Account_picture"];
 ?>
 
 
@@ -21,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="dist/css/editprofiletest.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="dist/js/editprofiletest.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 
@@ -45,17 +52,19 @@
             $newPassword = $_POST["newPassword"];
             $confirmNewPassword = $_POST["confirmNewPassword"];
             $birthdate = $_POST["birthdate"];
+            $hashedpassword = sha1($newPassword);
 
             $sql = "SELECT Password FROM account WHERE user_id = '$id'";
             $result = $conn->query($sql);
             while ($row =  $result->fetch_assoc()) {
                 $checkPassword = $row['Password'];
+               
             }
 
             if ($id) {
                 $query = "UPDATE account 
                           SET `First name` = '$firstName', `Last name` = '$lastName', `Email` = '$email', 
-                          Password = '$password', `Birth date` = '$birthdate' WHERE user_id = '$id'";
+                          Password = '$hashedpassword', `Birth date` = '$birthdate' WHERE user_id = '$id'";
                 $result = $conn->query($query);
                 ?>
                 <div class="alert alert-success">Updated profile.</div>
@@ -68,6 +77,7 @@
           }
       ?>
         <form class="form-container" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        
           <h2 class='pb-4'>Edit Profile</h2>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -80,14 +90,14 @@
               <small id="emailHelp" class="form-text text-muted pb-2"></small>
               <div class="profile-pic-div">
                 <i class="fa fa-fw fa-camera"></i>
-                <input type= "file" name="" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*">
+                <input type= "file" name="photo" id= "file"value="<?php echo $row['Account_picture']; ?>" accept= "image/*" required>
                 <label id="editPic" for= "file"> </label>
             </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" name='firstName' class='form-control' value="">
+            <input type="text" name='firstName' class='form-control' value="<?php echo $firstName; ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -97,7 +107,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name='lastName' class='form-control' value="">
+            <input type="text" name='lastName' class='form-control' value="<?php echo $lastName; ?>" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -106,8 +116,8 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="birth-date">Birthdate:</label>
-            <input type="date" class="form-control" name="birthdate" name="birthdate" value="">
+            <label for="birth-date">Birthday:</label>
+            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $birthdate; ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -117,7 +127,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" name="emailInput"  value="">
+            <input type="email" class="form-control" name="emailInput"  value="<?php echo $email; ?>" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
@@ -130,14 +140,14 @@
           <h4 class="mb-3">Change Password</h4>
           <div class="form-group">
             <label for="exampleInputEmail1">Current Password</label>
-            <input type="password" name='password' class='form-control'">
+            <input type="password" name='password' class='form-control'required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">New Password</label>
-            <input type="password" name='newPassword' class='form-control'>
+            <input type="password" name='newPassword' class='form-control'required>
             <small id="passwordHelpBlock" class="form-text text-muted">
               Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
             </small>
@@ -150,7 +160,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Confirm New Password</label>
-            <input type="password" name='confirmNewPassword' class='form-control'>
+            <input type="password" name='confirmNewPassword' class='form-control'required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -224,7 +234,7 @@
               Copyright &copy; 2021 TroliMart Co. <br>
           </p>
       </footer>
-      <script src="dist/js/editprofiletest.js"></script>
+      <script type="text/javascript" src="dist/js/editprofiletest.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     

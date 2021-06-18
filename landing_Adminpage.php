@@ -31,7 +31,9 @@ session_start();
             $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
-
+    <script type="text/javascript">
+        window.history.forward();
+    </script>
 </head>
 
 <body class="text-dark">
@@ -64,7 +66,6 @@ session_start();
               Hello Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>
@@ -832,7 +833,7 @@ session_start();
 </html>
 <?php }
     else{
-        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed eheh</h1>";
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed</h1>";
         echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
     }
 ?>

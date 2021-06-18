@@ -77,7 +77,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="exampleInputEmail1">Price :</label>
-            <input type="number" class="form-control" name="price"  id="price" min="1" required>
+            <input type="number" class="form-control" name="price"  id="price" min="1" step="0.01" required>
             <div class="valid-feedback">
               Looks good!
             </div>
