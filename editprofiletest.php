@@ -68,6 +68,7 @@
           }
       ?>
         <form class="form-container" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        
           <h2 class='pb-4'>Edit Profile</h2>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -87,7 +88,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" name='firstName' class='form-control' value="">
+            <input type="text" name='firstName' class='form-control' value="<?php echo $firstName ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -97,7 +98,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name='lastName' class='form-control' value="">
+            <input type="text" name='lastName' class='form-control' value="<?php echo $lastName ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -107,7 +108,7 @@
           </div>
           <div class="form-group">
             <label for="birth-date">Birthdate:</label>
-            <input type="date" class="form-control" name="birthdate" name="birthdate" value="">
+            <input type="date" class="form-control" name="birthdate" name="birthdate" value="<?php echo $birthdate ?>"required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -117,7 +118,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" name="emailInput"  value="">
+            <input type="email" class="form-control" name="emailInput"  value="<?php echo $email ?>"required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div class="valid-feedback">
               Valid e-mail!
@@ -130,14 +131,14 @@
           <h4 class="mb-3">Change Password</h4>
           <div class="form-group">
             <label for="exampleInputEmail1">Current Password</label>
-            <input type="password" name='password' class='form-control'">
+            <input type="password" name='password' class='form-control'required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">New Password</label>
-            <input type="password" name='newPassword' class='form-control'>
+            <input type="password" name='newPassword' class='form-control'required>
             <small id="passwordHelpBlock" class="form-text text-muted">
               Password length must be between 8 to 10 characters with atleast one uppercase letter, one lowercase letter and one number.
             </small>
@@ -150,7 +151,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Confirm New Password</label>
-            <input type="password" name='confirmNewPassword' class='form-control'>
+            <input type="password" name='confirmNewPassword' class='form-control'required>
             <div class="valid-feedback">
               Looks good!
             </div>
