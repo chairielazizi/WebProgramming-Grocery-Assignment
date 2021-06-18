@@ -4,6 +4,7 @@
 <head>
 <?php
 session_start();
+// echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
 ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +41,7 @@ session_start();
       <div class="container-fluid">
         <!-- upperleft logo -->
         <div class="navbar-brand p-0 me-2">
-          <a href="homepage.php">
+          <a href="landing_Adminpage.php">
             <img class='trolimart-logo' src="images/trolimart rect2.png" width="180" alt="">
           </a>
         </div>
@@ -64,7 +65,7 @@ session_start();
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="editprofiletest.html">Edit Profile</a>
-              <a class="dropdown-item" href="index.php">Logout</a>
+              <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>
         </ul>
@@ -74,7 +75,7 @@ session_start();
 
   <!--Products table-->
   <!--Beverages 1-->
-  
+  <?php if(isset($_SESSION['logged_in'])){ ?>
   <div class="wrapper center">
     <div class="container-fluid">
         <div class="row">
@@ -829,3 +830,9 @@ session_start();
 </body>
 
 </html>
+<?php }
+    else{
+        echo "<h1 style='color:red; font-size:300px;'>Session is destroyed eheh</h1>";
+        echo "<a href='index.php' style='font-size:100px;'>Click here to login back!</a>";
+    }
+?>
