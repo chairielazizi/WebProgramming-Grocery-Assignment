@@ -1,37 +1,56 @@
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-header{
+header {
     background-color: #0c143c;
 }
-#container{
+
+#container {
     min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-footer{
+
+footer {
     background-color: #0c143c;
-    position: relative;
-    clear: both;
 }
-p{
+
+footer div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer div div{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+    min-width: 250px;
+}
+
+p {
     text-align: center;
     color: aliceblue;
 }
-.form{
+
+.form {
     margin: auto;
     width: 30%;
 }
-#callus{
-    color:#3385ff;
+
+#callus {
+    color: #3385ff;
 }
-#newToTroliMart{
+
+#newToTroliMart {
     color: red;
 }
-ul{
+
+ul {
     color: white;
 }
