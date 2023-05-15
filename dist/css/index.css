@@ -1,12 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 header{
     background-color: #0c143c;
-}
-html, body{
-    height: 100%;
 }
 #container{
     min-height: 100%;
