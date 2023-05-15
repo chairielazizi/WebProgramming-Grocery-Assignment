@@ -263,7 +263,7 @@ if (isset($_SESSION['user_name'])) {
             var htmltabid = 'T' + "<?= $user_id ?>" + list_name;
             var htmldivid = 'D' + "<?= $user_id ?>" + list_name;
             var deletebtnid = "delete" + htmltabid + "btn";
-            if (active == true) {
+            if (active) {
                 tabstate = "active";
                 divstate = "in active";
 
