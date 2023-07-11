@@ -3,7 +3,9 @@ include_once 'connection.php';
 session_start();
 if (isset($_SESSION['user_name']) && isset($_POST['functionname'])) {
 
+
     $user_id = $_SESSION['user_id'];
+
 
     switch ($_POST['functionname']) {
 
@@ -13,6 +15,7 @@ if (isset($_SESSION['user_name']) && isset($_POST['functionname'])) {
                 VALUES ('$user_id', '$list_name')";
             if (mysqli_query($conn, $addlistsql)) {
                 echo "Records inserted successfully.";
+?><?php
             } else {
                 echo "ERROR: Could not able to execute $addlistsql. " . mysqli_error($conn);
             }
@@ -39,6 +42,8 @@ if (isset($_SESSION['user_name']) && isset($_POST['functionname'])) {
             $product_id =   intval($_POST['product_id']);
             $product_price = floatval($_POST['product_price']);
             $list_name = strval($_POST['list_name']);
+
+
 
             $additemsql = "INSERT INTO item ( `product_id`, `list_name`, `user_id`, `total`, `total_item_cost`) VALUES ('$product_id', '$list_name', '$user_id', 1, '$product_price')";
             if (mysqli_query($conn, $additemsql)) {
@@ -98,6 +103,7 @@ if (isset($_SESSION['user_name']) && isset($_POST['functionname'])) {
         case 'renamelist':
             # code...
             break;
+
 
         case 'deleteitem':
             # code...
