@@ -47,23 +47,23 @@ include_once './dist/php/connection.php';
         <ul class="navbar-nav">
           <li class="nav-item text-light">
             <?php
-            $uname = $_SESSION['user_name'];
-            $uid = $_SESSION['user_id'];
-            $sql = "SELECT * FROM account WHERE (user_id='$uid')";
-            $result = $conn->query($sql);
-            while ($row = $result->fetch_assoc()) {
-              if ($uname == $row['First name']) {
-                $firstName  = $row["First name"];
-                $lastName = $row["Last name"];
-                $email = $row["Email"];
-                $password = $row["Password"];
-                $birthdate = $row["Birth date"];
-                $gender = $row["Gender"];
-                $photo = $row["Account_picture"];
+              $uname = $_SESSION['user_name'];
+              $uid = $_SESSION['user_id'];
+              $sql = "SELECT * FROM account WHERE (user_id='$uid')";
+              $result = $conn->query($sql);
+              while ($row = $result->fetch_assoc()) {
+                  if ($uname == $row['First name']) {
+                  $firstName  = $row["First name"];
+                  $lastName = $row["Last name"];
+                  $email = $row["Email"];
+                  $password = $row["Password"];
+                  $birthdate = $row["Birth date"];
+                  $gender = $row["Gender"];
+                  $photo = $row["Account_picture"];
+                  }
               }
-            }
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($photo) . '" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;">';
-            ?>
+              echo '<img src="data:image/jpeg;base64,' . base64_encode($photo) . '" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;">';
+              ?>
             <!-- <img src="./images/user.png" width="30" height="30" alt="" class="mr-2" data-toggle="modal" data-target="#profile" style="cursor: pointer;"> -->
           </li>
           <!-- Modal -->
@@ -284,7 +284,7 @@ include_once './dist/php/connection.php';
                   <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                   <h6 class="card-title"><?php echo $product_name ?></h6>
                   <p class="card-text">RM<?php echo $product_price ?></p>
-                  <button class="add-to-cart-button btn btn-success align-self-end" onclick="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)">Add to List</button>
+                  <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
                   <!-- <script>
                 
               </script> -->
@@ -319,7 +319,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)">Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
               </div>
             <?php
               }
@@ -351,7 +351,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)">Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
 
               </div>
               <?php echo '<script> function name() {
@@ -390,7 +390,7 @@ include_once './dist/php/connection.php';
                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($product_image) . '" style=height:9em;/><br>'; ?>
                 <h6 class="card-title"><?php echo $product_name ?></h6>
                 <p class="card-text">RM<?php echo $product_price ?></p>
-                <button class="add-to-cart-button btn btn-success align-self-end" onclick="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)">Add to List</button>
+                <button class="add-to-cart-button btn btn-success align-self-end" onclick ="addtolist('<?php echo $product_id ?>','<?php echo $product_name ?>',<?php echo $product_price ?>)" >Add to List</button>
               </div>
           <?php
               }
@@ -497,7 +497,7 @@ include_once './dist/php/connection.php';
       </p>
     </footer>
 
-    <?php
+    <?php 
     // include_once './dist/php/retrievelist.php'; 
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
