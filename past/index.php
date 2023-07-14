@@ -134,7 +134,7 @@
           <ul>
             <li>Call us at <p style="color:#3385ff; text-align: left;">03-5657 5432</p>
             </li>
-            <li>Email us at <br><a href="mailto:jcustomerservice@TroliMart.com.my">customerservice@TroliMart.com.my</a>
+            <li>Email us at <br><a href="mailto:customerservice@TroliMart.com.my">customerservice@TroliMart.com.my</a>
             </li>
           </ul>
         </div>

@@ -2,11 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./asset/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+
+    <?php include_once './component/head.html' ?>
     <link rel="stylesheet" href="./index.css">
-    <script src="./asset/bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
     <title>TroliMart</title>
 </head>
 
@@ -26,6 +24,15 @@
             <a href="" class="link-warning" style="text-decoration: none;">Sign up</a>
         </nav>
     </div>
+    <main>
+        <?php
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            printf('You search for this: ' . $_GET['search']);
+        }else {
+            printf('You did not search for anything');
+        }
+        ?>
+    </main>
     <?php include_once './component/footer.html' ?>
 </body>
 
